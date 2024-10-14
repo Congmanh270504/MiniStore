@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEE7324E-F199-4B86-8FEB-AB81003B3054}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KFC_FASTFOOD</RootNamespace>
+    <AssemblyName>KFC_FASTFOOD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>15844397.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\WinForm\TNTFOOD\TNTFOOD\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_About.Designer.cs">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_BackupDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_BackupDatabase.Designer.cs">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_ChangePassword.Designer.cs">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Connect.Designer.cs">
+      <DependentUpon>frm_Connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_InvoiceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_InvoiceDetails.Designer.cs">
+      <DependentUpon>frm_InvoiceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_PrintInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_PrintInvoice.Designer.cs">
+      <DependentUpon>frm_PrintInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_RestoreDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_RestoreDatabase.Designer.cs">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Setting.Designer.cs">
+      <DependentUpon>frm_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Splash.Designer.cs">
+      <DependentUpon>frm_Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_UserPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_UserPermission.Designer.cs">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lib\cls_BackupRestore.cs" />
+    <Compile Include="lib\cls_Category.cs" />
+    <Compile Include="lib\cls_Database.cs" />
+    <Compile Include="lib\cls_Employess.cs" />
+    <Compile Include="lib\cls_EnCrypt.cs" />
+    <Compile Include="lib\cls_Order.cs" />
+    <Compile Include="lib\cls_Product.cs" />
+    <Compile Include="lib\cls_Report.cs" />
+    <Compile Include="lib\cls_Salary.cs" />
+    <Compile Include="lib\cls_TestConnectDB.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rp_InvoiceDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_InvoiceDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_ProductInventory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_ProductInventory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_ProductSold.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_ProductSold.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_Product.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_Product.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_LabourContract.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_LabourContract.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_NumberOfEmployess.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_NumberOfEmployess.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_PrintInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_PrintInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_ProfileAllEmployess.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_ProfileAllEmployess.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_ProfileEmployess.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_ProfileEmployess.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_RevenueDay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_RevenueDay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_RevenueMonth.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_RevenueMonth.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rp_Salary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_Salary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_CityCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_CityCategory.Designer.cs">
+      <DependentUpon>UC_CityCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_DegreeManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_DegreeManager.Designer.cs">
+      <DependentUpon>UC_DegreeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_InvoiceDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_InvoiceDetails.Designer.cs">
+      <DependentUpon>UC_InvoiceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_NationManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_NationManager.Designer.cs">
+      <DependentUpon>UC_NationManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_OfficesManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_OfficesManager.Designer.cs">
+      <DependentUpon>UC_OfficesManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_ReligionManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_ReligionManager.Designer.cs">
+      <DependentUpon>UC_ReligionManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProductInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProductInventory.Designer.cs">
+      <DependentUpon>UC_RpProductInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpRevenue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpRevenue.Designer.cs">
+      <DependentUpon>UC_RpRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_DepartmentManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_DepartmentManager.Designer.cs">
+      <DependentUpon>UC_DepartmentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_DrinkManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_DrinkManager.Designer.cs">
+      <DependentUpon>UC_DrinkManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_FoodManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_FoodManager.Designer.cs">
+      <DependentUpon>UC_FoodManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_NCCManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_NCCManager.Designer.cs">
+      <DependentUpon>UC_NCCManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_OfficeManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_OfficeManager.Designer.cs">
+      <DependentUpon>UC_OfficeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_PayrollManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_PayrollManager.Designer.cs">
+      <DependentUpon>UC_PayrollManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_PersonnelManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_PersonnelManager.Designer.cs">
+      <DependentUpon>UC_PersonnelManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_ProductType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_ProductType.Designer.cs">
+      <DependentUpon>UC_ProductType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_ProfilePersonnelManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_ProfilePersonnelManager.Designer.cs">
+      <DependentUpon>UC_ProfilePersonnelManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpLabourContract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpLabourContract.Designer.cs">
+      <DependentUpon>UC_RpLabourContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpNumberOfEmployess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpNumberOfEmployess.Designer.cs">
+      <DependentUpon>UC_RpNumberOfEmployess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProduct.Designer.cs">
+      <DependentUpon>UC_RpProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProductSold.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProductSold.Designer.cs">
+      <DependentUpon>UC_RpProductSold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProfileAllEmployess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProfileAllEmployess.Designer.cs">
+      <DependentUpon>UC_RpProfileAllEmployess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProfileEmployess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpProfileEmployess.Designer.cs">
+      <DependentUpon>UC_RpProfileEmployess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpSalary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_RpSalary.Designer.cs">
+      <DependentUpon>UC_RpSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_SalaryManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_SalaryManager.Designer.cs">
+      <DependentUpon>UC_SalaryManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_TimeSheetManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_TimeSheetManager.Designer.cs">
+      <DependentUpon>UC_TimeSheetManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFunction\UC_UserManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFunction\UC_UserManager.Designer.cs">
+      <DependentUpon>UC_UserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Category.Designer.cs">
+      <DependentUpon>UC_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Noti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Noti.Designer.cs">
+      <DependentUpon>UC_Noti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Order.Designer.cs">
+      <DependentUpon>UC_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Personnel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Personnel.Designer.cs">
+      <DependentUpon>UC_Personnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Product.Designer.cs">
+      <DependentUpon>UC_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Report.Designer.cs">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_Salary.Designer.cs">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSytems\UC_System.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSytems\UC_System.Designer.cs">
+      <DependentUpon>UC_System.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\frm_About.resx">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_BackupDatabase.resx">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_ChangePassword.resx">
+      <DependentUpon>frm_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Connect.resx">
+      <DependentUpon>frm_Connect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_InvoiceDetails.resx">
+      <DependentUpon>frm_InvoiceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_PrintInvoice.resx">
+      <DependentUpon>frm_PrintInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_RestoreDatabase.resx">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Setting.resx">
+      <DependentUpon>frm_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Splash.resx">
+      <DependentUpon>frm_Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_UserPermission.resx">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\rp_InvoiceDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_InvoiceDetails.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_ProductInventory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_ProductInventory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_ProductSold.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_ProductSold.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_Product.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_Product.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_LabourContract.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_LabourContract.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_NumberOfEmployess.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_NumberOfEmployess.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_PrintInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_PrintInvoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_ProfileAllEmployess.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_ProfileAllEmployess.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_ProfileEmployess.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_ProfileEmployess.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_RevenueDay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_RevenueDay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_RevenueMonth.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_RevenueMonth.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rp_Salary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_Salary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_CityCategory.resx">
+      <DependentUpon>UC_CityCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_DegreeManager.resx">
+      <DependentUpon>UC_DegreeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_DepartmentManager.resx">
+      <DependentUpon>UC_DepartmentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_DrinkManager.resx">
+      <DependentUpon>UC_DrinkManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_FoodManager.resx">
+      <DependentUpon>UC_FoodManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_InvoiceDetails.resx">
+      <DependentUpon>UC_InvoiceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_NationManager.resx">
+      <DependentUpon>UC_NationManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_NCCManager.resx">
+      <DependentUpon>UC_NCCManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_OfficeManager.resx">
+      <DependentUpon>UC_OfficeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_OfficesManager.resx">
+      <DependentUpon>UC_OfficesManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_PayrollManager.resx">
+      <DependentUpon>UC_PayrollManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_PersonnelManager.resx">
+      <DependentUpon>UC_PersonnelManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_ProductType.resx">
+      <DependentUpon>UC_ProductType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_ProfilePersonnelManager.resx">
+      <DependentUpon>UC_ProfilePersonnelManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_ReligionManager.resx">
+      <DependentUpon>UC_ReligionManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpLabourContract.resx">
+      <DependentUpon>UC_RpLabourContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpNumberOfEmployess.resx">
+      <DependentUpon>UC_RpNumberOfEmployess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpProduct.resx">
+      <DependentUpon>UC_RpProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpProductInventory.resx">
+      <DependentUpon>UC_RpProductInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpProductSold.resx">
+      <DependentUpon>UC_RpProductSold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpProfileAllEmployess.resx">
+      <DependentUpon>UC_RpProfileAllEmployess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpProfileEmployess.resx">
+      <DependentUpon>UC_RpProfileEmployess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpRevenue.resx">
+      <DependentUpon>UC_RpRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_RpSalary.resx">
+      <DependentUpon>UC_RpSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_SalaryManager.resx">
+      <DependentUpon>UC_SalaryManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_TimeSheetManager.resx">
+      <DependentUpon>UC_TimeSheetManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFunction\UC_UserManager.resx">
+      <DependentUpon>UC_UserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_Category.resx">
+      <DependentUpon>UC_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_Noti.resx">
+      <DependentUpon>UC_Noti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_Order.resx">
+      <DependentUpon>UC_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_Personnel.resx">
+      <DependentUpon>UC_Personnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_Product.resx">
+      <DependentUpon>UC_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_Report.resx">
+      <DependentUpon>UC_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_Salary.resx">
+      <DependentUpon>UC_Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSytems\UC_System.resx">
+      <DependentUpon>UC_System.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\left_round_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\logo-vn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\kfc-chicken-bucket-png-banner-royalty-free-stock-kfc-11563010886nsepnquweo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\logo-kfc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\shopping_cart_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\kawaii_french_fries_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\conference_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\system_task_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\graph_report_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\money_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\kfc_food_PNG20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\kfc-png-kfc-png-784.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\checked_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\checked_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\hamburger_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\cafe_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\ingredients_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\small_business_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\edit_user_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\resume_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\client_company_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\contact_card_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\groups_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\user_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\edit_property_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\money_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\worker_male_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\bill_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\receive_cash_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\statistics_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\add_shopping_cart_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\graduation_cap_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\red_shopping_basket_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\sorting_answers_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\password_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\admin_settings_male_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\restart_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\data_configuration_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\administrative_tools_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\city_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\couple_globe_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\conference_call_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\man_with_yellow_tie_in_jacket_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\question_mark_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\error_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\left_round_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\arrow_pointing_left_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\add_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\add_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\add_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\edit_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\delete_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\available_updates_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\cancel_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AnhNV\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\sqlsever.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\sqlsever.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\planner_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\subtract_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\unchecked_checkbox_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\unchecked_checkbox_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\subtract_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\restore_down_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\settings_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\logo_pc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\online_shop_sale_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyResources\password_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="15844397.ico" />
+    <Content Include="MyResources\15844397.ico" />
+    <None Include="MyResources\biggs25logo2.jpg" />
+    <None Include="MyResources\biggs25logo3.jpg" />
+    <None Include="MyResources\logopassword.jpg" />
+    <None Include="MyResources\logopassword2.jpg" />
+    <Content Include="MyResources\minigs25logo.jpg" />
+    <None Include="MyResources\2015_iflg_4c_h_wht_fnl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
