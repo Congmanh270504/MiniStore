@@ -14,7 +14,7 @@ namespace KFC_FASTFOOD.Forms
     public partial class frm_Main : Form
     {
         public static string NguoiDungID;
-        
+        //test
         bool checkPer;
 
         static frm_Main _obj;
