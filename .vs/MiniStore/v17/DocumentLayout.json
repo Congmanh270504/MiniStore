@@ -11,9 +11,6 @@
       "RelativeMoniker": "D:0:0:{1BB7BCF3-9D75-4B04-83B4-326798D0146B}|MINISTORE\\MiniStore.csproj|solutionrelative:ministore\\forms\\frm_connect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BE2472D-8891-4148-A3E2-577B6B9D052B}|..\\..\\SQL\\SQL.csproj|e:\\tr\u1EA7n c\u00F4ng m\u1EA1nh_bt\\congnghe_net\\sql\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1BB7BCF3-9D75-4B04-83B4-326798D0146B}|MINISTORE\\MiniStore.csproj|E:\\Tr\u1EA7n C\u00F4ng M\u1EA1nh_BT\\CongNghe_Net\\Project\\MiniStore\\ministore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BB7BCF3-9D75-4B04-83B4-326798D0146B}|MINISTORE\\MiniStore.csproj|solutionrelative:ministore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -25,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -65,18 +62,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DBConnect.cs",
-              "DocumentMoniker": "E:\\Tr\u1EA7n C\u00F4ng M\u1EA1nh_BT\\CongNghe_Net\\SQL\\DBConnect.cs",
-              "RelativeDocumentMoniker": "..\\..\\SQL\\DBConnect.cs",
-              "ToolTip": "E:\\Tr\u1EA7n C\u00F4ng M\u1EA1nh_BT\\CongNghe_Net\\SQL\\DBConnect.cs",
-              "RelativeToolTip": "..\\..\\SQL\\DBConnect.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAIwDQAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T15:03:42.851Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "frm_Connect.cs [Design]",
               "DocumentMoniker": "E:\\Tr\u1EA7n C\u00F4ng M\u1EA1nh_BT\\CongNghe_Net\\Project\\MiniStore\\MiniStore\\Forms\\frm_Connect.cs",
@@ -94,14 +79,14 @@
               "RelativeDocumentMoniker": "MiniStore\\Forms\\frm_Connect.Designer.cs",
               "ToolTip": "E:\\Tr\u1EA7n C\u00F4ng M\u1EA1nh_BT\\CongNghe_Net\\Project\\MiniStore\\MiniStore\\Forms\\frm_Connect.Designer.cs",
               "RelativeToolTip": "MiniStore\\Forms\\frm_Connect.Designer.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwNEAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T14:46:03.051Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Tr\u1EA7n C\u00F4ng M\u1EA1nh_BT\\CongNghe_Net\\Project\\MiniStore\\MiniStore\\Program.cs",
               "RelativeDocumentMoniker": "MiniStore\\Program.cs",

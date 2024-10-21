@@ -1,0 +1,6 @@
+E:\Trần Công Mạnh_BT\CongNghe_Net\SQL\bin\Debug\SQL.dll
+E:\Trần Công Mạnh_BT\CongNghe_Net\SQL\bin\Debug\SQL.pdb
+E:\Trần Công Mạnh_BT\CongNghe_Net\SQL\obj\Debug\SQL.csproj.AssemblyReference.cache
+E:\Trần Công Mạnh_BT\CongNghe_Net\SQL\obj\Debug\SQL.csproj.CoreCompileInputs.cache
+E:\Trần Công Mạnh_BT\CongNghe_Net\SQL\obj\Debug\SQL.dll
+E:\Trần Công Mạnh_BT\CongNghe_Net\SQL\obj\Debug\SQL.pdb

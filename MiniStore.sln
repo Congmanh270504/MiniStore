@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniStore", "MINISTORE\MiniStore.csproj", "{1BB7BCF3-9D75-4B04-83B4-326798D0146B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL", "..\..\SQL\SQL.csproj", "{0BE2472D-8891-4148-A3E2-577B6B9D052B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL", "SQL\SQL.csproj", "{0BE2472D-8891-4148-A3E2-577B6B9D052B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

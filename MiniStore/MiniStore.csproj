@@ -161,12 +161,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\SQL\SQL.csproj">
-      <Project>{0be2472d-8891-4148-a3e2-577b6b9d052b}</Project>
-      <Name>SQL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="img\sql.jpg" />
     <Content Include="MyResources\15844397.ico" />
     <Content Include="MyResources\2015_iflg_4c_h_wht_fnl.png" />
@@ -262,6 +256,12 @@
     <Content Include="MyResources\worker_male_120px.png" />
     <Content Include="MyResources\worldwide_location_120px.png" />
     <Content Include="MyResources\world_map_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SQL\SQL.csproj">
+      <Project>{0be2472d-8891-4148-a3e2-577b6b9d052b}</Project>
+      <Name>SQL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
