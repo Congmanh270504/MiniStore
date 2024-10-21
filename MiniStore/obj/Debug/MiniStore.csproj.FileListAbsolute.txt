@@ -1,1 +1,37 @@
-E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MiniStore\MiniStore\bin\Debug\MiniStore.exe.config
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\bin\Debug\MINISTORE.exe.config
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\bin\Debug\MINISTORE.exe
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\bin\Debug\MINISTORE.pdb
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.csprojResolveAssemblyReference.cache
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Properties.Resources.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.csproj.GenerateResource.Cache
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.exe
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.pdb
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_Connect.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_Login.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_Main.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_Splash.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_changepassword.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_TTcuahang.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_UserPermission.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_About.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_BackupDatabase.resources
+D:\STUDY\Công Nghệ.Net\MINISTORE\PROJECT\MINISTORE\obj\Debug\MINISTORE.Forms.frm_RestoreDatabase.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\bin\Debug\MINISTORE.exe.config
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\bin\Debug\MINISTORE.exe
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\bin\Debug\MINISTORE.pdb
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MiniStore.csproj.AssemblyReference.cache
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_About.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_BackupDatabase.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_changepassword.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_Connect.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_Login.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_Main.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_RestoreDatabase.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_Splash.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_TTcuahang.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Forms.frm_UserPermission.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.Properties.Resources.resources
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MiniStore.csproj.GenerateResource.cache
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MiniStore.csproj.CoreCompileInputs.cache
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.exe
+E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\obj\Debug\MINISTORE.pdb

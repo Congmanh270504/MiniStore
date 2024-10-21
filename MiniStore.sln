@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniStore", "MiniStore\MiniStore.csproj", "{ECBF918A-3A8C-4915-9607-101F4A0B4D56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniStore", "MINISTORE\MiniStore.csproj", "{1BB7BCF3-9D75-4B04-83B4-326798D0146B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL", "..\..\SQL\SQL.csproj", "{0BE2472D-8891-4148-A3E2-577B6B9D052B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ECBF918A-3A8C-4915-9607-101F4A0B4D56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ECBF918A-3A8C-4915-9607-101F4A0B4D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ECBF918A-3A8C-4915-9607-101F4A0B4D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ECBF918A-3A8C-4915-9607-101F4A0B4D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BB7BCF3-9D75-4B04-83B4-326798D0146B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB7BCF3-9D75-4B04-83B4-326798D0146B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB7BCF3-9D75-4B04-83B4-326798D0146B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB7BCF3-9D75-4B04-83B4-326798D0146B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE2472D-8891-4148-A3E2-577B6B9D052B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE2472D-8891-4148-A3E2-577B6B9D052B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE2472D-8891-4148-A3E2-577B6B9D052B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE2472D-8891-4148-A3E2-577B6B9D052B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

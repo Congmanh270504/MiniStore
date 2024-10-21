@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MiniStore.Properties
+namespace MINISTORE.Properties
 {
 
 

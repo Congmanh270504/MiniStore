@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ECBF918A-3A8C-4915-9607-101F4A0B4D56}</ProjectGuid>
+    <ProjectGuid>{1BB7BCF3-9D75-4B04-83B4-326798D0146B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MiniStore</RootNamespace>
-    <AssemblyName>MiniStore</AssemblyName>
+    <RootNamespace>MINISTORE</RootNamespace>
+    <AssemblyName>MINISTORE</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,14 +44,98 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MiniStore.cs">
+    <Compile Include="Forms\frm_About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MiniStore.Designer.cs">
-      <DependentUpon>MiniStore.cs</DependentUpon>
+    <Compile Include="Forms\frm_About.Designer.cs">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_BackupDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_BackupDatabase.Designer.cs">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_changepassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_changepassword.Designer.cs">
+      <DependentUpon>frm_changepassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Connect.Designer.cs">
+      <DependentUpon>frm_Connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_RestoreDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_RestoreDatabase.Designer.cs">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Splash.Designer.cs">
+      <DependentUpon>frm_Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_TTcuahang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_TTcuahang.Designer.cs">
+      <DependentUpon>frm_TTcuahang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_UserPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_UserPermission.Designer.cs">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frm_About.resx">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_BackupDatabase.resx">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_changepassword.resx">
+      <DependentUpon>frm_changepassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Connect.resx">
+      <DependentUpon>frm_Connect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_RestoreDatabase.resx">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Splash.resx">
+      <DependentUpon>frm_Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_TTcuahang.resx">
+      <DependentUpon>frm_TTcuahang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_UserPermission.resx">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -60,7 +144,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="MyResources\SVN-Segoe Print.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -73,6 +159,109 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SQL\SQL.csproj">
+      <Project>{0be2472d-8891-4148-a3e2-577b6b9d052b}</Project>
+      <Name>SQL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\sql.jpg" />
+    <Content Include="MyResources\15844397.ico" />
+    <Content Include="MyResources\2015_iflg_4c_h_wht_fnl.png" />
+    <Content Include="MyResources\add_20px.png" />
+    <Content Include="MyResources\add_24px.png" />
+    <Content Include="MyResources\add_32px.png" />
+    <Content Include="MyResources\add_shopping_cart_120px.png" />
+    <Content Include="MyResources\administrative_tools_120px.png" />
+    <Content Include="MyResources\admin_settings_male_120px.png" />
+    <Content Include="MyResources\an-kfc-chua-suot-mot-nam.png" />
+    <Content Include="MyResources\arrow_pointing_left_24px.png" />
+    <Content Include="MyResources\available_updates_32px.png" />
+    <Content Include="MyResources\biggs25logo.jpg" />
+    <Content Include="MyResources\biggs25logo2.jpg" />
+    <Content Include="MyResources\biggs25logo3.jpg" />
+    <Content Include="MyResources\bill_120px.png" />
+    <Content Include="MyResources\cafe_100px.png" />
+    <Content Include="MyResources\cancel_32px.png" />
+    <Content Include="MyResources\checked_24px.png" />
+    <Content Include="MyResources\checked_32px.png" />
+    <Content Include="MyResources\chien-luoc-marketing-mix-cua-kfc-di-den-dau-ban-dia-hoa-den-do_1.jpg" />
+    <Content Include="MyResources\city_120px.png" />
+    <Content Include="MyResources\client_company_100px.png" />
+    <Content Include="MyResources\conference_32px.png" />
+    <Content Include="MyResources\conference_call_120px.png" />
+    <Content Include="MyResources\contact_card_100px.png" />
+    <Content Include="MyResources\contract_120px.png" />
+    <Content Include="MyResources\couple_globe_120px.png" />
+    <Content Include="MyResources\data_configuration_120px.png" />
+    <Content Include="MyResources\delete_20px.png" />
+    <Content Include="MyResources\delete_32px.png" />
+    <Content Include="MyResources\edit_file_20px.png" />
+    <Content Include="MyResources\edit_file_32px.png" />
+    <Content Include="MyResources\edit_property_120px.png" />
+    <Content Include="MyResources\edit_user_100px.png" />
+    <Content Include="MyResources\error_120px.png" />
+    <Content Include="MyResources\Fast-Food-Free-PNG-Image.png" />
+    <Content Include="MyResources\graduation_cap_120px.png" />
+    <Content Include="MyResources\graph_report_32px.png" />
+    <Content Include="MyResources\groups_120px.png" />
+    <Content Include="MyResources\hamburger_100px.png" />
+    <Content Include="MyResources\home_32px.png" />
+    <Content Include="MyResources\icons8_online_store.ico" />
+    <Content Include="MyResources\ingredients_100px.png" />
+    <Content Include="MyResources\kawaii_french_fries_32px.png" />
+    <Content Include="MyResources\kfc-30330.jpg" />
+    <Content Include="MyResources\kfc-chicken-bucket-png-banner-royalty-free-stock-kfc-11563010886nsepnquweo.png" />
+    <Content Include="MyResources\kfc-fried-chicken-and-donuts-with-banner.jpg" />
+    <Content Include="MyResources\KFC-logo.png" />
+    <Content Include="MyResources\kfc-png-kfc-png-784.png" />
+    <Content Include="MyResources\kfc_chicken_80px.png" />
+    <Content Include="MyResources\kfc_food_PNG20.png" />
+    <Content Include="MyResources\left_round_32px.png" />
+    <Content Include="MyResources\left_round_96px.png" />
+    <Content Include="MyResources\logo-kfc.png" />
+    <Content Include="MyResources\logo-vn.png" />
+    <Content Include="MyResources\logopassword.jpg" />
+    <Content Include="MyResources\logopassword2.jpg" />
+    <Content Include="MyResources\logo_pc.png" />
+    <Content Include="MyResources\man_with_yellow_tie_in_jacket_120px.png" />
+    <Content Include="MyResources\minigs25logo.jpg" />
+    <Content Include="MyResources\minigs25logo2.png" />
+    <Content Include="MyResources\money_120px.png" />
+    <Content Include="MyResources\money_32px.png" />
+    <Content Include="MyResources\multiply_24px.png" />
+    <Content Include="MyResources\online_shop_sale_120px.png" />
+    <Content Include="MyResources\order_delivered_120px.png" />
+    <Content Include="MyResources\password_120px.png" />
+    <Content Include="MyResources\password_24px.png" />
+    <Content Include="MyResources\planner_120px.png" />
+    <Content Include="MyResources\question_mark_120px.png" />
+    <Content Include="MyResources\question_mark_24px.png" />
+    <Content Include="MyResources\receive_cash_120px.png" />
+    <Content Include="MyResources\red_shopping_basket_120px.png" />
+    <Content Include="MyResources\restart_120px.png" />
+    <Content Include="MyResources\restore_down_24px.png" />
+    <Content Include="MyResources\resume_100px.png" />
+    <Content Include="MyResources\resume_120px.png" />
+    <Content Include="MyResources\settings_24px.png" />
+    <Content Include="MyResources\shopping_cart_32px.png" />
+    <Content Include="MyResources\small_business_100px.png" />
+    <Content Include="MyResources\sorting_answers_32px.png" />
+    <Content Include="MyResources\sqlsever.jpg" />
+    <Content Include="MyResources\sqlsever.png" />
+    <Content Include="MyResources\statistics_120px.png" />
+    <Content Include="MyResources\subtract_24px.png" />
+    <Content Include="MyResources\subtract_32px.png" />
+    <Content Include="MyResources\synchronize_120px.png" />
+    <Content Include="MyResources\system_task_32px.png" />
+    <Content Include="MyResources\unchecked_checkbox_24px.png" />
+    <Content Include="MyResources\unchecked_checkbox_32px.png" />
+    <Content Include="MyResources\user_120px.png" />
+    <Content Include="MyResources\worker_male_120px.png" />
+    <Content Include="MyResources\worldwide_location_120px.png" />
+    <Content Include="MyResources\world_map_120px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
