@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BB7BCF3-9D75-4B04-83B4-326798D0146B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MiniStore</RootNamespace>
+    <AssemblyName>MINISTORE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_About.Designer.cs">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_BackupDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_BackupDatabase.Designer.cs">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_changepassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_changepassword.Designer.cs">
+      <DependentUpon>frm_changepassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Connect.Designer.cs">
+      <DependentUpon>frm_Connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Main.Designer.cs">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_RestoreDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_RestoreDatabase.Designer.cs">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Splash.Designer.cs">
+      <DependentUpon>frm_Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_TTcuahang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_TTcuahang.Designer.cs">
+      <DependentUpon>frm_TTcuahang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_UserPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_UserPermission.Designer.cs">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemNav\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemNav\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\QL_BangLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\QL_BangLuong.Designer.cs">
+      <DependentUpon>QL_BangLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\QL_ChamCongNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\QL_ChamCongNV.Designer.cs">
+      <DependentUpon>QL_ChamCongNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\QL_DoUong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\QL_DoUong.Designer.cs">
+      <DependentUpon>QL_DoUong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\QL_Food.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\QL_Food.Designer.cs">
+      <DependentUpon>QL_Food.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\QL_LoaiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\QL_LoaiSanPham.Designer.cs">
+      <DependentUpon>QL_LoaiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\QL_NhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\QL_NhanSu.Designer.cs">
+      <DependentUpon>QL_NhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Style\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Forms\frm_About.resx">
+      <DependentUpon>frm_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_BackupDatabase.resx">
+      <DependentUpon>frm_BackupDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_changepassword.resx">
+      <DependentUpon>frm_changepassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Connect.resx">
+      <DependentUpon>frm_Connect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Main.resx">
+      <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_RestoreDatabase.resx">
+      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Splash.resx">
+      <DependentUpon>frm_Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_TTcuahang.resx">
+      <DependentUpon>frm_TTcuahang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_UserPermission.resx">
+      <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemNav\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\QL_BangLuong.resx">
+      <DependentUpon>QL_BangLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\QL_ChamCongNV.resx">
+      <DependentUpon>QL_ChamCongNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\QL_DoUong.resx">
+      <DependentUpon>QL_DoUong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\QL_Food.resx">
+      <DependentUpon>QL_Food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\QL_LoaiSanPham.resx">
+      <DependentUpon>QL_LoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\QL_NhanSu.resx">
+      <DependentUpon>QL_NhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="MyResources\SVN-Segoe Print.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\sql.jpg" />
+    <Content Include="MyResources\15844397.ico" />
+    <Content Include="MyResources\2015_iflg_4c_h_wht_fnl.png" />
+    <Content Include="MyResources\add_20px.png" />
+    <Content Include="MyResources\add_24px.png" />
+    <Content Include="MyResources\add_32px.png" />
+    <Content Include="MyResources\add_shopping_cart_120px.png" />
+    <Content Include="MyResources\administrative_tools_120px.png" />
+    <Content Include="MyResources\admin_settings_male_120px.png" />
+    <Content Include="MyResources\an-kfc-chua-suot-mot-nam.png" />
+    <Content Include="MyResources\arrow_pointing_left_24px.png" />
+    <Content Include="MyResources\available_updates_32px.png" />
+    <Content Include="MyResources\biggs25logo.jpg" />
+    <Content Include="MyResources\biggs25logo2.jpg" />
+    <Content Include="MyResources\biggs25logo3.jpg" />
+    <Content Include="MyResources\bill_120px.png" />
+    <Content Include="MyResources\cafe_100px.png" />
+    <Content Include="MyResources\cancel_32px.png" />
+    <Content Include="MyResources\checked_24px.png" />
+    <Content Include="MyResources\checked_32px.png" />
+    <Content Include="MyResources\chien-luoc-marketing-mix-cua-kfc-di-den-dau-ban-dia-hoa-den-do_1.jpg" />
+    <Content Include="MyResources\city_120px.png" />
+    <Content Include="MyResources\client_company_100px.png" />
+    <Content Include="MyResources\conference_32px.png" />
+    <Content Include="MyResources\conference_call_120px.png" />
+    <Content Include="MyResources\contact_card_100px.png" />
+    <Content Include="MyResources\contract_120px.png" />
+    <Content Include="MyResources\couple_globe_120px.png" />
+    <Content Include="MyResources\data_configuration_120px.png" />
+    <Content Include="MyResources\delete_20px.png" />
+    <Content Include="MyResources\delete_32px.png" />
+    <Content Include="MyResources\edit_file_20px.png" />
+    <Content Include="MyResources\edit_file_32px.png" />
+    <Content Include="MyResources\edit_property_120px.png" />
+    <Content Include="MyResources\edit_user_100px.png" />
+    <Content Include="MyResources\error_120px.png" />
+    <Content Include="MyResources\Fast-Food-Free-PNG-Image.png" />
+    <Content Include="MyResources\graduation_cap_120px.png" />
+    <Content Include="MyResources\graph_report_32px.png" />
+    <Content Include="MyResources\groups_120px.png" />
+    <Content Include="MyResources\hamburger_100px.png" />
+    <Content Include="MyResources\home_32px.png" />
+    <Content Include="MyResources\icons8_online_store.ico" />
+    <Content Include="MyResources\ingredients_100px.png" />
+    <Content Include="MyResources\kawaii_french_fries_32px.png" />
+    <Content Include="MyResources\kfc-30330.jpg" />
+    <Content Include="MyResources\kfc-chicken-bucket-png-banner-royalty-free-stock-kfc-11563010886nsepnquweo.png" />
+    <Content Include="MyResources\kfc-fried-chicken-and-donuts-with-banner.jpg" />
+    <Content Include="MyResources\KFC-logo.png" />
+    <Content Include="MyResources\kfc-png-kfc-png-784.png" />
+    <Content Include="MyResources\kfc_chicken_80px.png" />
+    <Content Include="MyResources\kfc_food_PNG20.png" />
+    <Content Include="MyResources\left_round_32px.png" />
+    <Content Include="MyResources\left_round_96px.png" />
+    <Content Include="MyResources\logo-kfc.png" />
+    <Content Include="MyResources\logo-vn.png" />
+    <Content Include="MyResources\logopassword.jpg" />
+    <Content Include="MyResources\logopassword2.jpg" />
+    <Content Include="MyResources\logo_pc.png" />
+    <Content Include="MyResources\man_with_yellow_tie_in_jacket_120px.png" />
+    <Content Include="MyResources\minigs25logo.jpg" />
+    <Content Include="MyResources\minigs25logo2.png" />
+    <Content Include="MyResources\money_120px.png" />
+    <Content Include="MyResources\money_32px.png" />
+    <Content Include="MyResources\multiply_24px.png" />
+    <Content Include="MyResources\online_shop_sale_120px.png" />
+    <Content Include="MyResources\order_delivered_120px.png" />
+    <Content Include="MyResources\password_120px.png" />
+    <Content Include="MyResources\password_24px.png" />
+    <Content Include="MyResources\planner_120px.png" />
+    <Content Include="MyResources\question_mark_120px.png" />
+    <Content Include="MyResources\question_mark_24px.png" />
+    <Content Include="MyResources\receive_cash_120px.png" />
+    <Content Include="MyResources\red_shopping_basket_120px.png" />
+    <Content Include="MyResources\restart_120px.png" />
+    <Content Include="MyResources\restore_down_24px.png" />
+    <Content Include="MyResources\resume_100px.png" />
+    <Content Include="MyResources\resume_120px.png" />
+    <Content Include="MyResources\settings_24px.png" />
+    <Content Include="MyResources\shopping_cart_32px.png" />
+    <Content Include="MyResources\small_business_100px.png" />
+    <Content Include="MyResources\sorting_answers_32px.png" />
+    <Content Include="MyResources\sqlsever.jpg" />
+    <Content Include="MyResources\sqlsever.png" />
+    <Content Include="MyResources\statistics_120px.png" />
+    <Content Include="MyResources\subtract_24px.png" />
+    <Content Include="MyResources\subtract_32px.png" />
+    <Content Include="MyResources\synchronize_120px.png" />
+    <Content Include="MyResources\system_task_32px.png" />
+    <Content Include="MyResources\unchecked_checkbox_24px.png" />
+    <Content Include="MyResources\unchecked_checkbox_32px.png" />
+    <Content Include="MyResources\user_120px.png" />
+    <Content Include="MyResources\worker_male_120px.png" />
+    <Content Include="MyResources\worldwide_location_120px.png" />
+    <Content Include="MyResources\world_map_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SQL\SQL.csproj">
+      <Project>{3c0dbc11-3e98-4918-8df8-b9c243785896}</Project>
+      <Name>SQL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
