@@ -126,12 +126,7 @@ namespace MiniStore.Management
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMaMonAn.Text))
-            {
-                MessageBox.Show("Bạn chưa nhập mã món ăn !!", "Chưa nhập mã món ăn", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                txtMaMonAn.Focus();
-                return;
-            }
+
             if (string.IsNullOrEmpty(txtTenMonAn.Text))
             {
                 MessageBox.Show("Bạn chưa nhập tên món ăn !!", "Chưa nhập tên món ăn", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -151,29 +146,81 @@ namespace MiniStore.Management
                 return;
             }
 
-            if (db.checkExist(string.Format("select count(*) from SupplierName where SupplierID = {0}", txtMaMonAn.Text)))
-            {
-                if (MessageBox.Show("Mã phiếu đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
-                {
-                    txtMaMonAn.Focus();
-                }
-                return;
-            }
-            if (db.checkExist(string.Format("select count(*) from SupplierName where SupplierName = {0}", txtTenMonAn.Text)))
+
+            if (db.checkExist(string.Format("select count(*) from Suppliers where SupplierName = N'{0}'", txtTenMonAn.Text)))
             {
                 if (MessageBox.Show("Tên sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
                 {
-                    txtMaMonAn.Focus();
+                    txtTenMonAn.Focus();
                 }
                 return;
             }
-            //           string sql = string.Format(
-            //    "INSERT INTO Products(ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) " +
-            //    "VALUES('{0}', N'{1}', '{2}', '{3}', {4}, {5}, '{6}')",
-            //    txtMaMonAn.Text, txtTenMonAn.Text, categoryID, supplierID, price, stockQuantity, unit
-            //);
-            //db.updateToDataBase(sql);
+            string sql = string.Format(
+            "INSERT INTO Products( ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) " +
+            "VALUES( N'{0}', '{1}', '{2}', {3}, {4}, N'{5}')",
+            txtTenMonAn.Text,
+            cb_LoaiHang.SelectedValue,
+            cmbNhaCungCap.SelectedValue,
+            txtGiaTien.Text,
+            txtSoLuong.Text,
+            cb_DVT.SelectedValue);
+            db.updateToDataBase(sql);
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            LoadData();
+        }
+
+        private void txtMaMonAn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtGiaTien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_DSMonAn.CurrentRow == null)
+            {
+                MessageBox.Show("Bạn chưa chọn dòng nào để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                int productId = (int)dataGridView_DSMonAn.CurrentRow.Cells["ProductID"].Value;
+
+                // Find the DataRow to delete
+                DataRow rowToDelete = products.Rows.Find(productId);
+                if (rowToDelete != null)
+                {
+                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM Products WHERE ProductID = @ProductID", da_products.SelectCommand.Connection);
+                    deleteCommand.Parameters.Add("@ProductID", SqlDbType.Int, 4, "ProductID");
+                    da_products.DeleteCommand = deleteCommand;
+
+                    rowToDelete.Delete();
+                    da_products.Update(products); 
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy sản phẩm để xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

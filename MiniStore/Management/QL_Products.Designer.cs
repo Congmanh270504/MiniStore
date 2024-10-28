@@ -53,8 +53,6 @@
             this.txtTenMonAn = new System.Windows.Forms.TextBox();
             this.lblTenMonAn = new System.Windows.Forms.Label();
             this.lblSoLuong = new System.Windows.Forms.Label();
-            this.txtMaMonAn = new System.Windows.Forms.TextBox();
-            this.lblMaMonAn = new System.Windows.Forms.Label();
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
@@ -182,8 +180,6 @@
             this.grpThongTin.Controls.Add(this.txtTenMonAn);
             this.grpThongTin.Controls.Add(this.lblTenMonAn);
             this.grpThongTin.Controls.Add(this.lblSoLuong);
-            this.grpThongTin.Controls.Add(this.txtMaMonAn);
-            this.grpThongTin.Controls.Add(this.lblMaMonAn);
             this.grpThongTin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThongTin.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpThongTin.Location = new System.Drawing.Point(428, 12);
@@ -204,7 +200,7 @@
             // cb_LoaiHang
             // 
             this.cb_LoaiHang.FormattingEnabled = true;
-            this.cb_LoaiHang.Location = new System.Drawing.Point(348, 71);
+            this.cb_LoaiHang.Location = new System.Drawing.Point(348, 66);
             this.cb_LoaiHang.Name = "cb_LoaiHang";
             this.cb_LoaiHang.Size = new System.Drawing.Size(140, 29);
             this.cb_LoaiHang.TabIndex = 31;
@@ -213,7 +209,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(273, 74);
+            this.label1.Location = new System.Drawing.Point(273, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 30;
@@ -225,7 +221,7 @@
             this.cmbNhaCungCap.FormattingEnabled = true;
             this.cmbNhaCungCap.Location = new System.Drawing.Point(121, 106);
             this.cmbNhaCungCap.Name = "cmbNhaCungCap";
-            this.cmbNhaCungCap.Size = new System.Drawing.Size(327, 28);
+            this.cmbNhaCungCap.Size = new System.Drawing.Size(367, 28);
             this.cmbNhaCungCap.TabIndex = 29;
             // 
             // label6
@@ -241,10 +237,11 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(348, 33);
+            this.txtSoLuong.Location = new System.Drawing.Point(121, 66);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(140, 27);
             this.txtSoLuong.TabIndex = 26;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // lblGiamGia
             // 
@@ -263,6 +260,7 @@
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(110, 27);
             this.txtGiaTien.TabIndex = 22;
+            this.txtGiaTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaTien_KeyPress);
             // 
             // lblGiaTien
             // 
@@ -287,16 +285,16 @@
             // txtTenMonAn
             // 
             this.txtTenMonAn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenMonAn.Location = new System.Drawing.Point(121, 71);
+            this.txtTenMonAn.Location = new System.Drawing.Point(121, 33);
             this.txtTenMonAn.Name = "txtTenMonAn";
-            this.txtTenMonAn.Size = new System.Drawing.Size(146, 27);
+            this.txtTenMonAn.Size = new System.Drawing.Size(367, 27);
             this.txtTenMonAn.TabIndex = 10;
             // 
             // lblTenMonAn
             // 
             this.lblTenMonAn.AutoSize = true;
             this.lblTenMonAn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenMonAn.Location = new System.Drawing.Point(15, 73);
+            this.lblTenMonAn.Location = new System.Drawing.Point(15, 35);
             this.lblTenMonAn.Name = "lblTenMonAn";
             this.lblTenMonAn.Size = new System.Drawing.Size(86, 20);
             this.lblTenMonAn.TabIndex = 9;
@@ -306,29 +304,11 @@
             // 
             this.lblSoLuong.AutoSize = true;
             this.lblSoLuong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoLuong.Location = new System.Drawing.Point(273, 36);
+            this.lblSoLuong.Location = new System.Drawing.Point(16, 70);
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(69, 20);
             this.lblSoLuong.TabIndex = 4;
             this.lblSoLuong.Text = "Số lượng";
-            // 
-            // txtMaMonAn
-            // 
-            this.txtMaMonAn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaMonAn.Location = new System.Drawing.Point(121, 33);
-            this.txtMaMonAn.Name = "txtMaMonAn";
-            this.txtMaMonAn.Size = new System.Drawing.Size(146, 27);
-            this.txtMaMonAn.TabIndex = 3;
-            // 
-            // lblMaMonAn
-            // 
-            this.lblMaMonAn.AutoSize = true;
-            this.lblMaMonAn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaMonAn.Location = new System.Drawing.Point(15, 36);
-            this.lblMaMonAn.Name = "lblMaMonAn";
-            this.lblMaMonAn.Size = new System.Drawing.Size(84, 20);
-            this.lblMaMonAn.TabIndex = 2;
-            this.lblMaMonAn.Text = "Mã món ăn";
             // 
             // btn_Them
             // 
@@ -352,6 +332,7 @@
             this.btn_Xoa.TabIndex = 75;
             this.btn_Xoa.Text = "XÓA";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Sua
             // 
@@ -509,8 +490,6 @@
         private System.Windows.Forms.TextBox txtTenMonAn;
         private System.Windows.Forms.Label lblTenMonAn;
         private System.Windows.Forms.Label lblSoLuong;
-        private System.Windows.Forms.TextBox txtMaMonAn;
-        private System.Windows.Forms.Label lblMaMonAn;
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Sua;
