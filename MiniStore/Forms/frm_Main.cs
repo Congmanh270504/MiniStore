@@ -35,7 +35,7 @@ namespace MiniStore.Forms
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            QL_Food ql_Food = new QL_Food();
+            QL_Products ql_Food = new QL_Products();
             ql_Food.Show();
         }
 

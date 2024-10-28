@@ -104,11 +104,11 @@
     <Compile Include="ItemNav\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="Management\QL_Food.cs">
+    <Compile Include="Management\QL_Products.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Management\QL_Food.Designer.cs">
-      <DependentUpon>QL_Food.cs</DependentUpon>
+    <Compile Include="Management\QL_Products.Designer.cs">
+      <DependentUpon>QL_Products.cs</DependentUpon>
     </Compile>
     <Compile Include="Management\QL_LoaiSanPham.cs">
       <SubType>Form</SubType>
@@ -157,8 +157,8 @@
     <EmbeddedResource Include="ItemNav\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Management\QL_Food.resx">
-      <DependentUpon>QL_Food.cs</DependentUpon>
+    <EmbeddedResource Include="Management\QL_Products.resx">
+      <DependentUpon>QL_Products.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Management\QL_LoaiSanPham.resx">
       <DependentUpon>QL_LoaiSanPham.cs</DependentUpon>

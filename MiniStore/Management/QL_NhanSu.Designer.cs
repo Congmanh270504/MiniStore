@@ -460,7 +460,7 @@
             this.grpDanhSach.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpDanhSach.Location = new System.Drawing.Point(12, 290);
             this.grpDanhSach.Name = "grpDanhSach";
-            this.grpDanhSach.Size = new System.Drawing.Size(850, 256);
+            this.grpDanhSach.Size = new System.Drawing.Size(780, 256);
             this.grpDanhSach.TabIndex = 84;
             this.grpDanhSach.TabStop = false;
             this.grpDanhSach.Text = "Danh sách nhân viên";
@@ -470,7 +470,7 @@
             this.dataGridView_DSNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_DSNhanVien.Location = new System.Drawing.Point(7, 28);
             this.dataGridView_DSNhanVien.Name = "dataGridView_DSNhanVien";
-            this.dataGridView_DSNhanVien.Size = new System.Drawing.Size(837, 222);
+            this.dataGridView_DSNhanVien.Size = new System.Drawing.Size(748, 222);
             this.dataGridView_DSNhanVien.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -556,7 +556,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 582);
+            this.ClientSize = new System.Drawing.Size(1004, 582);
             this.Controls.Add(this.grpDanhSach);
             this.Controls.Add(this.btn_Dong);
             this.Controls.Add(this.btn_Luu);
@@ -568,6 +568,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "QL_NhanSu";
             this.Text = "QUẢN LÝ NHÂN SỰ";
+            this.Load += new System.EventHandler(this.QL_NhanSu_Load);
             this.grpThongTin.ResumeLayout(false);
             this.grpThongTin.PerformLayout();
             this.grpTimKiem.ResumeLayout(false);

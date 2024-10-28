@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,12 @@ using System.Windows.Forms;
 
 namespace MiniStore.Management
 {
-    public partial class QL_Food : Form
+    public partial class QL_Products : Form
     {
         DBConnect db;
         SqlDataAdapter da_products;
         DataTable products;
-        public QL_Food()
+        public QL_Products()
         {
             InitializeComponent();
             db = new DBConnect("miniMKT");
@@ -71,13 +72,42 @@ namespace MiniStore.Management
         private void QL_Food_Load(object sender, EventArgs e)
         {
             LoadData();
+            loadNCC();
+            load_LoaiHang();
+            load_DVT();
         }
 
         private void btn_Dong_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        void loadNCC()
+        {
+            string sql = "select * from Suppliers";
+            da_products = db.getDataAdapter(sql, "Suppliers");
+            DataTable dt = db.Dset.Tables["Suppliers"];
+            cmbNhaCungCap.DataSource = dt;
+            cmbNhaCungCap.DisplayMember = "SupplierName";
+            cmbNhaCungCap.ValueMember = "SupplierID";
+        }
+        void load_LoaiHang()
+        {
+            string sql = "select * from Categories";
+            da_products = db.getDataAdapter(sql, "Categories");
+            DataTable dt = db.Dset.Tables["Categories"];
+            cb_LoaiHang.DataSource = dt;
+            cb_LoaiHang.DisplayMember = "CategoryName";
+            cb_LoaiHang.ValueMember = "CategoryID";
+        }
+        void load_DVT()
+        {
+            string sql = "select * from Products";
+            da_products = db.getDataAdapter(sql, "Products");
+            DataTable dt = db.Dset.Tables["Products"];
+            cb_DVT.DataSource = dt;
+            cb_DVT.DisplayMember = "Unit";
+            cb_DVT.ValueMember = "ProductID";
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchString = txtTimKiem.Text;
@@ -92,6 +122,58 @@ namespace MiniStore.Management
                 da_products.Fill(products);
                 dataGridView_DSMonAn.DataSource = products;
             }
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaMonAn.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập mã món ăn !!", "Chưa nhập mã món ăn", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtMaMonAn.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtTenMonAn.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập tên món ăn !!", "Chưa nhập tên món ăn", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtTenMonAn.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtGiaTien.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập giá món ăn !!", "Chưa nhập giá món ăn", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtGiaTien.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtSoLuong.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập số lượng món ăn !!", "Chưa nhập số lượng món ăn", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtSoLuong.Focus();
+                return;
+            }
+
+            if (db.checkExist(string.Format("select count(*) from SupplierName where SupplierID = {0}", txtMaMonAn.Text)))
+            {
+                if (MessageBox.Show("Mã phiếu đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                {
+                    txtMaMonAn.Focus();
+                }
+                return;
+            }
+            if (db.checkExist(string.Format("select count(*) from SupplierName where SupplierName = {0}", txtTenMonAn.Text)))
+            {
+                if (MessageBox.Show("Tên sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                {
+                    txtMaMonAn.Focus();
+                }
+                return;
+            }
+            //           string sql = string.Format(
+            //    "INSERT INTO Products(ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) " +
+            //    "VALUES('{0}', N'{1}', '{2}', '{3}', {4}, {5}, '{6}')",
+            //    txtMaMonAn.Text, txtTenMonAn.Text, categoryID, supplierID, price, stockQuantity, unit
+            //);
+            //db.updateToDataBase(sql);
+            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
     }
 }

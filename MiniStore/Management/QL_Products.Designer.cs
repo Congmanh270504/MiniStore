@@ -1,6 +1,6 @@
 ﻿namespace MiniStore.Management
 {
-    partial class QL_Food
+    partial class QL_Products
     {
         /// <summary>
         /// Required designer variable.
@@ -37,12 +37,15 @@
             this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpTimKiem = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.grpThongTin = new System.Windows.Forms.GroupBox();
+            this.cb_DVT = new System.Windows.Forms.ComboBox();
+            this.cb_LoaiHang = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.txtGiamGia = new System.Windows.Forms.TextBox();
             this.lblGiamGia = new System.Windows.Forms.Label();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
             this.lblGiaTien = new System.Windows.Forms.Label();
@@ -66,7 +69,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.grpTimKiem.SuspendLayout();
             this.grpThongTin.SuspendLayout();
             this.grpDanhSach.SuspendLayout();
@@ -147,6 +149,16 @@
             this.grpTimKiem.TabStop = false;
             this.grpTimKiem.Text = "Tìm kiếm";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(274, 37);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 28);
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,10 +169,12 @@
             // 
             // grpThongTin
             // 
+            this.grpThongTin.Controls.Add(this.cb_DVT);
+            this.grpThongTin.Controls.Add(this.cb_LoaiHang);
+            this.grpThongTin.Controls.Add(this.label1);
             this.grpThongTin.Controls.Add(this.cmbNhaCungCap);
             this.grpThongTin.Controls.Add(this.label6);
             this.grpThongTin.Controls.Add(this.txtSoLuong);
-            this.grpThongTin.Controls.Add(this.txtGiamGia);
             this.grpThongTin.Controls.Add(this.lblGiamGia);
             this.grpThongTin.Controls.Add(this.txtGiaTien);
             this.grpThongTin.Controls.Add(this.lblGiaTien);
@@ -172,12 +186,38 @@
             this.grpThongTin.Controls.Add(this.lblMaMonAn);
             this.grpThongTin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThongTin.ForeColor = System.Drawing.Color.DarkCyan;
-            this.grpThongTin.Location = new System.Drawing.Point(474, 12);
+            this.grpThongTin.Location = new System.Drawing.Point(428, 12);
             this.grpThongTin.Name = "grpThongTin";
-            this.grpThongTin.Size = new System.Drawing.Size(466, 186);
+            this.grpThongTin.Size = new System.Drawing.Size(494, 186);
             this.grpThongTin.TabIndex = 70;
             this.grpThongTin.TabStop = false;
             this.grpThongTin.Text = "Thông tin";
+            // 
+            // cb_DVT
+            // 
+            this.cb_DVT.FormattingEnabled = true;
+            this.cb_DVT.Location = new System.Drawing.Point(367, 141);
+            this.cb_DVT.Name = "cb_DVT";
+            this.cb_DVT.Size = new System.Drawing.Size(121, 29);
+            this.cb_DVT.TabIndex = 32;
+            // 
+            // cb_LoaiHang
+            // 
+            this.cb_LoaiHang.FormattingEnabled = true;
+            this.cb_LoaiHang.Location = new System.Drawing.Point(348, 71);
+            this.cb_LoaiHang.Name = "cb_LoaiHang";
+            this.cb_LoaiHang.Size = new System.Drawing.Size(140, 29);
+            this.cb_LoaiHang.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(273, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Tên loại";
             // 
             // cmbNhaCungCap
             // 
@@ -185,7 +225,7 @@
             this.cmbNhaCungCap.FormattingEnabled = true;
             this.cmbNhaCungCap.Location = new System.Drawing.Point(121, 106);
             this.cmbNhaCungCap.Name = "cmbNhaCungCap";
-            this.cmbNhaCungCap.Size = new System.Drawing.Size(300, 28);
+            this.cmbNhaCungCap.Size = new System.Drawing.Size(327, 28);
             this.cmbNhaCungCap.TabIndex = 29;
             // 
             // label6
@@ -201,28 +241,20 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(321, 33);
+            this.txtSoLuong.Location = new System.Drawing.Point(348, 33);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(100, 27);
+            this.txtSoLuong.Size = new System.Drawing.Size(140, 27);
             this.txtSoLuong.TabIndex = 26;
-            // 
-            // txtGiamGia
-            // 
-            this.txtGiamGia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiamGia.Location = new System.Drawing.Point(366, 140);
-            this.txtGiamGia.Name = "txtGiamGia";
-            this.txtGiamGia.Size = new System.Drawing.Size(55, 27);
-            this.txtGiamGia.TabIndex = 24;
             // 
             // lblGiamGia
             // 
             this.lblGiamGia.AutoSize = true;
             this.lblGiamGia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGiamGia.Location = new System.Drawing.Point(295, 146);
+            this.lblGiamGia.Location = new System.Drawing.Point(280, 146);
             this.lblGiamGia.Name = "lblGiamGia";
-            this.lblGiamGia.Size = new System.Drawing.Size(69, 20);
+            this.lblGiamGia.Size = new System.Drawing.Size(81, 20);
             this.lblGiamGia.TabIndex = 23;
-            this.lblGiamGia.Text = "Giảm giá";
+            this.lblGiamGia.Text = "Đơn vị tính";
             // 
             // txtGiaTien
             // 
@@ -257,7 +289,7 @@
             this.txtTenMonAn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenMonAn.Location = new System.Drawing.Point(121, 71);
             this.txtTenMonAn.Name = "txtTenMonAn";
-            this.txtTenMonAn.Size = new System.Drawing.Size(300, 27);
+            this.txtTenMonAn.Size = new System.Drawing.Size(146, 27);
             this.txtTenMonAn.TabIndex = 10;
             // 
             // lblTenMonAn
@@ -274,7 +306,7 @@
             // 
             this.lblSoLuong.AutoSize = true;
             this.lblSoLuong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoLuong.Location = new System.Drawing.Point(246, 36);
+            this.lblSoLuong.Location = new System.Drawing.Point(273, 36);
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(69, 20);
             this.lblSoLuong.TabIndex = 4;
@@ -285,7 +317,7 @@
             this.txtMaMonAn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaMonAn.Location = new System.Drawing.Point(121, 33);
             this.txtMaMonAn.Name = "txtMaMonAn";
-            this.txtMaMonAn.Size = new System.Drawing.Size(119, 27);
+            this.txtMaMonAn.Size = new System.Drawing.Size(146, 27);
             this.txtMaMonAn.TabIndex = 3;
             // 
             // lblMaMonAn
@@ -308,6 +340,7 @@
             this.btn_Them.TabIndex = 74;
             this.btn_Them.Text = "THÊM";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // btn_Xoa
             // 
@@ -424,21 +457,11 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(274, 37);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 28);
-            this.btnSearch.TabIndex = 12;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // QL_Food
+            // QL_Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 551);
+            this.ClientSize = new System.Drawing.Size(943, 551);
             this.Controls.Add(this.grpDanhSach);
             this.Controls.Add(this.btn_Dong);
             this.Controls.Add(this.btn_Luu);
@@ -449,8 +472,8 @@
             this.Controls.Add(this.grpTimKiem);
             this.Controls.Add(this.grpThongTin);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "QL_Food";
-            this.Text = "QUẢN LÝ ĐỒ ĂN";
+            this.Name = "QL_Products";
+            this.Text = "QUẢN LÝ SẢN PHẨM";
             this.Load += new System.EventHandler(this.QL_Food_Load);
             this.grpTimKiem.ResumeLayout(false);
             this.grpTimKiem.PerformLayout();
@@ -479,7 +502,6 @@
         private System.Windows.Forms.ComboBox cmbNhaCungCap;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.TextBox txtGiamGia;
         private System.Windows.Forms.Label lblGiamGia;
         private System.Windows.Forms.TextBox txtGiaTien;
         private System.Windows.Forms.Label lblGiaTien;
@@ -504,5 +526,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cb_DVT;
+        private System.Windows.Forms.ComboBox cb_LoaiHang;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -34,6 +34,7 @@
             this.lblLoaiSanPham = new System.Windows.Forms.Label();
             this.txtLoaiSanPham = new System.Windows.Forms.TextBox();
             this.grpDanhSach = new System.Windows.Forms.GroupBox();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Dong = new System.Windows.Forms.Button();
@@ -41,10 +42,9 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpLoaiSanPham.SuspendLayout();
             this.grpDanhSach.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // LoaiSPID
@@ -95,7 +95,7 @@
             // 
             // grpDanhSach
             // 
-            this.grpDanhSach.Controls.Add(this.dataGridView1);
+            this.grpDanhSach.Controls.Add(this.dataGridView);
             this.grpDanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDanhSach.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpDanhSach.Location = new System.Drawing.Point(12, 202);
@@ -104,6 +104,14 @@
             this.grpDanhSach.TabIndex = 77;
             this.grpDanhSach.TabStop = false;
             this.grpDanhSach.Text = "Danh sách loại sản phẩm";
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(6, 28);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(781, 259);
+            this.dataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -180,14 +188,6 @@
             this.btn_Them.Text = "THÊM";
             this.btn_Them.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(781, 259);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // QL_LoaiSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,10 +202,11 @@
             this.Controls.Add(this.grpLoaiSanPham);
             this.Name = "QL_LoaiSanPham";
             this.Text = "QUẢN LÝ LOẠI SẢN PHẨM";
+            this.Load += new System.EventHandler(this.QL_LoaiSanPham_Load);
             this.grpLoaiSanPham.ResumeLayout(false);
             this.grpLoaiSanPham.PerformLayout();
             this.grpDanhSach.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,6 +226,6 @@
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
