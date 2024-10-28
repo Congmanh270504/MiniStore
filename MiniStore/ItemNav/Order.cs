@@ -253,6 +253,22 @@ namespace MiniStore.ItemNav
                 e.Handled = true;
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchString = txtSearch.Text;
+            string sql = "SELECT * FROM Products WHERE ProductName LIKE @searchString";
+
+            using (SqlConnection connection = new SqlConnection(db.strConnect))
+            {
+                SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
+                da_products.SelectCommand.Parameters.AddWithValue("@searchString", "%" + searchString + "%");
+
+                DataTable products = new DataTable();
+                da_products.Fill(products);
+                dataGridView.DataSource = products;
+            }
+        }
     }
 }
 

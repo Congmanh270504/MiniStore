@@ -92,12 +92,6 @@
     <Compile Include="Forms\frm_Splash.Designer.cs">
       <DependentUpon>frm_Splash.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_TTcuahang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frm_TTcuahang.Designer.cs">
-      <DependentUpon>frm_TTcuahang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frm_UserPermission.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,24 +103,6 @@
     </Compile>
     <Compile Include="ItemNav\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Management\QL_BangLuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Management\QL_BangLuong.Designer.cs">
-      <DependentUpon>QL_BangLuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Management\QL_ChamCongNV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Management\QL_ChamCongNV.Designer.cs">
-      <DependentUpon>QL_ChamCongNV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Management\QL_DoUong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Management\QL_DoUong.Designer.cs">
-      <DependentUpon>QL_DoUong.cs</DependentUpon>
     </Compile>
     <Compile Include="Management\QL_Food.cs">
       <SubType>Form</SubType>
@@ -175,23 +151,11 @@
     <EmbeddedResource Include="Forms\frm_Splash.resx">
       <DependentUpon>frm_Splash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_TTcuahang.resx">
-      <DependentUpon>frm_TTcuahang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_UserPermission.resx">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemNav\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Management\QL_BangLuong.resx">
-      <DependentUpon>QL_BangLuong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Management\QL_ChamCongNV.resx">
-      <DependentUpon>QL_ChamCongNV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Management\QL_DoUong.resx">
-      <DependentUpon>QL_DoUong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Management\QL_Food.resx">
       <DependentUpon>QL_Food.cs</DependentUpon>

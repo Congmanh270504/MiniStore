@@ -36,7 +36,6 @@
             this.btnCategory = new System.Windows.Forms.Button();
             this.btnSystem = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.btnSalary = new System.Windows.Forms.Button();
             this.btnPersonnel = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
@@ -82,14 +81,13 @@
             this.panel1.Controls.Add(this.btnCategory);
             this.panel1.Controls.Add(this.btnSystem);
             this.panel1.Controls.Add(this.btnReport);
-            this.panel1.Controls.Add(this.btnSalary);
             this.panel1.Controls.Add(this.btnPersonnel);
             this.panel1.Controls.Add(this.btnProduct);
             this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Location = new System.Drawing.Point(1, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 434);
+            this.panel1.Size = new System.Drawing.Size(200, 372);
             this.panel1.TabIndex = 2;
             // 
             // btnCategory
@@ -101,7 +99,7 @@
             this.btnCategory.ForeColor = System.Drawing.Color.White;
             this.btnCategory.Image = global::MiniStore.Properties.Resources.sorting_answers_32px;
             this.btnCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategory.Location = new System.Drawing.Point(0, 374);
+            this.btnCategory.Location = new System.Drawing.Point(0, 321);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(200, 47);
             this.btnCategory.TabIndex = 13;
@@ -118,7 +116,7 @@
             this.btnSystem.ForeColor = System.Drawing.Color.White;
             this.btnSystem.Image = global::MiniStore.Properties.Resources.system_task_32px;
             this.btnSystem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSystem.Location = new System.Drawing.Point(0, 321);
+            this.btnSystem.Location = new System.Drawing.Point(0, 268);
             this.btnSystem.Name = "btnSystem";
             this.btnSystem.Size = new System.Drawing.Size(200, 47);
             this.btnSystem.TabIndex = 12;
@@ -135,30 +133,13 @@
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.Image = global::MiniStore.Properties.Resources.graph_report_32px;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 268);
+            this.btnReport.Location = new System.Drawing.Point(0, 215);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(200, 47);
             this.btnReport.TabIndex = 11;
             this.btnReport.Text = "Thống kê";
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = false;
-            // 
-            // btnSalary
-            // 
-            this.btnSalary.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.btnSalary.FlatAppearance.BorderSize = 0;
-            this.btnSalary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalary.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalary.ForeColor = System.Drawing.Color.White;
-            this.btnSalary.Image = global::MiniStore.Properties.Resources.money_32px;
-            this.btnSalary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalary.Location = new System.Drawing.Point(0, 215);
-            this.btnSalary.Name = "btnSalary";
-            this.btnSalary.Size = new System.Drawing.Size(203, 47);
-            this.btnSalary.TabIndex = 10;
-            this.btnSalary.Text = "Lương";
-            this.btnSalary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalary.UseVisualStyleBackColor = false;
             // 
             // btnPersonnel
             // 
@@ -176,6 +157,7 @@
             this.btnPersonnel.Text = "Nhân sự";
             this.btnPersonnel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPersonnel.UseVisualStyleBackColor = false;
+            this.btnPersonnel.Click += new System.EventHandler(this.btnPersonnel_Click);
             // 
             // btnProduct
             // 
@@ -193,6 +175,7 @@
             this.btnProduct.Text = "Sản phẩm";
             this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnOrder
             // 
@@ -210,6 +193,7 @@
             this.btnOrder.Text = "Gọi món";
             this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnHome
             // 
@@ -240,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 544);
+            this.ClientSize = new System.Drawing.Size(758, 486);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_header);
             this.Controls.Add(this.panel_lefttop);
@@ -267,7 +251,6 @@
         private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.Button btnSystem;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnSalary;
         private System.Windows.Forms.Button btnPersonnel;
         private System.Windows.Forms.Button btnProduct;
     }

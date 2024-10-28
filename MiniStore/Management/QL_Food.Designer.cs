@@ -37,7 +37,6 @@
             this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpTimKiem = new System.Windows.Forms.GroupBox();
-            this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.grpThongTin = new System.Windows.Forms.GroupBox();
             this.cmbNhaCungCap = new System.Windows.Forms.ComboBox();
@@ -59,6 +58,7 @@
             this.btn_Luu = new System.Windows.Forms.Button();
             this.btn_Dong = new System.Windows.Forms.Button();
             this.grpDanhSach = new System.Windows.Forms.GroupBox();
+            this.dataGridView_DSMonAn = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +66,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView_DSMonAn = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.grpTimKiem.SuspendLayout();
             this.grpThongTin.SuspendLayout();
             this.grpDanhSach.SuspendLayout();
@@ -136,7 +136,7 @@
             // 
             // grpTimKiem
             // 
-            this.grpTimKiem.Controls.Add(this.cmbFilter);
+            this.grpTimKiem.Controls.Add(this.btnSearch);
             this.grpTimKiem.Controls.Add(this.txtTimKiem);
             this.grpTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpTimKiem.ForeColor = System.Drawing.Color.DarkCyan;
@@ -146,15 +146,6 @@
             this.grpTimKiem.TabIndex = 71;
             this.grpTimKiem.TabStop = false;
             this.grpTimKiem.Text = "Tìm kiếm";
-            // 
-            // cmbFilter
-            // 
-            this.cmbFilter.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFilter.FormattingEnabled = true;
-            this.cmbFilter.Location = new System.Drawing.Point(257, 37);
-            this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(111, 28);
-            this.cmbFilter.TabIndex = 30;
             // 
             // txtTimKiem
             // 
@@ -181,7 +172,7 @@
             this.grpThongTin.Controls.Add(this.lblMaMonAn);
             this.grpThongTin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThongTin.ForeColor = System.Drawing.Color.DarkCyan;
-            this.grpThongTin.Location = new System.Drawing.Point(415, 12);
+            this.grpThongTin.Location = new System.Drawing.Point(474, 12);
             this.grpThongTin.Name = "grpThongTin";
             this.grpThongTin.Size = new System.Drawing.Size(466, 186);
             this.grpThongTin.TabIndex = 70;
@@ -361,6 +352,7 @@
             this.btn_Dong.TabIndex = 78;
             this.btn_Dong.Text = "ĐÓNG";
             this.btn_Dong.UseVisualStyleBackColor = false;
+            this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
             // 
             // grpDanhSach
             // 
@@ -369,10 +361,18 @@
             this.grpDanhSach.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpDanhSach.Location = new System.Drawing.Point(19, 204);
             this.grpDanhSach.Name = "grpDanhSach";
-            this.grpDanhSach.Size = new System.Drawing.Size(862, 317);
+            this.grpDanhSach.Size = new System.Drawing.Size(921, 346);
             this.grpDanhSach.TabIndex = 79;
             this.grpDanhSach.TabStop = false;
             this.grpDanhSach.Text = "Danh sách món ăn";
+            // 
+            // dataGridView_DSMonAn
+            // 
+            this.dataGridView_DSMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_DSMonAn.Location = new System.Drawing.Point(6, 28);
+            this.dataGridView_DSMonAn.Name = "dataGridView_DSMonAn";
+            this.dataGridView_DSMonAn.Size = new System.Drawing.Size(897, 307);
+            this.dataGridView_DSMonAn.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -424,19 +424,21 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // dataGridView_DSMonAn
+            // btnSearch
             // 
-            this.dataGridView_DSMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_DSMonAn.Location = new System.Drawing.Point(6, 28);
-            this.dataGridView_DSMonAn.Name = "dataGridView_DSMonAn";
-            this.dataGridView_DSMonAn.Size = new System.Drawing.Size(850, 283);
-            this.dataGridView_DSMonAn.TabIndex = 0;
+            this.btnSearch.Location = new System.Drawing.Point(274, 37);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 28);
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // QL_Food
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 533);
+            this.ClientSize = new System.Drawing.Size(1204, 551);
             this.Controls.Add(this.grpDanhSach);
             this.Controls.Add(this.btn_Dong);
             this.Controls.Add(this.btn_Luu);
@@ -449,6 +451,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "QL_Food";
             this.Text = "QUẢN LÝ ĐỒ ĂN";
+            this.Load += new System.EventHandler(this.QL_Food_Load);
             this.grpTimKiem.ResumeLayout(false);
             this.grpTimKiem.PerformLayout();
             this.grpThongTin.ResumeLayout(false);
@@ -471,7 +474,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.GroupBox grpTimKiem;
-        private System.Windows.Forms.ComboBox cmbFilter;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox grpThongTin;
         private System.Windows.Forms.ComboBox cmbNhaCungCap;
@@ -501,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MiniStore.ItemNav;
+using MiniStore.Management;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,8 +27,23 @@ namespace MiniStore.Forms
                 e.Cancel = true;
         }
 
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            order.Show();
+        }
 
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            QL_Food ql_Food = new QL_Food();
+            ql_Food.Show();
+        }
 
+        private void btnPersonnel_Click(object sender, EventArgs e)
+        {
+            QL_NhanSu ql_NhanSu = new QL_NhanSu();
+            ql_NhanSu.Show();
+        }
 
     }
 }

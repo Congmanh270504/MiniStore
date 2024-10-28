@@ -18,11 +18,10 @@ namespace MiniStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Forms.frm_Main());
             //Application.Run(new Forms.frm_Connect());
             //Application.Run(new Forms.frm_Login());
-            //Application.Run(new Forms.frm_Main());
-            Application.Run(new Order());
-            //Application.Run(new QL_BangLuong());
+            Application.Run(new QL_Food());
             //Application.Run(new Forms.frm_Splash());
             //Application.Run(new Forms.frm_changepassword());
             //Application.Run(new Forms.frm_TTcuahang());
