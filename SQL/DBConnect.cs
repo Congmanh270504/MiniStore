@@ -50,7 +50,7 @@ namespace SQL
         }
         public DBConnect(string strDBName)
         {
-            strServerName = "CongManhPC\\MSSQLSERVER01"; //Tên máy server của mình (tên máy của SV)
+            strServerName = "DESKTOP-LI8OVCU\\SQLEXPRESS"; //Tên máy server của mình (tên máy của SV)
             this.strDBName = strDBName;
             //Dùng với quyền của của Windows
             strConnect = @"Data Source=" + strServerName + ";Initial Catalog=" + strDBName +

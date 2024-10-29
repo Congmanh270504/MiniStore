@@ -14,33 +14,45 @@ namespace MiniStore.Management
 {
     public partial class QL_LoaiSanPham : Form
     {
+        SqlConnection con = new SqlConnection("Data Source = DESKTOP-LI8OVCU\\SQLEXPRESS; Initial Catalog = miniMKT; Integrated Security=true");
+        DataSet ds = new DataSet();
+        SqlDataAdapter da;
         DBConnect db;
-        SqlDataAdapter da_categories;
-        DataTable categories;
+
         public QL_LoaiSanPham()
         {
             InitializeComponent();
-            db = new DBConnect("miniMKT");
+            db = new DBConnect("");
         }
 
-        private void QL_LoaiSanPham_Load(object sender, EventArgs e)
+        private void QL_LoaiSanPham_FormClosing(object sender, FormClosingEventArgs e)
         {
-            load_ategory();
+            DialogResult r;
+            r = MessageBox.Show("Bạn Có Muốn Thoát?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (r == DialogResult.No)
+                e.Cancel = true;
         }
-        void load_ategory()
+
+        void LoadDuLieu()
         {
-            string sql = "select * from Categories";
-            da_categories = db.getDataAdapter(sql, "Categories");
-            categories = db.Dset.Tables["Categories"];
-            dataGridView.DataSource = categories;
+            string str = "SELECT * FROM Categories";
 
-            DataColumn[] primaryKey = new DataColumn[1];
-            primaryKey[0] = categories.Columns["CategoryID"];
-            categories.PrimaryKey = primaryKey;
-            dataGridView.Columns["CategoryID"].HeaderText = "Mã loại sản phẩm";
-            dataGridView.Columns["CategoryName"].HeaderText = "Tên loại sản phẩm";
+            da = new SqlDataAdapter(str, con);
 
-            // Center the header text
+            da.Fill(ds, "Categories");
+
+            dataGridView.DataSource = ds.Tables["Categories"];
+
+            DataColumn[] key = new DataColumn[1];
+
+            key[0] = ds.Tables["Categories"].Columns[0];
+
+            ds.Tables["Categories"].PrimaryKey = key;
+
+            dataGridView.Columns["CategoryID"].HeaderText = "MÃ LOẠI SẢN PHẨM";
+
+            dataGridView.Columns["CategoryName"].HeaderText = "TÊN LOẠI SẢN PHẨM";
+
             dataGridView.Columns["CategoryID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView.Columns["CategoryName"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
@@ -51,6 +63,122 @@ namespace MiniStore.Management
 
             dataGridView.Columns["CategoryID"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
             dataGridView.Columns["CategoryName"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+
+            txtb_Maloaisp.DataBindings.Add(new Binding("Text", ds.Tables["Categories"], "CategoryID", true, DataSourceUpdateMode.Never));
+            txtLoaiSanPham.DataBindings.Add(new Binding("Text", ds.Tables["Categories"], "CategoryName", true, DataSourceUpdateMode.Never));
+        }
+
+        private void QL_LoaiSanPham_Load(object sender, EventArgs e)
+        {
+            LoadDuLieu();
+        }
+
+        private void btn_Dong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            btn_Xoa.Enabled = false;
+            btn_Sua.Enabled = false;
+            btn_Luu.Enabled = true;
+            btn_Dong.Enabled = true;
+
+            txtb_Maloaisp.Clear();
+            txtLoaiSanPham.Clear();
+            txtb_Maloaisp.Focus();
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            btn_Them.Enabled = false;
+            btn_Xoa.Enabled = false;
+            btn_Luu.Enabled = true;
+            btn_Dong.Enabled = true;
+
+            txtb_Maloaisp.Enabled = false;
+            txtLoaiSanPham.Focus();
+        }
+
+        private void btn_Luu_Click(object sender, EventArgs e)
+        {
+            if (txtb_Maloaisp.Text == string.Empty)
+            {
+                MessageBox.Show("Không Được Để Trống Mã Loại Sản Phẩm");
+                txtb_Maloaisp.Focus();
+                return;
+            }
+
+            if (txtLoaiSanPham.Text == string.Empty)
+            {
+                MessageBox.Show("Không Được Để Trống Tên Loại Sản Phẩm");
+                txtLoaiSanPham.Focus();
+                return;
+            }
+
+            string masp = txtb_Maloaisp.Text;
+            string tensp = txtLoaiSanPham.Text;
+
+            if (txtb_Maloaisp.Enabled == true)
+            {
+                DataRow insert = ds.Tables["Categories"].NewRow();
+                insert["CategoryID"] = txtb_Maloaisp.Text;
+                insert["CategoryName"] = txtLoaiSanPham.Text;
+                ds.Tables["Categories"].Rows.Add(insert);
+            }
+
+            else
+            {
+                DataRow update = ds.Tables["Categories"].Rows.Find(masp);
+                if (update != null)
+                {
+                    update["CategoryName"] = tensp;
+                }
+            }
+
+            SqlCommandBuilder cb = new SqlCommandBuilder(da);
+            da.Update(ds, "Categories");
+            MessageBox.Show("Thành Công !");
+
+            btn_Them.Enabled = true;
+            btn_Xoa.Enabled = true;
+            btn_Sua.Enabled = true;
+            btn_Luu.Enabled = true;
+            btn_Dong.Enabled = true;
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Có Muốn Xóa?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+
+            {
+                DataTable dt_kq = new DataTable();
+
+                SqlDataAdapter da_kq = new SqlDataAdapter("SELECT * FROM Products WHERE CategoryID = '" + txtb_Maloaisp.Text + "'", con);
+                da_kq.Fill(dt_kq);
+                if (dt_kq.Rows.Count > 0)
+                {
+                    MessageBox.Show("Không Thể Xóa Dữ Liệu Này !");
+                    return;
+                }
+
+                DataRow update = ds.Tables["Categories"].Rows.Find(txtb_Maloaisp.Text);
+                if (update != null)
+                {
+                    update.Delete();
+                }
+                SqlCommandBuilder cmb = new SqlCommandBuilder(da);
+                da.Update(ds, "Categories");
+                MessageBox.Show("Xóa Thành Công !");
+            }
+
+            btn_Them.Enabled = true;
+            btn_Xoa.Enabled = true;
+            btn_Sua.Enabled = true;
+            btn_Luu.Enabled = true;
+            btn_Dong.Enabled = true;
         }
     }
+
 }

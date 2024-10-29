@@ -21,9 +21,9 @@ namespace MiniStore
             //Application.Run(new Forms.frm_Main());
             //Application.Run(new Forms.frm_Connect());
             //Application.Run(new Forms.frm_Login());
-            Application.Run(new QL_Products());
+            //Application.Run(new QL_Products());
             //Application.Run(new QL_NhanSu());
-            //Application.Run(new QL_LoaiSanPham());
+            Application.Run(new QL_LoaiSanPham());
             //Application.Run(new Forms.frm_Splash());
             //Application.Run(new Forms.frm_changepassword());
             //Application.Run(new Forms.frm_TTcuahang());
