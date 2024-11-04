@@ -98,6 +98,12 @@
     <Compile Include="Forms\frm_UserPermission.Designer.cs">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemNav\NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemNav\NewCustomer.Designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemNav\Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_UserPermission.resx">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemNav\NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemNav\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>

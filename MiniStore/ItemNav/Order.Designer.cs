@@ -40,7 +40,6 @@
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.lblMoney = new System.Windows.Forms.Label();
             this.lblEmployess = new System.Windows.Forms.Label();
-            this.txtCustomer = new System.Windows.Forms.TextBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.grpSearchProduct = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -56,6 +55,8 @@
             this.grpListProduct = new System.Windows.Forms.GroupBox();
             this.listOrder = new System.Windows.Forms.ListBox();
             this.grpInfoInvoice = new System.Windows.Forms.GroupBox();
+            this.btnNewCustomer = new System.Windows.Forms.Button();
+            this.cbCustomer = new System.Windows.Forms.ComboBox();
             this.cb_PrintBill = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -203,16 +204,6 @@
             this.lblEmployess.Text = "Nhân viên:";
             this.lblEmployess.Click += new System.EventHandler(this.lblEmployess_Click);
             // 
-            // txtCustomer
-            // 
-            this.txtCustomer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomer.Location = new System.Drawing.Point(102, 40);
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(239, 23);
-            this.txtCustomer.TabIndex = 7;
-            this.txtCustomer.TextChanged += new System.EventHandler(this.txtCustomer_TextChanged);
-            this.txtCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
-            // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
@@ -343,9 +334,10 @@
             // 
             // grpInfoInvoice
             // 
+            this.grpInfoInvoice.Controls.Add(this.btnNewCustomer);
+            this.grpInfoInvoice.Controls.Add(this.cbCustomer);
             this.grpInfoInvoice.Controls.Add(this.txtEmployess);
             this.grpInfoInvoice.Controls.Add(this.lblEmployess);
-            this.grpInfoInvoice.Controls.Add(this.txtCustomer);
             this.grpInfoInvoice.Controls.Add(this.lblUser);
             this.grpInfoInvoice.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInfoInvoice.ForeColor = System.Drawing.Color.DarkCyan;
@@ -356,6 +348,25 @@
             this.grpInfoInvoice.TabStop = false;
             this.grpInfoInvoice.Text = "Thông tin hóa đơn";
             this.grpInfoInvoice.Enter += new System.EventHandler(this.grpInfoInvoice_Enter);
+            // 
+            // btnNewCustomer
+            // 
+            this.btnNewCustomer.Location = new System.Drawing.Point(386, 33);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.Size = new System.Drawing.Size(147, 30);
+            this.btnNewCustomer.TabIndex = 12;
+            this.btnNewCustomer.Text = "Khách hàng mới";
+            this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
+            // 
+            // cbCustomer
+            // 
+            this.cbCustomer.FormattingEnabled = true;
+            this.cbCustomer.Location = new System.Drawing.Point(102, 33);
+            this.cbCustomer.Name = "cbCustomer";
+            this.cbCustomer.Size = new System.Drawing.Size(239, 28);
+            this.cbCustomer.TabIndex = 11;
+            this.cbCustomer.SelectedIndexChanged += new System.EventHandler(this.cbCustomer_SelectedIndexChanged);
             // 
             // cb_PrintBill
             // 
@@ -459,7 +470,6 @@
         private System.Windows.Forms.GroupBox grpInfoInvoice;
         private System.Windows.Forms.TextBox txtEmployess;
         private System.Windows.Forms.Label lblEmployess;
-        private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
@@ -475,5 +485,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.ComboBox cbCustomer;
+        private System.Windows.Forms.Button btnNewCustomer;
     }
 }

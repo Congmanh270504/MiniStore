@@ -36,11 +36,14 @@ namespace MiniStore.ItemNav
         private void Order_Load(object sender, EventArgs e)
         {
             LoadData();
+            load_CbCustomer();
             if (listOrder.Items.Count == 0)
             {
                 txtMoney.Text = "0";
                 btnCancel.Enabled = false;
             }
+            string rank = db.getString("SELECT CustomerRank FROM Customers WHERE CustomerID = 1");
+            getDiscount(rank);
             string query = string.Format("SELECT EmployeeName FROM Employees WHERE Email = '{0}' and EmployPassword = '{1}' ", user.Name, user.Password);
             txtEmployess.Text = db.getString(query);
         }
@@ -76,6 +79,13 @@ namespace MiniStore.ItemNav
             dataGridView.Columns["Price"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
             dataGridView.Columns["Unit"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
 
+        }
+        void load_CbCustomer()
+        {
+            string sql = "SELECT * FROM Customers";
+            cbCustomer.DataSource = db.getDataTable(sql, "Customers");
+            cbCustomer.DisplayMember = "CustomerName";
+            cbCustomer.ValueMember = "CustomerID";
         }
 
         private void grpInfoInvoice_Enter(object sender, EventArgs e)
@@ -234,7 +244,7 @@ namespace MiniStore.ItemNav
         {
             decimal total = decimal.Parse(getTotal());
             decimal sell = 0;
-            string rank = db.getString(string.Format("SELECT CustomerRank FROM Customers WHERE CustomerName = N'{0}' ", txtCustomer.Text));
+            string rank = db.getString(string.Format("SELECT CustomerRank FROM Customers WHERE CustomerID = N'{0}' ", cbCustomer.SelectedValue));
             switch (rank)
             {
                 case "Bạc":
@@ -269,9 +279,19 @@ namespace MiniStore.ItemNav
             txtReturnPayment.Text = (int.Parse(txtReceive.Text) - Math.Round(total, MidpointRounding.AwayFromZero)).ToString() + "đ";
             lblTotalMoney.Text = Math.Round(total, MidpointRounding.AwayFromZero).ToString() + "đ";
 
-
+            string query = string.Format(
+                "INSERT INTO Orders (CustomerID,EmployeeID,OrderDate,TotalAmount,PaymentMethod)" +
+                " VALUES ({0},{1},{3},{4},{5})", cbCustomer.SelectedValue, user.Id, DateTime.Now, total.ToString(), "Tiền mặt");
+            db.updateToDataBase(query);
+            // need to fix daytime in sql first
+            //foreach (int item in listOrder.Items)
+            //{
+            //    string oderID = string.Format("select OrderID from Orders where CustomerID= {0} and EmployeeID= {1} ")
+            //    query = string.Format(
+            //    "INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price)" +
+            //    " VALUES ({0},{1},{3},{4},{5})", );
+            //}
             listOrder.Items.Clear();
-            txtCustomer.Clear();
             txtDiscount.Clear();
             txtReceive.Clear();
             txtMoney.Clear();
@@ -304,28 +324,11 @@ namespace MiniStore.ItemNav
 
         private void txtCustomer_TextChanged(object sender, EventArgs e)
         {
-            string rank = db.getString(string.Format("SELECT CustomerRank FROM Customers WHERE CustomerName = N'{0}' ", txtCustomer.Text));
-            decimal sell = 0;
-            switch (rank)
-            {
-                case "Bạc":
-                    sell = 2;
-                    break;
-                case "Vàng":
-                    sell = 5;
-                    break;
-                case "Kim cương":
-                    sell = 7;
-                    break;
-                default:
-                    break;
-            }
-            txtDiscount.Text = sell.ToString() + "%";
         }
 
         private void txtReceive_TextChanged(object sender, EventArgs e)
         {
-           
+
             decimal total = decimal.Parse(getTotal());
             if (string.IsNullOrEmpty(txtReceive.Text))
             {
@@ -345,7 +348,41 @@ namespace MiniStore.ItemNav
 
         private void txtReturnPayment_TextChanged(object sender, EventArgs e)
         {
-            
+
+        }
+        void getDiscount(string rank)
+        {
+            decimal sell = 0;
+            switch (rank)
+            {
+                case "Bạc":
+                    sell = 2;
+                    break;
+                case "Vàng":
+                    sell = 5;
+                    break;
+                case "Kim cương":
+                    sell = 7;
+                    break;
+                default:
+                    break;
+            }
+            txtDiscount.Text = sell.ToString() + "%";
+        }
+        private void cbCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCustomer.SelectedValue != null && cbCustomer.SelectedValue is DataRowView == false)
+            {
+                string customerId = cbCustomer.SelectedValue.ToString();
+                string rank = db.getString(string.Format("SELECT CustomerRank FROM Customers WHERE CustomerID = N'{0}' ", customerId));
+                getDiscount(rank);
+            }
+        }
+
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            NewCustomer newCustomer = new NewCustomer();
+            newCustomer.ShowDialog();
         }
     }
 }

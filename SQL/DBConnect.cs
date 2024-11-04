@@ -115,6 +115,16 @@ namespace SQL
             closeConnect(); //Đóng kết nối
             return count;
         }
+        public int getInt(string strSQL)
+        {
+            openConnect(); //Mở kết nối
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = strSQL; //Câu truy vấn đưa vào
+            int count = (int)cmd.ExecuteScalar(); //Thực thi
+            closeConnect(); //Đóng kết nối
+            return count;
+        }
         public string getString(string strSQL)
         {
             openConnect(); //Mở kết nối
