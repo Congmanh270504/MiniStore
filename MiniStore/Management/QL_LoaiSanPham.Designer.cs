@@ -31,6 +31,8 @@
             this.LoaiSPID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLoaiSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpLoaiSanPham = new System.Windows.Forms.GroupBox();
+            this.txtb_Maloaisp = new System.Windows.Forms.TextBox();
+            this.lbl_Maloaisp = new System.Windows.Forms.Label();
             this.lblLoaiSanPham = new System.Windows.Forms.Label();
             this.txtLoaiSanPham = new System.Windows.Forms.TextBox();
             this.grpDanhSach = new System.Windows.Forms.GroupBox();
@@ -64,34 +66,54 @@
             // 
             // grpLoaiSanPham
             // 
+            this.grpLoaiSanPham.Controls.Add(this.txtb_Maloaisp);
+            this.grpLoaiSanPham.Controls.Add(this.lbl_Maloaisp);
             this.grpLoaiSanPham.Controls.Add(this.lblLoaiSanPham);
             this.grpLoaiSanPham.Controls.Add(this.txtLoaiSanPham);
             this.grpLoaiSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpLoaiSanPham.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpLoaiSanPham.Location = new System.Drawing.Point(40, 12);
             this.grpLoaiSanPham.Name = "grpLoaiSanPham";
-            this.grpLoaiSanPham.Size = new System.Drawing.Size(724, 101);
+            this.grpLoaiSanPham.Size = new System.Drawing.Size(724, 117);
             this.grpLoaiSanPham.TabIndex = 2;
             this.grpLoaiSanPham.TabStop = false;
             this.grpLoaiSanPham.Text = "Loại sản phẩm";
+            // 
+            // txtb_Maloaisp
+            // 
+            this.txtb_Maloaisp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtb_Maloaisp.Location = new System.Drawing.Point(185, 36);
+            this.txtb_Maloaisp.Name = "txtb_Maloaisp";
+            this.txtb_Maloaisp.Size = new System.Drawing.Size(295, 27);
+            this.txtb_Maloaisp.TabIndex = 72;
+            // 
+            // lbl_Maloaisp
+            // 
+            this.lbl_Maloaisp.AutoSize = true;
+            this.lbl_Maloaisp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Maloaisp.Location = new System.Drawing.Point(39, 36);
+            this.lbl_Maloaisp.Name = "lbl_Maloaisp";
+            this.lbl_Maloaisp.Size = new System.Drawing.Size(127, 20);
+            this.lbl_Maloaisp.TabIndex = 71;
+            this.lbl_Maloaisp.Text = "Mã loại sản phẩm";
             // 
             // lblLoaiSanPham
             // 
             this.lblLoaiSanPham.AutoSize = true;
             this.lblLoaiSanPham.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoaiSanPham.Location = new System.Drawing.Point(129, 45);
+            this.lblLoaiSanPham.Location = new System.Drawing.Point(39, 85);
             this.lblLoaiSanPham.Name = "lblLoaiSanPham";
             this.lblLoaiSanPham.Size = new System.Drawing.Size(129, 20);
-            this.lblLoaiSanPham.TabIndex = 71;
+            this.lblLoaiSanPham.TabIndex = 73;
             this.lblLoaiSanPham.Text = "Tên loại sản phẩm";
             // 
             // txtLoaiSanPham
             // 
             this.txtLoaiSanPham.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiSanPham.Location = new System.Drawing.Point(264, 42);
+            this.txtLoaiSanPham.Location = new System.Drawing.Point(185, 82);
             this.txtLoaiSanPham.Name = "txtLoaiSanPham";
             this.txtLoaiSanPham.Size = new System.Drawing.Size(295, 27);
-            this.txtLoaiSanPham.TabIndex = 2;
+            this.txtLoaiSanPham.TabIndex = 74;
             // 
             // grpDanhSach
             // 
@@ -233,5 +255,7 @@
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.TextBox txtb_Maloaisp;
+        private System.Windows.Forms.Label lbl_Maloaisp;
     }
 }
