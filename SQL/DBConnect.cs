@@ -50,7 +50,7 @@ namespace SQL
         }
         public DBConnect(string strDBName)
         {
-            strServerName = "DESKTOP-LI8OVCU\\SQLEXPRESS"; //Tên máy server của mình (tên máy của SV)
+            strServerName = "CongManhPC\\MSSQLSERVER01"; //Tên máy server của mình (tên máy của SV)
             this.strDBName = strDBName;
             //Dùng với quyền của của Windows
             strConnect = @"Data Source=" + strServerName + ";Initial Catalog=" + strDBName +
@@ -64,11 +64,10 @@ namespace SQL
         }
         public DBConnect(string pServerName, string pDBName)
         { //Dùng với quyền của của Windows
-            strServerName = pServerName;
-            strDBName = pDBName;
-            strConnect = @"Data Source=" + strServerName + ";Initial Catalog=" + strDBName +
+            strConnect = @"Data Source=" + pServerName + ";Initial Catalog=" + pDBName +
         ";Integrated Security=true";
             conn = new SqlConnection(strConnect); //Khởi tạo đối tượng kết nối đến CSDL
+            Dset = new DataSet(strConnect);
         }
         public DBConnect(string pServerName, string pDBName, string pUserID, string pPassword)
         { //Dùng với quyền của SQL Server
@@ -79,6 +78,7 @@ namespace SQL
             strConnect = @"Data Source=" + strServerName + ";Initial Catalog=" + strDBName +
             ";User ID=" + strUserID + ";Password=" + strPassword;
             conn = new SqlConnection(strConnect); //Khởi tạo đối tượng kết nối đến CSDL
+            Dset = new DataSet(strConnect);
         }
         public void openConnect()
         { //Mở kết nối

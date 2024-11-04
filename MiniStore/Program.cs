@@ -20,10 +20,10 @@ namespace MiniStore
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Forms.frm_Main());
             //Application.Run(new Forms.frm_Connect());
-            Application.Run(new Forms.frm_Login());
+            //Application.Run(new Forms.frm_Login());
             //Application.Run(new QL_Products());
             //Application.Run(new QL_NhanSu());
-            //Application.Run(new QL_LoaiSanPham());
+            Application.Run(new QL_LoaiSanPham());
             //Application.Run(new Order());
             //Application.Run(new Forms.frm_Splash());
             //Application.Run(new Forms.frm_changepassword());
