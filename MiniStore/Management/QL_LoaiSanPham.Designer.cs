@@ -139,6 +139,7 @@
             this.btn_Dong.TabIndex = 88;
             this.btn_Dong.Text = "ĐÓNG";
             this.btn_Dong.UseVisualStyleBackColor = false;
+            this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
             // 
             // btn_Luu
             // 
@@ -151,6 +152,7 @@
             this.btn_Luu.TabIndex = 87;
             this.btn_Luu.Text = "LƯU";
             this.btn_Luu.UseVisualStyleBackColor = false;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
             // btn_Sua
             // 
@@ -163,6 +165,7 @@
             this.btn_Sua.TabIndex = 86;
             this.btn_Sua.Text = "SỬA";
             this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Xoa
             // 
@@ -175,6 +178,7 @@
             this.btn_Xoa.TabIndex = 85;
             this.btn_Xoa.Text = "XÓA";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Them
             // 
@@ -187,6 +191,7 @@
             this.btn_Them.TabIndex = 84;
             this.btn_Them.Text = "THÊM";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // QL_LoaiSanPham
             // 
@@ -202,6 +207,7 @@
             this.Controls.Add(this.grpLoaiSanPham);
             this.Name = "QL_LoaiSanPham";
             this.Text = "QUẢN LÝ LOẠI SẢN PHẨM";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QL_LoaiSanPham_FormClosing);
             this.Load += new System.EventHandler(this.QL_LoaiSanPham_Load);
             this.grpLoaiSanPham.ResumeLayout(false);
             this.grpLoaiSanPham.PerformLayout();
