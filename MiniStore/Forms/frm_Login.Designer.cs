@@ -94,7 +94,7 @@
             this.lblLogin.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblLogin.Location = new System.Drawing.Point(49, 182);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(284, 32);
+            this.lblLogin.Size = new System.Drawing.Size(283, 32);
             this.lblLogin.TabIndex = 8;
             this.lblLogin.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
@@ -115,6 +115,7 @@
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lbl_username
             // 
@@ -169,7 +170,6 @@
             this.Controls.Add(this.pnlRight);
             this.Name = "frm_Login";
             this.Text = "frm_Login";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Login_FormClosing);
             this.pnlRight.ResumeLayout(false);
             this.pnlRight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

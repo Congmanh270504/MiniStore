@@ -1,4 +1,5 @@
-﻿using SQL;
+﻿using MiniStore.Forms;
+using SQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -213,7 +214,7 @@ namespace MiniStore.Management
                     da_products.DeleteCommand = deleteCommand;
 
                     rowToDelete.Delete();
-                    da_products.Update(products); 
+                    da_products.Update(products);
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
                 else

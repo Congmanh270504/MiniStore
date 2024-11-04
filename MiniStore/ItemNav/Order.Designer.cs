@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.check = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpPayment = new System.Windows.Forms.GroupBox();
             this.lblTotalMoney = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -42,7 +40,7 @@
             this.txtMoney = new System.Windows.Forms.TextBox();
             this.lblMoney = new System.Windows.Forms.Label();
             this.lblEmployess = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtCustomer = new System.Windows.Forms.TextBox();
             this.lblUser = new System.Windows.Forms.Label();
             this.grpSearchProduct = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -63,17 +61,12 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.check)).BeginInit();
             this.grpPayment.SuspendLayout();
             this.grpSearchProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.grpListProduct.SuspendLayout();
             this.grpInfoInvoice.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // check
-            // 
-            this.check.ContainerControl = this;
             // 
             // grpPayment
             // 
@@ -126,6 +119,7 @@
             this.txtReturnPayment.Name = "txtReturnPayment";
             this.txtReturnPayment.Size = new System.Drawing.Size(120, 27);
             this.txtReturnPayment.TabIndex = 16;
+            this.txtReturnPayment.TextChanged += new System.EventHandler(this.txtReturnPayment_TextChanged);
             // 
             // lblReturnPayment
             // 
@@ -144,6 +138,8 @@
             this.txtReceive.Name = "txtReceive";
             this.txtReceive.Size = new System.Drawing.Size(118, 27);
             this.txtReceive.TabIndex = 14;
+            this.txtReceive.TextChanged += new System.EventHandler(this.txtReceive_TextChanged);
+            this.txtReceive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceive_KeyPress);
             // 
             // lblReceive
             // 
@@ -157,6 +153,7 @@
             // 
             // txtDiscount
             // 
+            this.txtDiscount.Enabled = false;
             this.txtDiscount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscount.Location = new System.Drawing.Point(301, 29);
             this.txtDiscount.Name = "txtDiscount";
@@ -206,14 +203,15 @@
             this.lblEmployess.Text = "Nhân viên:";
             this.lblEmployess.Click += new System.EventHandler(this.lblEmployess_Click);
             // 
-            // txtUser
+            // txtCustomer
             // 
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(102, 40);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(239, 23);
-            this.txtUser.TabIndex = 7;
-            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
+            this.txtCustomer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomer.Location = new System.Drawing.Point(102, 40);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.Size = new System.Drawing.Size(239, 23);
+            this.txtCustomer.TabIndex = 7;
+            this.txtCustomer.TextChanged += new System.EventHandler(this.txtCustomer_TextChanged);
+            this.txtCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // lblUser
             // 
@@ -313,6 +311,7 @@
             // 
             // txtEmployess
             // 
+            this.txtEmployess.Enabled = false;
             this.txtEmployess.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmployess.Location = new System.Drawing.Point(102, 83);
             this.txtEmployess.Name = "txtEmployess";
@@ -346,7 +345,7 @@
             // 
             this.grpInfoInvoice.Controls.Add(this.txtEmployess);
             this.grpInfoInvoice.Controls.Add(this.lblEmployess);
-            this.grpInfoInvoice.Controls.Add(this.txtUser);
+            this.grpInfoInvoice.Controls.Add(this.txtCustomer);
             this.grpInfoInvoice.Controls.Add(this.lblUser);
             this.grpInfoInvoice.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInfoInvoice.ForeColor = System.Drawing.Color.DarkCyan;
@@ -429,7 +428,6 @@
             this.Name = "Order";
             this.Text = "Order";
             this.Load += new System.EventHandler(this.Order_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.check)).EndInit();
             this.grpPayment.ResumeLayout(false);
             this.grpPayment.PerformLayout();
             this.grpSearchProduct.ResumeLayout(false);
@@ -444,8 +442,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ErrorProvider check;
         private System.Windows.Forms.GroupBox grpPayment;
         private System.Windows.Forms.Label lblTotalMoney;
         private System.Windows.Forms.Label lblTotal;
@@ -463,7 +459,7 @@
         private System.Windows.Forms.GroupBox grpInfoInvoice;
         private System.Windows.Forms.TextBox txtEmployess;
         private System.Windows.Forms.Label lblEmployess;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;

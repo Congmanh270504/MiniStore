@@ -115,7 +115,7 @@ namespace SQL
             closeConnect(); //Đóng kết nối
             return count;
         }
-        public string getId(string strSQL)
+        public string getString(string strSQL)
         {
             openConnect(); //Mở kết nối
             SqlCommand cmd = new SqlCommand();

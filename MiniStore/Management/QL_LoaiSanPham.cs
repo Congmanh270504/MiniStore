@@ -72,7 +72,6 @@ namespace MiniStore.Management
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(txtLoaiSanPham.Text))
             {
                 MessageBox.Show("Bạn chưa nhập tên loại sản phẩm !!", "Chưa nhập tên món ăn", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);

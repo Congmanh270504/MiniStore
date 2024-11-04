@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MiniStore.Forms;
 using SQL;
 namespace MiniStore.ItemNav
 {
@@ -17,10 +19,13 @@ namespace MiniStore.ItemNav
         DBConnect db;
         SqlDataAdapter da_products;
         DataTable products;
+        User user;
+
         public Order()
         {
             InitializeComponent();
-            db = new DBConnect("miniMKT");
+            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            user = frm_Login.LoggedInUser;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,6 +41,8 @@ namespace MiniStore.ItemNav
                 txtMoney.Text = "0";
                 btnCancel.Enabled = false;
             }
+            string query = string.Format("SELECT EmployeeName FROM Employees WHERE Email = '{0}' and EmployPassword = '{1}' ", user.Name, user.Password);
+            txtEmployess.Text = db.getString(query);
         }
         void LoadData()
         {
@@ -47,7 +54,7 @@ namespace MiniStore.ItemNav
             DataColumn[] primaryKey = new DataColumn[1];
             primaryKey[0] = products.Columns["ProductID"];
             products.PrimaryKey = primaryKey;
-            dataGridView.Columns["ProductID"].HeaderText = "Số thứ tự";
+            dataGridView.Columns["ProductID"].HeaderText = "Mã sản phẩm";
             dataGridView.Columns["ProductName"].HeaderText = "Tên sản phẩm";
             dataGridView.Columns["Price"].HeaderText = "Giá";
             dataGridView.Columns["Unit"].HeaderText = "Đơn vị tính";
@@ -191,7 +198,7 @@ namespace MiniStore.ItemNav
                 btnDelete.Enabled = false;
                 txtDiscount.Text = "";
             }
-         
+
             txtMoney.Text = getTotal() + "đ";
 
         }
@@ -226,9 +233,26 @@ namespace MiniStore.ItemNav
         private void btnPay_Click(object sender, EventArgs e)
         {
             decimal total = decimal.Parse(getTotal());
+            decimal sell = 0;
+            string rank = db.getString(string.Format("SELECT CustomerRank FROM Customers WHERE CustomerName = N'{0}' ", txtCustomer.Text));
+            switch (rank)
+            {
+                case "Bạc":
+                    sell = 5;
+                    break;
+                case "Vàng":
+                    sell = 7;
+                    break;
+                case "Kim cương":
+                    sell = 10;
+                    break;
+                default:
+                    break;
+            }
             if (!string.IsNullOrEmpty(txtDiscount.Text))
             {
-                total *= ((100 - decimal.Parse(txtDiscount.Text)) / 100);
+                total *= ((100 - sell) / 100);
+
             }
 
             if (string.IsNullOrEmpty(txtReceive.Text))
@@ -242,8 +266,16 @@ namespace MiniStore.ItemNav
                 return;
             }
             MessageBox.Show("Thanh toán thành công !!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            txtReturnPayment.Text = (int.Parse(txtReceive.Text) - total).ToString() + "đ";
-            lblTotalMoney.Text = total.ToString() + "đ";
+            txtReturnPayment.Text = (int.Parse(txtReceive.Text) - Math.Round(total, MidpointRounding.AwayFromZero)).ToString() + "đ";
+            lblTotalMoney.Text = Math.Round(total, MidpointRounding.AwayFromZero).ToString() + "đ";
+
+
+            listOrder.Items.Clear();
+            txtCustomer.Clear();
+            txtDiscount.Clear();
+            txtReceive.Clear();
+            txtMoney.Clear();
+            txtReturnPayment.Clear();
         }
 
         private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
@@ -257,7 +289,7 @@ namespace MiniStore.ItemNav
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchString = txtSearch.Text;
-            string sql = "SELECT * FROM Products WHERE ProductName LIKE @searchString";
+            string sql = "SELECT ProductID,ProductName,Price,Unit FROM Products WHERE ProductName LIKE @searchString";
 
             using (SqlConnection connection = new SqlConnection(db.strConnect))
             {
@@ -268,6 +300,52 @@ namespace MiniStore.ItemNav
                 da_products.Fill(products);
                 dataGridView.DataSource = products;
             }
+        }
+
+        private void txtCustomer_TextChanged(object sender, EventArgs e)
+        {
+            string rank = db.getString(string.Format("SELECT CustomerRank FROM Customers WHERE CustomerName = N'{0}' ", txtCustomer.Text));
+            decimal sell = 0;
+            switch (rank)
+            {
+                case "Bạc":
+                    sell = 2;
+                    break;
+                case "Vàng":
+                    sell = 5;
+                    break;
+                case "Kim cương":
+                    sell = 7;
+                    break;
+                default:
+                    break;
+            }
+            txtDiscount.Text = sell.ToString() + "%";
+        }
+
+        private void txtReceive_TextChanged(object sender, EventArgs e)
+        {
+           
+            decimal total = decimal.Parse(getTotal());
+            if (string.IsNullOrEmpty(txtReceive.Text))
+            {
+                txtReturnPayment.Text = "";
+                return;
+            }
+            txtReturnPayment.Text = (int.Parse(txtReceive.Text) - Math.Round(total, MidpointRounding.AwayFromZero)).ToString() + "đ";
+        }
+
+        private void txtReceive_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtReturnPayment_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

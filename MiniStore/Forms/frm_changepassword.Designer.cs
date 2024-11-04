@@ -122,6 +122,7 @@
             this.btn_Xacnhan.TabIndex = 17;
             this.btn_Xacnhan.Text = "Xác Nhận";
             this.btn_Xacnhan.UseVisualStyleBackColor = false;
+            this.btn_Xacnhan.Click += new System.EventHandler(this.btn_Xacnhan_Click);
             // 
             // frm_changepassword
             // 
@@ -138,6 +139,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "frm_changepassword";
             this.Text = "ĐỔI MẬT KHẨU";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_changepassword_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
