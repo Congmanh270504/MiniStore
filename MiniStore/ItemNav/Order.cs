@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MiniStore.Forms;
 using SQL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 namespace MiniStore.ItemNav
 {
     public partial class Order : Form
@@ -281,16 +282,25 @@ namespace MiniStore.ItemNav
 
             string query = string.Format(
                 "INSERT INTO Orders (CustomerID,EmployeeID,OrderDate,TotalAmount,PaymentMethod)" +
-                " VALUES ({0},{1},{3},{4},{5})", cbCustomer.SelectedValue, user.Id, DateTime.Now, total.ToString(), "Tiền mặt");
+                " VALUES ({0},{1},'{2}',{3},N'{4}')", cbCustomer.SelectedValue, user.Id, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), total.ToString(), "Tiền mặt");
             db.updateToDataBase(query);
-            // need to fix daytime in sql first
-            //foreach (int item in listOrder.Items)
-            //{
-            //    string oderID = string.Format("select OrderID from Orders where CustomerID= {0} and EmployeeID= {1} ")
-            //    query = string.Format(
-            //    "INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price)" +
-            //    " VALUES ({0},{1},{3},{4},{5})", );
-            //}
+            int orderID = db.getInt("SELECT MAX(OrderID) FROM Orders");
+            foreach (string item in listOrder.Items)
+            {
+                string[] itemParts = item.Split('-');
+
+                string quantityPart = itemParts[itemParts.Length - 1].Split(' ')[1].Trim();
+                int currentQuantity = int.Parse(quantityPart);
+
+
+                string productID = itemParts[0].Split(':')[1].Trim();
+                string quantity = itemParts[itemParts.Length - 1].Split(' ')[1].Trim();
+                string price = itemParts[itemParts.Length - 2].Split(':')[1].Trim().Replace("đ", "").Trim();
+                query = string.Format(
+                "INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price)" +
+                " VALUES ({0}, {1}, {2}, {3})", orderID, productID, quantity, price);
+                db.updateToDataBase(query);
+            }
             listOrder.Items.Clear();
             txtDiscount.Clear();
             txtReceive.Clear();
@@ -333,9 +343,11 @@ namespace MiniStore.ItemNav
             if (string.IsNullOrEmpty(txtReceive.Text))
             {
                 txtReturnPayment.Text = "";
+                lblTotalMoney.Text = "";
                 return;
             }
             txtReturnPayment.Text = (int.Parse(txtReceive.Text) - Math.Round(total, MidpointRounding.AwayFromZero)).ToString() + "đ";
+            lblTotalMoney.Text = Math.Round(total, MidpointRounding.AwayFromZero).ToString() + "đ";
         }
 
         private void txtReceive_KeyPress(object sender, KeyPressEventArgs e)
@@ -384,6 +396,8 @@ namespace MiniStore.ItemNav
             NewCustomer newCustomer = new NewCustomer();
             newCustomer.ShowDialog();
         }
+
+
     }
 }
 
