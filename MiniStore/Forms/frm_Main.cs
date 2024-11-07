@@ -1,5 +1,6 @@
 ﻿using MiniStore.ItemNav;
 using MiniStore.Management;
+using SQL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,13 @@ namespace MiniStore.Forms
 {
     public partial class frm_Main : Form
     {
+        DBConnect db;
+        User user;
         public frm_Main()
         {
             InitializeComponent();
+            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            user = frm_Login.LoggedInUser;
         }
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -45,5 +50,11 @@ namespace MiniStore.Forms
             ql_NhanSu.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("SELECT Position FROM Employees WHERE EmployeeID = {0} ", user.Id);
+            string tmp = db.getString(query);
+            MessageBox.Show("Chức vụ của bạn là: " + tmp);
+        }
     }
 }

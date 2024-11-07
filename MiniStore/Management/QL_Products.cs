@@ -34,7 +34,7 @@ namespace MiniStore.Management
             DataColumn[] primaryKey = new DataColumn[1];
             primaryKey[0] = products.Columns["ProductID"];
             products.PrimaryKey = primaryKey;
-            dataGridView_DSMonAn.Columns["ProductID"].HeaderText = "Số thứ tự";
+            dataGridView_DSMonAn.Columns["ProductID"].HeaderText = "Mã sản phẩm";
             dataGridView_DSMonAn.Columns["ProductName"].HeaderText = "Tên sản phẩm";
             dataGridView_DSMonAn.Columns["CategoryID"].HeaderText = "Mã loại hàng";
             dataGridView_DSMonAn.Columns["SupplierID"].HeaderText = "Mã NCC";
@@ -84,7 +84,7 @@ namespace MiniStore.Management
         }
         void loadNCC()
         {
-            string sql = "select * from Suppliers";
+            string sql = "select  * from Suppliers";
             da_products = db.getDataAdapter(sql, "Suppliers");
             DataTable dt = db.Dset.Tables["Suppliers"];
             cmbNhaCungCap.DataSource = dt;
@@ -147,8 +147,7 @@ namespace MiniStore.Management
                 return;
             }
 
-
-            if (db.checkExist(string.Format("select count(*) from Suppliers where SupplierName = N'{0}'", txtTenMonAn.Text)))
+            if (db.checkExist(string.Format("select count(*) from Products where ProductName = N'{0}'", txtTenMonAn.Text)))
             {
                 if (MessageBox.Show("Tên sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
                 {
@@ -222,6 +221,66 @@ namespace MiniStore.Management
                     MessageBox.Show("Không tìm thấy sản phẩm để xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            txtTenMonAn.Clear();
+            txtGiaTien.Clear();
+            txtSoLuong.Clear();
+            txtTimKiem.Clear();
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_DSMonAn.CurrentRow == null)
+            {
+                MessageBox.Show("Bạn chưa chọn dòng nào để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            List<string> list = new List<string>();
+
+            DataGridViewRow selectedRow = dataGridView_DSMonAn.CurrentRow;
+
+            // Extract the values from the selected row
+            string maSanPham = selectedRow.Cells["ProductID"].Value.ToString();
+            list.Add(maSanPham);
+            string tenSanPham = selectedRow.Cells["ProductName"].Value.ToString();
+            list.Add(tenSanPham);
+            string gia = selectedRow.Cells["Price"].Value.ToString();
+            list.Add(gia);
+            string soLuongTrongKho = selectedRow.Cells["StockQuantity"].Value.ToString();
+            list.Add(soLuongTrongKho);
+            string donViTinh = selectedRow.Cells["Unit"].Value.ToString();
+            list.Add(donViTinh);
+
+
+            List<string> input = new List<string>();
+            input.Add(maSanPham);
+            input.Add(txtTenMonAn.Text);
+            input.Add(txtGiaTien.Text);
+            input.Add(txtSoLuong.Text);
+            input.Add(cb_DVT.Text);
+
+            for (int i = 0; i < input.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(input[i]) && i < list.Count)
+                {
+                    list[i] = input[i];
+                }
+            }
+            if (db.checkExist(string.Format("select count(*) from Products where ProductName=N'{0}'", txtTenMonAn.Text)))
+            {
+                if (MessageBox.Show("Tên sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                {
+                    txtTenMonAn.Focus();
+                }
+                return;
+            }
+            string query = string.Format(
+                               "UPDATE Products SET ProductName = N'{0}', Price = {1}, StockQuantity = {2}, Unit = N'{3}' WHERE ProductID = {4}",
+                                              list[1], list[2], list[3], list[4], list[0]);
+            db.updateToDataBase(query);
+            LoadData();
+            da_products.Update(products);
+
+            MessageBox.Show("Sửa  thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
     }
 }

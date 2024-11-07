@@ -56,7 +56,6 @@
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Luu = new System.Windows.Forms.Button();
             this.btn_Dong = new System.Windows.Forms.Button();
             this.grpDanhSach = new System.Windows.Forms.GroupBox();
             this.dataGridView_DSMonAn = new System.Windows.Forms.DataGridView();
@@ -314,7 +313,7 @@
             // 
             this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Location = new System.Drawing.Point(19, 100);
+            this.btn_Them.Location = new System.Drawing.Point(58, 101);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(126, 45);
             this.btn_Them.TabIndex = 74;
@@ -326,7 +325,7 @@
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Location = new System.Drawing.Point(151, 100);
+            this.btn_Xoa.Location = new System.Drawing.Point(58, 152);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(126, 45);
             this.btn_Xoa.TabIndex = 75;
@@ -338,31 +337,21 @@
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.Location = new System.Drawing.Point(283, 100);
+            this.btn_Sua.Location = new System.Drawing.Point(242, 101);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(126, 45);
             this.btn_Sua.TabIndex = 76;
             this.btn_Sua.Text = "SỬA";
             this.btn_Sua.UseVisualStyleBackColor = false;
-            // 
-            // btn_Luu
-            // 
-            this.btn_Luu.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Luu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Luu.Location = new System.Drawing.Point(89, 152);
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(121, 46);
-            this.btn_Luu.TabIndex = 77;
-            this.btn_Luu.Text = "LƯU";
-            this.btn_Luu.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Dong
             // 
             this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Dong.Location = new System.Drawing.Point(226, 152);
+            this.btn_Dong.Location = new System.Drawing.Point(242, 152);
             this.btn_Dong.Name = "btn_Dong";
-            this.btn_Dong.Size = new System.Drawing.Size(121, 46);
+            this.btn_Dong.Size = new System.Drawing.Size(126, 46);
             this.btn_Dong.TabIndex = 78;
             this.btn_Dong.Text = "ĐÓNG";
             this.btn_Dong.UseVisualStyleBackColor = false;
@@ -445,7 +434,6 @@
             this.ClientSize = new System.Drawing.Size(943, 551);
             this.Controls.Add(this.grpDanhSach);
             this.Controls.Add(this.btn_Dong);
-            this.Controls.Add(this.btn_Luu);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Them);
@@ -493,7 +481,6 @@
         private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button btn_Luu;
         private System.Windows.Forms.Button btn_Dong;
         private System.Windows.Forms.GroupBox grpDanhSach;
         private System.Windows.Forms.DataGridView dataGridView_DSMonAn;
