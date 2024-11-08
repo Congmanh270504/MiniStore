@@ -12,11 +12,13 @@ namespace MiniStore.Forms
 {
     public partial class frm_UserPermission : Form
     {
+        User user = new User();
         public frm_UserPermission()
         {
             InitializeComponent();
+            user = frm_Login.LoggedInUser;
         }
 
-       
+
     }
 }

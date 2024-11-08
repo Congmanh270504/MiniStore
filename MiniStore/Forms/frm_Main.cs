@@ -17,11 +17,14 @@ namespace MiniStore.Forms
     {
         DBConnect db;
         User user;
+        string position;
         public frm_Main()
         {
             InitializeComponent();
             db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
             user = frm_Login.LoggedInUser;
+            string query = string.Format("SELECT Position FROM Employees WHERE EmployeeID = {0} ", user.Id);
+            position = db.getString(query);
         }
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -50,11 +53,24 @@ namespace MiniStore.Forms
             ql_NhanSu.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void frm_Main_Load(object sender, EventArgs e)
         {
-            string query = string.Format("SELECT Position FROM Employees WHERE EmployeeID = {0} ", user.Id);
-            string tmp = db.getString(query);
-            MessageBox.Show("Chức vụ của bạn là: " + tmp);
+            switch (position)
+            {
+                case "Nhân viên kho":
+                    MessageBox.Show("Bạn không có quyền truy cập vào chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case "Nhân viên bán hàng":
+                    btnPersonnel.Visible = false;
+                    btnReport.Visible = false;
+                    btnCategory.Visible = false;
+                    btnProduct.Visible = false;
+                    break;
+                case "Quản lý":
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

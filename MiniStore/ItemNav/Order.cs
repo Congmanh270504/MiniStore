@@ -276,6 +276,9 @@ namespace MiniStore.ItemNav
                 MessageBox.Show("Tiền nhận không đủ !!", "Chưa đủ tiền", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
+
+
+
             MessageBox.Show("Thanh toán thành công !!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             txtReturnPayment.Text = (int.Parse(txtReceive.Text) - Math.Round(total, MidpointRounding.AwayFromZero)).ToString() + "đ";
             lblTotalMoney.Text = Math.Round(total, MidpointRounding.AwayFromZero).ToString() + "đ";
@@ -285,17 +288,19 @@ namespace MiniStore.ItemNav
                 " VALUES ({0},{1},'{2}',{3},N'{4}')", cbCustomer.SelectedValue, user.Id, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), total.ToString(), "Tiền mặt");
             db.updateToDataBase(query);
             int orderID = db.getInt("SELECT MAX(OrderID) FROM Orders");
+
             foreach (string item in listOrder.Items)
             {
                 string[] itemParts = item.Split('-');
-
                 string quantityPart = itemParts[itemParts.Length - 1].Split(' ')[1].Trim();
                 int currentQuantity = int.Parse(quantityPart);
-
-
                 string productID = itemParts[0].Split(':')[1].Trim();
                 string quantity = itemParts[itemParts.Length - 1].Split(' ')[1].Trim();
                 string price = itemParts[itemParts.Length - 2].Split(':')[1].Trim().Replace("đ", "").Trim();
+
+                query = string.Format("UPDATE Products SET StockQuantity = StockQuantity - {0} WHERE ProductID = {1}", quantity, productID);
+                db.updateToDataBase(query);
+
                 query = string.Format(
                 "INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price)" +
                 " VALUES ({0}, {1}, {2}, {3})", orderID, productID, quantity, price);

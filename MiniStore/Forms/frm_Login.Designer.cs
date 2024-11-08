@@ -152,6 +152,7 @@
             this.txtb_password.Location = new System.Drawing.Point(28, 365);
             this.txtb_password.Multiline = true;
             this.txtb_password.Name = "txtb_password";
+            this.txtb_password.PasswordChar = '*';
             this.txtb_password.Size = new System.Drawing.Size(290, 24);
             this.txtb_password.TabIndex = 13;
             // 
