@@ -55,6 +55,12 @@ namespace MiniStore.Forms
 
         private void frm_Main_Load(object sender, EventArgs e)
         {
+            btnOrder.Visible = true;
+            btnProduct.Visible = true;
+            btnPersonnel.Visible = true;
+            btnReport.Visible = true;
+            btnSetting.Visible = true;
+
             switch (position)
             {
                 case "Nhân viên kho":
@@ -63,7 +69,7 @@ namespace MiniStore.Forms
                 case "Nhân viên bán hàng":
                     btnPersonnel.Visible = false;
                     btnReport.Visible = false;
-                    btnCategory.Visible = false;
+                    btnSetting.Visible = false;
                     btnProduct.Visible = false;
                     break;
                 case "Quản lý":
@@ -71,6 +77,13 @@ namespace MiniStore.Forms
                 default:
                     break;
             }
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            Setting setting = new Setting();
+            setting.Show();
+
         }
     }
 }

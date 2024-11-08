@@ -98,6 +98,12 @@
     <Compile Include="Forms\frm_UserPermission.Designer.cs">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemNav\editInfor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemNav\editInfor.Designer.cs">
+      <DependentUpon>editInfor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemNav\NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     </Compile>
     <Compile Include="ItemNav\Order.Designer.cs">
       <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemNav\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemNav\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="Management\QL_Products.cs">
       <SubType>Form</SubType>
@@ -160,11 +172,17 @@
     <EmbeddedResource Include="Forms\frm_UserPermission.resx">
       <DependentUpon>frm_UserPermission.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ItemNav\editInfor.resx">
+      <DependentUpon>editInfor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ItemNav\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemNav\Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemNav\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Management\QL_Products.resx">
       <DependentUpon>QL_Products.cs</DependentUpon>

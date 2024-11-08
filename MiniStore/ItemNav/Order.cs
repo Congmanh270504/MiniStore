@@ -45,8 +45,7 @@ namespace MiniStore.ItemNav
             }
             string rank = db.getString("SELECT CustomerRank FROM Customers WHERE CustomerID = 1");
             getDiscount(rank);
-            string query = string.Format("SELECT EmployeeName FROM Employees WHERE Email = '{0}' and EmployPassword = '{1}' ", user.Name, user.Password);
-            txtEmployess.Text = db.getString(query);
+            txtEmployess.Text = user.Name;
         }
         void LoadData()
         {

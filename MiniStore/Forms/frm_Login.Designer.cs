@@ -171,6 +171,7 @@
             this.Controls.Add(this.pnlRight);
             this.Name = "frm_Login";
             this.Text = "frm_Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Login_FormClosing);
             this.pnlRight.ResumeLayout(false);
             this.pnlRight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
