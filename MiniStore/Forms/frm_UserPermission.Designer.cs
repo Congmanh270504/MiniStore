@@ -31,10 +31,8 @@
             this.grpb_thongtin = new System.Windows.Forms.GroupBox();
             this.cmbNguoiDung = new System.Windows.Forms.ComboBox();
             this.cmbNhanVien = new System.Windows.Forms.ComboBox();
-            this.cmbBoPhan = new System.Windows.Forms.ComboBox();
             this.lbl_tendangnhap = new System.Windows.Forms.Label();
             this.lbl_nhanvien = new System.Windows.Forms.Label();
-            this.lbl_bophan = new System.Windows.Forms.Label();
             this.grpb_phanquyen = new System.Windows.Forms.GroupBox();
             this.cbGoiMon = new System.Windows.Forms.CheckBox();
             this.cbTienLuong = new System.Windows.Forms.CheckBox();
@@ -52,15 +50,13 @@
             // 
             this.grpb_thongtin.Controls.Add(this.cmbNguoiDung);
             this.grpb_thongtin.Controls.Add(this.cmbNhanVien);
-            this.grpb_thongtin.Controls.Add(this.cmbBoPhan);
             this.grpb_thongtin.Controls.Add(this.lbl_tendangnhap);
             this.grpb_thongtin.Controls.Add(this.lbl_nhanvien);
-            this.grpb_thongtin.Controls.Add(this.lbl_bophan);
             this.grpb_thongtin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpb_thongtin.ForeColor = System.Drawing.Color.SlateGray;
             this.grpb_thongtin.Location = new System.Drawing.Point(22, 12);
             this.grpb_thongtin.Name = "grpb_thongtin";
-            this.grpb_thongtin.Size = new System.Drawing.Size(355, 146);
+            this.grpb_thongtin.Size = new System.Drawing.Size(355, 114);
             this.grpb_thongtin.TabIndex = 1;
             this.grpb_thongtin.TabStop = false;
             this.grpb_thongtin.Text = "Thông tin";
@@ -70,7 +66,7 @@
             this.cmbNguoiDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNguoiDung.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNguoiDung.FormattingEnabled = true;
-            this.cmbNguoiDung.Location = new System.Drawing.Point(122, 100);
+            this.cmbNguoiDung.Location = new System.Drawing.Point(124, 65);
             this.cmbNguoiDung.Name = "cmbNguoiDung";
             this.cmbNguoiDung.Size = new System.Drawing.Size(216, 28);
             this.cmbNguoiDung.TabIndex = 75;
@@ -80,26 +76,16 @@
             this.cmbNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNhanVien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNhanVien.FormattingEnabled = true;
-            this.cmbNhanVien.Location = new System.Drawing.Point(122, 66);
+            this.cmbNhanVien.Location = new System.Drawing.Point(124, 31);
             this.cmbNhanVien.Name = "cmbNhanVien";
             this.cmbNhanVien.Size = new System.Drawing.Size(216, 28);
             this.cmbNhanVien.TabIndex = 75;
-            // 
-            // cmbBoPhan
-            // 
-            this.cmbBoPhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoPhan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBoPhan.FormattingEnabled = true;
-            this.cmbBoPhan.Location = new System.Drawing.Point(122, 32);
-            this.cmbBoPhan.Name = "cmbBoPhan";
-            this.cmbBoPhan.Size = new System.Drawing.Size(216, 28);
-            this.cmbBoPhan.TabIndex = 76;
             // 
             // lbl_tendangnhap
             // 
             this.lbl_tendangnhap.AutoSize = true;
             this.lbl_tendangnhap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tendangnhap.Location = new System.Drawing.Point(9, 103);
+            this.lbl_tendangnhap.Location = new System.Drawing.Point(11, 68);
             this.lbl_tendangnhap.Name = "lbl_tendangnhap";
             this.lbl_tendangnhap.Size = new System.Drawing.Size(107, 20);
             this.lbl_tendangnhap.TabIndex = 73;
@@ -109,21 +95,11 @@
             // 
             this.lbl_nhanvien.AutoSize = true;
             this.lbl_nhanvien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nhanvien.Location = new System.Drawing.Point(9, 69);
+            this.lbl_nhanvien.Location = new System.Drawing.Point(11, 34);
             this.lbl_nhanvien.Name = "lbl_nhanvien";
             this.lbl_nhanvien.Size = new System.Drawing.Size(75, 20);
             this.lbl_nhanvien.TabIndex = 73;
             this.lbl_nhanvien.Text = "Nhân viên";
-            // 
-            // lbl_bophan
-            // 
-            this.lbl_bophan.AutoSize = true;
-            this.lbl_bophan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_bophan.Location = new System.Drawing.Point(9, 35);
-            this.lbl_bophan.Name = "lbl_bophan";
-            this.lbl_bophan.Size = new System.Drawing.Size(64, 20);
-            this.lbl_bophan.TabIndex = 74;
-            this.lbl_bophan.Text = "Bộ phận";
             // 
             // grpb_phanquyen
             // 
@@ -136,9 +112,9 @@
             this.grpb_phanquyen.Controls.Add(this.cbHeThong);
             this.grpb_phanquyen.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpb_phanquyen.ForeColor = System.Drawing.Color.SlateGray;
-            this.grpb_phanquyen.Location = new System.Drawing.Point(22, 164);
+            this.grpb_phanquyen.Location = new System.Drawing.Point(22, 132);
             this.grpb_phanquyen.Name = "grpb_phanquyen";
-            this.grpb_phanquyen.Size = new System.Drawing.Size(355, 170);
+            this.grpb_phanquyen.Size = new System.Drawing.Size(355, 202);
             this.grpb_phanquyen.TabIndex = 2;
             this.grpb_phanquyen.TabStop = false;
             this.grpb_phanquyen.Text = "Phân Quyền";
@@ -263,10 +239,8 @@
         private System.Windows.Forms.GroupBox grpb_thongtin;
         private System.Windows.Forms.ComboBox cmbNguoiDung;
         private System.Windows.Forms.ComboBox cmbNhanVien;
-        private System.Windows.Forms.ComboBox cmbBoPhan;
         private System.Windows.Forms.Label lbl_tendangnhap;
         private System.Windows.Forms.Label lbl_nhanvien;
-        private System.Windows.Forms.Label lbl_bophan;
         private System.Windows.Forms.GroupBox grpb_phanquyen;
         private System.Windows.Forms.CheckBox cbGoiMon;
         private System.Windows.Forms.CheckBox cbTienLuong;

@@ -84,9 +84,7 @@ namespace MiniStore.ItemNav
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             CloseAllFormsExceptLogin();
-            frm_Login loginForm = new frm_Login();
-            // Show the login form
-            loginForm.Show();
+           
         }
 
         private void CloseAllFormsExceptLogin()

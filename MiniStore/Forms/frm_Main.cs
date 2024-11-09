@@ -37,53 +37,90 @@ namespace MiniStore.Forms
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            Hide();
             Order order = new Order();
+            order.FormClosed += Order_FormClosed; // Subscribe to FormClosed event
             order.Show();
+        }
+        private void Order_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            Hide();
             QL_Products ql_Food = new QL_Products();
+            ql_Food.FormClosed += QL_Food_FormClosed; // Subscribe to FormClosed event
             ql_Food.Show();
+        }
+        private void QL_Food_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
 
         private void btnPersonnel_Click(object sender, EventArgs e)
         {
+            Hide();
             QL_NhanSu ql_NhanSu = new QL_NhanSu();
+            ql_NhanSu.FormClosed += QL_NhanSu_FormClosed; // Subscribe to FormClosed event
             ql_NhanSu.Show();
         }
-
+        private void QL_NhanSu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
         private void frm_Main_Load(object sender, EventArgs e)
         {
             btnOrder.Visible = true;
-            btnProduct.Visible = true;
             btnPersonnel.Visible = true;
+            btnProduct.Visible = true;
             btnReport.Visible = true;
             btnSetting.Visible = true;
 
             switch (position)
             {
                 case "Nhân viên kho":
-                    MessageBox.Show("Bạn không có quyền truy cập vào chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bạn không có quyền truy cập vào các chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case "Nhân viên bán hàng":
                     btnPersonnel.Visible = false;
-                    btnReport.Visible = false;
-                    btnSetting.Visible = false;
                     btnProduct.Visible = false;
+                    btnReport.Visible = false;
+                    btnAdmin.Visible = false;
                     break;
-                case "Quản lý":
+                case "Quản lý cửa hàng":
+                    btnProduct.Visible = false;
+                    btnAdmin.Visible = true;
                     break;
                 default:
+
                     break;
             }
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
+            Hide();
             Setting setting = new Setting();
+            setting.FormClosed += Setting_FormClosed; // Subscribe to FormClosed event
             setting.Show();
+        }
+        private void Setting_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
 
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Admin admin = new Admin();
+            admin.FormClosed += Admin_FormClosed; // Subscribe to FormClosed event
+            admin.Show();
+        }
+        private void Admin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }

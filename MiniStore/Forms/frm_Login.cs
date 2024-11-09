@@ -68,10 +68,11 @@ namespace MiniStore.Forms
                         };
 
                         // Close the login form
-                        this.Hide();
+                        Hide();
 
                         // Create an instance of the main form
                         frm_Main mainForm = new frm_Main();
+                        mainForm.FormClosed += frm_Main_FormClosed; // Subscribe to FormClosed event
 
                         // Show the main form
                         mainForm.Show();
@@ -82,6 +83,10 @@ namespace MiniStore.Forms
                     }
                 }
             }
+        }
+        private void frm_Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Show();
         }
 
         private void frm_Login_FormClosing(object sender, FormClosingEventArgs e)

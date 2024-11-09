@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.panel_lefttop = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_header = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
-            this.btnCategories = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnPersonnel = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel_header = new System.Windows.Forms.Panel();
             this.panel_lefttop.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_lefttop
@@ -57,28 +57,38 @@
             this.panel_lefttop.Size = new System.Drawing.Size(200, 120);
             this.panel_lefttop.TabIndex = 0;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(11, 10);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(172, 83);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 86;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(11, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 83);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnSetting);
-            this.panel1.Controls.Add(this.btnCategories);
+            this.panel1.Controls.Add(this.btnAdmin);
             this.panel1.Controls.Add(this.btnReport);
-            this.panel1.Controls.Add(this.btnPersonnel);
             this.panel1.Controls.Add(this.btnProduct);
+            this.panel1.Controls.Add(this.btnPersonnel);
             this.panel1.Controls.Add(this.btnOrder);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Location = new System.Drawing.Point(1, 110);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 372);
             this.panel1.TabIndex = 2;
-            // 
-            // panel_header
-            // 
-            this.panel_header.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.panel_header.Location = new System.Drawing.Point(198, 2);
-            this.panel_header.Name = "panel_header";
-            this.panel_header.Size = new System.Drawing.Size(539, 42);
-            this.panel_header.TabIndex = 1;
             // 
             // btnSetting
             // 
@@ -98,22 +108,23 @@
             this.btnSetting.UseVisualStyleBackColor = false;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
-            // btnCategories
+            // btnAdmin
             // 
-            this.btnCategories.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.btnCategories.FlatAppearance.BorderSize = 0;
-            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategories.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategories.ForeColor = System.Drawing.Color.White;
-            this.btnCategories.Image = global::MiniStore.Properties.Resources.sorting_answers_32px1;
-            this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategories.Location = new System.Drawing.Point(0, 268);
-            this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Size = new System.Drawing.Size(200, 47);
-            this.btnCategories.TabIndex = 12;
-            this.btnCategories.Text = "Danh mục";
-            this.btnCategories.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCategories.UseVisualStyleBackColor = false;
+            this.btnAdmin.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Image = global::MiniStore.Properties.Resources.sorting_answers_32px1;
+            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.Location = new System.Drawing.Point(0, 268);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(200, 47);
+            this.btnAdmin.TabIndex = 12;
+            this.btnAdmin.Text = "Quản lý";
+            this.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnReport
             // 
@@ -124,7 +135,7 @@
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.Image = global::MiniStore.Properties.Resources.graph_report_32px;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 215);
+            this.btnReport.Location = new System.Drawing.Point(0, 162);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(200, 47);
             this.btnReport.TabIndex = 11;
@@ -141,7 +152,7 @@
             this.btnPersonnel.ForeColor = System.Drawing.Color.White;
             this.btnPersonnel.Image = global::MiniStore.Properties.Resources.conference_32px;
             this.btnPersonnel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonnel.Location = new System.Drawing.Point(0, 162);
+            this.btnPersonnel.Location = new System.Drawing.Point(0, 109);
             this.btnPersonnel.Name = "btnPersonnel";
             this.btnPersonnel.Size = new System.Drawing.Size(200, 47);
             this.btnPersonnel.TabIndex = 9;
@@ -159,7 +170,7 @@
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.Image = global::MiniStore.Properties.Resources.kawaii_french_fries_32px;
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.Location = new System.Drawing.Point(0, 109);
+            this.btnProduct.Location = new System.Drawing.Point(0, 215);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(200, 47);
             this.btnProduct.TabIndex = 8;
@@ -203,23 +214,13 @@
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
+            // panel_header
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(172, 83);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 86;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(11, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 83);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.panel_header.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.panel_header.Location = new System.Drawing.Point(198, 2);
+            this.panel_header.Name = "panel_header";
+            this.panel_header.Size = new System.Drawing.Size(539, 42);
+            this.panel_header.TabIndex = 1;
             // 
             // frm_Main
             // 
@@ -233,9 +234,9 @@
             this.Text = "frm_Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.panel_lefttop.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -250,7 +251,7 @@
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnSetting;
-        private System.Windows.Forms.Button btnCategories;
+        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnPersonnel;
         private System.Windows.Forms.Button btnProduct;

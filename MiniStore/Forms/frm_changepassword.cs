@@ -71,5 +71,10 @@ namespace MiniStore.Forms
             if (r == DialogResult.No)
                 e.Cancel = true;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

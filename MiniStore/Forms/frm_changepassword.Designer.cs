@@ -36,6 +36,7 @@
             this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
             this.txtNhapLai = new System.Windows.Forms.TextBox();
             this.btn_Xacnhan = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +117,7 @@
             this.btn_Xacnhan.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Xacnhan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn_Xacnhan.ForeColor = System.Drawing.Color.White;
-            this.btn_Xacnhan.Location = new System.Drawing.Point(363, 151);
+            this.btn_Xacnhan.Location = new System.Drawing.Point(227, 151);
             this.btn_Xacnhan.Name = "btn_Xacnhan";
             this.btn_Xacnhan.Size = new System.Drawing.Size(107, 40);
             this.btn_Xacnhan.TabIndex = 17;
@@ -124,11 +125,25 @@
             this.btn_Xacnhan.UseVisualStyleBackColor = false;
             this.btn_Xacnhan.Click += new System.EventHandler(this.btn_Xacnhan_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.Location = new System.Drawing.Point(363, 151);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(107, 40);
+            this.btnCancel.TabIndex = 18;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frm_changepassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 203);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btn_Xacnhan);
             this.Controls.Add(this.txtNhapLai);
             this.Controls.Add(this.txtMatKhauMoi);
@@ -156,5 +171,6 @@
         private System.Windows.Forms.TextBox txtMatKhauMoi;
         private System.Windows.Forms.TextBox txtNhapLai;
         private System.Windows.Forms.Button btn_Xacnhan;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

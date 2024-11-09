@@ -63,6 +63,16 @@ namespace MiniStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_shopping_cart_120px {
+            get {
+                object obj = ResourceManager.GetObject("add_shopping_cart_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap biggs25logo3 {
             get {
                 object obj = ResourceManager.GetObject("biggs25logo3", resourceCulture);
@@ -83,9 +93,29 @@ namespace MiniStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap conference_call_120px {
+            get {
+                object obj = ResourceManager.GetObject("conference_call_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contact_card_100px {
             get {
                 object obj = ResourceManager.GetObject("contact_card_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap data_configuration_120px {
+            get {
+                object obj = ResourceManager.GetObject("data_configuration_120px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +136,16 @@ namespace MiniStore.Properties {
         internal static System.Drawing.Bitmap home_32px {
             get {
                 object obj = ResourceManager.GetObject("home_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ingredients_100px {
+            get {
+                object obj = ResourceManager.GetObject("ingredients_100px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +256,16 @@ namespace MiniStore.Properties {
         internal static System.Drawing.Bitmap shopping_cart_32px {
             get {
                 object obj = ResourceManager.GetObject("shopping_cart_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap small_business_100px {
+            get {
+                object obj = ResourceManager.GetObject("small_business_100px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
