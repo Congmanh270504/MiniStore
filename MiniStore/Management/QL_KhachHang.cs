@@ -8,15 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiniStore.Forms
+namespace MiniStore.Management
 {
-    public partial class frm_About : Form
+    public partial class QL_KhachHang : Form
     {
-        public frm_About()
+        public QL_KhachHang()
         {
             InitializeComponent();
         }
 
-       
+      
     }
 }
