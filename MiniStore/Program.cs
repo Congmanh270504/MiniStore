@@ -32,7 +32,7 @@ namespace MiniStore
             //Application.Run(new Forms.frm_About());
             //Application.Run(new Forms.frm_BackupDatabase());
             //Application.Run(new Forms.frm_RestoreDatabase());
-            Application.Run(new Management.QL_KhachHang());
+            Application.Run(new QL_KhachHang());
         }
     }
 }

@@ -7,8 +7,10 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace MiniStore.Management
 {
@@ -20,7 +22,7 @@ namespace MiniStore.Management
         public QL_KhachHang()
         {
             InitializeComponent();
-            db = new DBConnect("DESKTOP-LI8OVCU\\SQLEXPRESS", "miniMKT");
+            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
         }
 
         private void QL_KhachHang_FormClosing(object sender, FormClosingEventArgs e)
@@ -64,45 +66,120 @@ namespace MiniStore.Management
 
             dataGridView.Columns["Phone"].HeaderText = "Số Điện Thoại";
 
-            dataGridView.Columns["Email"].HeaderText = "Email";
-
             dataGridView.Columns["CustomerRank"].HeaderText = "Hạng";
 
             dataGridView.Columns["CustomerSuppAddress"].HeaderText = "Địa Chỉ";
 
-            txtb_makh.DataBindings.Add(new Binding("Text", Customers, "CustomerID", true, DataSourceUpdateMode.Never));
 
             txtb_tenkh.DataBindings.Add(new Binding("Text", Customers, "CustomerName", true, DataSourceUpdateMode.Never));
 
             txtb_sdt.DataBindings.Add(new Binding("Text", Customers, "Phone", true, DataSourceUpdateMode.Never));
 
             cbb_hangkh.DataBindings.Add(new Binding("SelectedValue", Customers, "CustomerRank", true, DataSourceUpdateMode.Never));
+
+            txtb_DiaChi.DataBindings.Add(new Binding("Text", Customers, "CustomerSuppAddress", true, DataSourceUpdateMode.Never));
+
+            dataGridView.Columns["CustomerID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns["CustomerName"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns["Phone"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns["CustomerRank"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.Columns["CustomerSuppAddress"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dataGridView.Columns["CustomerName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["Phone"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["CustomerRank"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns["CustomerSuppAddress"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            dataGridView.Columns["CustomerRank"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dataGridView.Columns["CustomerName"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+            dataGridView.Columns["Phone"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+            dataGridView.Columns["CustomerRank"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+            dataGridView.Columns["CustomerSuppAddress"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+        }
+        void load_Grid()
+        {
+            string str = "SELECT * FROM Customers";
+
+            dataGridView.DataSource = db.getDataTable(str, "Customers");
         }
 
         private void QL_KhachHang_Load(object sender, EventArgs e)
         {
             loadData();
             loadcomboboxhang();
-            txtb_makh.Enabled = false;
         }
 
         private void btn_Dong_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            txtb_makh.Clear();
+            if (string.IsNullOrEmpty(txtb_tenkh.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập tên khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtb_tenkh.Focus();
+                return;
+
+            }
+            if (!IsValidPhoneNumber(txtb_sdt.Text))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ !!", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            if (string.IsNullOrEmpty(txtb_sdt.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập sđt khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtb_sdt.Focus();
+                return;
+            }
+
+            if (db.checkExist(string.Format("select count(*) from Customers where CustomerName = N'{0}'", txtb_tenkh.Text)))
+            {
+                if (MessageBox.Show("Tên khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                {
+                    txtb_tenkh.Focus();
+                }
+                return;
+            }
+
+            if (db.checkExist(string.Format("select count(*) from Customers where Phone = N'{0}'", txtb_sdt.Text)))
+            {
+                if (MessageBox.Show("SĐT khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                {
+                    txtb_sdt.Focus();
+                }
+                return;
+            }
+            string query;
+            if (string.IsNullOrEmpty(cbb_hangkh.Text))
+            {
+                query = string.Format("INSERT Customers ( CustomerName, Phone, CustomerRank, CustomerSuppAddress)" +
+                                " VALUES (N'{0}', '{1}', null, N'{2}')", txtb_tenkh.Text, txtb_sdt.Text, txtb_DiaChi.Text);
+            }
+            else
+            {
+                query = string.Format("INSERT Customers ( CustomerName, Phone, CustomerRank, CustomerSuppAddress)" +
+                               " VALUES (N'{0}', '{1}', '{2}', N'{3}')", txtb_tenkh.Text, txtb_sdt.Text, cbb_hangkh.Text, txtb_DiaChi.Text);
+            }
+            MessageBox.Show(query);
+            db.updateToDataBase(query);
+            txtb_DiaChi.Clear();
             txtb_tenkh.Clear();
             txtb_sdt.Clear();
             txtb_tenkh.Focus();
+            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            load_Grid();
         }
 
-        private void btn_Sua_Click(object sender, EventArgs e)
+        private void btn_Clean_Click(object sender, EventArgs e)
         {
+            txtb_DiaChi.Clear();
             txtb_tenkh.Clear();
             txtb_sdt.Clear();
+            cbb_hangkh.Text = "";
             txtb_tenkh.Focus();
         }
 
@@ -113,8 +190,9 @@ namespace MiniStore.Management
                 MessageBox.Show("Bạn chưa chọn dòng nào để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            int cusId = (int)dataGridView.CurrentRow.Cells["CustomerID"].Value;
 
-            string checkSQL = "SELECT count(*) FROM Orders WHERE CustomerID = '" + txtb_makh.Text + "'";
+            string checkSQL = "SELECT count(*) FROM Orders WHERE CustomerID = '" + cusId + "'";
 
             if (db.checkExist(checkSQL))
             {
@@ -125,7 +203,6 @@ namespace MiniStore.Management
             if (MessageBox.Show("Bạn có muốn xóa không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
-                int cusId = (int)dataGridView.CurrentRow.Cells["CustomerID"].Value;
 
                 // Find the DataRow to delete
                 DataRow rowToDelete = Customers.Rows.Find(cusId);
@@ -145,16 +222,9 @@ namespace MiniStore.Management
                 }
             }
         }
-        private void btn_Luu_Click(object sender, EventArgs e)
+
+        private void btn_Sua_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(txtb_makh.Text))
-            //{
-            //    MessageBox.Show("Bạn chưa nhập mã khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            //    txtb_makh.Focus();
-            //    return;
-
-            //}
-
             if (string.IsNullOrEmpty(txtb_tenkh.Text))
             {
                 MessageBox.Show("Bạn chưa nhập tên khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -162,23 +232,17 @@ namespace MiniStore.Management
                 return;
 
             }
-
+            if (!IsValidPhoneNumber(txtb_sdt.Text))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ !!", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                return;
+            }
             if (string.IsNullOrEmpty(txtb_sdt.Text))
             {
                 MessageBox.Show("Bạn chưa nhập sđt khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 txtb_sdt.Focus();
                 return;
-
             }
-
-            //if (db.checkExist(string.Format("select count(*) from Customers where CustomerID = N'{0}'", txtb_makh.Text)))
-            //{
-            //    if (MessageBox.Show("Mã khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
-            //    {
-            //        txtb_makh.Focus();
-            //    }
-            //    return;
-            //}
 
             if (db.checkExist(string.Format("select count(*) from Customers where CustomerName = N'{0}'", txtb_tenkh.Text)))
             {
@@ -197,44 +261,35 @@ namespace MiniStore.Management
                 }
                 return;
             }
+            string update = "UPDATE Customers SET CustomerName = N'" + txtb_tenkh.Text + "'," +
+                " Phone = '" + txtb_sdt.Text + "', CustomerRank = N'" + cbb_hangkh.Text + "'," +
+                " CustomerSuppAddress = N'" + txtb_DiaChi.Text +
+                "' WHERE CustomerID = " + dataGridView.CurrentRow.Cells["CustomerID"].Value;
+            db.updateToDataBase(update);
+            MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            load_Grid();
+        }
 
-            string hoten = txtb_tenkh.Text;
-            string sdt = txtb_sdt.Text;
-            string hang = cbb_hangkh.SelectedValue.ToString();
-
-            // THÊM.
-            //if (string.IsNullOrWhiteSpace(txtb_makh.Text))
-            //{
-            //    DataRow insert = db.Dset.Tables["Customers"].NewRow();
-
-            //    insert["CustomerName"] = hoten;
-
-            //    insert["Phone"] = sdt;
-
-            //    insert["CustomerRank"] = hang;
-
-            //    db.Dset.Tables["Customers"].Rows.Add(insert);
-            //}
-
-            // SỬA.
-            else
+        private void txtb_tenkh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                DataRow update = db.Dset.Tables["Customers"].Rows.Find(txtb_makh.Text);
-
-                if (update == null)
-                {
-                    MessageBox.Show("Lưu không thành công", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    return;
-                }
-                update["CustomerName"] = hoten;
-                update["Phone"] = sdt;
-                update["CustomerRank"] = hang;
+                e.Handled = true;
             }
+        }
 
-            // Update the database
-            SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(da_Customers);
-            da_Customers.Update(db.Dset, "Customers");
-            MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        private void txtb_sdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            // Regular expression for Vietnamese phone numbers
+            string pattern = @"^(03|05|07|08|09)\d{8,9}$";
+            return Regex.IsMatch(phoneNumber, pattern);
         }
     }
 }

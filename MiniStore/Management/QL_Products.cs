@@ -22,7 +22,7 @@ namespace MiniStore.Management
         public QL_Products()
         {
             InitializeComponent();
-            db = new DBConnect("miniMKT");
+            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
         }
         void LoadData()
         {
