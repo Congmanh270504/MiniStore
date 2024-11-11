@@ -7,9 +7,8 @@ GO
 -- Bảng Categories
 CREATE TABLE Categories 
 (
-    CategoryID INT IDENTITY(1,1) NOT NULL,
-    CategoryName NVARCHAR(100) NOT NULL,
-    PRIMARY KEY (CategoryID)
+    CategoryID INT PRIMARY KEY IDENTITY(1,1),
+    CategoryName NVARCHAR(100) NOT NULL
 );
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -25,13 +24,12 @@ GO
 -- Bảng Customers
 CREATE TABLE Customers 
 (
-    CustomerID INT IDENTITY(1,1) NOT NULL,
+    CustomerID INT PRIMARY KEY IDENTITY(1,1),
     CustomerName NVARCHAR(100) NOT NULL,
     Phone VARCHAR(15) NULL,
     Email VARCHAR(100) NULL,
     CustomerRank NVARCHAR(15) NULL,
-    CustomerSuppAddress NVARCHAR(255) NULL,
-    PRIMARY KEY (CustomerID)
+    CustomerSuppAddress NVARCHAR(255) NULL
 );
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -62,13 +60,12 @@ GO
 -- Bảng Suppliers
 CREATE TABLE Suppliers 
 (
-    SupplierID INT IDENTITY(1,1) NOT NULL,
+    SupplierID INT PRIMARY KEY IDENTITY(1,1),
     SupplierName NVARCHAR(100) NOT NULL,
     ContactName NVARCHAR(100) NULL,
     Phone VARCHAR(15) NULL,
     Email VARCHAR(100) NULL,
-    SuppAddress NVARCHAR(255) NULL,
-    PRIMARY KEY (SupplierID)
+    SuppAddress NVARCHAR(255) NULL
 );
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT Suppliers ON 
@@ -87,14 +84,13 @@ GO
 -- Bảng Products
 CREATE TABLE Products 
 (
-    ProductID INT IDENTITY(1,1) NOT NULL,
+    ProductID INT PRIMARY KEY IDENTITY(1,1),
     ProductName NVARCHAR(100) NOT NULL,
     CategoryID INT NOT NULL,
     SupplierID INT NOT NULL,
     Price DECIMAL(10, 3) NOT NULL,
     StockQuantity INT NOT NULL,
     Unit NVARCHAR(50) NULL,
-    PRIMARY KEY (ProductID),
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID),
     FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
 );
@@ -137,12 +133,11 @@ GO
 -- Bảng Discounts
 CREATE TABLE Discounts 
 (
-    DiscountID INT IDENTITY(1,1) NOT NULL,
+    DiscountID INT PRIMARY KEY IDENTITY(1,1),
     ProductID INT NOT NULL,
     DiscountPercentage DECIMAL(5, 2) NOT NULL,
     StartDate DATETIME NOT NULL,
     EndDate DATETIME NOT NULL,
-    PRIMARY KEY (DiscountID),
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
 GO
@@ -158,13 +153,12 @@ GO
 -- Bảng Employees
 CREATE TABLE Employees 
 (
-    EmployeeID INT IDENTITY(1,1) NOT NULL,
+    EmployeeID INT PRIMARY KEY IDENTITY(1,1),
     EmployeeName NVARCHAR(100) NOT NULL,
     Position NVARCHAR(50) NULL,
     Phone VARCHAR(15) NULL,
     Email VARCHAR(100) NULL,
-    EmployPassword VARCHAR(255) NULL,
-    PRIMARY KEY (EmployeeID)
+    EmployPassword VARCHAR(255) NULL
 );
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -179,12 +173,11 @@ GO
 -- Bảng Inventory
 CREATE TABLE Inventory 
 (
-    InventoryID INT IDENTITY(1,1) NOT NULL,
+    InventoryID INT PRIMARY KEY IDENTITY(1,1),
     ProductID INT NOT NULL,
     QuantityInStock INT NOT NULL,
     MinimumRequired INT NULL,
     LastUpdated DATETIME NULL,
-    PRIMARY KEY (InventoryID),
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
 GO
@@ -206,13 +199,12 @@ GO
 -- Bảng Orders
 CREATE TABLE Orders 
 (
-    OrderID INT IDENTITY(1,1) NOT NULL,
+    OrderID INT PRIMARY KEY IDENTITY(1,1),
     CustomerID INT NOT NULL,
     EmployeeID INT NOT NULL,
     OrderDate DATETIME NULL,
     TotalAmount DECIMAL(10, 3) NOT NULL,
     PaymentMethod NVARCHAR(50) NULL,
-    PRIMARY KEY (OrderID),
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
     FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
 );
@@ -255,16 +247,15 @@ GO
 -- Bảng OrderDetails
 CREATE TABLE OrderDetails
 (
-    OrderDetailID INT IDENTITY(1,1) NOT NULL,
+    OrderDetailID INT PRIMARY KEY IDENTITY(1,1),
     OrderID INT NOT NULL,
     ProductID INT NOT NULL,
     Quantity INT NOT NULL,
     Price DECIMAL(10, 2) NOT NULL,
-    PRIMARY KEY (OrderDetailID),
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
-GO
+GO -- chạy lại db nha Q? ok
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT OrderDetails ON 
 INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (1, 1, 1, 2, CAST(12.50 AS DECIMAL(10, 2)))

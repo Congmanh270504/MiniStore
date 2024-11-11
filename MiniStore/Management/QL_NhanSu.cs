@@ -62,5 +62,7 @@ namespace MiniStore.Management
             dataGridView_DSNhanVien.Columns["EmployeeID"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
             dataGridView_DSNhanVien.Columns["EmployeeName"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
         }
+
+       
     }
 }
