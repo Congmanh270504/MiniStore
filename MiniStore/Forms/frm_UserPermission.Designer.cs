@@ -29,26 +29,24 @@
         private void InitializeComponent()
         {
             this.grpb_thongtin = new System.Windows.Forms.GroupBox();
-            this.cmbNguoiDung = new System.Windows.Forms.ComboBox();
+            this.tbPosition = new System.Windows.Forms.TextBox();
             this.cmbNhanVien = new System.Windows.Forms.ComboBox();
             this.lbl_tendangnhap = new System.Windows.Forms.Label();
             this.lbl_nhanvien = new System.Windows.Forms.Label();
             this.grpb_phanquyen = new System.Windows.Forms.GroupBox();
-            this.cbGoiMon = new System.Windows.Forms.CheckBox();
-            this.cbTienLuong = new System.Windows.Forms.CheckBox();
-            this.cbSanPham = new System.Windows.Forms.CheckBox();
-            this.cbThongKe = new System.Windows.Forms.CheckBox();
-            this.cbNhanSu = new System.Windows.Forms.CheckBox();
-            this.cbDanhMuc = new System.Windows.Forms.CheckBox();
-            this.cbHeThong = new System.Windows.Forms.CheckBox();
+            this.rdoSell = new System.Windows.Forms.RadioButton();
+            this.rdoWareHouse = new System.Windows.Forms.RadioButton();
+            this.rdoManager = new System.Windows.Forms.RadioButton();
+            this.rdoOwner = new System.Windows.Forms.RadioButton();
             this.btn_luu = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.grpb_thongtin.SuspendLayout();
             this.grpb_phanquyen.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpb_thongtin
             // 
-            this.grpb_thongtin.Controls.Add(this.cmbNguoiDung);
+            this.grpb_thongtin.Controls.Add(this.tbPosition);
             this.grpb_thongtin.Controls.Add(this.cmbNhanVien);
             this.grpb_thongtin.Controls.Add(this.lbl_tendangnhap);
             this.grpb_thongtin.Controls.Add(this.lbl_nhanvien);
@@ -61,15 +59,14 @@
             this.grpb_thongtin.TabStop = false;
             this.grpb_thongtin.Text = "Thông tin";
             // 
-            // cmbNguoiDung
+            // tbPosition
             // 
-            this.cmbNguoiDung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNguoiDung.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNguoiDung.FormattingEnabled = true;
-            this.cmbNguoiDung.Location = new System.Drawing.Point(124, 65);
-            this.cmbNguoiDung.Name = "cmbNguoiDung";
-            this.cmbNguoiDung.Size = new System.Drawing.Size(216, 28);
-            this.cmbNguoiDung.TabIndex = 75;
+            this.tbPosition.Enabled = false;
+            this.tbPosition.Location = new System.Drawing.Point(124, 77);
+            this.tbPosition.Name = "tbPosition";
+            this.tbPosition.Size = new System.Drawing.Size(216, 29);
+            this.tbPosition.TabIndex = 76;
+            this.tbPosition.Text = " ";
             // 
             // cmbNhanVien
             // 
@@ -80,16 +77,17 @@
             this.cmbNhanVien.Name = "cmbNhanVien";
             this.cmbNhanVien.Size = new System.Drawing.Size(216, 28);
             this.cmbNhanVien.TabIndex = 75;
+            this.cmbNhanVien.SelectedIndexChanged += new System.EventHandler(this.cmbNhanVien_SelectedIndexChanged);
             // 
             // lbl_tendangnhap
             // 
             this.lbl_tendangnhap.AutoSize = true;
             this.lbl_tendangnhap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tendangnhap.Location = new System.Drawing.Point(11, 68);
+            this.lbl_tendangnhap.Location = new System.Drawing.Point(11, 81);
             this.lbl_tendangnhap.Name = "lbl_tendangnhap";
-            this.lbl_tendangnhap.Size = new System.Drawing.Size(107, 20);
+            this.lbl_tendangnhap.Size = new System.Drawing.Size(61, 20);
             this.lbl_tendangnhap.TabIndex = 73;
-            this.lbl_tendangnhap.Text = "Tên đăng nhập";
+            this.lbl_tendangnhap.Text = "Chức vụ";
             // 
             // lbl_nhanvien
             // 
@@ -103,13 +101,10 @@
             // 
             // grpb_phanquyen
             // 
-            this.grpb_phanquyen.Controls.Add(this.cbGoiMon);
-            this.grpb_phanquyen.Controls.Add(this.cbTienLuong);
-            this.grpb_phanquyen.Controls.Add(this.cbSanPham);
-            this.grpb_phanquyen.Controls.Add(this.cbThongKe);
-            this.grpb_phanquyen.Controls.Add(this.cbNhanSu);
-            this.grpb_phanquyen.Controls.Add(this.cbDanhMuc);
-            this.grpb_phanquyen.Controls.Add(this.cbHeThong);
+            this.grpb_phanquyen.Controls.Add(this.rdoSell);
+            this.grpb_phanquyen.Controls.Add(this.rdoWareHouse);
+            this.grpb_phanquyen.Controls.Add(this.rdoManager);
+            this.grpb_phanquyen.Controls.Add(this.rdoOwner);
             this.grpb_phanquyen.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpb_phanquyen.ForeColor = System.Drawing.Color.SlateGray;
             this.grpb_phanquyen.Location = new System.Drawing.Point(22, 132);
@@ -119,113 +114,88 @@
             this.grpb_phanquyen.TabStop = false;
             this.grpb_phanquyen.Text = "Phân Quyền";
             // 
-            // cbGoiMon
+            // rdoSell
             // 
-            this.cbGoiMon.AccessibleDescription = "6";
-            this.cbGoiMon.AutoSize = true;
-            this.cbGoiMon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGoiMon.Location = new System.Drawing.Point(171, 98);
-            this.cbGoiMon.Name = "cbGoiMon";
-            this.cbGoiMon.Size = new System.Drawing.Size(85, 24);
-            this.cbGoiMon.TabIndex = 0;
-            this.cbGoiMon.Text = "Gọi món";
-            this.cbGoiMon.UseVisualStyleBackColor = true;
+            this.rdoSell.AutoSize = true;
+            this.rdoSell.Location = new System.Drawing.Point(169, 102);
+            this.rdoSell.Name = "rdoSell";
+            this.rdoSell.Size = new System.Drawing.Size(171, 25);
+            this.rdoSell.TabIndex = 4;
+            this.rdoSell.TabStop = true;
+            this.rdoSell.Text = "Nhân viên bán hàng";
+            this.rdoSell.UseVisualStyleBackColor = true;
             // 
-            // cbTienLuong
+            // rdoWareHouse
             // 
-            this.cbTienLuong.AccessibleDescription = "3";
-            this.cbTienLuong.AutoSize = true;
-            this.cbTienLuong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTienLuong.Location = new System.Drawing.Point(24, 128);
-            this.cbTienLuong.Name = "cbTienLuong";
-            this.cbTienLuong.Size = new System.Drawing.Size(150, 24);
-            this.cbTienLuong.TabIndex = 0;
-            this.cbTienLuong.Text = "Quản lý tiền lương";
-            this.cbTienLuong.UseVisualStyleBackColor = true;
+            this.rdoWareHouse.AutoSize = true;
+            this.rdoWareHouse.Location = new System.Drawing.Point(15, 102);
+            this.rdoWareHouse.Name = "rdoWareHouse";
+            this.rdoWareHouse.Size = new System.Drawing.Size(131, 25);
+            this.rdoWareHouse.TabIndex = 3;
+            this.rdoWareHouse.TabStop = true;
+            this.rdoWareHouse.Text = "Nhân viên kho";
+            this.rdoWareHouse.UseVisualStyleBackColor = true;
             // 
-            // cbSanPham
+            // rdoManager
             // 
-            this.cbSanPham.AccessibleDescription = "5";
-            this.cbSanPham.AutoSize = true;
-            this.cbSanPham.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSanPham.Location = new System.Drawing.Point(24, 98);
-            this.cbSanPham.Name = "cbSanPham";
-            this.cbSanPham.Size = new System.Drawing.Size(146, 24);
-            this.cbSanPham.TabIndex = 0;
-            this.cbSanPham.Text = "Quản lý sản phẩm";
-            this.cbSanPham.UseVisualStyleBackColor = true;
+            this.rdoManager.AutoSize = true;
+            this.rdoManager.Location = new System.Drawing.Point(169, 41);
+            this.rdoManager.Name = "rdoManager";
+            this.rdoManager.Size = new System.Drawing.Size(152, 25);
+            this.rdoManager.TabIndex = 2;
+            this.rdoManager.TabStop = true;
+            this.rdoManager.Text = "Quản lý cửa hàng";
+            this.rdoManager.UseVisualStyleBackColor = true;
             // 
-            // cbThongKe
+            // rdoOwner
             // 
-            this.cbThongKe.AccessibleDescription = "4";
-            this.cbThongKe.AutoSize = true;
-            this.cbThongKe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbThongKe.Location = new System.Drawing.Point(171, 68);
-            this.cbThongKe.Name = "cbThongKe";
-            this.cbThongKe.Size = new System.Drawing.Size(153, 24);
-            this.cbThongKe.TabIndex = 0;
-            this.cbThongKe.Text = "Thống kê -báo cáo";
-            this.cbThongKe.UseVisualStyleBackColor = true;
-            // 
-            // cbNhanSu
-            // 
-            this.cbNhanSu.AccessibleDescription = "2";
-            this.cbNhanSu.AutoSize = true;
-            this.cbNhanSu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNhanSu.ForeColor = System.Drawing.Color.SlateGray;
-            this.cbNhanSu.Location = new System.Drawing.Point(24, 68);
-            this.cbNhanSu.Name = "cbNhanSu";
-            this.cbNhanSu.Size = new System.Drawing.Size(133, 24);
-            this.cbNhanSu.TabIndex = 0;
-            this.cbNhanSu.Text = "Quản lý nhân sự";
-            this.cbNhanSu.UseVisualStyleBackColor = true;
-            // 
-            // cbDanhMuc
-            // 
-            this.cbDanhMuc.AccessibleDescription = "7";
-            this.cbDanhMuc.AutoSize = true;
-            this.cbDanhMuc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDanhMuc.Location = new System.Drawing.Point(171, 38);
-            this.cbDanhMuc.Name = "cbDanhMuc";
-            this.cbDanhMuc.Size = new System.Drawing.Size(147, 24);
-            this.cbDanhMuc.TabIndex = 0;
-            this.cbDanhMuc.Text = "Quản lý danh mục";
-            this.cbDanhMuc.UseVisualStyleBackColor = true;
-            // 
-            // cbHeThong
-            // 
-            this.cbHeThong.AccessibleDescription = "1";
-            this.cbHeThong.AutoSize = true;
-            this.cbHeThong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHeThong.Location = new System.Drawing.Point(24, 38);
-            this.cbHeThong.Name = "cbHeThong";
-            this.cbHeThong.Size = new System.Drawing.Size(141, 24);
-            this.cbHeThong.TabIndex = 0;
-            this.cbHeThong.Text = "Quản lý hệ thống";
-            this.cbHeThong.UseVisualStyleBackColor = true;
+            this.rdoOwner.AutoSize = true;
+            this.rdoOwner.Location = new System.Drawing.Point(15, 41);
+            this.rdoOwner.Name = "rdoOwner";
+            this.rdoOwner.Size = new System.Drawing.Size(126, 25);
+            this.rdoOwner.TabIndex = 1;
+            this.rdoOwner.TabStop = true;
+            this.rdoOwner.Text = "Chủ cửa hàng";
+            this.rdoOwner.UseVisualStyleBackColor = true;
             // 
             // btn_luu
             // 
             this.btn_luu.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_luu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btn_luu.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_luu.Location = new System.Drawing.Point(280, 340);
+            this.btn_luu.Location = new System.Drawing.Point(146, 340);
             this.btn_luu.Name = "btn_luu";
             this.btn_luu.Size = new System.Drawing.Size(97, 40);
             this.btn_luu.TabIndex = 3;
             this.btn_luu.Text = "LƯU";
             this.btn_luu.UseVisualStyleBackColor = false;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.Location = new System.Drawing.Point(280, 339);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(97, 40);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "HỦY";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frm_UserPermission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 391);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.grpb_phanquyen);
             this.Controls.Add(this.grpb_thongtin);
             this.Name = "frm_UserPermission";
             this.Text = "PHÂN QUYỀN NGƯỜI DÙNG";
+            this.Load += new System.EventHandler(this.frm_UserPermission_Load);
             this.grpb_thongtin.ResumeLayout(false);
             this.grpb_thongtin.PerformLayout();
             this.grpb_phanquyen.ResumeLayout(false);
@@ -237,18 +207,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpb_thongtin;
-        private System.Windows.Forms.ComboBox cmbNguoiDung;
         private System.Windows.Forms.ComboBox cmbNhanVien;
         private System.Windows.Forms.Label lbl_tendangnhap;
         private System.Windows.Forms.Label lbl_nhanvien;
         private System.Windows.Forms.GroupBox grpb_phanquyen;
-        private System.Windows.Forms.CheckBox cbGoiMon;
-        private System.Windows.Forms.CheckBox cbTienLuong;
-        private System.Windows.Forms.CheckBox cbSanPham;
-        private System.Windows.Forms.CheckBox cbThongKe;
-        private System.Windows.Forms.CheckBox cbNhanSu;
-        private System.Windows.Forms.CheckBox cbDanhMuc;
-        private System.Windows.Forms.CheckBox cbHeThong;
         private System.Windows.Forms.Button btn_luu;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox tbPosition;
+        private System.Windows.Forms.RadioButton rdoSell;
+        private System.Windows.Forms.RadioButton rdoWareHouse;
+        private System.Windows.Forms.RadioButton rdoManager;
+        private System.Windows.Forms.RadioButton rdoOwner;
     }
 }

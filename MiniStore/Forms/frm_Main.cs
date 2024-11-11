@@ -25,6 +25,22 @@ namespace MiniStore.Forms
             user = frm_Login.LoggedInUser;
             string query = string.Format("SELECT Position FROM Employees WHERE EmployeeID = {0} ", user.Id);
             position = db.getString(query);
+
+            switch (position.Trim())
+            {
+                case "Nhân viên bán hàng":
+                    btnPersonnel.Visible = false;
+                    btnProduct.Visible = false;
+                    btnReport.Visible = false;
+                    btnAdmin.Visible = false;
+                    break;
+                case "Quản lý cửa hàng":
+                    btnProduct.Visible = false;
+                    btnAdmin.Visible = false;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -78,25 +94,7 @@ namespace MiniStore.Forms
             btnReport.Visible = true;
             btnSetting.Visible = true;
 
-            switch (position)
-            {
-                case "Nhân viên kho":
-                    MessageBox.Show("Bạn không có quyền truy cập vào các chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    break;
-                case "Nhân viên bán hàng":
-                    btnPersonnel.Visible = false;
-                    btnProduct.Visible = false;
-                    btnReport.Visible = false;
-                    btnAdmin.Visible = false;
-                    break;
-                case "Quản lý cửa hàng":
-                    btnProduct.Visible = false;
-                    btnAdmin.Visible = true;
-                    break;
-                default:
 
-                    break;
-            }
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

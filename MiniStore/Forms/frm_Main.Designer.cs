@@ -36,8 +36,8 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.btnPersonnel = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
+            this.btnPersonnel = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel_header = new System.Windows.Forms.Panel();
@@ -143,24 +143,6 @@
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = false;
             // 
-            // btnPersonnel
-            // 
-            this.btnPersonnel.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.btnPersonnel.FlatAppearance.BorderSize = 0;
-            this.btnPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonnel.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonnel.ForeColor = System.Drawing.Color.White;
-            this.btnPersonnel.Image = global::MiniStore.Properties.Resources.conference_32px;
-            this.btnPersonnel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonnel.Location = new System.Drawing.Point(0, 109);
-            this.btnPersonnel.Name = "btnPersonnel";
-            this.btnPersonnel.Size = new System.Drawing.Size(200, 47);
-            this.btnPersonnel.TabIndex = 9;
-            this.btnPersonnel.Text = "Nhân sự";
-            this.btnPersonnel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPersonnel.UseVisualStyleBackColor = false;
-            this.btnPersonnel.Click += new System.EventHandler(this.btnPersonnel_Click);
-            // 
             // btnProduct
             // 
             this.btnProduct.BackColor = System.Drawing.Color.DarkTurquoise;
@@ -178,6 +160,24 @@
             this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProduct.UseVisualStyleBackColor = false;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // btnPersonnel
+            // 
+            this.btnPersonnel.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnPersonnel.FlatAppearance.BorderSize = 0;
+            this.btnPersonnel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonnel.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonnel.ForeColor = System.Drawing.Color.White;
+            this.btnPersonnel.Image = global::MiniStore.Properties.Resources.conference_32px;
+            this.btnPersonnel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersonnel.Location = new System.Drawing.Point(0, 109);
+            this.btnPersonnel.Name = "btnPersonnel";
+            this.btnPersonnel.Size = new System.Drawing.Size(200, 47);
+            this.btnPersonnel.TabIndex = 9;
+            this.btnPersonnel.Text = "Nhân sự";
+            this.btnPersonnel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPersonnel.UseVisualStyleBackColor = false;
+            this.btnPersonnel.Click += new System.EventHandler(this.btnPersonnel_Click);
             // 
             // btnOrder
             // 
@@ -219,7 +219,7 @@
             this.panel_header.BackColor = System.Drawing.Color.DarkTurquoise;
             this.panel_header.Location = new System.Drawing.Point(198, 2);
             this.panel_header.Name = "panel_header";
-            this.panel_header.Size = new System.Drawing.Size(539, 42);
+            this.panel_header.Size = new System.Drawing.Size(569, 42);
             this.panel_header.TabIndex = 1;
             // 
             // frm_Main

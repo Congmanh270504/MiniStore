@@ -10,7 +10,7 @@ namespace MiniStore.Forms
     public partial class frm_Login : Form
     {
         DBConnect db;
-        public static User LoggedInUser { get; private set; } // Static variable to store the logged-in user
+        public static User LoggedInUser { get; private set; }
 
         public frm_Login()
         {
@@ -74,8 +74,17 @@ namespace MiniStore.Forms
                         frm_Main mainForm = new frm_Main();
                         mainForm.FormClosed += frm_Main_FormClosed; // Subscribe to FormClosed event
 
-                        // Show the main form
-                        mainForm.Show();
+                        //// Show the main form
+                        if (LoggedInUser.Position.Equals("Nhân viên kho"))
+                        {
+                            MessageBox.Show("Bạn không có quyền truy cập vào các chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            mainForm.Close();
+                            Show();
+                        }
+                        else
+                        {
+                            mainForm.Show();
+                        }
                     }
                     else
                     {
