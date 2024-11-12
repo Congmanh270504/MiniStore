@@ -21,7 +21,7 @@ namespace MiniStore.Management
         public QL_LoaiSanPham()
         {
             InitializeComponent();
-            db = new DBConnect("DESKTOP-LI8OVCU\\SQLEXPRESS", "miniMKT");
+            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
         }
 
         private void QL_LoaiSanPham_Load(object sender, EventArgs e)

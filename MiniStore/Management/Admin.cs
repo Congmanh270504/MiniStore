@@ -22,13 +22,13 @@ namespace MiniStore.Management
         {
             Hide();
             QL_LoaiSanPham ql_LoaiSanPham = new QL_LoaiSanPham();
-            ql_LoaiSanPham.FormClosed += QL_LoaiSanPham_FormClosed; 
+            ql_LoaiSanPham.FormClosed += QL_LoaiSanPham_FormClosed;
             ql_LoaiSanPham.Show();
         }
 
         private void QL_LoaiSanPham_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Show(); 
+            this.Show();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -43,5 +43,16 @@ namespace MiniStore.Management
             this.Show();
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Hide();
+            QL_KhachHang ql_KhachHang = new QL_KhachHang();
+            ql_KhachHang.FormClosed += QL_KhachHang_FormClosed;
+            ql_KhachHang.Show();
+        }
+        private void QL_KhachHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
     }
 }

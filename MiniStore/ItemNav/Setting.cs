@@ -83,29 +83,19 @@ namespace MiniStore.ItemNav
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            CloseAllFormsExceptLogin();
-           
-        }
-
-        private void CloseAllFormsExceptLogin()
-        {
-            // Create a list to store the forms to be closed
-            List<Form> formsToClose = new List<Form>();
-
-            // Iterate through all open forms and add them to the list
-            foreach (Form form in Application.OpenForms)
+            foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
             {
-                if (!(form is frm_Login))
+                if (form.Name != "frm_Login")
                 {
-                    formsToClose.Add(form);
+                    form.Close();
                 }
             }
 
-            // Close the forms in the list
-            foreach (Form form in formsToClose)
-            {
-                form.Close();
-            }
+            // Show the login form
+            frm_Login loginForm = frm_Login.GetInstance();
+            loginForm.Show();
+
         }
+
     }
 }

@@ -42,6 +42,19 @@ namespace MiniStore.Management
             dataGridView_DSMonAn.Columns["StockQuantity"].HeaderText = "Số lượng trong kho";
             dataGridView_DSMonAn.Columns["Unit"].HeaderText = "Đơn vị tính";
 
+            txtTenMonAn.DataBindings.Add(new Binding("Text", products, "ProductName", true, DataSourceUpdateMode.Never));
+
+            cb_LoaiHang.DataBindings.Add(new Binding("SelectedValue", products, "CategoryID", true, DataSourceUpdateMode.Never));
+
+            cmbNhaCungCap.DataBindings.Add(new Binding("SelectedValue", products, "SupplierID", true, DataSourceUpdateMode.Never));
+
+            txtGiaTien.DataBindings.Add(new Binding("Text", products, "Price", true, DataSourceUpdateMode.Never));
+
+            txtSoLuong.DataBindings.Add(new Binding("Text", products, "StockQuantity", true, DataSourceUpdateMode.Never));
+            
+
+            cb_DVT.DataBindings.Add(new Binding("SelectedValue", products, "Unit", true, DataSourceUpdateMode.Never));
+
             // Center the header text
             dataGridView_DSMonAn.Columns["ProductID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView_DSMonAn.Columns["ProductName"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -84,7 +97,7 @@ namespace MiniStore.Management
         }
         void loadNCC()
         {
-            string sql = "select  * from Suppliers";
+            string sql = "select * from Suppliers";
             da_products = db.getDataAdapter(sql, "Suppliers");
             DataTable dt = db.Dset.Tables["Suppliers"];
             cmbNhaCungCap.DataSource = dt;
@@ -102,12 +115,11 @@ namespace MiniStore.Management
         }
         void load_DVT()
         {
-            string sql = "select * from Products";
-            da_products = db.getDataAdapter(sql, "Products");
-            DataTable dt = db.Dset.Tables["Products"];
-            cb_DVT.DataSource = dt;
+            string sql = "select Unit from Products group by Unit ";
+
+            cb_DVT.DataSource = db.getDataTable(sql, "Unit");
             cb_DVT.DisplayMember = "Unit";
-            cb_DVT.ValueMember = "ProductID";
+            cb_DVT.ValueMember = "Unit";
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {

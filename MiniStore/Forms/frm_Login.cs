@@ -3,19 +3,28 @@ using System.Windows.Forms;
 using System;
 using System.Data.SqlClient;
 using System.Collections.Generic;
-using System.Xml.Linq;
 
 namespace MiniStore.Forms
 {
     public partial class frm_Login : Form
     {
-        DBConnect db;
+        private static frm_Login instance;
+        private DBConnect db;
         public static User LoggedInUser { get; private set; }
 
-        public frm_Login()
+        private frm_Login()
         {
             InitializeComponent();
             db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+        }
+
+        public static frm_Login GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frm_Login();
+            }
+            return instance;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -93,9 +102,13 @@ namespace MiniStore.Forms
                 }
             }
         }
+
         private void frm_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Show();
+            if (!this.Visible)
+            {
+                this.Show();
+            }
         }
 
         private void frm_Login_FormClosing(object sender, FormClosingEventArgs e)

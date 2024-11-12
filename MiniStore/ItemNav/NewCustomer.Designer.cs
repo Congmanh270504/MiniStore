@@ -32,8 +32,6 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbNumberPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -77,26 +75,9 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "SĐT";
             // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(106, 144);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(281, 20);
-            this.tbEmail.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 142);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Email";
-            // 
             // tbAddress
             // 
-            this.tbAddress.Location = new System.Drawing.Point(106, 179);
+            this.tbAddress.Location = new System.Drawing.Point(106, 148);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(281, 20);
             this.tbAddress.TabIndex = 7;
@@ -105,7 +86,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 177);
+            this.label4.Location = new System.Drawing.Point(23, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 6;
@@ -113,13 +94,15 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.DarkCyan;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(72, 233);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(93, 42);
             this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Text = "THÊM";
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label5
@@ -135,13 +118,15 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.DarkCyan;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(262, 233);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(93, 42);
             this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Text = "HỦY";
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // NewCustomer
@@ -154,8 +139,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbEmail);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbNumberPhone);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbName);
@@ -174,8 +157,6 @@
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbNumberPhone;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdd;

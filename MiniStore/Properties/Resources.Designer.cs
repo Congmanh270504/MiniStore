@@ -103,6 +103,16 @@ namespace MiniStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap conference_call_120px1 {
+            get {
+                object obj = ResourceManager.GetObject("conference_call_120px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contact_card_100px {
             get {
                 object obj = ResourceManager.GetObject("contact_card_100px", resourceCulture);
@@ -306,6 +316,16 @@ namespace MiniStore.Properties {
         internal static System.Drawing.Bitmap system_task_32px {
             get {
                 object obj = ResourceManager.GetObject("system_task_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_120px {
+            get {
+                object obj = ResourceManager.GetObject("user_120px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

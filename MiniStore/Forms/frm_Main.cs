@@ -106,7 +106,10 @@ namespace MiniStore.Forms
         }
         private void Setting_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Show();
+            if (!this.IsDisposed)
+            {
+                this.Show();
+            }
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)

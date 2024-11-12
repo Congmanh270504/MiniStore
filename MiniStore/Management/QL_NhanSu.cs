@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -63,6 +64,18 @@ namespace MiniStore.Management
             dataGridView_DSNhanVien.Columns["EmployeeName"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
         }
 
-       
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            // Regular expression for Vietnamese phone numbers
+            string pattern = @"^(03|05|07|08|09)\d{8,9}$";
+            return Regex.IsMatch(phoneNumber, pattern);
+        }
+
+        private bool IsValidGmail(string email)
+        {
+            // Regular expression for Gmail addresses
+            string pattern = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
+            return Regex.IsMatch(email, pattern);
+        }
     }
 }
