@@ -19,7 +19,6 @@ namespace MiniStore
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Forms.frm_Main());
-            //Application.Run(new Forms.frm_Connect());
             Application.Run(Forms.frm_Login.GetInstance());
             //Application.Run(new QL_Products());
             //Application.Run(new QL_NhanSu());

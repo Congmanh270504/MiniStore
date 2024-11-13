@@ -41,10 +41,12 @@
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel_header = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel_lefttop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_lefttop
@@ -222,11 +224,22 @@
             this.panel_header.Size = new System.Drawing.Size(569, 42);
             this.panel_header.TabIndex = 1;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MiniStore.Properties.Resources.discount_banner1;
+            this.pictureBox3.Location = new System.Drawing.Point(207, 50);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(549, 432);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 486);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_header);
             this.Controls.Add(this.panel_lefttop);
@@ -237,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,5 +269,6 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnPersonnel;
         private System.Windows.Forms.Button btnProduct;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

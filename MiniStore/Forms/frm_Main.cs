@@ -18,6 +18,16 @@ namespace MiniStore.Forms
         DBConnect db;
         User user;
         string position;
+        private int currentImageIndex = 0;
+        private string[] imagePaths = new string[]
+        {
+            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner1.jpg",
+            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner2.jpg",
+            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner3.jpg",
+            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner5.jpg"
+        };
+        private Timer imageChangeTimer;
+
         public frm_Main()
         {
             InitializeComponent();
@@ -41,6 +51,11 @@ namespace MiniStore.Forms
                 default:
                     break;
             }
+
+            imageChangeTimer = new Timer();
+            imageChangeTimer.Interval = 4000;
+            imageChangeTimer.Tick += new EventHandler(imageChangeTimer_Tick);
+            imageChangeTimer.Start();
         }
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -93,8 +108,6 @@ namespace MiniStore.Forms
             btnProduct.Visible = true;
             btnReport.Visible = true;
             btnSetting.Visible = true;
-
-
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -122,6 +135,12 @@ namespace MiniStore.Forms
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
+        }
+
+        private void imageChangeTimer_Tick(object sender, EventArgs e)
+        {
+            currentImageIndex = (currentImageIndex + 1) % imagePaths.Length;
+            pictureBox3.Image = Image.FromFile(imagePaths[currentImageIndex]);
         }
     }
 }

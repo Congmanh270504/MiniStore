@@ -41,13 +41,6 @@ namespace MiniStore.Forms
 
         private void btn_luu_Click(object sender, EventArgs e)
         {
-            List<string> textButton = new List<string>();
-            textButton.Add(rdoOwner.Text);
-            textButton.Add(rdoManager.Text);
-            textButton.Add(rdoSell.Text);
-            textButton.Add(rdoWareHouse.Text);
-
-
             if (!db.checkExist(" select count(*) from Employees where Position= N'Chủ cửa hàng'"))
             {
                 MessageBox.Show("Bạn cần phải chọn 1 người Chủ cửa hàng trước khi chuyển", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

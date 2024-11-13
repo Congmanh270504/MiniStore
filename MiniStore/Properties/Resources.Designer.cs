@@ -133,6 +133,16 @@ namespace MiniStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap discount_banner1 {
+            get {
+                object obj = ResourceManager.GetObject("discount_banner1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap graph_report_32px {
             get {
                 object obj = ResourceManager.GetObject("graph_report_32px", resourceCulture);

@@ -233,6 +233,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\discount_banner1.jpg" />
     <Content Include="img\sql.jpg" />
     <Content Include="MyResources\15844397.ico" />
     <Content Include="MyResources\2015_iflg_4c_h_wht_fnl.png" />
