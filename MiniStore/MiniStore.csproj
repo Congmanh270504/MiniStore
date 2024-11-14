@@ -128,6 +128,12 @@
     <Compile Include="Management\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Management\QL_DSHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\QL_DSHoaDon.Designer.cs">
+      <DependentUpon>QL_DSHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Management\QL_HoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Management\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\QL_DSHoaDon.resx">
+      <DependentUpon>QL_DSHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Management\QL_HoaDon.resx">
       <DependentUpon>QL_HoaDon.cs</DependentUpon>

@@ -255,7 +255,7 @@ CREATE TABLE OrderDetails
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
-GO -- chạy lại db nha Q? ok
+GO 
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT OrderDetails ON 
 INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (1, 1, 1, 2, CAST(12.50 AS DECIMAL(10, 2)))
