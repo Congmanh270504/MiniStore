@@ -54,5 +54,17 @@ namespace MiniStore.Management
         {
             this.Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            QL_DSHoaDon ql_DSHoaDon = new QL_DSHoaDon();
+            ql_DSHoaDon.FormClosed += QL_DSHoaDon_FormClosed;
+            ql_DSHoaDon.Show();
+        }
+        private void QL_DSHoaDon_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
     }
 }

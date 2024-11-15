@@ -59,11 +59,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(317, 183);
+            this.label2.Location = new System.Drawing.Point(253, 183);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 29);
+            this.label2.Size = new System.Drawing.Size(218, 29);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Hóa đơn";
+            this.label2.Text = "Danh sách hóa đơn";
             // 
             // label3
             // 
@@ -126,12 +126,13 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::MiniStore.Properties.Resources.add_shopping_cart_120px;
+            this.pictureBox2.Image = global::MiniStore.Properties.Resources.bill_120px;
             this.pictureBox2.Location = new System.Drawing.Point(305, 66);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(116, 105);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 

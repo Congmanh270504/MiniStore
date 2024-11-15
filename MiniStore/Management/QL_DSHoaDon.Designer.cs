@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.lbl_dshoadon = new System.Windows.Forms.Label();
             this.grb_tthoadon = new System.Windows.Forms.GroupBox();
+            this.lbPhuongThuctinh = new System.Windows.Forms.Label();
+            this.cbPayment = new System.Windows.Forms.ComboBox();
+            this.lbTime = new System.Windows.Forms.Label();
             this.cbDate = new System.Windows.Forms.ComboBox();
             this.lbDateTime = new System.Windows.Forms.Label();
             this.maskDateTime = new System.Windows.Forms.MaskedTextBox();
@@ -44,10 +47,8 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.orderDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbPayment = new System.Windows.Forms.ComboBox();
-            this.lbPhuongThuctinh = new System.Windows.Forms.Label();
-            this.tbTime = new System.Windows.Forms.TextBox();
+            this.tbDate = new System.Windows.Forms.TextBox();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.grb_tthoadon.SuspendLayout();
             this.grpb_dshoadon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -67,10 +68,11 @@
             // 
             // grb_tthoadon
             // 
-            this.grb_tthoadon.Controls.Add(this.tbTime);
+            this.grb_tthoadon.Controls.Add(this.btnLoad);
+            this.grb_tthoadon.Controls.Add(this.tbDate);
             this.grb_tthoadon.Controls.Add(this.lbPhuongThuctinh);
             this.grb_tthoadon.Controls.Add(this.cbPayment);
-            this.grb_tthoadon.Controls.Add(this.label3);
+            this.grb_tthoadon.Controls.Add(this.lbTime);
             this.grb_tthoadon.Controls.Add(this.cbDate);
             this.grb_tthoadon.Controls.Add(this.lbDateTime);
             this.grb_tthoadon.Controls.Add(this.maskDateTime);
@@ -89,6 +91,36 @@
             this.grb_tthoadon.TabStop = false;
             this.grb_tthoadon.Text = "Tìm kiếm hóa đơn";
             // 
+            // lbPhuongThuctinh
+            // 
+            this.lbPhuongThuctinh.AutoSize = true;
+            this.lbPhuongThuctinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhuongThuctinh.Location = new System.Drawing.Point(45, 80);
+            this.lbPhuongThuctinh.Name = "lbPhuongThuctinh";
+            this.lbPhuongThuctinh.Size = new System.Drawing.Size(153, 24);
+            this.lbPhuongThuctinh.TabIndex = 26;
+            this.lbPhuongThuctinh.Text = "Phương thức tính";
+            this.lbPhuongThuctinh.Visible = false;
+            // 
+            // cbPayment
+            // 
+            this.cbPayment.FormattingEnabled = true;
+            this.cbPayment.Location = new System.Drawing.Point(204, 79);
+            this.cbPayment.Name = "cbPayment";
+            this.cbPayment.Size = new System.Drawing.Size(121, 24);
+            this.cbPayment.TabIndex = 25;
+            this.cbPayment.Visible = false;
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.Location = new System.Drawing.Point(46, 125);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(94, 24);
+            this.lbTime.TabIndex = 24;
+            this.lbTime.Text = "Thời gian:";
+            // 
             // cbDate
             // 
             this.cbDate.FormattingEnabled = true;
@@ -97,6 +129,7 @@
             this.cbDate.Size = new System.Drawing.Size(229, 24);
             this.cbDate.TabIndex = 23;
             this.cbDate.Visible = false;
+            this.cbDate.SelectedIndexChanged += new System.EventHandler(this.cbDate_SelectedIndexChanged);
             // 
             // lbDateTime
             // 
@@ -111,10 +144,10 @@
             // 
             // maskDateTime
             // 
-            this.maskDateTime.Location = new System.Drawing.Point(204, 124);
+            this.maskDateTime.Location = new System.Drawing.Point(204, 128);
             this.maskDateTime.Mask = "00/00/0000";
             this.maskDateTime.Name = "maskDateTime";
-            this.maskDateTime.Size = new System.Drawing.Size(100, 22);
+            this.maskDateTime.Size = new System.Drawing.Size(121, 22);
             this.maskDateTime.TabIndex = 21;
             this.maskDateTime.ValidatingType = typeof(System.DateTime);
             this.maskDateTime.Visible = false;
@@ -222,44 +255,27 @@
             this.orderDetailsToolStripMenuItem.Size = new System.Drawing.Size(214, 24);
             this.orderDetailsToolStripMenuItem.Text = "Xem chi tiết hóa đơn";
             // 
-            // label3
+            // tbDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 24);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Thời gian:";
-            this.label3.Visible = false;
+            this.tbDate.Location = new System.Drawing.Point(204, 128);
+            this.tbDate.Name = "tbDate";
+            this.tbDate.Size = new System.Drawing.Size(121, 22);
+            this.tbDate.TabIndex = 27;
+            this.tbDate.Visible = false;
+            this.tbDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDate_KeyPress);
             // 
-            // cbPayment
+            // btnLoad
             // 
-            this.cbPayment.FormattingEnabled = true;
-            this.cbPayment.Location = new System.Drawing.Point(204, 79);
-            this.cbPayment.Name = "cbPayment";
-            this.cbPayment.Size = new System.Drawing.Size(121, 24);
-            this.cbPayment.TabIndex = 25;
-            this.cbPayment.Visible = false;
-            // 
-            // lbPhuongThuctinh
-            // 
-            this.lbPhuongThuctinh.AutoSize = true;
-            this.lbPhuongThuctinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPhuongThuctinh.Location = new System.Drawing.Point(45, 80);
-            this.lbPhuongThuctinh.Name = "lbPhuongThuctinh";
-            this.lbPhuongThuctinh.Size = new System.Drawing.Size(153, 24);
-            this.lbPhuongThuctinh.TabIndex = 26;
-            this.lbPhuongThuctinh.Text = "Phương thức tính";
-            this.lbPhuongThuctinh.Visible = false;
-            // 
-            // tbTime
-            // 
-            this.tbTime.Location = new System.Drawing.Point(332, 125);
-            this.tbTime.Name = "tbTime";
-            this.tbTime.Size = new System.Drawing.Size(101, 22);
-            this.tbTime.TabIndex = 27;
-            this.tbTime.Text = "Nhập";
+            this.btnLoad.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.ForeColor = System.Drawing.Color.White;
+            this.btnLoad.Location = new System.Drawing.Point(606, 16);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(118, 46);
+            this.btnLoad.TabIndex = 28;
+            this.btnLoad.Text = "LOAD";
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // QL_DSHoaDon
             // 
@@ -300,9 +316,10 @@
         private System.Windows.Forms.MaskedTextBox maskDateTime;
         private System.Windows.Forms.Label lbDateTime;
         private System.Windows.Forms.ComboBox cbDate;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.ComboBox cbPayment;
         private System.Windows.Forms.Label lbPhuongThuctinh;
-        private System.Windows.Forms.TextBox tbTime;
+        private System.Windows.Forms.TextBox tbDate;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
