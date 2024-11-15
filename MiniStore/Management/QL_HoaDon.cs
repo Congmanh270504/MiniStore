@@ -16,7 +16,5 @@ namespace MiniStore.Management
         {
             InitializeComponent();
         }
-
-        
     }
 }
