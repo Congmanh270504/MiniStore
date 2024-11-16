@@ -31,7 +31,16 @@ namespace MiniStore.ItemNav
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnDelete.Enabled = listOrder.SelectedItems.Count > 0;
+            if (listOrder.SelectedItems.Count > 0)
+            {
+                btnDecrease.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+            else
+            {
+                btnDecrease.Enabled = false;
+                btnDelete.Enabled = false;
+            }
         }
 
         private void Order_Load(object sender, EventArgs e)
@@ -78,6 +87,9 @@ namespace MiniStore.ItemNav
             dataGridView.Columns["ProductName"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
             dataGridView.Columns["Price"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
             dataGridView.Columns["Unit"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+
+            btnDecrease.Enabled = false;
+            btnDelete.Enabled = false;
 
         }
         void load_CbCustomer()
@@ -276,8 +288,6 @@ namespace MiniStore.ItemNav
                 return;
             }
 
-
-
             MessageBox.Show("Thanh toán thành công !!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             txtReturnPayment.Text = (int.Parse(txtReceive.Text) - Math.Round(total, MidpointRounding.AwayFromZero)).ToString() + "đ";
             lblTotalMoney.Text = Math.Round(total, MidpointRounding.AwayFromZero).ToString() + "đ";
@@ -401,6 +411,47 @@ namespace MiniStore.ItemNav
             newCustomer.ShowDialog();
         }
 
+        private void btnDecrease_Click(object sender, EventArgs e)
+        {
+            if (listOrder.SelectedItem != null)
+            {
+                // Get the selected item
+                string selectedItem = listOrder.SelectedItem.ToString();
+                int index = listOrder.SelectedIndex;
+
+                // Extract the current quantity
+                string[] itemParts = selectedItem.Split('-');
+                string quantityPart = itemParts[itemParts.Length - 1].Split(' ')[1].Trim();
+                int currentQuantity = int.Parse(quantityPart);
+
+                // Decrease the quantity by 1
+                currentQuantity -= 1;
+
+                if (currentQuantity > 0)
+                {
+                    // Update the item with the new quantity
+                    itemParts[itemParts.Length - 1] = $" {currentQuantity} {itemParts[itemParts.Length - 1].Split(' ')[2].Trim()}";
+                    listOrder.Items[index] = string.Join("-", itemParts);
+                }
+                else
+                {
+                    // Remove the item if the quantity is 0
+                    listOrder.Items.RemoveAt(index);
+                }
+
+                // Update the total amount
+                txtMoney.Text = getTotal() + "đ";
+            }
+            else if (listOrder.Items.Count == 0)
+            {
+                btnDecrease.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Cần chọn sản phẩm để giảm số lượng.", "Chưa sản phẩm được chọn", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
+                return;
+            }
+        }
 
     }
 }

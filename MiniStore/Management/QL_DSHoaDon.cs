@@ -302,8 +302,6 @@ namespace MiniStore.Management
                     }
             }
         }
-
-
         private void cbCell_SelectedIndexChanged(object sender, EventArgs e)
         {
 

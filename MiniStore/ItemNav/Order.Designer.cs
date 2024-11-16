@@ -62,6 +62,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
+            this.btnDecrease = new System.Windows.Forms.Button();
             this.grpPayment.SuspendLayout();
             this.grpSearchProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -382,7 +383,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(55, 587);
+            this.btnAdd.Location = new System.Drawing.Point(34, 588);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(106, 41);
             this.btnAdd.TabIndex = 32;
@@ -393,12 +394,13 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(272, 587);
+            this.btnDelete.Location = new System.Drawing.Point(340, 588);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(106, 41);
             this.btnDelete.TabIndex = 33;
-            this.btnDelete.Text = "Hủy sản phẩm";
+            this.btnDelete.Text = "Bỏ món";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnCancel
             // 
@@ -422,11 +424,23 @@
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
+            // btnDecrease
+            // 
+            this.btnDecrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecrease.Location = new System.Drawing.Point(197, 588);
+            this.btnDecrease.Name = "btnDecrease";
+            this.btnDecrease.Size = new System.Drawing.Size(106, 41);
+            this.btnDecrease.TabIndex = 36;
+            this.btnDecrease.Text = "Giảm số lượng ";
+            this.btnDecrease.UseVisualStyleBackColor = true;
+            this.btnDecrease.Click += new System.EventHandler(this.btnDecrease_Click);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 641);
+            this.Controls.Add(this.btnDecrease);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
@@ -487,5 +501,6 @@
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.ComboBox cbCustomer;
         private System.Windows.Forms.Button btnNewCustomer;
+        private System.Windows.Forms.Button btnDecrease;
     }
 }
