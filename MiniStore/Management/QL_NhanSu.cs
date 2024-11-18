@@ -184,6 +184,14 @@ namespace MiniStore.Management
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
+            string positionInDB = db.getString(string.Format("select Position from Employees where EmployeeID = {0}", dataGridView_DSNhanVien.CurrentRow.Cells["EmployeeID"].Value.ToString()));
+            string currentPos = cb_Position.Text;
+            if (!positionInDB.Equals(currentPos))
+            {
+                MessageBox.Show("Bạn không thể thay đổi chức vụ của nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (string.IsNullOrEmpty(txtTenNV.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -219,13 +227,7 @@ namespace MiniStore.Management
                 MessageBox.Show("Email không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string positionInDB = db.getString(string.Format("select Position from Employees where EmployeeID = {0}", dataGridView_DSNhanVien.CurrentRow.Cells["EmployeeID"].Value.ToString()));
-            string currentPos = cb_Position.Text;
-            if (!positionInDB.Equals(currentPos))
-            {
-                MessageBox.Show("Bạn không thể thay đổi chức vụ của nhân viên", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                return;
-            }
+
             string sql = string.Format("UPDATE Employees SET EmployeeName = N'{0}', Position = N'{1}', Phone = '{2}', Email = '{3}' WHERE EmployeeID = {4}",
                                txtTenNV.Text, cb_Position.Text, txtSDT.Text, txtEmail.Text, dataGridView_DSNhanVien.CurrentRow.Cells["EmployeeID"].Value);
             db.updateToDataBase(sql);

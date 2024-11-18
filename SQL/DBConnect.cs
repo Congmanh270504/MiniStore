@@ -131,9 +131,17 @@ namespace SQL
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = strSQL; //Câu truy vấn đưa vào
-            string tmp = (string)cmd.ExecuteScalar(); //Thực thi
-            closeConnect(); //Đóng kết nối
-            return tmp;
+            object result = cmd.ExecuteScalar(); // Thực thi
+            closeConnect(); // Đóng kết nối
+
+            if (result == DBNull.Value)
+            {
+                return null; // Trả về null nếu kết quả là DBNull
+            }
+            else
+            {
+                return (string)result; // Trả về kết quả nếu không phải là DBNull
+            }
         }
         public bool checkExist(string strSQL)
         {

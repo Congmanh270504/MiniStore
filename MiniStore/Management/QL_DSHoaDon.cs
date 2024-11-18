@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQL;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using MiniStore.ItemNav;
 namespace MiniStore.Management
 {
     public partial class QL_DSHoaDon : Form
@@ -413,6 +414,28 @@ namespace MiniStore.Management
         private void btnLoad_Click(object sender, EventArgs e)
         {
             datagrid_Load();
+        }
+
+        private void orderDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.CurrentRow != null && dataGridView.CurrentRow.Cells["OrderId"].Value != null && !string.IsNullOrEmpty(dataGridView.CurrentRow.Cells["OrderId"].Value.ToString()))
+            {
+                // Lấy thông tin từ dòng được chọn
+                string orderId = dataGridView.CurrentRow.Cells["OrderId"].Value.ToString();
+                // Tạo và hiển thị form OrderDetails
+                var orderDetailsForm = new OrderDetails(orderId);
+                Hide();
+                orderDetailsForm.Show();
+                orderDetailsForm.FormClosed += OrderDetailsForm_FormClosed;
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn để xem chi tiết", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void OrderDetailsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }

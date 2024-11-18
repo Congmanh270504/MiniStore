@@ -93,6 +93,7 @@ namespace MiniStore.ItemNav
 
             // Show the login form
             frm_Login loginForm = frm_Login.GetInstance();
+            loginForm.ResetFields();
             loginForm.Show();
 
         }

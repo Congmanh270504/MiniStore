@@ -52,13 +52,13 @@ namespace MiniStore.ItemNav
                 txtMoney.Text = "0";
                 btnCancel.Enabled = false;
             }
-            string rank = db.getString("SELECT CustomerRank FROM Customers WHERE CustomerID = 1");
+            string rank = db.getString("SELECT CustomerRank \r\nFROM Customers \r\nWHERE CustomerID = (SELECT MIN(CustomerID) FROM Customers)");
             getDiscount(rank);
             txtEmployess.Text = user.Name;
         }
         void LoadData()
         {
-            string sql = "select ProductID,ProductName,Price,Unit from Products";
+            string sql = "select ProductID,ProductName,Price,Unit from Products where StockQuantity > 0";
             da_products = db.getDataAdapter(sql, "Products");
             products = db.Dset.Tables["Products"];
             dataGridView.DataSource = products;
@@ -98,26 +98,6 @@ namespace MiniStore.ItemNav
             cbCustomer.DataSource = db.getDataTable(sql, "Customers");
             cbCustomer.DisplayMember = "CustomerName";
             cbCustomer.ValueMember = "CustomerID";
-        }
-
-        private void grpInfoInvoice_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmployess_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmployess_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -391,6 +371,7 @@ namespace MiniStore.ItemNav
                     sell = 7;
                     break;
                 default:
+                    sell = 0;
                     break;
             }
             txtDiscount.Text = sell.ToString() + "%";
@@ -401,6 +382,7 @@ namespace MiniStore.ItemNav
             {
                 string customerId = cbCustomer.SelectedValue.ToString();
                 string rank = db.getString(string.Format("SELECT CustomerRank FROM Customers WHERE CustomerID = N'{0}' ", customerId));
+
                 getDiscount(rank);
             }
         }
@@ -452,7 +434,6 @@ namespace MiniStore.ItemNav
                 return;
             }
         }
-
     }
 }
 

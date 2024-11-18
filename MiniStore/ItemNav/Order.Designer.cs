@@ -203,7 +203,6 @@
             this.lblEmployess.Size = new System.Drawing.Size(84, 20);
             this.lblEmployess.TabIndex = 8;
             this.lblEmployess.Text = "Nhân viên:";
-            this.lblEmployess.Click += new System.EventHandler(this.lblEmployess_Click);
             // 
             // lblUser
             // 
@@ -264,7 +263,6 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(283, 27);
             this.txtSearch.TabIndex = 0;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // MaSP
             // 
@@ -309,7 +307,6 @@
             this.txtEmployess.Name = "txtEmployess";
             this.txtEmployess.Size = new System.Drawing.Size(239, 23);
             this.txtEmployess.TabIndex = 10;
-            this.txtEmployess.TextChanged += new System.EventHandler(this.txtEmployess_TextChanged);
             // 
             // grpListProduct
             // 
@@ -348,7 +345,6 @@
             this.grpInfoInvoice.TabIndex = 24;
             this.grpInfoInvoice.TabStop = false;
             this.grpInfoInvoice.Text = "Thông tin hóa đơn";
-            this.grpInfoInvoice.Enter += new System.EventHandler(this.grpInfoInvoice_Enter);
             // 
             // btnNewCustomer
             // 

@@ -26,7 +26,11 @@ namespace MiniStore.Forms
             }
             return instance;
         }
-
+        public void ResetFields()
+        {
+            txtb_username.Text = LoggedInUser.Email;
+            txtb_password.Text = "";
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtb_username.Text))
@@ -117,6 +121,14 @@ namespace MiniStore.Forms
             r = MessageBox.Show("Bạn Có Muốn Thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (r == DialogResult.No)
                 e.Cancel = true;
+        }
+
+        private void txtb_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
         }
     }
 

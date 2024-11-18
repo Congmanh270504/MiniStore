@@ -155,6 +155,7 @@
             this.txtb_password.PasswordChar = '*';
             this.txtb_password.Size = new System.Drawing.Size(290, 24);
             this.txtb_password.TabIndex = 13;
+            this.txtb_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtb_password_KeyDown);
             // 
             // frm_Login
             // 

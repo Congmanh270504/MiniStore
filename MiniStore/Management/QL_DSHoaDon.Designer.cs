@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.lbl_dshoadon = new System.Windows.Forms.Label();
             this.grb_tthoadon = new System.Windows.Forms.GroupBox();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.tbDate = new System.Windows.Forms.TextBox();
             this.lbPhuongThuctinh = new System.Windows.Forms.Label();
             this.cbPayment = new System.Windows.Forms.ComboBox();
             this.lbTime = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.orderDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbDate = new System.Windows.Forms.TextBox();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.grb_tthoadon.SuspendLayout();
             this.grpb_dshoadon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -90,6 +90,28 @@
             this.grb_tthoadon.TabIndex = 2;
             this.grb_tthoadon.TabStop = false;
             this.grb_tthoadon.Text = "Tìm kiếm hóa đơn";
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.ForeColor = System.Drawing.Color.White;
+            this.btnLoad.Location = new System.Drawing.Point(606, 16);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(118, 46);
+            this.btnLoad.TabIndex = 28;
+            this.btnLoad.Text = "LOAD";
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // tbDate
+            // 
+            this.tbDate.Location = new System.Drawing.Point(204, 128);
+            this.tbDate.Name = "tbDate";
+            this.tbDate.Size = new System.Drawing.Size(121, 22);
+            this.tbDate.TabIndex = 27;
+            this.tbDate.Visible = false;
+            this.tbDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDate_KeyPress);
             // 
             // lbPhuongThuctinh
             // 
@@ -245,7 +267,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.orderDetailsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 28);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 50);
             // 
             // orderDetailsToolStripMenuItem
             // 
@@ -254,28 +276,7 @@
             this.orderDetailsToolStripMenuItem.Name = "orderDetailsToolStripMenuItem";
             this.orderDetailsToolStripMenuItem.Size = new System.Drawing.Size(214, 24);
             this.orderDetailsToolStripMenuItem.Text = "Xem chi tiết hóa đơn";
-            // 
-            // tbDate
-            // 
-            this.tbDate.Location = new System.Drawing.Point(204, 128);
-            this.tbDate.Name = "tbDate";
-            this.tbDate.Size = new System.Drawing.Size(121, 22);
-            this.tbDate.TabIndex = 27;
-            this.tbDate.Visible = false;
-            this.tbDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDate_KeyPress);
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(606, 16);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(118, 46);
-            this.btnLoad.TabIndex = 28;
-            this.btnLoad.Text = "LOAD";
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.orderDetailsToolStripMenuItem.Click += new System.EventHandler(this.orderDetailsToolStripMenuItem_Click);
             // 
             // QL_DSHoaDon
             // 
