@@ -126,6 +126,7 @@
             // 
             // cbPayment
             // 
+            this.cbPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPayment.FormattingEnabled = true;
             this.cbPayment.Location = new System.Drawing.Point(204, 79);
             this.cbPayment.Name = "cbPayment";
@@ -145,6 +146,7 @@
             // 
             // cbDate
             // 
+            this.cbDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDate.FormattingEnabled = true;
             this.cbDate.Location = new System.Drawing.Point(204, 79);
             this.cbDate.Name = "cbDate";
@@ -212,6 +214,7 @@
             // 
             // cbCell
             // 
+            this.cbCell.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCell.FormattingEnabled = true;
             this.cbCell.Location = new System.Drawing.Point(204, 38);
             this.cbCell.Name = "cbCell";
@@ -267,7 +270,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.orderDetailsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 50);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 28);
             // 
             // orderDetailsToolStripMenuItem
             // 

@@ -22,8 +22,8 @@ namespace MiniStore.Management
         List<string> columnNames = new List<string>
                         {
                             "OrderID",
-                            "CustomerID",
-                            "EmployeeID",
+                            "CustomerName",
+                            "EmployeeName",
                             "OrderDate",
                             "TotalAmount",
                             "PaymentMethod"
@@ -43,7 +43,7 @@ namespace MiniStore.Management
         }
         void datagrid_Load()
         {
-            string sql = "select * from Orders";
+            string sql = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from Orders,Customers,Employees where Orders.CustomerID=Customers.CustomerID and Employees.EmployeeID = Orders.EmployeeID";
             da_employees = db.getDataAdapter(sql, "Orders");
             employees = db.Dset.Tables["Orders"];
             dataGridView.DataSource = employees;
@@ -55,8 +55,8 @@ namespace MiniStore.Management
             primaryKey[0] = employees.Columns["OrderID"];
             employees.PrimaryKey = primaryKey;
             dataGridView.Columns["OrderID"].HeaderText = "Mã hóa đơn";
-            dataGridView.Columns["CustomerID"].HeaderText = "Mã khách hàng";
-            dataGridView.Columns["EmployeeID"].HeaderText = "Mã nhân viên";
+            dataGridView.Columns["EmployeeName"].HeaderText = "Tên nhân viên";
+            dataGridView.Columns["CustomerName"].HeaderText = "Tên khách hàng";
             dataGridView.Columns["OrderDate"].HeaderText = "Ngày lập";
             dataGridView.Columns["TotalAmount"].HeaderText = "Tổng tiền";
             dataGridView.Columns["PaymentMethod"].HeaderText = "Phương thức tính";
@@ -67,7 +67,6 @@ namespace MiniStore.Management
                 dataGridView.Columns[item].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dataGridView.Columns[item].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridView.Columns[item].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-
             }
             load_Type();
             load_DateType();
@@ -113,7 +112,7 @@ namespace MiniStore.Management
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            if (cbCell.Text.Equals("Mã hóa đơn") || cbCell.Text.Equals("Mã khách hàng") || cbCell.Text.Equals("Mã nhân viên"))
+            if (cbCell.Text.Equals("Mã hóa đơn") || cbCell.Text.Equals("Tên khách hàng") || cbCell.Text.Equals("Tên nhân viên"))
             {
                 if (string.IsNullOrEmpty(txtSearch.Text) || txtSearch.Text.Equals("Chỉ nhập số"))
                 {
@@ -125,7 +124,9 @@ namespace MiniStore.Management
             {
                 case "Mã hóa đơn":
                     {
-                        string sql = "SELECT * FROM Orders where OrderID = " + txtSearch.Text;
+                        string sql = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                                      "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                                      "and Employees.EmployeeID = Orders.EmployeeID and OrderID = " + txtSearch.Text;
 
                         using (SqlConnection connection = new SqlConnection(db.strConnect))
                         {
@@ -133,32 +134,62 @@ namespace MiniStore.Management
 
                             DataTable products = new DataTable();
                             da_products.Fill(products);
+                            if (products.Rows.Count == 0)
+                            {
+                                MessageBox.Show("Không tìm thấy hóa đơn nào có mã đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtSearch.Clear();
+                                txtSearch.Focus();
+                                datagrid_Load();
+                                return;
+                            }
                             dataGridView.DataSource = products;
                         }
                         break;
                     }
-                case "Mã khách hàng":
+                case "Tên khách hàng":
                     {
-                        string sql = "select * from Orders where CustomerID = " + txtSearch.Text;
+                        string sql = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                                      "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                                      "and Employees.EmployeeID = Orders.EmployeeID and CustomerName LIKE @CustomerName";
+
                         using (SqlConnection connection = new SqlConnection(db.strConnect))
                         {
                             SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
-
+                            da_products.SelectCommand.Parameters.AddWithValue("@CustomerName", "%" + txtSearch.Text + "%");
                             DataTable products = new DataTable();
                             da_products.Fill(products);
+                            if (products.Rows.Count == 0)
+                            {
+                                MessageBox.Show("Không tìm thấy hóa đơn nào có tên khách hàng đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtSearch.Clear();
+                                txtSearch.Focus();
+                                datagrid_Load();
+                                return;
+                            }
                             dataGridView.DataSource = products;
                         }
                         break;
                     }
-                case "Mã nhân viên":
+                case "Tên nhân viên":
                     {
-                        string sql = "select * from Orders where EmployeeID = " + txtSearch.Text;
+                        string sql = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                                        "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                                        "and Employees.EmployeeID = Orders.EmployeeID and EmployeeName LIKE @EmployeeName";
+
                         using (SqlConnection connection = new SqlConnection(db.strConnect))
                         {
                             SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
-
+                            da_products.SelectCommand.Parameters.AddWithValue("@EmployeeName", "%" + txtSearch.Text + "%");
                             DataTable products = new DataTable();
                             da_products.Fill(products);
+                            if (products.Rows.Count == 0)
+                            {
+                                MessageBox.Show("Không tìm thấy hóa đơn nào có tên nhân viên đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtSearch.Clear();
+                                txtSearch.Focus();
+                                datagrid_Load();
+                                return;
+                            }
                             dataGridView.DataSource = products;
                         }
                         break;
@@ -169,40 +200,69 @@ namespace MiniStore.Management
                         {
                             case "Ngày":
                                 {
-                                    string query = "select * from Orders where DAY(OrderDate) = '" + tbDate.Text + "'";
+                                    string query = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                                        "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                                        "and Employees.EmployeeID = Orders.EmployeeID and DAY(OrderDate) = '" + tbDate.Text + "'";
                                     using (SqlConnection connection = new SqlConnection(db.strConnect))
                                     {
                                         SqlDataAdapter da_products = new SqlDataAdapter(query, connection);
 
                                         DataTable products = new DataTable();
                                         da_products.Fill(products);
+                                        if (products.Rows.Count == 0)
+                                        {
+                                            MessageBox.Show("Không tìm thấy hóa đơn nào có ngày đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            tbDate.Clear();
+                                            tbDate.Focus();
+                                            datagrid_Load();
+                                            return;
+                                        }
                                         dataGridView.DataSource = products;
                                     }
-
                                     break;
                                 }
                             case "Tháng":
                                 {
-                                    string query = "select * from Orders where MONTH(OrderDate) = '" + tbDate.Text + "'";
+                                    string query = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                                        "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                                        "and Employees.EmployeeID = Orders.EmployeeID and MONTH(OrderDate) = '" + tbDate.Text + "'";
                                     using (SqlConnection connection = new SqlConnection(db.strConnect))
                                     {
                                         SqlDataAdapter da_products = new SqlDataAdapter(query, connection);
 
                                         DataTable products = new DataTable();
                                         da_products.Fill(products);
+                                        if (products.Rows.Count == 0)
+                                        {
+                                            MessageBox.Show("Không tìm thấy hóa đơn nào có tháng đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            tbDate.Clear();
+                                            tbDate.Focus();
+                                            datagrid_Load();
+                                            return;
+                                        }
                                         dataGridView.DataSource = products;
                                     }
                                     break;
                                 }
                             case "Năm":
                                 {
-                                    string query = "select * from Orders where YEAR(OrderDate) = '" + tbDate.Text + "'";
+                                    string query = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                                        "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                                        "and Employees.EmployeeID = Orders.EmployeeID and YEAR(OrderDate) = '" + tbDate.Text + "'";
                                     using (SqlConnection connection = new SqlConnection(db.strConnect))
                                     {
                                         SqlDataAdapter da_products = new SqlDataAdapter(query, connection);
 
                                         DataTable products = new DataTable();
                                         da_products.Fill(products);
+                                        if (products.Rows.Count == 0)
+                                        {
+                                            MessageBox.Show("Không tìm thấy hóa đơn nào có năm đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            tbDate.Clear();
+                                            tbDate.Focus();
+                                            datagrid_Load();
+                                            return;
+                                        }
                                         dataGridView.DataSource = products;
                                     }
                                     break;
@@ -213,7 +273,9 @@ namespace MiniStore.Management
                                 if (DateTime.TryParseExact(maskDateTime.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out enteredDate))
                                 {
                                     string formattedDate = enteredDate.ToString("yyyy-MM-dd");
-                                    defaultSQL = "select * from Orders where CONVERT(date, OrderDate) = @OrderDate";
+                                    defaultSQL = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                                        "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                                        "and Employees.EmployeeID = Orders.EmployeeID and CONVERT(date, OrderDate) = @OrderDate";
                                     using (SqlConnection conn = new SqlConnection(db.strConnect))
                                     {
                                         using (SqlCommand cmd = new SqlCommand(defaultSQL, conn))
@@ -222,6 +284,14 @@ namespace MiniStore.Management
                                             da_employees = new SqlDataAdapter(cmd);
                                             employees = new DataTable();
                                             da_employees.Fill(employees);
+                                            if (employees.Rows.Count == 0)
+                                            {
+                                                MessageBox.Show("Không tìm thấy hóa đơn nào có ngày/tháng/năm đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                tbDate.Clear();
+                                                tbDate.Focus();
+                                                datagrid_Load();
+                                                return;
+                                            }
                                             dataGridView.DataSource = employees;
                                         }
                                     }
@@ -237,62 +307,45 @@ namespace MiniStore.Management
                     }
                 case "Tổng tiền":
                     {
-                        string sql = "select * from Orders where TotalAmount = " + txtSearch.Text;
+                        string sql = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                                        "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                                        "and Employees.EmployeeID = Orders.EmployeeID and TotalAmount = " + txtSearch.Text;
                         using (SqlConnection connection = new SqlConnection(db.strConnect))
                         {
                             SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
-
                             DataTable products = new DataTable();
                             da_products.Fill(products);
+
+                            if (products.Rows.Count == 0)
+                            {
+                                MessageBox.Show("Không tìm thấy hóa đơn nào có tổng tiền đã nhập ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtSearch.Clear();
+                                txtSearch.Focus();
+                                datagrid_Load();
+                                return;
+                            }
                             dataGridView.DataSource = products;
                         }
                         break;
                     }
                 case "Phương thức tính":
                     {
-                        switch (cbPayment.Text)
+                        string sql = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
+                            "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
+                            "and Employees.EmployeeID = Orders.EmployeeID and PaymentMethod = N'" + cbPayment.Text + "'";
+                        using (SqlConnection connection = new SqlConnection(db.strConnect))
                         {
-                            case "Tiền mặt":
-                                {
-                                    string sql = "select * from Orders where PaymentMethod = N'Tiền mặt'";
-                                    using (SqlConnection connection = new SqlConnection(db.strConnect))
-                                    {
-                                        SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
-
-                                        DataTable products = new DataTable();
-                                        da_products.Fill(products);
-                                        dataGridView.DataSource = products;
-                                    }
-                                    break;
-                                }
-                            case "Chuyển khoản":
-                                {
-                                    string sql = "select * from Orders where PaymentMethod = N'Chuyển khoản'";
-                                    using (SqlConnection connection = new SqlConnection(db.strConnect))
-                                    {
-                                        SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
-
-                                        DataTable products = new DataTable();
-                                        da_products.Fill(products);
-                                        dataGridView.DataSource = products;
-                                    }
-                                    break;
-                                }
-                            case "Thẻ":
-                                {
-                                    string sql = "select * from Orders where PaymentMethod = N'Thẻ'";
-                                    using (SqlConnection connection = new SqlConnection(db.strConnect))
-                                    {
-                                        SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
-
-                                        DataTable products = new DataTable();
-                                        da_products.Fill(products);
-                                        dataGridView.DataSource = products;
-                                    }
-                                    break;
-                                }
-                            default:
-                                break;
+                            SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
+                            DataTable products = new DataTable();
+                            da_products.Fill(products);
+                            if (products.Rows.Count == 0)
+                            {
+                                MessageBox.Show("Không tìm thấy hóa đơn nào có phương tính là " + cbPayment.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                cbPayment.Focus();
+                                datagrid_Load();
+                                return;
+                            }
+                            dataGridView.DataSource = products;
                         }
                         break;
                     }
@@ -305,6 +358,17 @@ namespace MiniStore.Management
         }
         private void cbCell_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            if (cbCell.Text.Equals("Tên nhân viên") || cbCell.Text.Equals("Tên khách hàng"))
+            {
+                txtSearch.Text = "Chỉ nhập chữ";
+                txtSearch.ForeColor = Color.Gray;
+            }
+            if (cbCell.Text.Equals("Mã hóa đơn") || cbCell.Text.Equals("Tổng tiền"))
+            {
+                txtSearch.Text = "Chỉ nhập số";
+                txtSearch.ForeColor = Color.Gray;
+            }
 
             switch (cbCell.Text)
             {
@@ -361,27 +425,60 @@ namespace MiniStore.Management
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (cbCell.Text.Equals("Tên nhân viên") || cbCell.Text.Equals("Tên khách hàng"))
             {
-                e.Handled = true;
+                if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            if (cbCell.Text.Equals("Tổng tiền") || cbCell.Text.Equals("Mã hóa đơn"))
+            {
+                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
             }
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
-            if (txtSearch.Text.Equals("Chỉ nhập số"))
+            if (cbCell.Text.Equals("Tổng tiền") || cbCell.Text.Equals("Mã hóa đơn"))
             {
-                txtSearch.Text = "";
-                txtSearch.ForeColor = Color.Black;
+                if (txtSearch.Text.Equals("Chỉ nhập số"))
+                {
+                    txtSearch.Text = "";
+                    txtSearch.ForeColor = Color.Black;
+                }
+            }
+            if (cbCell.Text.Equals("Tên nhân viên") || cbCell.Text.Equals("Tên khách hàng"))
+            {
+                if (txtSearch.Text.Equals("Chỉ nhập chữ"))
+                {
+                    txtSearch.Text = "";
+                    txtSearch.ForeColor = Color.Black;
+                }
             }
         }
 
         private void txtSearch_Leave(object sender, EventArgs e)
         {
-            if (txtSearch.Text.Equals(""))
+            if (cbCell.Text.Equals("Tổng tiền") || cbCell.Text.Equals("Mã hóa đơn"))
             {
-                txtSearch.Text = "Chỉ nhập số";
-                txtSearch.ForeColor = Color.Gray;
+                if (txtSearch.Text.Equals(""))
+                {
+                    txtSearch.Text = "Chỉ nhập số";
+                    txtSearch.ForeColor = Color.Gray;
+                }
+            }
+
+            if (cbCell.Text.Equals("Tên nhân viên") || cbCell.Text.Equals("Tên khách hàng"))
+            {
+                if (txtSearch.Text.Equals(""))
+                {
+                    txtSearch.Text = "Chỉ nhập chữ";
+                    txtSearch.ForeColor = Color.Gray;
+                }
             }
         }
 
