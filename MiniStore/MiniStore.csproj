@@ -104,6 +104,12 @@
     <Compile Include="ItemNav\editInfor.Designer.cs">
       <DependentUpon>editInfor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemNav\frm_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemNav\frm_Report.Designer.cs">
+      <DependentUpon>frm_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemNav\NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemNav\editInfor.resx">
       <DependentUpon>editInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemNav\frm_Report.resx">
+      <DependentUpon>frm_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemNav\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>

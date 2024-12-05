@@ -144,9 +144,9 @@ GO
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT Discounts ON 
 INSERT Discounts (DiscountID, ProductID, DiscountPercentage, StartDate, EndDate) VALUES (2, 1, CAST(10.00 AS DECIMAL(5, 2)), CAST(N'2024-09-01T00:00:00.000' AS DATETIME), CAST(N'2024-09-30T00:00:00.000' AS DATETIME))
-INSERT Discounts (DiscountID, ProductID, DiscountPercentage, StartDate, EndDate) VALUES (3, 2, CAST(5.00 AS DECIMAL(5, 2)), CAST(N'2024-09-15T00:00:00.000' AS DATETIME), CAST(N'2024-10-15T00:00:00.000' AS DATETIME))
+INSERT Discounts (DiscountID, ProductID, DiscountPercentage, StartDate, EndDate) VALUES (3, 2, CAST(5.00 AS DECIMAL(5, 2)), CAST(N'2018-12-15T00:00:00.000' AS DATETIME), CAST(N'2019-11-15T00:00:00.000' AS DATETIME))
 INSERT Discounts (DiscountID, ProductID, DiscountPercentage, StartDate, EndDate) VALUES (4, 4, CAST(15.00 AS DECIMAL(5, 2)), CAST(N'2024-10-01T00:00:00.000' AS DATETIME), CAST(N'2024-10-31T00:00:00.000' AS DATETIME))
-INSERT Discounts (DiscountID, ProductID, DiscountPercentage, StartDate, EndDate) VALUES (5, 8, CAST(20.00 AS DECIMAL(5, 2)), CAST(N'2024-09-20T00:00:00.000' AS DATETIME), CAST(N'2024-10-20T00:00:00.000' AS DATETIME))
+INSERT Discounts (DiscountID, ProductID, DiscountPercentage, StartDate, EndDate) VALUES (5, 8, CAST(20.00 AS DECIMAL(5, 2)), CAST(N'2024-07-20T00:00:00.000' AS DATETIME), CAST(N'2024-10-20T00:00:00.000' AS DATETIME))
 SET IDENTITY_INSERT Discounts OFF
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -184,7 +184,7 @@ GO
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT Inventory ON 
 INSERT Inventory (InventoryID, ProductID, QuantityInStock, MinimumRequired, LastUpdated) VALUES (1, 1, 100, 50, CAST(N'2024-10-25T20:47:17.383' AS DATETIME))
-INSERT Inventory (InventoryID, ProductID, QuantityInStock, MinimumRequired, LastUpdated) VALUES (2, 2, 150, 50, CAST(N'2024-10-25T20:47:17.383' AS DATETIME))
+INSERT Inventory (InventoryID, ProductID, QuantityInStock, MinimumRequired, LastUpdated) VALUES (2, 2, 150, 50, CAST(N'2024-12-18T20:47:17.383' AS DATETIME))
 INSERT Inventory (InventoryID, ProductID, QuantityInStock, MinimumRequired, LastUpdated) VALUES (3, 3, 75, 20, CAST(N'2024-10-25T20:47:17.383' AS DATETIME))
 INSERT Inventory (InventoryID, ProductID, QuantityInStock, MinimumRequired, LastUpdated) VALUES (4, 4, 200, 100, CAST(N'2024-10-25T20:47:17.383' AS DATETIME))
 INSERT Inventory (InventoryID, ProductID, QuantityInStock, MinimumRequired, LastUpdated) VALUES (5, 5, 250, 80, CAST(N'2024-10-25T20:47:17.383' AS DATETIME))
@@ -212,35 +212,35 @@ GO
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT Orders ON 
 INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (1, 1, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(150.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (2, 2, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(85.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (3, 3, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(250.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (4, 4, 3, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(300.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (5, 5, 4, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(120.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (6, 6, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(190.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (7, 7, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(230.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (8, 8, 3, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(90.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (9, 9, 4, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(170.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (10, 10, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(210.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (11, 11, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(55.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (12, 12, 4, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(82.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (13, 13, 3, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(79.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (14, 14, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(125.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (15, 15, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(263.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (16, 16, 4, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(22.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (17, 17, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(34.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (18, 18, 3, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(78.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (19, 19, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(99.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (20, 20, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(146.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (21, 20, 4, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(89.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (22, 15, 3, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(155.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (23, 17, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(20.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (24, 18, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(55.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (25, 8, 3, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(89.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (26, 7, 4, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(76.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (27, 11, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(444.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (2, 2, 2, CAST(N'2023-12-18T20:46:46.753' AS DATETIME), CAST(85.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (3, 3, 1, CAST(N'2023-07-14T20:46:46.753' AS DATETIME), CAST(250.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (4, 4, 3, CAST(N'2024-11-22T20:46:46.753' AS DATETIME), CAST(300.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (5, 5, 4, CAST(N'2023-08-20T20:46:46.753' AS DATETIME), CAST(120.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (6, 6, 2, CAST(N'2023-10-26T20:46:46.753' AS DATETIME), CAST(190.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (7, 7, 1, CAST(N'2023-07-13T20:46:46.753' AS DATETIME), CAST(230.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (8, 8, 3, CAST(N'2024-10-14T20:46:46.753' AS DATETIME), CAST(90.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (9, 9, 4, CAST(N'2024-02-22T20:46:46.753' AS DATETIME), CAST(170.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (10, 10, 2, CAST(N'2023-11-14T20:46:46.753' AS DATETIME), CAST(210.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (11, 11, 2, CAST(N'2024-08-25T20:46:46.753' AS DATETIME), CAST(55.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (12, 12, 4, CAST(N'2024-04-22T20:46:46.753' AS DATETIME), CAST(82.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (13, 13, 3, CAST(N'2024-05-16T20:46:46.753' AS DATETIME), CAST(79.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (14, 14, 1, CAST(N'2023-06-19T20:46:46.753' AS DATETIME), CAST(125.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (15, 15, 1, CAST(N'2023-11-25T20:46:46.753' AS DATETIME), CAST(263.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (16, 16, 4, CAST(N'2024-07-22T20:46:46.753' AS DATETIME), CAST(22.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (17, 17, 2, CAST(N'2024-11-27T20:46:46.753' AS DATETIME), CAST(34.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (18, 18, 3, CAST(N'2024-10-16T20:46:46.753' AS DATETIME), CAST(78.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (19, 19, 2, CAST(N'2023-09-25T20:46:46.753' AS DATETIME), CAST(99.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (20, 20, 1, CAST(N'2023-01-13T20:46:46.753' AS DATETIME), CAST(146.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (21, 20, 4, CAST(N'2024-07-25T20:46:46.753' AS DATETIME), CAST(89.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (22, 15, 3, CAST(N'2024-11-17T20:46:46.753' AS DATETIME), CAST(155.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (23, 17, 1, CAST(N'2023-12-08T20:46:46.753' AS DATETIME), CAST(20.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (24, 18, 2, CAST(N'2024-08-25T20:46:46.753' AS DATETIME), CAST(55.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (25, 8, 3, CAST(N'2024-05-09T20:46:46.753' AS DATETIME), CAST(89.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (26, 7, 4, CAST(N'2023-12-25T20:46:46.753' AS DATETIME), CAST(76.000 AS DECIMAL(10, 3)), N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (27, 11, 1, CAST(N'2024-11-12T20:46:46.753' AS DATETIME), CAST(444.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
 INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (28, 12, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(178.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (29, 7, 4, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(97.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (30, 15, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(23.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (29, 7, 4, CAST(N'2024-06-17T20:46:46.753' AS DATETIME), CAST(97.000 AS DECIMAL(10, 3)), N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (30, 15, 1, CAST(N'2023-07-19T20:46:46.753' AS DATETIME), CAST(23.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
 SET IDENTITY_INSERT Orders OFF
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -343,3 +343,38 @@ GO
 ALTER DATABASE miniMKT SET  READ_WRITE 
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
+-- SET PHỤC HỒI DẠNG FULL.
+ALTER DATABASE miniMKT SET RECOVERY FULL
+GO
+
+-- FULL BACKUP.
+BACKUP DATABASE miniMKT
+TO  DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Backup\miniMKT_full.bak' 
+GO
+----------------------------------------------------------------------------------------------------------------------------------------
+-- TEST SỰ CỐ.
+USE master
+GO
+
+DROP DATABASE miniMKT
+GO
+----------------------------------------------------------------------------------------------------------------------------------------
+-- PHỤC HỒI.
+RESTORE DATABASE miniMKT
+FROM  DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Backup\miniMKT.bak' 
+GO
+
+USE miniMKT
+GO
+
+SELECT * FROM dbo.Customers
+GO
+
+INSERT INTO dbo.Customers VALUES
+(N'test',0321654,'test@gmail.com',N'VANG',N'test dia chi')
+GO
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+

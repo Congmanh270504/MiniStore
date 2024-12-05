@@ -91,7 +91,9 @@ namespace MiniStore.Management
              "INSERT INTO Categories(CategoryName) " + "VALUES( N'{0}')", txtLoaiSanPham.Text);
             db.updateToDataBase(sql);
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            load_category();
+            string str = "SELECT * FROM Categories";
+
+            dataGridView.DataSource = db.getDataTable(str, "Categories");
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
@@ -173,5 +175,12 @@ namespace MiniStore.Management
             }
         }
 
+        private void txtLoaiSanPham_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

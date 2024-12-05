@@ -53,11 +53,7 @@
             this.grpTimKiem = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btn_Dong = new System.Windows.Forms.Button();
             this.btn_Clear = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
             this.grpDanhSach = new System.Windows.Forms.GroupBox();
             this.dataGridView_DSNhanVien = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +67,10 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btn_Dong = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
             this.grpThongTin.SuspendLayout();
             this.grpTimKiem.SuspendLayout();
             this.grpDanhSach.SuspendLayout();
@@ -243,6 +243,7 @@
             // 
             // cb_Position
             // 
+            this.cb_Position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Position.FormattingEnabled = true;
             this.cb_Position.Location = new System.Drawing.Point(114, 96);
             this.cb_Position.Name = "cb_Position";
@@ -284,9 +285,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(551, 28);
+            this.btnSearch.Location = new System.Drawing.Point(550, 22);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(95, 27);
+            this.btnSearch.Size = new System.Drawing.Size(96, 36);
             this.btnSearch.TabIndex = 34;
             this.btnSearch.Text = "Tìm ";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -303,19 +304,6 @@
             this.lblTitle.TabIndex = 74;
             this.lblTitle.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
-            // btn_Dong
-            // 
-            this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Dong.ForeColor = System.Drawing.Color.White;
-            this.btn_Dong.Location = new System.Drawing.Point(671, 239);
-            this.btn_Dong.Name = "btn_Dong";
-            this.btn_Dong.Size = new System.Drawing.Size(121, 46);
-            this.btn_Dong.TabIndex = 83;
-            this.btn_Dong.Text = "ĐÓNG";
-            this.btn_Dong.UseVisualStyleBackColor = false;
-            this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
-            // 
             // btn_Clear
             // 
             this.btn_Clear.BackColor = System.Drawing.Color.DarkCyan;
@@ -328,45 +316,6 @@
             this.btn_Clear.Text = "CLEAR";
             this.btn_Clear.UseVisualStyleBackColor = false;
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua.Location = new System.Drawing.Point(344, 240);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(126, 45);
-            this.btn_Sua.TabIndex = 81;
-            this.btn_Sua.Text = "SỬA";
-            this.btn_Sua.UseVisualStyleBackColor = false;
-            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_Xoa.Location = new System.Drawing.Point(178, 240);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(126, 45);
-            this.btn_Xoa.TabIndex = 80;
-            this.btn_Xoa.Text = "XÓA";
-            this.btn_Xoa.UseVisualStyleBackColor = false;
-            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.ForeColor = System.Drawing.Color.White;
-            this.btn_Them.Location = new System.Drawing.Point(12, 240);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(126, 45);
-            this.btn_Them.TabIndex = 79;
-            this.btn_Them.Text = "THÊM";
-            this.btn_Them.UseVisualStyleBackColor = false;
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // grpDanhSach
             // 
@@ -385,6 +334,7 @@
             this.dataGridView_DSNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_DSNhanVien.Location = new System.Drawing.Point(7, 28);
             this.dataGridView_DSNhanVien.Name = "dataGridView_DSNhanVien";
+            this.dataGridView_DSNhanVien.ReadOnly = true;
             this.dataGridView_DSNhanVien.Size = new System.Drawing.Size(748, 222);
             this.dataGridView_DSNhanVien.TabIndex = 0;
             this.dataGridView_DSNhanVien.SelectionChanged += new System.EventHandler(this.dataGridView_DSNhanVien_SelectionChanged);
@@ -467,6 +417,73 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Đi làm";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // btn_Dong
+            // 
+            this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dong.ForeColor = System.Drawing.Color.White;
+            this.btn_Dong.Image = global::MiniStore.Properties.Resources.cancel_32px;
+            this.btn_Dong.Location = new System.Drawing.Point(671, 239);
+            this.btn_Dong.Name = "btn_Dong";
+            this.btn_Dong.Size = new System.Drawing.Size(121, 46);
+            this.btn_Dong.TabIndex = 83;
+            this.btn_Dong.Text = "ĐÓNG";
+            this.btn_Dong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Dong.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Dong.UseVisualStyleBackColor = false;
+            this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
+            // 
+            // btn_Sua
+            // 
+            this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Sua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sua.ForeColor = System.Drawing.Color.White;
+            this.btn_Sua.Image = global::MiniStore.Properties.Resources.edit_file_20px;
+            this.btn_Sua.Location = new System.Drawing.Point(344, 240);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(126, 45);
+            this.btn_Sua.TabIndex = 81;
+            this.btn_Sua.Text = "SỬA";
+            this.btn_Sua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.ForeColor = System.Drawing.Color.White;
+            this.btn_Xoa.Image = global::MiniStore.Properties.Resources.delete_20px;
+            this.btn_Xoa.Location = new System.Drawing.Point(178, 240);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(126, 45);
+            this.btn_Xoa.TabIndex = 80;
+            this.btn_Xoa.Text = "XÓA";
+            this.btn_Xoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Them.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Them.ForeColor = System.Drawing.Color.White;
+            this.btn_Them.Image = global::MiniStore.Properties.Resources.add_20px;
+            this.btn_Them.Location = new System.Drawing.Point(12, 240);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(126, 45);
+            this.btn_Them.TabIndex = 79;
+            this.btn_Them.Text = "THÊM";
+            this.btn_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // QL_NhanSu
             // 

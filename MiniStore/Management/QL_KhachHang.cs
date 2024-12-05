@@ -19,6 +19,14 @@ namespace MiniStore.Management
         DBConnect db;
         SqlDataAdapter da_Customers;
         DataTable Customers;
+        List<string> columnNames = new List<string>
+                        {
+                            "CustomerID",
+                            "CustomerName",
+                            "Phone",
+                            "CustomerRank",
+                            "CustomerSuppAddress"
+                        };
         public QL_KhachHang()
         {
             InitializeComponent();
@@ -79,23 +87,13 @@ namespace MiniStore.Management
 
             txtb_DiaChi.DataBindings.Add(new Binding("Text", Customers, "CustomerSuppAddress", true, DataSourceUpdateMode.Never));
 
-            dataGridView.Columns["CustomerID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView.Columns["CustomerName"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView.Columns["Phone"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView.Columns["CustomerRank"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView.Columns["CustomerSuppAddress"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            dataGridView.Columns["CustomerName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns["Phone"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns["CustomerRank"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns["CustomerSuppAddress"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-            dataGridView.Columns["CustomerRank"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            dataGridView.Columns["CustomerName"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-            dataGridView.Columns["Phone"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-            dataGridView.Columns["CustomerRank"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-            dataGridView.Columns["CustomerSuppAddress"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+            foreach (string item in columnNames)
+            {
+                dataGridView.Columns[item].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView.Columns[item].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView.Columns[item].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView.Columns[item].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+            }
         }
         void load_Grid()
         {
@@ -106,8 +104,8 @@ namespace MiniStore.Management
 
         private void QL_KhachHang_Load(object sender, EventArgs e)
         {
-            loadData();
             loadcomboboxhang();
+            loadData();
         }
 
         private void btn_Dong_Click(object sender, EventArgs e)

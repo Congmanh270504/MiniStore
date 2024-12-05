@@ -124,10 +124,16 @@
   <data name="graph_report_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\graph_report_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit_file_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\edit_file_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shopping_cart_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\shopping_cart_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="restart_120px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\restart_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="restart_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\restart_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sorting_answers_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -142,11 +148,14 @@
   <data name="man_with_yellow_tie_in_jacket_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\man_with_yellow_tie_in_jacket_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="conference_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\conference_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kawaii_french_fries_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\kawaii_french_fries_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="conference_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MyResources\conference_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\delete_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ingredients_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\ingredients_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,6 +187,9 @@
   <data name="discount_banner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\discount_banner1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit_file_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\edit_file_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logopassword2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\logopassword2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,19 +202,22 @@
   <data name="password_120px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\password_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\add_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="conference_call_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\conference_call_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="small_business_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\small_business_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="restart_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MyResources\restart_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bill_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\bill_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="conference_call_120px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\conference_call_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bill_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MyResources\bill_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancel_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\cancel_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

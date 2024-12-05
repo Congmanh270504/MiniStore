@@ -66,6 +66,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(6, 28);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(888, 275);
             this.dataGridView.TabIndex = 0;
             // 
@@ -105,6 +106,7 @@
             // 
             // cbb_hangkh
             // 
+            this.cbb_hangkh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_hangkh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_hangkh.FormattingEnabled = true;
             this.cbb_hangkh.Location = new System.Drawing.Point(596, 84);
