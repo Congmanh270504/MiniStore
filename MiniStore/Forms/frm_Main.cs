@@ -44,7 +44,7 @@ namespace MiniStore.Forms
                     btnReport.Visible = false;
                     btnAdmin.Visible = false;
                     break;
-                case "Quản lý cửa hàng":
+                case "Thu ngân":
                     btnProduct.Visible = false;
                     btnAdmin.Visible = false;
                     break;

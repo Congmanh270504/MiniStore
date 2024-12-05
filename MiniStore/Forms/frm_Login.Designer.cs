@@ -92,7 +92,7 @@
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblLogin.Location = new System.Drawing.Point(49, 182);
+            this.lblLogin.Location = new System.Drawing.Point(44, 187);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(283, 32);
             this.lblLogin.TabIndex = 8;
@@ -120,22 +120,22 @@
             // lbl_username
             // 
             this.lbl_username.AutoSize = true;
-            this.lbl_username.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_username.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_username.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbl_username.Location = new System.Drawing.Point(25, 253);
             this.lbl_username.Name = "lbl_username";
-            this.lbl_username.Size = new System.Drawing.Size(69, 17);
+            this.lbl_username.Size = new System.Drawing.Size(80, 20);
             this.lbl_username.TabIndex = 10;
             this.lbl_username.Text = "Username";
             // 
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_password.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_password.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbl_password.Location = new System.Drawing.Point(25, 330);
             this.lbl_password.Name = "lbl_password";
-            this.lbl_password.Size = new System.Drawing.Size(66, 17);
+            this.lbl_password.Size = new System.Drawing.Size(76, 20);
             this.lbl_password.TabIndex = 11;
             this.lbl_password.Text = "Password";
             // 
@@ -171,7 +171,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pnlRight);
             this.Name = "frm_Login";
-            this.Text = "frm_Login";
+            this.Text = "ĐĂNG NHẬP";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Login_FormClosing);
             this.pnlRight.ResumeLayout(false);
             this.pnlRight.PerformLayout();

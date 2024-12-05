@@ -259,7 +259,7 @@
             this.Controls.Add(this.lbl_mahd);
             this.Controls.Add(this.lbl_hoadon);
             this.Name = "QL_HoaDon";
-            this.Text = "QL_HoaDon";
+            this.Text = "HÓA ĐƠN";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

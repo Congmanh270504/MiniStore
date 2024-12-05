@@ -291,7 +291,7 @@
             this.Controls.Add(this.lbl_dshoadon);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "QL_DSHoaDon";
-            this.Text = "QL_DSHoaDon";
+            this.Text = "DANH SÁCH HÓA ĐƠN";
             this.Load += new System.EventHandler(this.QL_DSHoaDon_Load);
             this.grb_tthoadon.ResumeLayout(false);
             this.grb_tthoadon.PerformLayout();

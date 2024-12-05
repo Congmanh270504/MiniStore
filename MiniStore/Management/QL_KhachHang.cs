@@ -162,7 +162,6 @@ namespace MiniStore.Management
                 query = string.Format("INSERT Customers ( CustomerName, Phone, CustomerRank, CustomerSuppAddress)" +
                                " VALUES (N'{0}', '{1}', '{2}', N'{3}')", txtb_tenkh.Text, txtb_sdt.Text, cbb_hangkh.Text, txtb_DiaChi.Text);
             }
-            MessageBox.Show(query);
             db.updateToDataBase(query);
             txtb_DiaChi.Clear();
             txtb_tenkh.Clear();
@@ -286,7 +285,7 @@ namespace MiniStore.Management
         private bool IsValidPhoneNumber(string phoneNumber)
         {
             // Regular expression for Vietnamese phone numbers
-            string pattern = @"^(03|05|07|08|09)\d{8,9}$";
+            string pattern = @"^(03|05|07|08|09)\d{10,11}$";
             return Regex.IsMatch(phoneNumber, pattern);
         }
     }

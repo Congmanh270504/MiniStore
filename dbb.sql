@@ -163,8 +163,8 @@ CREATE TABLE Employees
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT Employees ON 
-INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (1, N'Trần Công Mạnh', N'Thu ngân', N'0901234567', N'congmanh@gmail.com', N'12345')
-INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (2, N'Phạm Thị Hằng', N'Quản lý cửa hàng', N'0912345678', N'hangpham@gmail.com', N'password456')
+INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (1, N'Trần Công Mạnh', N'Quản lý cửa hàng', N'0901234567', N'congmanh@gmail.com', N'12345')
+INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (2, N'Phạm Thị Hằng', N'Thu ngân', N'0912345678', N'hangpham@gmail.com', N'password456')
 INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (3, N'Lê Văn Minh', N'Nhân viên kho', N'0938765432', N'minhle@gmail.com', N'password789')
 INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (4, N'Nguyễn Thị Mai', N'Nhân viên bán hàng', N'0945432123', N'mainguyen@gmail.com', N'password321')
 SET IDENTITY_INSERT Employees OFF

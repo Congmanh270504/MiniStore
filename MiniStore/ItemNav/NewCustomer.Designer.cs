@@ -43,15 +43,15 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 72);
+            this.label1.Location = new System.Drawing.Point(23, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Họ và tên";
+            this.label1.Text = "Họ và tên:";
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(106, 74);
+            this.tbName.Location = new System.Drawing.Point(158, 78);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(281, 20);
             this.tbName.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // tbNumberPhone
             // 
-            this.tbNumberPhone.Location = new System.Drawing.Point(106, 109);
+            this.tbNumberPhone.Location = new System.Drawing.Point(158, 119);
             this.tbNumberPhone.Name = "tbNumberPhone";
             this.tbNumberPhone.Size = new System.Drawing.Size(281, 20);
             this.tbNumberPhone.TabIndex = 3;
@@ -69,15 +69,15 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 107);
+            this.label2.Location = new System.Drawing.Point(23, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 20);
+            this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "SĐT";
+            this.label2.Text = "Số Điện Thoại:";
             // 
             // tbAddress
             // 
-            this.tbAddress.Location = new System.Drawing.Point(106, 148);
+            this.tbAddress.Location = new System.Drawing.Point(158, 165);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(281, 20);
             this.tbAddress.TabIndex = 7;
@@ -86,20 +86,20 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 146);
+            this.label4.Location = new System.Drawing.Point(23, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.Size = new System.Drawing.Size(61, 20);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Địa chỉ";
+            this.label4.Text = "Địa chỉ:";
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.DarkCyan;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(72, 233);
+            this.btnAdd.Location = new System.Drawing.Point(83, 209);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(93, 42);
+            this.btnAdd.Size = new System.Drawing.Size(140, 42);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "THÊM";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -108,22 +108,23 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(100, 25);
+            this.label5.Location = new System.Drawing.Point(94, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(273, 31);
+            this.label5.Size = new System.Drawing.Size(298, 45);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Thêm người dùng mới";
+            this.label5.Text = "Thêm người dùng ";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.DarkCyan;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(262, 233);
+            this.btnCancel.Location = new System.Drawing.Point(266, 209);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(93, 42);
+            this.btnCancel.Size = new System.Drawing.Size(140, 42);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "HỦY";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -133,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 308);
+            this.ClientSize = new System.Drawing.Size(474, 274);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnAdd);
@@ -144,7 +145,7 @@
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.label1);
             this.Name = "NewCustomer";
-            this.Text = "Người dùng mới";
+            this.Text = "NGƯỜI DÙNG MỚI";
             this.Load += new System.EventHandler(this.NewCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
