@@ -253,6 +253,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(7, 61);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(526, 376);
             this.dataGridView.TabIndex = 1;
             // 
@@ -358,6 +359,7 @@
             // 
             // cbCustomer
             // 
+            this.cbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomer.FormattingEnabled = true;
             this.cbCustomer.Location = new System.Drawing.Point(102, 33);
             this.cbCustomer.Name = "cbCustomer";

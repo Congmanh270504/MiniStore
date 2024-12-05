@@ -91,6 +91,7 @@
             this.txtLoaiSanPham.Name = "txtLoaiSanPham";
             this.txtLoaiSanPham.Size = new System.Drawing.Size(295, 27);
             this.txtLoaiSanPham.TabIndex = 74;
+            this.txtLoaiSanPham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoaiSanPham_KeyPress);
             // 
             // grpDanhSach
             // 
@@ -109,6 +110,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(6, 28);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(781, 259);
             this.dataGridView.TabIndex = 0;
             // 

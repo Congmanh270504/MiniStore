@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MiniStore.Forms;
 using SQL;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 namespace MiniStore.ItemNav
 {
     public partial class Order : Form
@@ -118,7 +117,7 @@ namespace MiniStore.ItemNav
                 for (int i = 0; i < listOrder.Items.Count; i++)
                 {
                     string item = listOrder.Items[i].ToString();
-                    if (item.Contains($"Mã SP: {maSP} -"))
+                    if (item.Contains("Mã SP: {maSP} -"))
                     {
                         // Extract the current quantity
                         string[] itemParts = item.Split('-');
@@ -128,7 +127,7 @@ namespace MiniStore.ItemNav
 
 
                         // Update the item with the new quantity
-                        listOrder.Items[i] = $"Mã SP: {maSP} - Tên SP: {tenSP} - Giá: {giaTien}đ - {currentQuantity} {unit}";
+                        listOrder.Items[i] = "Mã SP: {maSP} - Tên SP: {tenSP} - Giá: {giaTien}đ - {currentQuantity} {unit}";
                         productExists = true;
                         break;
                     }
@@ -136,7 +135,7 @@ namespace MiniStore.ItemNav
 
                 if (!productExists)
                 {
-                    string itemText = $"Mã SP: {maSP} - Tên SP: {tenSP} - Giá: {giaTien}đ - {soLuong} {unit}";
+                    string itemText = "Mã SP: {maSP} - Tên SP: {tenSP} - Giá: {giaTien}đ - {soLuong} {unit}";
                     listOrder.Items.Add(itemText);
                 }
             }
@@ -412,7 +411,7 @@ namespace MiniStore.ItemNav
                 if (currentQuantity > 0)
                 {
                     // Update the item with the new quantity
-                    itemParts[itemParts.Length - 1] = $" {currentQuantity} {itemParts[itemParts.Length - 1].Split(' ')[2].Trim()}";
+                    itemParts[itemParts.Length - 1] = " {currentQuantity} {itemParts[itemParts.Length - 1].Split(' ')[2].Trim()}";
                     listOrder.Items[index] = string.Join("-", itemParts);
                 }
                 else

@@ -142,5 +142,17 @@ namespace MiniStore.Forms
             currentImageIndex = (currentImageIndex + 1) % imagePaths.Length;
             pictureBox3.Image = Image.FromFile(imagePaths[currentImageIndex]);
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frm_Report frm_Report = new frm_Report();
+            frm_Report.FormClosed += Report_FormClosed; // Subscribe to FormClosed event
+            frm_Report.Show();
+        }
+        private void Report_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
     }
 }

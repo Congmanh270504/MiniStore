@@ -127,9 +127,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(363, 151);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 40);

@@ -135,14 +135,45 @@ namespace MiniStore.Forms
     public class User
     {
         string name, password, position, phone, email;
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        public string Phone
+        {
+            get { return phone; }
+            set { phone = value; }
+        }
+
+        public string Position
+        {
+            get { return position; }
+            set { position = value; }
+        }
+
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
         int id;
 
-        public string Name { get => name; set => name = value; }
-        public string Password { get => password; set => password = value; }
-        public int Id { get => id; set => id = value; }
-        public string Position { get => position; set => position = value; }
-        public string Phone { get => phone; set => phone = value; }
-        public string Email { get => email; set => email = value; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+       
 
         public User()
         {

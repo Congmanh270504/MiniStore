@@ -144,6 +144,7 @@
             this.btnReport.Text = "Thống kê";
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnProduct
             // 

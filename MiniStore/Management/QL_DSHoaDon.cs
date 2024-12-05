@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQL;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using MiniStore.ItemNav;
 namespace MiniStore.Management
 {

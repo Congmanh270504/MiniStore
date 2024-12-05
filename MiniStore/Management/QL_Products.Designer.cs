@@ -190,6 +190,7 @@
             // 
             // cb_DVT
             // 
+            this.cb_DVT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_DVT.FormattingEnabled = true;
             this.cb_DVT.Location = new System.Drawing.Point(367, 141);
             this.cb_DVT.Name = "cb_DVT";
@@ -198,6 +199,7 @@
             // 
             // cb_LoaiHang
             // 
+            this.cb_LoaiHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_LoaiHang.FormattingEnabled = true;
             this.cb_LoaiHang.Location = new System.Drawing.Point(348, 66);
             this.cb_LoaiHang.Name = "cb_LoaiHang";
@@ -216,6 +218,7 @@
             // 
             // cmbNhaCungCap
             // 
+            this.cmbNhaCungCap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNhaCungCap.FormattingEnabled = true;
             this.cmbNhaCungCap.Location = new System.Drawing.Point(121, 106);
@@ -374,6 +377,7 @@
             this.dataGridView_DSMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_DSMonAn.Location = new System.Drawing.Point(6, 28);
             this.dataGridView_DSMonAn.Name = "dataGridView_DSMonAn";
+            this.dataGridView_DSMonAn.ReadOnly = true;
             this.dataGridView_DSMonAn.Size = new System.Drawing.Size(897, 307);
             this.dataGridView_DSMonAn.TabIndex = 0;
             // 

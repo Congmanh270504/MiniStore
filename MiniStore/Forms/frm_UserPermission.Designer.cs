@@ -117,6 +117,7 @@
             // rdoSell
             // 
             this.rdoSell.AutoSize = true;
+            this.rdoSell.ForeColor = System.Drawing.Color.Black;
             this.rdoSell.Location = new System.Drawing.Point(169, 102);
             this.rdoSell.Name = "rdoSell";
             this.rdoSell.Size = new System.Drawing.Size(171, 25);
@@ -128,6 +129,7 @@
             // rdoWareHouse
             // 
             this.rdoWareHouse.AutoSize = true;
+            this.rdoWareHouse.ForeColor = System.Drawing.Color.Black;
             this.rdoWareHouse.Location = new System.Drawing.Point(15, 102);
             this.rdoWareHouse.Name = "rdoWareHouse";
             this.rdoWareHouse.Size = new System.Drawing.Size(131, 25);
@@ -139,6 +141,7 @@
             // rdoManager
             // 
             this.rdoManager.AutoSize = true;
+            this.rdoManager.ForeColor = System.Drawing.Color.Black;
             this.rdoManager.Location = new System.Drawing.Point(169, 41);
             this.rdoManager.Name = "rdoManager";
             this.rdoManager.Size = new System.Drawing.Size(152, 25);
@@ -150,6 +153,7 @@
             // rdoOwner
             // 
             this.rdoOwner.AutoSize = true;
+            this.rdoOwner.ForeColor = System.Drawing.Color.Black;
             this.rdoOwner.Location = new System.Drawing.Point(15, 41);
             this.rdoOwner.Name = "rdoOwner";
             this.rdoOwner.Size = new System.Drawing.Size(126, 25);

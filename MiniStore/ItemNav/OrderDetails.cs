@@ -19,7 +19,12 @@ namespace MiniStore.ItemNav
         DataTable orderDetails;
         string orderID;
 
-        public string OrderID { get => orderID; set => orderID = value; }
+        public string OrderID
+        {
+            get { return orderID; }
+            set { orderID = value; }
+        }
+
 
         public OrderDetails(string orderID)
         {

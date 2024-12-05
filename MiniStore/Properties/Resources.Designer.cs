@@ -63,6 +63,16 @@ namespace MiniStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_20px {
+            get {
+                object obj = ResourceManager.GetObject("add_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_shopping_cart_120px {
             get {
                 object obj = ResourceManager.GetObject("add_shopping_cart_120px", resourceCulture);
@@ -86,6 +96,16 @@ namespace MiniStore.Properties {
         internal static System.Drawing.Bitmap bill_120px {
             get {
                 object obj = ResourceManager.GetObject("bill_120px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel_32px {
+            get {
+                object obj = ResourceManager.GetObject("cancel_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +163,39 @@ namespace MiniStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_20px {
+            get {
+                object obj = ResourceManager.GetObject("delete_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap discount_banner1 {
             get {
                 object obj = ResourceManager.GetObject("discount_banner1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_file_20px {
+            get {
+                object obj = ResourceManager.GetObject("edit_file_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_file_32px {
+            get {
+                object obj = ResourceManager.GetObject("edit_file_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
