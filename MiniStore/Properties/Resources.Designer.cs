@@ -83,6 +83,26 @@ namespace MiniStore.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap available_updates {
+            get {
+                object obj = ResourceManager.GetObject("available_updates", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap available_updates_32px {
+            get {
+                object obj = ResourceManager.GetObject("available_updates_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap biggs25logo3 {
             get {
                 object obj = ResourceManager.GetObject("biggs25logo3", resourceCulture);
@@ -106,6 +126,16 @@ namespace MiniStore.Properties {
         internal static System.Drawing.Bitmap cancel_32px {
             get {
                 object obj = ResourceManager.GetObject("cancel_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel_32px1 {
+            get {
+                object obj = ResourceManager.GetObject("cancel_32px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +176,16 @@ namespace MiniStore.Properties {
         internal static System.Drawing.Bitmap contact_card_100px {
             get {
                 object obj = ResourceManager.GetObject("contact_card_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contract_120px {
+            get {
+                object obj = ResourceManager.GetObject("contract_120px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

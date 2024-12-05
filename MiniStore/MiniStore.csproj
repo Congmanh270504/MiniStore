@@ -272,6 +272,7 @@
     <Content Include="MyResources\admin_settings_male_120px.png" />
     <Content Include="MyResources\an-kfc-chua-suot-mot-nam.png" />
     <Content Include="MyResources\arrow_pointing_left_24px.png" />
+    <None Include="MyResources\available_updates.png" />
     <Content Include="MyResources\available_updates_32px.png" />
     <Content Include="MyResources\biggs25logo.jpg" />
     <Content Include="MyResources\biggs25logo2.jpg" />

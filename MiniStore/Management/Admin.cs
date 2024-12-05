@@ -66,5 +66,30 @@ namespace MiniStore.Management
         {
             this.Show();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frm_RestoreDatabase frm_RestoreDatabase = new frm_RestoreDatabase();
+            frm_RestoreDatabase.FormClosed += frm_RestoreDatabase_FormClosed;
+            frm_RestoreDatabase.Show();
+        }
+        private void frm_RestoreDatabase_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frm_About frm_About = new frm_About();
+            frm_About.FormClosed += frm_About_FormClosed;
+            frm_About.Show();
+        }
+
+        private void frm_About_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
     }
 }

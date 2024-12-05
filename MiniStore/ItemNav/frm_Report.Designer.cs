@@ -29,19 +29,17 @@
         private void InitializeComponent()
         {
             this.lbl_hoadon = new System.Windows.Forms.Label();
-            this.lbl_makh = new System.Windows.Forms.Label();
-            this.cbb_hangkh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.lbTotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Tim = new System.Windows.Forms.Button();
             this.tbTime = new System.Windows.Forms.TextBox();
             this.lbTimeType = new System.Windows.Forms.Label();
             this.cb_TimeType = new System.Windows.Forms.ComboBox();
-            this.lbl_makh = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -52,32 +50,11 @@
             this.lbl_hoadon.AutoSize = true;
             this.lbl_hoadon.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_hoadon.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lbl_hoadon.Location = new System.Drawing.Point(148, 25);
+            this.lbl_hoadon.Location = new System.Drawing.Point(148, 9);
             this.lbl_hoadon.Name = "lbl_hoadon";
             this.lbl_hoadon.Size = new System.Drawing.Size(389, 45);
             this.lbl_hoadon.TabIndex = 1;
             this.lbl_hoadon.Text = "THỐNG KÊ DOANH THU";
-            // 
-            // lbl_makh
-            // 
-            this.lbl_makh.AutoSize = true;
-            this.lbl_makh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_makh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_makh.Location = new System.Drawing.Point(97, 119);
-            this.lbl_makh.Name = "lbl_makh";
-            this.lbl_makh.Size = new System.Drawing.Size(149, 21);
-            this.lbl_makh.TabIndex = 107;
-            this.lbl_makh.Text = "Theo dạng thời gian";
-            // 
-            // cbb_hangkh
-            // 
-            this.cbb_hangkh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_hangkh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_hangkh.FormattingEnabled = true;
-            this.cbb_hangkh.Location = new System.Drawing.Point(252, 115);
-            this.cbb_hangkh.Name = "cbb_hangkh";
-            this.cbb_hangkh.Size = new System.Drawing.Size(226, 25);
-            this.cbb_hangkh.TabIndex = 118;
             // 
             // label1
             // 
@@ -101,32 +78,6 @@
             this.dataGridView.Size = new System.Drawing.Size(660, 286);
             this.dataGridView.TabIndex = 120;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(460, 120);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(99, 36);
-            this.btnRefresh.TabIndex = 125;
-            this.btnRefresh.Text = "REFRESH";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(573, 120);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(99, 36);
-            this.btnClose.TabIndex = 126;
-            this.btnClose.Text = "ĐÓNG";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
@@ -140,16 +91,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btn_Tim);
             this.groupBox1.Controls.Add(this.tbTime);
             this.groupBox1.Controls.Add(this.lbTimeType);
             this.groupBox1.Controls.Add(this.cb_TimeType);
-            this.groupBox1.Controls.Add(this.lbl_makh);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox1.Location = new System.Drawing.Point(12, 73);
+            this.groupBox1.Location = new System.Drawing.Point(12, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(407, 97);
+            this.groupBox1.Size = new System.Drawing.Size(407, 113);
             this.groupBox1.TabIndex = 128;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm theo dạng thời gian";
@@ -159,7 +110,7 @@
             this.btn_Tim.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Tim.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Tim.ForeColor = System.Drawing.Color.White;
-            this.btn_Tim.Location = new System.Drawing.Point(290, 55);
+            this.btn_Tim.Location = new System.Drawing.Point(290, 60);
             this.btn_Tim.Name = "btn_Tim";
             this.btn_Tim.Size = new System.Drawing.Size(99, 36);
             this.btn_Tim.TabIndex = 129;
@@ -169,7 +120,7 @@
             // 
             // tbTime
             // 
-            this.tbTime.Location = new System.Drawing.Point(163, 63);
+            this.tbTime.Location = new System.Drawing.Point(163, 68);
             this.tbTime.Name = "tbTime";
             this.tbTime.Size = new System.Drawing.Size(121, 27);
             this.tbTime.TabIndex = 128;
@@ -180,7 +131,7 @@
             this.lbTimeType.AutoSize = true;
             this.lbTimeType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimeType.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbTimeType.Location = new System.Drawing.Point(82, 62);
+            this.lbTimeType.Location = new System.Drawing.Point(35, 67);
             this.lbTimeType.Name = "lbTimeType";
             this.lbTimeType.Size = new System.Drawing.Size(75, 21);
             this.lbTimeType.TabIndex = 127;
@@ -191,21 +142,51 @@
             this.cb_TimeType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_TimeType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_TimeType.FormattingEnabled = true;
-            this.cb_TimeType.Location = new System.Drawing.Point(163, 24);
+            this.cb_TimeType.Location = new System.Drawing.Point(163, 29);
             this.cb_TimeType.Name = "cb_TimeType";
             this.cb_TimeType.Size = new System.Drawing.Size(226, 25);
             this.cb_TimeType.TabIndex = 126;
             // 
-            // lbl_makh
+            // label2
             // 
-            this.lbl_makh.AutoSize = true;
-            this.lbl_makh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_makh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_makh.Location = new System.Drawing.Point(8, 28);
-            this.lbl_makh.Name = "lbl_makh";
-            this.lbl_makh.Size = new System.Drawing.Size(149, 21);
-            this.lbl_makh.TabIndex = 125;
-            this.lbl_makh.Text = "Theo dạng thời gian";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(35, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 20);
+            this.label2.TabIndex = 130;
+            this.label2.Text = "Dạng thời gian";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = global::MiniStore.Properties.Resources.cancel_32px1;
+            this.btnClose.Location = new System.Drawing.Point(573, 120);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(99, 36);
+            this.btnClose.TabIndex = 126;
+            this.btnClose.Text = "ĐÓNG";
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Image = global::MiniStore.Properties.Resources.available_updates;
+            this.btnRefresh.Location = new System.Drawing.Point(457, 120);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(110, 36);
+            this.btnRefresh.TabIndex = 125;
+            this.btnRefresh.Text = "REFRESH";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frm_Report
             // 
@@ -218,11 +199,9 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbb_hangkh);
-            this.Controls.Add(this.lbl_makh);
             this.Controls.Add(this.lbl_hoadon);
             this.Name = "frm_Report";
-            this.Text = "frm_Report";
+            this.Text = "DOANH THU";
             this.Load += new System.EventHandler(this.frm_Report_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -236,7 +215,6 @@
 
         private System.Windows.Forms.Label lbl_hoadon;
         private System.Windows.Forms.Label lbl_makh;
-        private System.Windows.Forms.ComboBox cbb_hangkh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnRefresh;
@@ -247,6 +225,6 @@
         private System.Windows.Forms.TextBox tbTime;
         private System.Windows.Forms.Label lbTimeType;
         private System.Windows.Forms.ComboBox cb_TimeType;
-        private System.Windows.Forms.Label lbl_makh;
+        private System.Windows.Forms.Label label2;
     }
 }

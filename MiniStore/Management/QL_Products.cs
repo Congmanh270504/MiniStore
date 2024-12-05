@@ -19,28 +19,65 @@ namespace MiniStore.Management
         DBConnect db;
         SqlDataAdapter da_products;
         DataTable products;
+        List<string> columnNames = new List<string>
+                        {
+                            "ProductID",
+                            "ProductName",
+                            "CategoryName",
+                            "SupplierName",
+                            "Price",
+                            "StockQuantity",
+                            "Unit"
+                        };
         public QL_Products()
         {
             InitializeComponent();
-            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            db = new DBConnect("miniMKT");
         }
         void LoadData()
         {
-            string sql = "select * from Products";
-            da_products = db.getDataAdapter(sql, "Products");
-            products = db.Dset.Tables["Products"];
-            dataGridView_DSMonAn.DataSource = products;
+            string query = @"
+        SELECT Products.*, 
+               CategoryName, 
+               SupplierName, 
+               Products.CategoryID AS ProdCategoryID, 
+               Products.SupplierID AS ProdSupplierID
+        FROM Products
+        JOIN Categories ON Products.CategoryID = Categories.CategoryID
+        JOIN Suppliers ON Products.SupplierID = Suppliers.SupplierID";
 
-            DataColumn[] primaryKey = new DataColumn[1];
-            primaryKey[0] = products.Columns["ProductID"];
-            products.PrimaryKey = primaryKey;
-            dataGridView_DSMonAn.Columns["ProductID"].HeaderText = "Mã sản phẩm";
-            dataGridView_DSMonAn.Columns["ProductName"].HeaderText = "Tên sản phẩm";
-            dataGridView_DSMonAn.Columns["CategoryID"].HeaderText = "Mã loại hàng";
-            dataGridView_DSMonAn.Columns["SupplierID"].HeaderText = "Mã NCC";
-            dataGridView_DSMonAn.Columns["Price"].HeaderText = "Giá";
-            dataGridView_DSMonAn.Columns["StockQuantity"].HeaderText = "Số lượng trong kho";
-            dataGridView_DSMonAn.Columns["Unit"].HeaderText = "Đơn vị tính";
+            using (SqlConnection conn = new SqlConnection(db.strConnect))
+            {
+                da_products = new SqlDataAdapter(query, conn);
+                products = new DataTable();
+                da_products.Fill(products);
+                dataGridView_DSMonAn.DataSource = products;
+                dataGridView_DSMonAn.Columns["ProductID"].HeaderText = "Mã sản phẩm";
+                dataGridView_DSMonAn.Columns["ProductName"].HeaderText = "Tên sản phẩm";
+                dataGridView_DSMonAn.Columns["CategoryName"].HeaderText = "Tên loại hàng";
+                dataGridView_DSMonAn.Columns["SupplierName"].HeaderText = "Tên NCC";
+                dataGridView_DSMonAn.Columns["Price"].HeaderText = "Giá";
+                dataGridView_DSMonAn.Columns["StockQuantity"].HeaderText = "Số lượng trong kho";
+                dataGridView_DSMonAn.Columns["Unit"].HeaderText = "Đơn vị tính";
+
+                // Hide the aliased CategoryID and SupplierID columns
+                dataGridView_DSMonAn.Columns["ProdCategoryID"].Visible = false;
+                dataGridView_DSMonAn.Columns["ProdSupplierID"].Visible = false;
+            }
+
+     
+
+            foreach (var item in columnNames)
+            {
+                dataGridView_DSMonAn.Columns[item].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView_DSMonAn.Columns[item].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView_DSMonAn.Columns[item].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView_DSMonAn.Columns[item].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+
+            }
+        }
+        private void addBinding()
+        {
 
             txtTenMonAn.DataBindings.Add(new Binding("Text", products, "ProductName", true, DataSourceUpdateMode.Never));
 
@@ -51,36 +88,8 @@ namespace MiniStore.Management
             txtGiaTien.DataBindings.Add(new Binding("Text", products, "Price", true, DataSourceUpdateMode.Never));
 
             txtSoLuong.DataBindings.Add(new Binding("Text", products, "StockQuantity", true, DataSourceUpdateMode.Never));
-            
 
             cb_DVT.DataBindings.Add(new Binding("SelectedValue", products, "Unit", true, DataSourceUpdateMode.Never));
-
-            // Center the header text
-            dataGridView_DSMonAn.Columns["ProductID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["ProductName"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["CategoryID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["SupplierID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["Price"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["StockQuantity"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["Unit"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            dataGridView_DSMonAn.Columns["ProductName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView_DSMonAn.Columns["CategoryID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView_DSMonAn.Columns["SupplierID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView_DSMonAn.Columns["StockQuantity"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-            dataGridView_DSMonAn.Columns["ProductID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["Price"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["Unit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["CategoryID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["SupplierID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView_DSMonAn.Columns["StockQuantity"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            dataGridView_DSMonAn.Columns["ProductID"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-            dataGridView_DSMonAn.Columns["ProductName"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-            dataGridView_DSMonAn.Columns["Price"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-            dataGridView_DSMonAn.Columns["Unit"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-
         }
 
         private void QL_Food_Load(object sender, EventArgs e)
@@ -89,6 +98,9 @@ namespace MiniStore.Management
             loadNCC();
             load_LoaiHang();
             load_DVT();
+            btn_Xoa.Enabled = false;
+            btn_Sua.Enabled = false;
+            addBinding();
         }
 
         private void btn_Dong_Click(object sender, EventArgs e)
@@ -124,7 +136,10 @@ namespace MiniStore.Management
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchString = txtTimKiem.Text;
-            string sql = "SELECT * FROM Products WHERE ProductName LIKE @searchString";
+
+            string sql = " select ProductID,ProductName,Price,StockQuantity,Unit,CategoryName,SupplierName from Products,Categories,Suppliers" +
+                " where Products.CategoryID = Categories.CategoryID" +
+                " and Products.SupplierID = Suppliers.SupplierID and " + "ProductName LIKE @searchString";
 
             using (SqlConnection connection = new SqlConnection(db.strConnect))
             {
@@ -261,7 +276,10 @@ namespace MiniStore.Management
             list.Add(soLuongTrongKho);
             string donViTinh = selectedRow.Cells["Unit"].Value.ToString();
             list.Add(donViTinh);
-
+            string nhaCungCap = selectedRow.Cells["ProdSupplierID"].Value.ToString();
+            list.Add(nhaCungCap);
+            string loaiSP = selectedRow.Cells["ProdCategoryID"].ToString();
+            list.Add(loaiSP);
 
             List<string> input = new List<string>();
             input.Add(maSanPham);
@@ -277,7 +295,7 @@ namespace MiniStore.Management
                     list[i] = input[i];
                 }
             }
-            if (db.checkExist(string.Format("select count(*) from Products where ProductName=N'{0}'", txtTenMonAn.Text)))
+            if (db.checkExist(string.Format("select count(*) from Products where ProductName= N'{0}'", txtTenMonAn.Text)))
             {
                 if (MessageBox.Show("Tên sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
                 {
@@ -293,6 +311,12 @@ namespace MiniStore.Management
             da_products.Update(products);
 
             MessageBox.Show("Sửa  thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        private void dataGridView_DSMonAn_SelectionChanged(object sender, EventArgs e)
+        {
+            btn_Xoa.Enabled = true;
+            btn_Sua.Enabled = true;
         }
     }
 }

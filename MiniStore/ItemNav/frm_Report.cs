@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace MiniStore.ItemNav
         public frm_Report()
         {
             InitializeComponent();
-            db = new DBConnect("A210PC08", "miniMKT");
+            db = new DBConnect("miniMKT");
         }
         void datagrid_Load()
         {
@@ -56,9 +57,8 @@ namespace MiniStore.ItemNav
         }
         private void frm_Report_Load(object sender, EventArgs e)
         {
-            //lbTimeType.Text = "Ngày";
             string query = "SELECT SUM(TotalAmount) FROM Orders";
-            lbTotal.Text = db.getDecimal(query).ToString() + "đ";
+            lbTotal.Text = db.getInt(query).ToString() + "đ";
             datagrid_Load();
             load_DateType();
             DataColumn[] primaryKey = new DataColumn[1];
@@ -122,16 +122,11 @@ namespace MiniStore.ItemNav
                             return;
                         }
                         sql = "SELECT SUM(TotalAmount) FROM Orders where month(OrderDate)='" + tbTime.Text + "'";
-                        lbTotal.Text = db.getDecimal(sql).ToString() + "đ";
+                        lbTotal.Text = db.getInt(sql).ToString() + "đ";
                         dataGridView.DataSource = products;
                     }
                     break;
                 case "Năm":
-                    //int time = int.Parse(tbTime.Text);
-                    //if (true)
-                    //{
-
-                    //}
                     query = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
                                       "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
                                       "and Employees.EmployeeID = Orders.EmployeeID and YEAR(OrderDate) = '" + tbTime.Text + "'";
@@ -150,7 +145,7 @@ namespace MiniStore.ItemNav
                             return;
                         }
                         sql = "SELECT SUM(TotalAmount) FROM Orders where year(OrderDate)='" + tbTime.Text + "'";
-                        lbTotal.Text = db.getDecimal(sql).ToString() + "đ";
+                        lbTotal.Text = db.getInt(sql).ToString() + "đ";
                         dataGridView.DataSource = products;
         }
                     break;
@@ -163,7 +158,7 @@ namespace MiniStore.ItemNav
         {
             datagrid_Load();
             string query = "SELECT SUM(TotalAmount) FROM Orders";
-            lbTotal.Text = db.getDecimal(query).ToString() + "đ";
+            lbTotal.Text = db.getInt(query).ToString() + "đ";
             tbTime.Clear();
             cb_TimeType.SelectedIndex = -1;
             cb_TimeType.Focus();
