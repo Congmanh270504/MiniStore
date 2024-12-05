@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.lbl_hoadon = new System.Windows.Forms.Label();
+            this.lbl_makh = new System.Windows.Forms.Label();
+            this.cbb_hangkh = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -55,6 +57,27 @@
             this.lbl_hoadon.Size = new System.Drawing.Size(389, 45);
             this.lbl_hoadon.TabIndex = 1;
             this.lbl_hoadon.Text = "THỐNG KÊ DOANH THU";
+            // 
+            // lbl_makh
+            // 
+            this.lbl_makh.AutoSize = true;
+            this.lbl_makh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_makh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_makh.Location = new System.Drawing.Point(97, 119);
+            this.lbl_makh.Name = "lbl_makh";
+            this.lbl_makh.Size = new System.Drawing.Size(149, 21);
+            this.lbl_makh.TabIndex = 107;
+            this.lbl_makh.Text = "Theo dạng thời gian";
+            // 
+            // cbb_hangkh
+            // 
+            this.cbb_hangkh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_hangkh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_hangkh.FormattingEnabled = true;
+            this.cbb_hangkh.Location = new System.Drawing.Point(252, 115);
+            this.cbb_hangkh.Name = "cbb_hangkh";
+            this.cbb_hangkh.Size = new System.Drawing.Size(226, 25);
+            this.cbb_hangkh.TabIndex = 118;
             // 
             // label1
             // 
@@ -195,6 +218,8 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbb_hangkh);
+            this.Controls.Add(this.lbl_makh);
             this.Controls.Add(this.lbl_hoadon);
             this.Name = "frm_Report";
             this.Text = "frm_Report";
@@ -210,6 +235,8 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_hoadon;
+        private System.Windows.Forms.Label lbl_makh;
+        private System.Windows.Forms.ComboBox cbb_hangkh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnRefresh;

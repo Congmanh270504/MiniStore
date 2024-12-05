@@ -159,7 +159,7 @@
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(526, 97);
+            this.txtSDT.Location = new System.Drawing.Point(543, 96);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(200, 27);
             this.txtSDT.TabIndex = 13;
@@ -171,14 +171,14 @@
             this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSDT.Location = new System.Drawing.Point(423, 104);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(97, 20);
+            this.lblSDT.Size = new System.Drawing.Size(100, 20);
             this.lblSDT.TabIndex = 12;
-            this.lblSDT.Text = "Số điện thoại";
+            this.lblSDT.Text = "Số điện thoại:";
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(526, 31);
+            this.txtEmail.Location = new System.Drawing.Point(543, 28);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(200, 27);
             this.txtEmail.TabIndex = 11;
@@ -187,26 +187,26 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(423, 33);
+            this.lblEmail.Location = new System.Drawing.Point(423, 38);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(46, 20);
+            this.lblEmail.Size = new System.Drawing.Size(99, 20);
             this.lblEmail.TabIndex = 10;
-            this.lblEmail.Text = "Email";
+            this.lblEmail.Text = "Địa chỉ Email:";
             // 
             // lblCMND
             // 
             this.lblCMND.AutoSize = true;
             this.lblCMND.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMND.Location = new System.Drawing.Point(11, 101);
+            this.lblCMND.Location = new System.Drawing.Point(49, 96);
             this.lblCMND.Name = "lblCMND";
-            this.lblCMND.Size = new System.Drawing.Size(61, 20);
+            this.lblCMND.Size = new System.Drawing.Size(64, 20);
             this.lblCMND.TabIndex = 6;
-            this.lblCMND.Text = "Chức vụ";
+            this.lblCMND.Text = "Chức vụ:";
             // 
             // txtTenNV
             // 
             this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNV.Location = new System.Drawing.Point(114, 28);
+            this.txtTenNV.Location = new System.Drawing.Point(119, 35);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(226, 27);
             this.txtTenNV.TabIndex = 3;
@@ -216,11 +216,11 @@
             // 
             this.lblTenNV.AutoSize = true;
             this.lblTenNV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenNV.Location = new System.Drawing.Point(9, 31);
+            this.lblTenNV.Location = new System.Drawing.Point(11, 38);
             this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(99, 20);
+            this.lblTenNV.Size = new System.Drawing.Size(102, 20);
             this.lblTenNV.TabIndex = 2;
-            this.lblTenNV.Text = "Tên nhân viên";
+            this.lblTenNV.Text = "Tên nhân viên:";
             // 
             // grpThongTin
             // 
@@ -245,7 +245,7 @@
             // 
             this.cb_Position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Position.FormattingEnabled = true;
-            this.cb_Position.Location = new System.Drawing.Point(114, 96);
+            this.cb_Position.Location = new System.Drawing.Point(119, 92);
             this.cb_Position.Name = "cb_Position";
             this.cb_Position.Size = new System.Drawing.Size(226, 29);
             this.cb_Position.TabIndex = 14;
@@ -256,14 +256,14 @@
             this.lblTimNhanVien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimNhanVien.Location = new System.Drawing.Point(155, 31);
             this.lblTimNhanVien.Name = "lblTimNhanVien";
-            this.lblTimNhanVien.Size = new System.Drawing.Size(137, 20);
+            this.lblTimNhanVien.Size = new System.Drawing.Size(140, 20);
             this.lblTimNhanVien.TabIndex = 2;
-            this.lblTimNhanVien.Text = "Tìm kiếm nhân viên";
+            this.lblTimNhanVien.Text = "Tìm kiếm nhân viên:";
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(298, 28);
+            this.txtTimKiem.Location = new System.Drawing.Point(311, 28);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(212, 27);
             this.txtTimKiem.TabIndex = 0;
@@ -285,12 +285,12 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(550, 22);
+            this.btnSearch.Location = new System.Drawing.Point(551, 28);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(96, 36);
             this.btnSearch.TabIndex = 34;
-            this.btnSearch.Text = "Tìm ";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Text = "TÌM KIẾM";
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblTitle
@@ -313,7 +313,7 @@
             this.btn_Clear.Name = "btn_Clear";
             this.btn_Clear.Size = new System.Drawing.Size(121, 46);
             this.btn_Clear.TabIndex = 82;
-            this.btn_Clear.Text = "CLEAR";
+            this.btn_Clear.Text = "LÀM MỚI";
             this.btn_Clear.UseVisualStyleBackColor = false;
             this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
@@ -322,7 +322,7 @@
             this.grpDanhSach.Controls.Add(this.dataGridView_DSNhanVien);
             this.grpDanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDanhSach.ForeColor = System.Drawing.Color.DarkCyan;
-            this.grpDanhSach.Location = new System.Drawing.Point(12, 290);
+            this.grpDanhSach.Location = new System.Drawing.Point(12, 303);
             this.grpDanhSach.Name = "grpDanhSach";
             this.grpDanhSach.Size = new System.Drawing.Size(780, 256);
             this.grpDanhSach.TabIndex = 84;

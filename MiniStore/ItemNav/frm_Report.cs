@@ -152,7 +152,7 @@ namespace MiniStore.ItemNav
                         sql = "SELECT SUM(TotalAmount) FROM Orders where year(OrderDate)='" + tbTime.Text + "'";
                         lbTotal.Text = db.getDecimal(sql).ToString() + "đ";
                         dataGridView.DataSource = products;
-                    }
+        }
                     break;
                 default:
                     break;

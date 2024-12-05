@@ -89,7 +89,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_tittle);
             this.Name = "frm_Splash";
-            this.Text = "frm_Splash";
+            this.Text = "ĐANG KẾT NỐI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Splash_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

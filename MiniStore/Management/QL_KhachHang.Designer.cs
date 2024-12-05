@@ -246,7 +246,7 @@
             this.Controls.Add(this.grpDanhSach);
             this.ForeColor = System.Drawing.Color.DarkCyan;
             this.Name = "QL_KhachHang";
-            this.Text = "QL_KhachHang";
+            this.Text = "QUẢN LÝ KHÁCH HÀNG";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QL_KhachHang_FormClosing);
             this.Load += new System.EventHandler(this.QL_KhachHang_Load);
             this.grpDanhSach.ResumeLayout(false);

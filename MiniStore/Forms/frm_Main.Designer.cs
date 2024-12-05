@@ -245,7 +245,7 @@
             this.Controls.Add(this.panel_header);
             this.Controls.Add(this.panel_lefttop);
             this.Name = "frm_Main";
-            this.Text = "frm_Main";
+            this.Text = "CỬA HÀNG";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.panel_lefttop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

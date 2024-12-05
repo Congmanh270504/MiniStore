@@ -148,12 +148,14 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(274, 37);
+            this.btnSearch.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnSearch.ForeColor = System.Drawing.Color.MintCream;
+            this.btnSearch.Location = new System.Drawing.Point(270, 30);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 28);
+            this.btnSearch.Size = new System.Drawing.Size(95, 39);
             this.btnSearch.TabIndex = 12;
             this.btnSearch.Text = "Tìm";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtTimKiem
@@ -210,11 +212,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(273, 69);
+            this.label1.Location = new System.Drawing.Point(280, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 30;
-            this.label1.Text = "Tên loại";
+            this.label1.Text = "Tên loại:";
             // 
             // cmbNhaCungCap
             // 
@@ -251,9 +253,9 @@
             this.lblGiamGia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiamGia.Location = new System.Drawing.Point(280, 146);
             this.lblGiamGia.Name = "lblGiamGia";
-            this.lblGiamGia.Size = new System.Drawing.Size(81, 20);
+            this.lblGiamGia.Size = new System.Drawing.Size(84, 20);
             this.lblGiamGia.TabIndex = 23;
-            this.lblGiamGia.Text = "Đơn vị tính";
+            this.lblGiamGia.Text = "Đơn vị tính:";
             // 
             // txtGiaTien
             // 
@@ -270,9 +272,9 @@
             this.lblGiaTien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiaTien.Location = new System.Drawing.Point(15, 146);
             this.lblGiaTien.Name = "lblGiaTien";
-            this.lblGiaTien.Size = new System.Drawing.Size(60, 20);
+            this.lblGiaTien.Size = new System.Drawing.Size(63, 20);
             this.lblGiaTien.TabIndex = 21;
-            this.lblGiaTien.Text = "Giá tiền";
+            this.lblGiaTien.Text = "Giá tiền:";
             // 
             // lblNhaCungCap
             // 
@@ -280,9 +282,9 @@
             this.lblNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNhaCungCap.Location = new System.Drawing.Point(15, 109);
             this.lblNhaCungCap.Name = "lblNhaCungCap";
-            this.lblNhaCungCap.Size = new System.Drawing.Size(100, 20);
+            this.lblNhaCungCap.Size = new System.Drawing.Size(103, 20);
             this.lblNhaCungCap.TabIndex = 19;
-            this.lblNhaCungCap.Text = "Nhà cung cấp";
+            this.lblNhaCungCap.Text = "Nhà cung cấp:";
             // 
             // txtTenMonAn
             // 
@@ -298,19 +300,19 @@
             this.lblTenMonAn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenMonAn.Location = new System.Drawing.Point(15, 35);
             this.lblTenMonAn.Name = "lblTenMonAn";
-            this.lblTenMonAn.Size = new System.Drawing.Size(86, 20);
+            this.lblTenMonAn.Size = new System.Drawing.Size(89, 20);
             this.lblTenMonAn.TabIndex = 9;
-            this.lblTenMonAn.Text = "Tên món ăn";
+            this.lblTenMonAn.Text = "Tên món ăn:";
             // 
             // lblSoLuong
             // 
             this.lblSoLuong.AutoSize = true;
             this.lblSoLuong.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoLuong.Location = new System.Drawing.Point(16, 70);
+            this.lblSoLuong.Location = new System.Drawing.Point(15, 70);
             this.lblSoLuong.Name = "lblSoLuong";
-            this.lblSoLuong.Size = new System.Drawing.Size(69, 20);
+            this.lblSoLuong.Size = new System.Drawing.Size(72, 20);
             this.lblSoLuong.TabIndex = 4;
-            this.lblSoLuong.Text = "Số lượng";
+            this.lblSoLuong.Text = "Số lượng:";
             // 
             // btn_Them
             // 
