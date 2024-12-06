@@ -1,6 +1,7 @@
 ﻿using MiniStore.Forms;
 using SQL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,11 +24,13 @@ namespace MiniStore.Management
                         {
                             "ProductID",
                             "ProductName",
-                            "CategoryName",
-                            "SupplierName",
+                            "CategoryID",
+                            "SupplierID",
                             "Price",
                             "StockQuantity",
-                            "Unit"
+                            "Unit",
+                            "CategoryName",
+                            "SupplierName"
                         };
         public QL_Products()
         {
@@ -52,20 +55,28 @@ namespace MiniStore.Management
                 products = new DataTable();
                 da_products.Fill(products);
                 dataGridView_DSMonAn.DataSource = products;
+                DataColumn[] primaryKey = new DataColumn[1];
+                primaryKey[0] = products.Columns["ProductID"];
+                products.PrimaryKey = primaryKey;
                 dataGridView_DSMonAn.Columns["ProductID"].HeaderText = "Mã sản phẩm";
                 dataGridView_DSMonAn.Columns["ProductName"].HeaderText = "Tên sản phẩm";
-                dataGridView_DSMonAn.Columns["CategoryName"].HeaderText = "Tên loại hàng";
-                dataGridView_DSMonAn.Columns["SupplierName"].HeaderText = "Tên NCC";
+                // Hide the aliased CategoryID and SupplierID columns
+                dataGridView_DSMonAn.Columns["CategoryID"].Visible = false;
+                dataGridView_DSMonAn.Columns["SupplierID"].Visible = false;
                 dataGridView_DSMonAn.Columns["Price"].HeaderText = "Giá";
                 dataGridView_DSMonAn.Columns["StockQuantity"].HeaderText = "Số lượng trong kho";
                 dataGridView_DSMonAn.Columns["Unit"].HeaderText = "Đơn vị tính";
+                dataGridView_DSMonAn.Columns["CategoryName"].HeaderText = "Tên loại hàng";
+                dataGridView_DSMonAn.Columns["SupplierName"].HeaderText = "Tên NCC";
 
                 // Hide the aliased CategoryID and SupplierID columns
+                dataGridView_DSMonAn.Columns["CategoryID"].Visible = false;
+                dataGridView_DSMonAn.Columns["SupplierID"].Visible = false;
                 dataGridView_DSMonAn.Columns["ProdCategoryID"].Visible = false;
                 dataGridView_DSMonAn.Columns["ProdSupplierID"].Visible = false;
             }
 
-     
+
 
             foreach (var item in columnNames)
             {
@@ -231,22 +242,11 @@ namespace MiniStore.Management
             {
                 int productId = (int)dataGridView_DSMonAn.CurrentRow.Cells["ProductID"].Value;
 
-                // Find the DataRow to delete
-                DataRow rowToDelete = products.Rows.Find(productId);
-                if (rowToDelete != null)
-                {
-                    SqlCommand deleteCommand = new SqlCommand("DELETE FROM Products WHERE ProductID = @ProductID", da_products.SelectCommand.Connection);
-                    deleteCommand.Parameters.Add("@ProductID", SqlDbType.Int, 4, "ProductID");
-                    da_products.DeleteCommand = deleteCommand;
-
-                    rowToDelete.Delete();
-                    da_products.Update(products);
-                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy sản phẩm để xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                string query = string.Format("DELETE FROM Products WHERE ProductID = {0}", productId);
+                db.updateToDataBase(query);
+                LoadData();
+                da_products.Update(products);
+                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             txtTenMonAn.Clear();
             txtGiaTien.Clear();
@@ -270,49 +270,75 @@ namespace MiniStore.Management
             list.Add(maSanPham);
             string tenSanPham = selectedRow.Cells["ProductName"].Value.ToString();
             list.Add(tenSanPham);
+            string loaiSP = selectedRow.Cells["ProdCategoryID"].Value.ToString();
+            list.Add(loaiSP);
+            string nhaCungCap = selectedRow.Cells["ProdSupplierID"].Value.ToString();
+            list.Add(nhaCungCap);
             string gia = selectedRow.Cells["Price"].Value.ToString();
             list.Add(gia);
             string soLuongTrongKho = selectedRow.Cells["StockQuantity"].Value.ToString();
             list.Add(soLuongTrongKho);
             string donViTinh = selectedRow.Cells["Unit"].Value.ToString();
             list.Add(donViTinh);
-            string nhaCungCap = selectedRow.Cells["ProdSupplierID"].Value.ToString();
-            list.Add(nhaCungCap);
-            string loaiSP = selectedRow.Cells["ProdCategoryID"].ToString();
-            list.Add(loaiSP);
 
             List<string> input = new List<string>();
             input.Add(maSanPham);
             input.Add(txtTenMonAn.Text);
+            input.Add(cb_LoaiHang.SelectedValue.ToString());
+            input.Add(cmbNhaCungCap.SelectedValue.ToString());
             input.Add(txtGiaTien.Text);
             input.Add(txtSoLuong.Text);
-            input.Add(cb_DVT.Text);
-
-            for (int i = 0; i < input.Count; i++)
+            input.Add(cb_DVT.SelectedValue.ToString());
+            if (list.SequenceEqual(input))
             {
-                if (!string.IsNullOrEmpty(input[i]) && i < list.Count)
-                {
-                    list[i] = input[i];
-                }
-            }
-            if (db.checkExist(string.Format("select count(*) from Products where ProductName= N'{0}'", txtTenMonAn.Text)))
-            {
-                if (MessageBox.Show("Tên sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                if (MessageBox.Show("Không có gì thay đổi !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) != DialogResult.OK)
                 {
                     txtTenMonAn.Focus();
                 }
                 return;
             }
-            string query = string.Format(
-                               "UPDATE Products SET ProductName = N'{0}', Price = {1}, StockQuantity = {2}, Unit = N'{3}' WHERE ProductID = {4}",
-                                              list[1], list[2], list[3], list[4], list[0]);
+
+            if (!list[1].Equals(input[1]))
+            {
+                if (db.checkExist(string.Format("select count(*) from Products where ProductName= N'{0}'", txtTenMonAn.Text)))
+                {
+                    if (MessageBox.Show("Tên sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                    {
+                        txtTenMonAn.Focus();
+                    }
+                    return;
+                }
+            }
+            List<int> indexChange = new List<int>();
+            for (int i = 1; i < list.Count; i++)
+            {
+                if (!list[i].Equals(input[i]))
+                {
+                    indexChange.Add(i);
+                }
+            }
+            List<string> subQuery = new List<string>();
+            for (int i = 0; i < indexChange.Count; i++)
+            {
+                subQuery.Add(string.Format("{0} = N'{1}'", columnNames[indexChange[i]], input[indexChange[i]]));
+            }
+
+            for (int i = 0; i < input.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(input[i]))
+                {
+                    list[i] = input[i];
+                }
+            }
+
+            string query = "UPDATE Products SET ";
+            query += string.Join(", ", subQuery) + string.Format(" WHERE ProductID = {0}", maSanPham);
             db.updateToDataBase(query);
             LoadData();
             da_products.Update(products);
 
             MessageBox.Show("Sửa  thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
-
         private void dataGridView_DSMonAn_SelectionChanged(object sender, EventArgs e)
         {
             btn_Xoa.Enabled = true;

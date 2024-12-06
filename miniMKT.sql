@@ -1,8 +1,5 @@
-﻿CREATE DATABASE miniMKT;
-GO
-----------------------------------------------------------------------------------------------------------------------------------------
-USE miniMKT;
-GO
+﻿create database miniMKT
+use miniMKT
 ----------------------------------------------------------------------------------------------------------------------------------------
 -- Bảng Categories
 CREATE TABLE Categories 
@@ -88,7 +85,7 @@ CREATE TABLE Products
     ProductName NVARCHAR(100) NOT NULL,
     CategoryID INT NOT NULL,
     SupplierID INT NOT NULL,
-    Price DECIMAL(10, 3) NOT NULL,
+    Price INT NOT NULL,
     StockQuantity INT NOT NULL,
     Unit NVARCHAR(50) NULL,
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID),
@@ -97,36 +94,36 @@ CREATE TABLE Products
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT Products ON 
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (1, N'Nước ngọt Coca-Cola 1.5L', 1, 1, CAST(12.500 AS DECIMAL(10, 3)), 100, N'Chai')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (2, N'Bánh Snack Lays Classic', 2, 1, CAST(20.000 AS DECIMAL(10, 3)), 150, N'Gói')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (3, N'Bột giặt OMO 3kg', 3, 2, CAST(85.000 AS DECIMAL(10, 3)), 75, N'Túi')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (4, N'Sữa tươi Vinamilk 1L', 4, 3, CAST(30.000 AS DECIMAL(10, 3)), 200, N'Chai')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (5, N'Chuối', 5, 3, CAST(10.000 AS DECIMAL(10, 3)), 250, N'Kg')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (6, N'Nước cam Twister 1L', 1, 1, CAST(15.000 AS DECIMAL(10, 3)), 80, N'Chai')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (7, N'Kem đánh răng P/S 200g', 3, 2, CAST(25.000 AS DECIMAL(10, 3)), 120, N'Tuýp')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (8, N'Táo Mỹ', 5, 3, CAST(45.000 AS DECIMAL(10, 3)), 180, N'Kg')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (9, N'Sữa chua Vinamilk', 4, 4, CAST(8.000 AS DECIMAL(10, 3)), 300, N'Hộp')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (10, N'Bánh quy Oreo', 2, 1, CAST(22.000 AS DECIMAL(10, 3)), 130, N'Gói')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (11, N'Xà Lách Tươi', 5, 3,CAST(82.000 AS DECIMAL(10, 3)), 15, N'Kg')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (12, N'Pepsi Không Calo', 1, 5,CAST(40.000 AS DECIMAL(10, 3)), 50, N'Chai')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (13, N'Bơ Sữa Long Thành', 4, 7,CAST(75.000 AS DECIMAL(10, 3)), 100, N'Hộp')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (14, N'Ghế Lười', 3, 2,CAST(299.000 AS DECIMAL(10, 3)), 5, N'Cái')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (15, N'Táo Tươi Úc', 5, 8,CAST(125.000 AS DECIMAL(10, 3)), 150, N'Gói')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (16, N'Kẹo Nho Khô', 2, 6,CAST(22.000 AS DECIMAL(10, 3)), 15, N'Gói')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (17, N'Muỗng Nhựa Inox', 3, 2,CAST(52.000 AS DECIMAL(10, 3)), 8, N'Cái')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (18, N'Rau Mồng Tơi', 5, 6,CAST(12.000 AS DECIMAL(10, 3)), 150, N'Kg')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (19, N'Nước 7 UP', 1, 5,CAST(8.000 AS DECIMAL(10, 3)), 275, N'Chai')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (20, N'Thao Sứ Thanh Hoa',3 , 2,CAST(245.000 AS DECIMAL(10, 3)), 125, N'Cái')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (21, N'Kẹo dẻo dâu', 2, 8,CAST(15.000 AS DECIMAL(10, 3)), 88, N'Gói')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (22, N'Nước Khoáng Lavie', 1, 3,CAST(15.000 AS DECIMAL(10, 3)), 100, N'Chai')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (23, N'Dâu tươi Đà Lạt', 5, 6,CAST(275.000 AS DECIMAL(10, 3)), 25, N'Kg')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (24, N'Mận Hà Nội', 5, 6,CAST(125.000 AS DECIMAL(10, 3)), 50, N'Kg')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (25, N'Bàn gỗ', 3, 1,CAST(500.000 AS DECIMAL(10, 3)), 10, N'Cái')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (26, N'Nước Hoa', 3, 2,CAST(234.000 AS DECIMAL(10, 3)), 80, N'Hộp')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (27, N'Nước nhỏ mắt', 3, 2,CAST(50.000 AS DECIMAL(10, 3)), 155, N'Chai')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (28, N'Bánh quy Oreo', 2, 8,CAST(25.000 AS DECIMAL(10, 3)), 60, N'Gói')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (29, N'Nước cam Mirinda', 1, 3,CAST(15.000 AS DECIMAL(10, 3)), 100, N'Chai')
-INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (30, N'Nước ngọt Fanta', 1, 3,CAST(15.000 AS DECIMAL(10, 3)), 20, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (1, N'Nước ngọt Coca-Cola 1.5L', 1, 1, 12500 , 100, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (2, N'Bánh Snack Lays Classic', 2, 1, 20000 , 150, N'Gói')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (3, N'Bột giặt OMO 3kg', 3, 2, 85000 , 75, N'Túi')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (4, N'Sữa tươi Vinamilk 1L', 4, 3, 30000 , 200, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (5, N'Chuối', 5, 3, 10000 , 250, N'Kg')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (6, N'Nước cam Twister 1L', 1, 1, 15000 , 80, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (7, N'Kem đánh răng P/S 200g', 3, 2, 25000 , 120, N'Tuýp')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (8, N'Táo Mỹ', 5, 3, 45000 , 180, N'Kg')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (9, N'Sữa chua Vinamilk', 4, 4, 8000 , 300, N'Hộp')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (10, N'Bánh quy Oreo', 2, 1, 22000 , 130, N'Gói')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (11, N'Xà Lách Tươi', 5, 3,82000 , 15, N'Kg')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (12, N'Pepsi Không Calo', 1, 5,40000 , 50, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (13, N'Bơ Sữa Long Thành', 4, 7,75000 , 100, N'Hộp')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (14, N'Ghế Lười', 3, 2,299000 , 5, N'Cái')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (15, N'Táo Tươi Úc', 5, 8,125000 , 150, N'Gói')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (16, N'Kẹo Nho Khô', 2, 6,22000 , 15, N'Gói')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (17, N'Muỗng Nhựa Inox', 3, 2,52000 , 8, N'Cái')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (18, N'Rau Mồng Tơi', 5, 6,12000 , 150, N'Kg')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (19, N'Nước 7 UP', 1, 5,8000 , 275, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (20, N'Thao Sứ Thanh Hoa',3 , 2,245000 , 125, N'Cái')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (21, N'Kẹo dẻo dâu', 2, 8,15000 , 88, N'Gói')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (22, N'Nước Khoáng Lavie', 1, 3,15000 , 100, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (23, N'Dâu tươi Đà Lạt', 5, 6,275000 , 25, N'Kg')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (24, N'Mận Hà Nội', 5, 6,125000 , 50, N'Kg')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (25, N'Bàn gỗ', 3, 1,500000 , 10, N'Cái')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (26, N'Nước Hoa', 3, 2,234000 , 80, N'Hộp')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (27, N'Nước nhỏ mắt', 3, 2,50000 , 155, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (28, N'Bánh quy Oreo', 2, 8,25000 , 60, N'Gói')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (29, N'Nước cam Mirinda', 1, 3,15000 , 100, N'Chai')
+INSERT Products (ProductID, ProductName, CategoryID, SupplierID, Price, StockQuantity, Unit) VALUES (30, N'Nước ngọt Fanta', 1, 3,15000 , 20, N'Chai')
 SET IDENTITY_INSERT Products OFF
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -135,7 +132,7 @@ CREATE TABLE Discounts
 (
     DiscountID INT PRIMARY KEY IDENTITY(1,1),
     ProductID INT NOT NULL,
-    DiscountPercentage DECIMAL(5, 2) NOT NULL,
+    DiscountPercentage INT NOT NULL,
     StartDate DATETIME NOT NULL,
     EndDate DATETIME NOT NULL,
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
@@ -167,6 +164,11 @@ INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPasswo
 INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (2, N'Phạm Thị Hằng', N'Thu ngân', N'0912345678', N'hangpham@gmail.com', N'password456')
 INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (3, N'Lê Văn Minh', N'Nhân viên kho', N'0938765432', N'minhle@gmail.com', N'password789')
 INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (4, N'Nguyễn Thị Mai', N'Nhân viên bán hàng', N'0945432123', N'mainguyen@gmail.com', N'password321')
+INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (5, N'Hoàng Văn An', N'Nhân viên bán hàng', N'0976543210', N'hoangan@gmail.com', N'password654');
+INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (6, N'Ngô Thị Hương', N'Nhân viên bán hàng', N'0967894321', N'huongngo@gmail.com', N'password987');
+INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (7, N'Phan Minh Tâm', N'Nhân viên kho', N'0954321789', N'tamphan@gmail.com', N'password123');
+INSERT Employees (EmployeeID, EmployeeName, Position, Phone, Email, EmployPassword) VALUES (8, N'Trần Thị Lan', N'Nhân viên bán hàng', N'0987654321', N'lantran@gmail.com', N'password456');
+
 SET IDENTITY_INSERT Employees OFF
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -203,7 +205,7 @@ CREATE TABLE Orders
     CustomerID INT NOT NULL,
     EmployeeID INT NOT NULL,
     OrderDate DATETIME NULL,
-    TotalAmount DECIMAL(10, 3) NOT NULL,
+    TotalAmount INT NOT NULL,
     PaymentMethod NVARCHAR(50) NULL,
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
     FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
@@ -211,36 +213,36 @@ CREATE TABLE Orders
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT Orders ON 
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (1, 1, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(150.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (2, 2, 2, CAST(N'2023-12-18T20:46:46.753' AS DATETIME), CAST(85.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (3, 3, 1, CAST(N'2023-07-14T20:46:46.753' AS DATETIME), CAST(250.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (4, 4, 3, CAST(N'2024-11-22T20:46:46.753' AS DATETIME), CAST(300.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (5, 5, 4, CAST(N'2023-08-20T20:46:46.753' AS DATETIME), CAST(120.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (6, 6, 2, CAST(N'2023-10-26T20:46:46.753' AS DATETIME), CAST(190.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (7, 7, 1, CAST(N'2023-07-13T20:46:46.753' AS DATETIME), CAST(230.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (8, 8, 3, CAST(N'2024-10-14T20:46:46.753' AS DATETIME), CAST(90.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (9, 9, 4, CAST(N'2024-02-22T20:46:46.753' AS DATETIME), CAST(170.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (10, 10, 2, CAST(N'2023-11-14T20:46:46.753' AS DATETIME), CAST(210.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (11, 11, 2, CAST(N'2024-08-25T20:46:46.753' AS DATETIME), CAST(55.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (12, 12, 4, CAST(N'2024-04-22T20:46:46.753' AS DATETIME), CAST(82.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (13, 13, 3, CAST(N'2024-05-16T20:46:46.753' AS DATETIME), CAST(79.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (14, 14, 1, CAST(N'2023-06-19T20:46:46.753' AS DATETIME), CAST(125.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (15, 15, 1, CAST(N'2023-11-25T20:46:46.753' AS DATETIME), CAST(263.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (16, 16, 4, CAST(N'2024-07-22T20:46:46.753' AS DATETIME), CAST(22.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (17, 17, 2, CAST(N'2024-11-27T20:46:46.753' AS DATETIME), CAST(34.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (18, 18, 3, CAST(N'2024-10-16T20:46:46.753' AS DATETIME), CAST(78.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (19, 19, 2, CAST(N'2023-09-25T20:46:46.753' AS DATETIME), CAST(99.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (20, 20, 1, CAST(N'2023-01-13T20:46:46.753' AS DATETIME), CAST(146.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (21, 20, 4, CAST(N'2024-07-25T20:46:46.753' AS DATETIME), CAST(89.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (22, 15, 3, CAST(N'2024-11-17T20:46:46.753' AS DATETIME), CAST(155.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (23, 17, 1, CAST(N'2023-12-08T20:46:46.753' AS DATETIME), CAST(20.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (24, 18, 2, CAST(N'2024-08-25T20:46:46.753' AS DATETIME), CAST(55.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (25, 8, 3, CAST(N'2024-05-09T20:46:46.753' AS DATETIME), CAST(89.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (26, 7, 4, CAST(N'2023-12-25T20:46:46.753' AS DATETIME), CAST(76.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (27, 11, 1, CAST(N'2024-11-12T20:46:46.753' AS DATETIME), CAST(444.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (28, 12, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), CAST(178.000 AS DECIMAL(10, 3)), N'Thẻ')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (29, 7, 4, CAST(N'2024-06-17T20:46:46.753' AS DATETIME), CAST(97.000 AS DECIMAL(10, 3)), N'Tiền mặt')
-INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (30, 15, 1, CAST(N'2023-07-19T20:46:46.753' AS DATETIME), CAST(23.000 AS DECIMAL(10, 3)), N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (1, 1, 1, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), 150000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (2, 2, 2, CAST(N'2023-12-18T20:46:46.753' AS DATETIME), 85000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (3, 3, 1, CAST(N'2023-07-14T20:46:46.753' AS DATETIME), 250000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (4, 4, 3, CAST(N'2024-11-22T20:46:46.753' AS DATETIME), 300000 , N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (5, 5, 4, CAST(N'2023-08-20T20:46:46.753' AS DATETIME), 120000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (6, 6, 2, CAST(N'2023-10-26T20:46:46.753' AS DATETIME), 190000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (7, 7, 1, CAST(N'2023-07-13T20:46:46.753' AS DATETIME), 230000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (8, 8, 3, CAST(N'2024-10-14T20:46:46.753' AS DATETIME), 90000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (9, 9, 4, CAST(N'2024-02-22T20:46:46.753' AS DATETIME), 170000 , N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (10, 10, 2, CAST(N'2023-11-14T20:46:46.753' AS DATETIME), 210000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (11, 11, 2, CAST(N'2024-08-25T20:46:46.753' AS DATETIME), 55000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (12, 12, 4, CAST(N'2024-04-22T20:46:46.753' AS DATETIME), 82000 , N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (13, 13, 3, CAST(N'2024-05-16T20:46:46.753' AS DATETIME), 79000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (14, 14, 1, CAST(N'2023-06-19T20:46:46.753' AS DATETIME), 125000 , N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (15, 15, 1, CAST(N'2023-11-25T20:46:46.753' AS DATETIME), 263000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (16, 16, 4, CAST(N'2024-07-22T20:46:46.753' AS DATETIME), 22000 , N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (17, 17, 2, CAST(N'2024-11-27T20:46:46.753' AS DATETIME), 34000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (18, 18, 3, CAST(N'2024-10-16T20:46:46.753' AS DATETIME), 78000 , N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (19, 19, 2, CAST(N'2023-09-25T20:46:46.753' AS DATETIME), 99000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (20, 20, 1, CAST(N'2023-01-13T20:46:46.753' AS DATETIME), 146000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (21, 20, 4, CAST(N'2024-07-25T20:46:46.753' AS DATETIME), 89000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (22, 15, 3, CAST(N'2024-11-17T20:46:46.753' AS DATETIME), 155000 , N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (23, 17, 1, CAST(N'2023-12-08T20:46:46.753' AS DATETIME), 20000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (24, 18, 2, CAST(N'2024-08-25T20:46:46.753' AS DATETIME), 55000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (25, 8, 3, CAST(N'2024-05-09T20:46:46.753' AS DATETIME), 89000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (26, 7, 4, CAST(N'2023-12-25T20:46:46.753' AS DATETIME), 76000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (27, 11, 1, CAST(N'2024-11-12T20:46:46.753' AS DATETIME), 444000 , N'Chuyển khoản')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (28, 12, 2, CAST(N'2024-10-25T20:46:46.753' AS DATETIME), 178000 , N'Thẻ')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (29, 7, 4, CAST(N'2024-06-17T20:46:46.753' AS DATETIME), 97000 , N'Tiền mặt')
+INSERT Orders (OrderID, CustomerID, EmployeeID, OrderDate, TotalAmount, PaymentMethod) VALUES (30, 15, 1, CAST(N'2023-07-19T20:46:46.753' AS DATETIME), 23000 , N'Chuyển khoản')
 SET IDENTITY_INSERT Orders OFF
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -251,43 +253,43 @@ CREATE TABLE OrderDetails
     OrderID INT NOT NULL,
     ProductID INT NOT NULL,
     Quantity INT NOT NULL,
-    Price DECIMAL(10, 2) NOT NULL,
+    Price INT NOT NULL,
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
     FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
 );
 GO 
 ----------------------------------------------------------------------------------------------------------------------------------------
 SET IDENTITY_INSERT OrderDetails ON 
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (1, 1, 1, 2, CAST(12.50 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (2, 1, 2, 1, CAST(20.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (3, 1, 3, 1, CAST(85.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (4, 2, 4, 3, CAST(30.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (5, 2, 5, 2, CAST(10.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (6, 3, 6, 1, CAST(15.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (7, 3, 7, 2, CAST(25.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (8, 4, 8, 5, CAST(45.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (9, 4, 9, 10, CAST(8.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (10, 5, 10, 4, CAST(22.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (11, 5, 1, 3, CAST(12.50 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (12, 6, 2, 5, CAST(20.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (13, 6, 3, 1, CAST(85.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (14, 7, 4, 4, CAST(30.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (15, 7, 5, 6, CAST(10.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (16, 8, 6, 3, CAST(15.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (17, 8, 7, 2, CAST(25.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (18, 9, 8, 7, CAST(45.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (19, 9, 9, 12, CAST(8.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (20, 10, 10, 5, CAST(22.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (21, 15, 30, 5, CAST(25.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (22, 28, 18, 6, CAST(80.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (23, 22, 17, 8, CAST(150.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (24, 14, 11, 15, CAST(355.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (25, 11, 25, 9, CAST(475.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (26, 29, 14, 11, CAST(589.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (27, 30, 25, 17, CAST(666.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (28, 17, 9, 8, CAST(124.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (29, 12, 7, 12, CAST(745.00 AS DECIMAL(10, 2)))
-INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (30, 26, 8, 29, CAST(222.00 AS DECIMAL(10, 2)))
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (1, 1, 1, 2, 1250 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (2, 1, 2, 1, 2000 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (3, 1, 3, 1, 8500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (4, 2, 4, 3, 3000 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (5, 2, 5, 2, 1000 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (6, 3, 6, 1, 1500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (7, 3, 7, 2, 2500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (8, 4, 8, 5, 4500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (9, 4, 9, 10, 800 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (10, 5, 10, 4, 2200 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (11, 5, 1, 3, 1250 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (12, 6, 2, 5, 2000 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (13, 6, 3, 1, 8500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (14, 7, 4, 4, 3000 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (15, 7, 5, 6, 1000 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (16, 8, 6, 3, 1500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (17, 8, 7, 2, 2500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (18, 9, 8, 7, 4500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (19, 9, 9, 12, 800 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (20, 10, 10, 5, 2200 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (21, 15, 30, 5, 2500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (22, 28, 18, 6, 8000 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (23, 22, 17, 8, 15000 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (24, 14, 11, 15, 35500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (25, 11, 25, 9, 47500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (26, 29, 14, 11, 58900 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (27, 30, 25, 17, 66600 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (28, 17, 9, 8, 12400 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (29, 12, 7, 12, 74500 )
+INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (30, 26, 8, 29, 22200 )
 
 SET IDENTITY_INSERT OrderDetails OFF
 GO
@@ -349,7 +351,7 @@ GO
 
 -- FULL BACKUP.
 BACKUP DATABASE miniMKT
-TO  DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Backup\miniMKT_full.bak' 
+TO  DISK = N'D:\miniMKT_full.bak' 
 GO
 ----------------------------------------------------------------------------------------------------------------------------------------
 -- TEST SỰ CỐ.
@@ -361,7 +363,7 @@ GO
 ----------------------------------------------------------------------------------------------------------------------------------------
 -- PHỤC HỒI.
 RESTORE DATABASE miniMKT
-FROM  DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Backup\miniMKT.bak' 
+FROM  DISK = N'D:\miniMKT.bak' 
 GO
 
 USE miniMKT
