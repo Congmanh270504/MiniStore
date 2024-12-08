@@ -58,11 +58,11 @@
             this.btnNewCustomer = new System.Windows.Forms.Button();
             this.cbCustomer = new System.Windows.Forms.ComboBox();
             this.cb_PrintBill = new System.Windows.Forms.CheckBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnPay = new System.Windows.Forms.Button();
             this.btnDecrease = new System.Windows.Forms.Button();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.grpPayment.SuspendLayout();
             this.grpSearchProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -371,67 +371,87 @@
             // 
             this.cb_PrintBill.AutoSize = true;
             this.cb_PrintBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_PrintBill.Location = new System.Drawing.Point(463, 608);
+            this.cb_PrintBill.Location = new System.Drawing.Point(563, 609);
             this.cb_PrintBill.Name = "cb_PrintBill";
             this.cb_PrintBill.Size = new System.Drawing.Size(88, 20);
             this.cb_PrintBill.TabIndex = 31;
             this.cb_PrintBill.Text = "In hóa đơn";
             this.cb_PrintBill.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
+            // btnDecrease
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(34, 588);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(106, 41);
-            this.btnAdd.TabIndex = 32;
-            this.btnAdd.Text = "Thêm món";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(340, 588);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(106, 41);
-            this.btnDelete.TabIndex = 33;
-            this.btnDelete.Text = "Bỏ món";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(609, 587);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(149, 41);
-            this.btnCancel.TabIndex = 34;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnDecrease.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnDecrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecrease.ForeColor = System.Drawing.Color.White;
+            this.btnDecrease.Image = global::MiniStore.Properties.Resources.subtract_24px;
+            this.btnDecrease.Location = new System.Drawing.Point(188, 588);
+            this.btnDecrease.Name = "btnDecrease";
+            this.btnDecrease.Size = new System.Drawing.Size(173, 41);
+            this.btnDecrease.TabIndex = 36;
+            this.btnDecrease.Text = "GIẢM SỐ LƯỢNG";
+            this.btnDecrease.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDecrease.UseVisualStyleBackColor = false;
+            this.btnDecrease.Click += new System.EventHandler(this.btnDecrease_Click);
             // 
             // btnPay
             // 
-            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.Location = new System.Drawing.Point(861, 588);
+            this.btnPay.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.Red;
+            this.btnPay.Image = global::MiniStore.Properties.Resources.money_32px1;
+            this.btnPay.Location = new System.Drawing.Point(859, 588);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(132, 41);
             this.btnPay.TabIndex = 35;
-            this.btnPay.Text = "Tính tiền";
-            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Text = "TÍNH TIỀN";
+            this.btnPay.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPay.UseVisualStyleBackColor = false;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
-            // btnDecrease
+            // btnCancel
             // 
-            this.btnDecrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecrease.Location = new System.Drawing.Point(197, 588);
-            this.btnDecrease.Name = "btnDecrease";
-            this.btnDecrease.Size = new System.Drawing.Size(106, 41);
-            this.btnDecrease.TabIndex = 36;
-            this.btnDecrease.Text = "Giảm số lượng ";
-            this.btnDecrease.UseVisualStyleBackColor = true;
-            this.btnDecrease.Click += new System.EventHandler(this.btnDecrease_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = global::MiniStore.Properties.Resources.cancel_32px3;
+            this.btnCancel.Location = new System.Drawing.Point(699, 588);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(112, 41);
+            this.btnCancel.TabIndex = 34;
+            this.btnCancel.Text = "HỦY";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::MiniStore.Properties.Resources.delete_20px2;
+            this.btnDelete.Location = new System.Drawing.Point(409, 588);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(106, 41);
+            this.btnDelete.TabIndex = 33;
+            this.btnDelete.Text = "BỎ MÓN";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::MiniStore.Properties.Resources.add_20px;
+            this.btnAdd.Location = new System.Drawing.Point(12, 588);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(128, 41);
+            this.btnAdd.TabIndex = 32;
+            this.btnAdd.Text = "THÊM MÓN";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Order
             // 

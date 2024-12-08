@@ -134,11 +134,13 @@
             this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dong.ForeColor = System.Drawing.Color.White;
+            this.btn_Dong.Image = global::MiniStore.Properties.Resources.cancel_32px9;
             this.btn_Dong.Location = new System.Drawing.Point(595, 135);
             this.btn_Dong.Name = "btn_Dong";
             this.btn_Dong.Size = new System.Drawing.Size(121, 46);
             this.btn_Dong.TabIndex = 88;
             this.btn_Dong.Text = "ĐÓNG";
+            this.btn_Dong.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Dong.UseVisualStyleBackColor = false;
             this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
             // 
@@ -147,11 +149,13 @@
             this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sua.ForeColor = System.Drawing.Color.White;
+            this.btn_Sua.Image = global::MiniStore.Properties.Resources.edit_file_20px5;
             this.btn_Sua.Location = new System.Drawing.Point(410, 135);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(126, 45);
             this.btn_Sua.TabIndex = 86;
             this.btn_Sua.Text = "SỬA";
+            this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Sua.UseVisualStyleBackColor = false;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
@@ -160,11 +164,13 @@
             this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
+            this.btn_Xoa.Image = global::MiniStore.Properties.Resources.delete_20px5;
             this.btn_Xoa.Location = new System.Drawing.Point(225, 135);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(126, 45);
             this.btn_Xoa.TabIndex = 85;
             this.btn_Xoa.Text = "XÓA";
+            this.btn_Xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Xoa.UseVisualStyleBackColor = false;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
@@ -173,11 +179,13 @@
             this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Them.ForeColor = System.Drawing.Color.White;
+            this.btn_Them.Image = global::MiniStore.Properties.Resources.add_20px;
             this.btn_Them.Location = new System.Drawing.Point(40, 135);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(126, 45);
             this.btn_Them.TabIndex = 84;
             this.btn_Them.Text = "THÊM";
+            this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Them.UseVisualStyleBackColor = false;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 

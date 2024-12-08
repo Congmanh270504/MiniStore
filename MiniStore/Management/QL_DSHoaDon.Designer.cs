@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.lbl_dshoadon = new System.Windows.Forms.Label();
             this.grb_tthoadon = new System.Windows.Forms.GroupBox();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.tbDate = new System.Windows.Forms.TextBox();
             this.lbPhuongThuctinh = new System.Windows.Forms.Label();
             this.cbPayment = new System.Windows.Forms.ComboBox();
@@ -49,6 +48,7 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.orderDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.grb_tthoadon.SuspendLayout();
             this.grpb_dshoadon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -90,19 +90,6 @@
             this.grb_tthoadon.TabIndex = 2;
             this.grb_tthoadon.TabStop = false;
             this.grb_tthoadon.Text = "Tìm kiếm hóa đơn";
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(606, 16);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(118, 46);
-            this.btnLoad.TabIndex = 28;
-            this.btnLoad.Text = "LOAD";
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // tbDate
             // 
@@ -181,11 +168,13 @@
             this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dong.ForeColor = System.Drawing.Color.White;
+            this.btn_Dong.Image = global::MiniStore.Properties.Resources.cancel_32px6;
             this.btn_Dong.Location = new System.Drawing.Point(698, 91);
             this.btn_Dong.Name = "btn_Dong";
             this.btn_Dong.Size = new System.Drawing.Size(121, 46);
             this.btn_Dong.TabIndex = 20;
             this.btn_Dong.Text = "ĐÓNG";
+            this.btn_Dong.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Dong.UseVisualStyleBackColor = false;
             this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
             // 
@@ -280,6 +269,21 @@
             this.orderDetailsToolStripMenuItem.Size = new System.Drawing.Size(214, 24);
             this.orderDetailsToolStripMenuItem.Text = "Xem chi tiết hóa đơn";
             this.orderDetailsToolStripMenuItem.Click += new System.EventHandler(this.orderDetailsToolStripMenuItem_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.ForeColor = System.Drawing.Color.White;
+            this.btnLoad.Image = global::MiniStore.Properties.Resources.available_updates_32px1;
+            this.btnLoad.Location = new System.Drawing.Point(606, 16);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(118, 46);
+            this.btnLoad.TabIndex = 28;
+            this.btnLoad.Text = "LOAD";
+            this.btnLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // QL_DSHoaDon
             // 

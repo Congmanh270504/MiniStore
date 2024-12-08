@@ -97,11 +97,13 @@
             this.btnAdd.BackColor = System.Drawing.Color.DarkCyan;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::MiniStore.Properties.Resources.add_24px;
             this.btnAdd.Location = new System.Drawing.Point(83, 209);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(140, 42);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "THÊM";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -122,11 +124,13 @@
             this.btnCancel.BackColor = System.Drawing.Color.DarkCyan;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = global::MiniStore.Properties.Resources.cancel_32px4;
             this.btnCancel.Location = new System.Drawing.Point(266, 209);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(140, 42);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "HỦY";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 

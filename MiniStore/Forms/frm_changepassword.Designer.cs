@@ -28,26 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_oldpass = new System.Windows.Forms.Label();
             this.lbl_newpass = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMatKhauCu = new System.Windows.Forms.TextBox();
             this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
             this.txtNhapLai = new System.Windows.Forms.TextBox();
-            this.btn_Xacnhan = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btn_Xacnhan = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MiniStore.Properties.Resources.password_120px;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 121);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // lbl_oldpass
             // 
@@ -112,31 +103,44 @@
             this.txtNhapLai.TabIndex = 16;
             this.txtNhapLai.UseSystemPasswordChar = true;
             // 
-            // btn_Xacnhan
-            // 
-            this.btn_Xacnhan.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Xacnhan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.btn_Xacnhan.ForeColor = System.Drawing.Color.White;
-            this.btn_Xacnhan.Location = new System.Drawing.Point(227, 151);
-            this.btn_Xacnhan.Name = "btn_Xacnhan";
-            this.btn_Xacnhan.Size = new System.Drawing.Size(107, 40);
-            this.btn_Xacnhan.TabIndex = 17;
-            this.btn_Xacnhan.Text = "Xác Nhận";
-            this.btn_Xacnhan.UseVisualStyleBackColor = false;
-            this.btn_Xacnhan.Click += new System.EventHandler(this.btn_Xacnhan_Click);
-            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Image = global::MiniStore.Properties.Resources.cancel_32px4;
             this.btnCancel.Location = new System.Drawing.Point(363, 151);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 40);
             this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Hủy";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btn_Xacnhan
+            // 
+            this.btn_Xacnhan.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Xacnhan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Xacnhan.ForeColor = System.Drawing.Color.White;
+            this.btn_Xacnhan.Image = global::MiniStore.Properties.Resources.checked_24px;
+            this.btn_Xacnhan.Location = new System.Drawing.Point(217, 151);
+            this.btn_Xacnhan.Name = "btn_Xacnhan";
+            this.btn_Xacnhan.Size = new System.Drawing.Size(117, 40);
+            this.btn_Xacnhan.TabIndex = 17;
+            this.btn_Xacnhan.Text = "Xác Nhận";
+            this.btn_Xacnhan.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Xacnhan.UseVisualStyleBackColor = false;
+            this.btn_Xacnhan.Click += new System.EventHandler(this.btn_Xacnhan_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MiniStore.Properties.Resources.password_120px;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(125, 121);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_changepassword
             // 

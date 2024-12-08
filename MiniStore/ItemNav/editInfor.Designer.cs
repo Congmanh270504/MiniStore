@@ -37,15 +37,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -148,15 +148,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Họ và tên:";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MiniStore.Properties.Resources.man_with_yellow_tie_in_jacket_120px;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(110, 116);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -208,31 +199,44 @@
             this.tbEmail.Size = new System.Drawing.Size(164, 20);
             this.tbEmail.TabIndex = 10;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.Image = global::MiniStore.Properties.Resources.cancel_32px2;
+            this.btnCancel.Location = new System.Drawing.Point(452, 269);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(148, 40);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Text = "ĐÓNG";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.White;
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.Blue;
+            this.btnConfirm.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnConfirm.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Image = global::MiniStore.Properties.Resources.checked_32px;
             this.btnConfirm.Location = new System.Drawing.Point(232, 269);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(154, 35);
+            this.btnConfirm.Size = new System.Drawing.Size(156, 40);
             this.btnConfirm.TabIndex = 11;
-            this.btnConfirm.Text = "Xác nhận";
+            this.btnConfirm.Text = "XÁC NHẬN";
+            this.btnConfirm.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // btnCancel
+            // pictureBox2
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(452, 269);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(154, 35);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Đóng";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.pictureBox2.Image = global::MiniStore.Properties.Resources.man_with_yellow_tie_in_jacket_120px;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(110, 116);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // editInfor
             // 

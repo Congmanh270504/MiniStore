@@ -76,6 +76,17 @@ namespace MiniStore.Management
                 dataGridView_DSMonAn.Columns["ProdSupplierID"].Visible = false;
             }
 
+            txtTenMonAn.DataBindings.Add(new Binding("Text", products, "ProductName", true, DataSourceUpdateMode.Never));
+
+            cb_LoaiHang.DataBindings.Add(new Binding("SelectedValue", products, "CategoryID", true, DataSourceUpdateMode.Never));
+
+            cmbNhaCungCap.DataBindings.Add(new Binding("SelectedValue", products, "SupplierID", true, DataSourceUpdateMode.Never));
+
+            txtGiaTien.DataBindings.Add(new Binding("Text", products, "Price", true, DataSourceUpdateMode.Never));
+
+            txtSoLuong.DataBindings.Add(new Binding("Text", products, "StockQuantity", true, DataSourceUpdateMode.Never));
+
+            cb_DVT.DataBindings.Add(new Binding("SelectedValue", products, "Unit", true, DataSourceUpdateMode.Never));
 
 
             foreach (var item in columnNames)
@@ -111,7 +122,7 @@ namespace MiniStore.Management
             load_DVT();
             btn_Xoa.Enabled = false;
             btn_Sua.Enabled = false;
-            addBinding();
+            //addBinding();
         }
 
         private void btn_Dong_Click(object sender, EventArgs e)

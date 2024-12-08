@@ -40,10 +40,10 @@
             this.lbl_tenkh = new System.Windows.Forms.Label();
             this.lbl_makh = new System.Windows.Forms.Label();
             this.btn_Dong = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Clean = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
             this.grpDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.grpb_ttkh.SuspendLayout();
@@ -172,24 +172,43 @@
             this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dong.ForeColor = System.Drawing.Color.White;
+            this.btn_Dong.Image = global::MiniStore.Properties.Resources.cancel_32px8;
             this.btn_Dong.Location = new System.Drawing.Point(765, 162);
             this.btn_Dong.Name = "btn_Dong";
             this.btn_Dong.Size = new System.Drawing.Size(121, 46);
             this.btn_Dong.TabIndex = 102;
             this.btn_Dong.Text = "ĐÓNG";
+            this.btn_Dong.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Dong.UseVisualStyleBackColor = false;
             this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
+            // 
+            // btn_Sua
+            // 
+            this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sua.ForeColor = System.Drawing.Color.White;
+            this.btn_Sua.Image = global::MiniStore.Properties.Resources.edit_file_20px4;
+            this.btn_Sua.Location = new System.Drawing.Point(408, 162);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(121, 46);
+            this.btn_Sua.TabIndex = 103;
+            this.btn_Sua.Text = "SỬA";
+            this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Clean
             // 
             this.btn_Clean.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Clean.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Clean.ForeColor = System.Drawing.Color.White;
+            this.btn_Clean.Image = global::MiniStore.Properties.Resources.available_updates_32px2;
             this.btn_Clean.Location = new System.Drawing.Point(584, 163);
             this.btn_Clean.Name = "btn_Clean";
             this.btn_Clean.Size = new System.Drawing.Size(126, 45);
             this.btn_Clean.TabIndex = 101;
-            this.btn_Clean.Text = "CLEAN";
+            this.btn_Clean.Text = "LÀM MỚI";
+            this.btn_Clean.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Clean.UseVisualStyleBackColor = false;
             this.btn_Clean.Click += new System.EventHandler(this.btn_Clean_Click);
             // 
@@ -198,11 +217,13 @@
             this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
+            this.btn_Xoa.Image = global::MiniStore.Properties.Resources.delete_20px4;
             this.btn_Xoa.Location = new System.Drawing.Point(227, 162);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(126, 45);
             this.btn_Xoa.TabIndex = 100;
             this.btn_Xoa.Text = "XÓA";
+            this.btn_Xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Xoa.UseVisualStyleBackColor = false;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
@@ -211,26 +232,15 @@
             this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Them.ForeColor = System.Drawing.Color.White;
+            this.btn_Them.Image = global::MiniStore.Properties.Resources.add_20px3;
             this.btn_Them.Location = new System.Drawing.Point(46, 162);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(126, 45);
             this.btn_Them.TabIndex = 99;
             this.btn_Them.Text = "THÊM";
+            this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Them.UseVisualStyleBackColor = false;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua.Location = new System.Drawing.Point(408, 162);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(121, 46);
-            this.btn_Sua.TabIndex = 103;
-            this.btn_Sua.Text = "SỬA";
-            this.btn_Sua.UseVisualStyleBackColor = false;
-            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // QL_KhachHang
             // 

@@ -53,10 +53,6 @@
             this.txtTenMonAn = new System.Windows.Forms.TextBox();
             this.lblTenMonAn = new System.Windows.Forms.Label();
             this.lblSoLuong = new System.Windows.Forms.Label();
-            this.btn_Them = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Dong = new System.Windows.Forms.Button();
             this.grpDanhSach = new System.Windows.Forms.GroupBox();
             this.dataGridView_DSMonAn = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +62,10 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Dong = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
             this.grpTimKiem.SuspendLayout();
             this.grpThongTin.SuspendLayout();
             this.grpDanhSach.SuspendLayout();
@@ -318,62 +318,6 @@
             this.lblSoLuong.TabIndex = 4;
             this.lblSoLuong.Text = "Số lượng:";
             // 
-            // btn_Them
-            // 
-            this.btn_Them.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Location = new System.Drawing.Point(58, 101);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(126, 45);
-            this.btn_Them.TabIndex = 74;
-            this.btn_Them.Text = "THÊM";
-            this.btn_Them.UseVisualStyleBackColor = false;
-            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Location = new System.Drawing.Point(58, 152);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(126, 45);
-            this.btn_Xoa.TabIndex = 75;
-            this.btn_Xoa.Text = "XÓA";
-            this.btn_Xoa.UseVisualStyleBackColor = false;
-            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.Location = new System.Drawing.Point(242, 101);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(126, 45);
-            this.btn_Sua.TabIndex = 76;
-            this.btn_Sua.Text = "SỬA";
-            this.btn_Sua.UseVisualStyleBackColor = false;
-            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
-            // 
-            // btn_Dong
-            // 
-            this.btn_Dong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Dong.Location = new System.Drawing.Point(242, 152);
-            this.btn_Dong.Name = "btn_Dong";
-            this.btn_Dong.Size = new System.Drawing.Size(126, 46);
-            this.btn_Dong.TabIndex = 78;
-            this.btn_Dong.Text = "ĐÓNG";
-            this.btn_Dong.UseVisualStyleBackColor = false;
-            this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
-            // 
             // grpDanhSach
             // 
             this.grpDanhSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -449,6 +393,70 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Số lượng";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // btn_Dong
+            // 
+            this.btn_Dong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dong.Image = global::MiniStore.Properties.Resources.cancel_32px2;
+            this.btn_Dong.Location = new System.Drawing.Point(242, 152);
+            this.btn_Dong.Name = "btn_Dong";
+            this.btn_Dong.Size = new System.Drawing.Size(126, 46);
+            this.btn_Dong.TabIndex = 78;
+            this.btn_Dong.Text = "ĐÓNG";
+            this.btn_Dong.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Dong.UseVisualStyleBackColor = false;
+            this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
+            // 
+            // btn_Sua
+            // 
+            this.btn_Sua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sua.Image = global::MiniStore.Properties.Resources.edit_file_20px1;
+            this.btn_Sua.Location = new System.Drawing.Point(242, 101);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(126, 45);
+            this.btn_Sua.TabIndex = 76;
+            this.btn_Sua.Text = "SỬA";
+            this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
+            // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Image = global::MiniStore.Properties.Resources.delete_20px1;
+            this.btn_Xoa.Location = new System.Drawing.Point(58, 152);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(126, 45);
+            this.btn_Xoa.TabIndex = 75;
+            this.btn_Xoa.Text = "XÓA";
+            this.btn_Xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            // 
+            // btn_Them
+            // 
+            this.btn_Them.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Them.Image = global::MiniStore.Properties.Resources.add_24px;
+            this.btn_Them.Location = new System.Drawing.Point(58, 101);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(126, 45);
+            this.btn_Them.TabIndex = 74;
+            this.btn_Them.Text = "THÊM";
+            this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // QL_Products
             // 

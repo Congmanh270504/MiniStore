@@ -38,8 +38,8 @@
             this.rdoWareHouse = new System.Windows.Forms.RadioButton();
             this.rdoManager = new System.Windows.Forms.RadioButton();
             this.rdoOwner = new System.Windows.Forms.RadioButton();
-            this.btn_luu = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btn_luu = new System.Windows.Forms.Button();
             this.grpb_thongtin.SuspendLayout();
             this.grpb_phanquyen.SuspendLayout();
             this.SuspendLayout();
@@ -162,31 +162,35 @@
             this.rdoOwner.Text = "Chủ cửa hàng";
             this.rdoOwner.UseVisualStyleBackColor = true;
             // 
-            // btn_luu
-            // 
-            this.btn_luu.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_luu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_luu.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_luu.Location = new System.Drawing.Point(146, 340);
-            this.btn_luu.Name = "btn_luu";
-            this.btn_luu.Size = new System.Drawing.Size(97, 40);
-            this.btn_luu.TabIndex = 3;
-            this.btn_luu.Text = "LƯU";
-            this.btn_luu.UseVisualStyleBackColor = false;
-            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
-            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.Image = global::MiniStore.Properties.Resources.cancel_32px5;
             this.btnCancel.Location = new System.Drawing.Point(280, 339);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(97, 40);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "HỦY";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btn_luu
+            // 
+            this.btn_luu.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_luu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_luu.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_luu.Image = global::MiniStore.Properties.Resources.edit_file_20px2;
+            this.btn_luu.Location = new System.Drawing.Point(146, 340);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(97, 40);
+            this.btn_luu.TabIndex = 3;
+            this.btn_luu.Text = "LƯU";
+            this.btn_luu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_luu.UseVisualStyleBackColor = false;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
             // frm_UserPermission
             // 
