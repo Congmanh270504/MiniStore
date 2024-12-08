@@ -70,11 +70,11 @@ namespace MiniStore.Management
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Hide();
-            frm_RestoreDatabase frm_RestoreDatabase = new frm_RestoreDatabase();
-            frm_RestoreDatabase.FormClosed += frm_RestoreDatabase_FormClosed;
-            frm_RestoreDatabase.Show();
+            frm_BackupDatabase frm_BackupDatabase = new frm_BackupDatabase();
+            frm_BackupDatabase.FormClosed += frm_BackupDatabasee_FormClosed;
+            frm_BackupDatabase.Show();
         }
-        private void frm_RestoreDatabase_FormClosed(object sender, FormClosedEventArgs e)
+        private void frm_BackupDatabasee_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }
