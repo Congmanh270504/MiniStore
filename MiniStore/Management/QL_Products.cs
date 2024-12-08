@@ -76,19 +76,6 @@ namespace MiniStore.Management
                 dataGridView_DSMonAn.Columns["ProdSupplierID"].Visible = false;
             }
 
-            txtTenMonAn.DataBindings.Add(new Binding("Text", products, "ProductName", true, DataSourceUpdateMode.Never));
-
-            cb_LoaiHang.DataBindings.Add(new Binding("SelectedValue", products, "CategoryID", true, DataSourceUpdateMode.Never));
-
-            cmbNhaCungCap.DataBindings.Add(new Binding("SelectedValue", products, "SupplierID", true, DataSourceUpdateMode.Never));
-
-            txtGiaTien.DataBindings.Add(new Binding("Text", products, "Price", true, DataSourceUpdateMode.Never));
-
-            txtSoLuong.DataBindings.Add(new Binding("Text", products, "StockQuantity", true, DataSourceUpdateMode.Never));
-
-            cb_DVT.DataBindings.Add(new Binding("SelectedValue", products, "Unit", true, DataSourceUpdateMode.Never));
-
-
             foreach (var item in columnNames)
             {
                 dataGridView_DSMonAn.Columns[item].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -97,21 +84,18 @@ namespace MiniStore.Management
                 dataGridView_DSMonAn.Columns[item].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
 
             }
+            AddBindings();
+
+
         }
-        private void addBinding()
+        private void AddBindings()
         {
-
-            txtTenMonAn.DataBindings.Add(new Binding("Text", products, "ProductName", true, DataSourceUpdateMode.Never));
-
-            cb_LoaiHang.DataBindings.Add(new Binding("SelectedValue", products, "CategoryID", true, DataSourceUpdateMode.Never));
-
-            cmbNhaCungCap.DataBindings.Add(new Binding("SelectedValue", products, "SupplierID", true, DataSourceUpdateMode.Never));
-
-            txtGiaTien.DataBindings.Add(new Binding("Text", products, "Price", true, DataSourceUpdateMode.Never));
-
-            txtSoLuong.DataBindings.Add(new Binding("Text", products, "StockQuantity", true, DataSourceUpdateMode.Never));
-
-            cb_DVT.DataBindings.Add(new Binding("SelectedValue", products, "Unit", true, DataSourceUpdateMode.Never));
+            txtTenMonAn.DataBindings.Add(new Binding("Text", dataGridView_DSMonAn.DataSource, "ProductName", true, DataSourceUpdateMode.Never));
+            cb_LoaiHang.DataBindings.Add(new Binding("SelectedValue", dataGridView_DSMonAn.DataSource, "ProdCategoryID", true, DataSourceUpdateMode.Never));
+            cmbNhaCungCap.DataBindings.Add(new Binding("SelectedValue", dataGridView_DSMonAn.DataSource, "ProdSupplierID", true, DataSourceUpdateMode.Never));
+            txtGiaTien.DataBindings.Add(new Binding("Text", dataGridView_DSMonAn.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            txtSoLuong.DataBindings.Add(new Binding("Text", dataGridView_DSMonAn.DataSource, "StockQuantity", true, DataSourceUpdateMode.Never));
+            cb_DVT.DataBindings.Add(new Binding("SelectedValue", dataGridView_DSMonAn.DataSource, "Unit", true, DataSourceUpdateMode.Never));
         }
 
         private void QL_Food_Load(object sender, EventArgs e)
@@ -159,19 +143,33 @@ namespace MiniStore.Management
         {
             string searchString = txtTimKiem.Text;
 
-            string sql = " select ProductID,ProductName,Price,StockQuantity,Unit,CategoryName,SupplierName from Products,Categories,Suppliers" +
-                " where Products.CategoryID = Categories.CategoryID" +
-                " and Products.SupplierID = Suppliers.SupplierID and " + "ProductName LIKE @searchString";
+            string sql = "SELECT ProductID, ProductName, Price, StockQuantity, Unit, CategoryName, SupplierName, Products.CategoryID AS ProdCategoryID, Products.SupplierID AS ProdSupplierID " +
+                         "FROM Products " +
+                         "JOIN Categories ON Products.CategoryID = Categories.CategoryID " +
+                         "JOIN Suppliers ON Products.SupplierID = Suppliers.SupplierID " +
+                         "WHERE ProductName LIKE @searchString";
 
             using (SqlConnection connection = new SqlConnection(db.strConnect))
             {
                 SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
                 da_products.SelectCommand.Parameters.AddWithValue("@searchString", "%" + searchString + "%");
 
-                DataTable products = new DataTable();
-                da_products.Fill(products);
-                dataGridView_DSMonAn.DataSource = products;
+                DataTable searchResults = new DataTable();
+                da_products.Fill(searchResults);
+                dataGridView_DSMonAn.DataSource = searchResults;
             }
+
+            ClearBindings();
+            AddBindings();
+        }
+        private void ClearBindings()
+        {
+            txtTenMonAn.DataBindings.Clear();
+            cb_LoaiHang.DataBindings.Clear();
+            cmbNhaCungCap.DataBindings.Clear();
+            txtGiaTien.DataBindings.Clear();
+            txtSoLuong.DataBindings.Clear();
+            cb_DVT.DataBindings.Clear();
         }
 
         private void btn_Them_Click(object sender, EventArgs e)

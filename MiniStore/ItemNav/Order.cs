@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MiniStore.Forms;
 using SQL;
+using MiniStore.Report;
 namespace MiniStore.ItemNav
 {
     public partial class Order : Form
@@ -117,7 +118,7 @@ namespace MiniStore.ItemNav
                 for (int i = 0; i < listOrder.Items.Count; i++)
                 {
                     string item = listOrder.Items[i].ToString();
-                    if (item.Contains("Mã SP: {maSP} -"))
+                    if (item.Contains("Mã SP: " + maSP + " -"))
                     {
                         // Extract the current quantity
                         string[] itemParts = item.Split('-');
@@ -125,9 +126,8 @@ namespace MiniStore.ItemNav
                         int currentQuantity = int.Parse(quantityPart);
                         currentQuantity += 1;
 
-
                         // Update the item with the new quantity
-                        listOrder.Items[i] = "Mã SP: {maSP} - Tên SP: {tenSP} - Giá: {giaTien}đ - {currentQuantity} {unit}";
+                        listOrder.Items[i] = string.Format("Mã SP: {0} - Tên SP: {1} - Giá: {2}đ - {3} {4}", maSP, tenSP, giaTien, currentQuantity, unit);
                         productExists = true;
                         break;
                     }
@@ -135,7 +135,7 @@ namespace MiniStore.ItemNav
 
                 if (!productExists)
                 {
-                    string itemText = "Mã SP: {maSP} - Tên SP: {tenSP} - Giá: {giaTien}đ - {soLuong} {unit}";
+                    string itemText = string.Format("Mã SP: {0} - Tên SP: {1} - Giá: {2}đ - {3} {4}", maSP, tenSP, giaTien, soLuong, unit);
                     listOrder.Items.Add(itemText);
                 }
             }
@@ -152,6 +152,29 @@ namespace MiniStore.ItemNav
             getTotal();
             txtMoney.Text = getTotal() + "đ";
 
+            decimal total = decimal.Parse(getTotal());
+            decimal sell = 0;
+            string rank = db.getString(string.Format("SELECT CustomerRank FROM Customers WHERE CustomerID = N'{0}' ", cbCustomer.SelectedValue));
+            switch (rank)
+            {
+                case "Bạc":
+                    sell = 5;
+                    break;
+                case "Vàng":
+                    sell = 7;
+                    break;
+                case "Kim cương":
+                    sell = 10;
+                    break;
+                default:
+                    break;
+            }
+            if (!string.IsNullOrEmpty(txtDiscount.Text))
+            {
+                total *= ((100 - sell) / 100);
+
+            }
+            lblTotalMoney.Text = Math.Round(total, MidpointRounding.AwayFromZero).ToString() + "đ";
         }
         string getTotal()
         {
@@ -269,12 +292,12 @@ namespace MiniStore.ItemNav
 
             MessageBox.Show("Thanh toán thành công !!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             txtReturnPayment.Text = (int.Parse(txtReceive.Text) - Math.Round(total, MidpointRounding.AwayFromZero)).ToString() + "đ";
-            lblTotalMoney.Text = Math.Round(total, MidpointRounding.AwayFromZero).ToString() + "đ";
 
             string query = string.Format(
                 "INSERT INTO Orders (CustomerID,EmployeeID,OrderDate,TotalAmount,PaymentMethod)" +
                 " VALUES ({0},{1},'{2}',{3},N'{4}')", cbCustomer.SelectedValue, user.Id, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), total.ToString(), "Tiền mặt");
             db.updateToDataBase(query);
+
             int orderID = db.getInt("SELECT MAX(OrderID) FROM Orders");
 
             foreach (string item in listOrder.Items)
@@ -294,13 +317,24 @@ namespace MiniStore.ItemNav
                 " VALUES ({0}, {1}, {2}, {3})", orderID, productID, quantity, price);
                 db.updateToDataBase(query);
             }
+            if (cb_PrintBill.Checked)
+            {
+                Hide();
+                int orderId = db.getInt("select MAX(OrderID) from Orders");
+                frm_HoaDon frm_HoaDon = new frm_HoaDon(orderId);
+                frm_HoaDon.FormClosed += frm_HoaDon_FormClosed;
+                frm_HoaDon.Show();
+            }
             listOrder.Items.Clear();
             txtDiscount.Clear();
             txtReceive.Clear();
             txtMoney.Clear();
             txtReturnPayment.Clear();
         }
-
+        private void frm_HoaDon_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
         private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))

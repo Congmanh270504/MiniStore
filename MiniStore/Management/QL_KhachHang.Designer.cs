@@ -44,6 +44,8 @@
             this.btn_Clean = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
+            this.txtb_Email = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grpDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.grpb_ttkh.SuspendLayout();
@@ -54,7 +56,7 @@
             this.grpDanhSach.Controls.Add(this.dataGridView);
             this.grpDanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDanhSach.ForeColor = System.Drawing.Color.DarkCyan;
-            this.grpDanhSach.Location = new System.Drawing.Point(12, 214);
+            this.grpDanhSach.Location = new System.Drawing.Point(12, 236);
             this.grpDanhSach.Name = "grpDanhSach";
             this.grpDanhSach.Size = new System.Drawing.Size(900, 312);
             this.grpDanhSach.TabIndex = 89;
@@ -72,6 +74,8 @@
             // 
             // grpb_ttkh
             // 
+            this.grpb_ttkh.Controls.Add(this.txtb_Email);
+            this.grpb_ttkh.Controls.Add(this.label1);
             this.grpb_ttkh.Controls.Add(this.txtb_sdt);
             this.grpb_ttkh.Controls.Add(this.txtb_DiaChi);
             this.grpb_ttkh.Controls.Add(this.cbb_hangkh);
@@ -84,7 +88,7 @@
             this.grpb_ttkh.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpb_ttkh.Location = new System.Drawing.Point(12, 12);
             this.grpb_ttkh.Name = "grpb_ttkh";
-            this.grpb_ttkh.Size = new System.Drawing.Size(900, 144);
+            this.grpb_ttkh.Size = new System.Drawing.Size(900, 166);
             this.grpb_ttkh.TabIndex = 98;
             this.grpb_ttkh.TabStop = false;
             this.grpb_ttkh.Text = "Thông Tin Khách Hàng";
@@ -173,7 +177,7 @@
             this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dong.ForeColor = System.Drawing.Color.White;
             this.btn_Dong.Image = global::MiniStore.Properties.Resources.cancel_32px8;
-            this.btn_Dong.Location = new System.Drawing.Point(765, 162);
+            this.btn_Dong.Location = new System.Drawing.Point(764, 184);
             this.btn_Dong.Name = "btn_Dong";
             this.btn_Dong.Size = new System.Drawing.Size(121, 46);
             this.btn_Dong.TabIndex = 102;
@@ -188,7 +192,7 @@
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sua.ForeColor = System.Drawing.Color.White;
             this.btn_Sua.Image = global::MiniStore.Properties.Resources.edit_file_20px4;
-            this.btn_Sua.Location = new System.Drawing.Point(408, 162);
+            this.btn_Sua.Location = new System.Drawing.Point(407, 184);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(121, 46);
             this.btn_Sua.TabIndex = 103;
@@ -203,7 +207,7 @@
             this.btn_Clean.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Clean.ForeColor = System.Drawing.Color.White;
             this.btn_Clean.Image = global::MiniStore.Properties.Resources.available_updates_32px2;
-            this.btn_Clean.Location = new System.Drawing.Point(584, 163);
+            this.btn_Clean.Location = new System.Drawing.Point(583, 185);
             this.btn_Clean.Name = "btn_Clean";
             this.btn_Clean.Size = new System.Drawing.Size(126, 45);
             this.btn_Clean.TabIndex = 101;
@@ -218,7 +222,7 @@
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
             this.btn_Xoa.Image = global::MiniStore.Properties.Resources.delete_20px4;
-            this.btn_Xoa.Location = new System.Drawing.Point(227, 162);
+            this.btn_Xoa.Location = new System.Drawing.Point(226, 184);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(126, 45);
             this.btn_Xoa.TabIndex = 100;
@@ -233,7 +237,7 @@
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Them.ForeColor = System.Drawing.Color.White;
             this.btn_Them.Image = global::MiniStore.Properties.Resources.add_20px3;
-            this.btn_Them.Location = new System.Drawing.Point(46, 162);
+            this.btn_Them.Location = new System.Drawing.Point(45, 184);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(126, 45);
             this.btn_Them.TabIndex = 99;
@@ -242,11 +246,29 @@
             this.btn_Them.UseVisualStyleBackColor = false;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
+            // txtb_Email
+            // 
+            this.txtb_Email.Location = new System.Drawing.Point(596, 131);
+            this.txtb_Email.Name = "txtb_Email";
+            this.txtb_Email.Size = new System.Drawing.Size(226, 29);
+            this.txtb_Email.TabIndex = 119;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(452, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 21);
+            this.label1.TabIndex = 118;
+            this.label1.Text = "Email";
+            // 
             // QL_KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 529);
+            this.ClientSize = new System.Drawing.Size(940, 560);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.btn_Dong);
             this.Controls.Add(this.btn_Clean);
@@ -284,5 +306,7 @@
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.TextBox txtb_DiaChi;
         private System.Windows.Forms.TextBox txtb_sdt;
+        private System.Windows.Forms.TextBox txtb_Email;
+        private System.Windows.Forms.Label label1;
     }
 }

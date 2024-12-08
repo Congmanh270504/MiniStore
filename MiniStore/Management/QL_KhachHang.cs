@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 namespace MiniStore.Management
 {
     public partial class QL_KhachHang : Form
@@ -22,6 +23,7 @@ namespace MiniStore.Management
                             "CustomerID",
                             "CustomerName",
                             "Phone",
+                            "Email",
                             "CustomerRank",
                             "CustomerSuppAddress"
                         };
@@ -72,6 +74,8 @@ namespace MiniStore.Management
 
             dataGridView.Columns["Phone"].HeaderText = "Số Điện Thoại";
 
+            dataGridView.Columns["Email"].HeaderText = "Email";
+
             dataGridView.Columns["CustomerRank"].HeaderText = "Hạng";
 
             dataGridView.Columns["CustomerSuppAddress"].HeaderText = "Địa Chỉ";
@@ -80,6 +84,8 @@ namespace MiniStore.Management
             txtb_tenkh.DataBindings.Add(new Binding("Text", Customers, "CustomerName", true, DataSourceUpdateMode.Never));
 
             txtb_sdt.DataBindings.Add(new Binding("Text", Customers, "Phone", true, DataSourceUpdateMode.Never));
+
+            txtb_Email.DataBindings.Add(new Binding("Text", Customers, "Email", true, DataSourceUpdateMode.Never));
 
             cbb_hangkh.DataBindings.Add(new Binding("SelectedValue", Customers, "CustomerRank", true, DataSourceUpdateMode.Never));
 
@@ -120,7 +126,24 @@ namespace MiniStore.Management
                 return;
 
             }
-            if (!IsValidPhoneNumber(txtb_sdt.Text))
+            if (string.IsNullOrEmpty(txtb_DiaChi.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập địa chỉ khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtb_tenkh.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtb_Email.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập email khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtb_Email.Focus();
+                return;
+            }
+            if (!txtb_Email.Text.Contains("@gmail.com"))
+            {
+                MessageBox.Show("Email không hợp lệ !!", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            if (!IsValidPhoneNumber(txtb_sdt.Text.Trim()))
             {
                 MessageBox.Show("Số điện thoại không hợp lệ !!", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 return;
@@ -149,16 +172,25 @@ namespace MiniStore.Management
                 }
                 return;
             }
+            if (db.checkExist(string.Format("select count(*) from Customers where Email = N'{0}'", txtb_Email.Text)))
+            {
+                if (MessageBox.Show("Email khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                {
+                    txtb_Email.Focus();
+                }
+                return;
+            }
+
             string query;
             if (string.IsNullOrEmpty(cbb_hangkh.Text))
             {
-                query = string.Format("INSERT Customers ( CustomerName, Phone, CustomerRank, CustomerSuppAddress)" +
-                                " VALUES (N'{0}', '{1}', null, N'{2}')", txtb_tenkh.Text, txtb_sdt.Text, txtb_DiaChi.Text);
+                query = string.Format("INSERT Customers ( CustomerName, Phone, Email , CustomerRank, CustomerSuppAddress)" +
+                                " VALUES (N'{0}', '{1}', '{2}' , null, N'{3}')", txtb_tenkh.Text, txtb_sdt.Text, txtb_Email.Text, txtb_DiaChi.Text);
             }
             else
             {
-                query = string.Format("INSERT Customers ( CustomerName, Phone, CustomerRank, CustomerSuppAddress)" +
-                               " VALUES (N'{0}', '{1}', '{2}', N'{3}')", txtb_tenkh.Text, txtb_sdt.Text, cbb_hangkh.Text, txtb_DiaChi.Text);
+                query = string.Format("INSERT Customers ( CustomerName, Phone, Email , CustomerRank, CustomerSuppAddress)" +
+                               " VALUES (N'{0}', '{1}', '{2}','{3}', N'{4}')", txtb_tenkh.Text, txtb_sdt.Text,txtb_Email.Text ,cbb_hangkh.Text, txtb_DiaChi.Text);
             }
             db.updateToDataBase(query);
             txtb_DiaChi.Clear();
@@ -227,6 +259,18 @@ namespace MiniStore.Management
                 return;
 
             }
+            if (string.IsNullOrEmpty(txtb_DiaChi.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập địa chỉ khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtb_tenkh.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtb_Email.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập email khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                txtb_Email.Focus();
+                return;
+            }
             if (!IsValidPhoneNumber(txtb_sdt.Text))
             {
                 MessageBox.Show("Số điện thoại không hợp lệ !!", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -238,27 +282,45 @@ namespace MiniStore.Management
                 txtb_sdt.Focus();
                 return;
             }
-
-            if (db.checkExist(string.Format("select count(*) from Customers where CustomerName = N'{0}'", txtb_tenkh.Text)))
+            string name = dataGridView.CurrentRow.Cells["CustomerName"].Value.ToString();
+            if (!name.Equals(txtb_tenkh.Text))
             {
-                if (MessageBox.Show("Tên khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                if (db.checkExist(string.Format("select count(*) from Customers where CustomerName = N'{0}'", txtb_tenkh.Text)))
                 {
-                    txtb_tenkh.Focus();
+                    if (MessageBox.Show("Tên khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                    {
+                        txtb_tenkh.Focus();
+                    }
+                    return;
                 }
-                return;
             }
-
-            if (db.checkExist(string.Format("select count(*) from Customers where Phone = N'{0}'", txtb_sdt.Text)))
+            string number = dataGridView.CurrentRow.Cells["Phone"].Value.ToString();
+            if (!number.Equals(txtb_sdt.Text))
             {
-                if (MessageBox.Show("SĐT khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                if (db.checkExist(string.Format("select count(*) from Customers where Phone = N'{0}'", txtb_sdt.Text)))
                 {
-                    txtb_sdt.Focus();
+                    if (MessageBox.Show("SĐT khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                    {
+                        txtb_sdt.Focus();
+                    }
+                    return;
                 }
-                return;
+            }
+            string email = dataGridView.CurrentRow.Cells["Email"].Value.ToString();
+            if (!email.Equals(txtb_Email.Text))
+            {
+                if (db.checkExist(string.Format("select count(*) from Customers where Email = N'{0}'", txtb_Email.Text)))
+                {
+                    if (MessageBox.Show("Email khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                    {
+                        txtb_Email.Focus();
+                    }
+                    return;
+                }
             }
             string update = "UPDATE Customers SET CustomerName = N'" + txtb_tenkh.Text + "'," +
                 " Phone = '" + txtb_sdt.Text + "', CustomerRank = N'" + cbb_hangkh.Text + "'," +
-                " CustomerSuppAddress = N'" + txtb_DiaChi.Text +
+                " CustomerSuppAddress = N'" + txtb_DiaChi.Text + "', Email = '" + txtb_Email.Text +
                 "' WHERE CustomerID = " + dataGridView.CurrentRow.Cells["CustomerID"].Value;
             db.updateToDataBase(update);
             MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -282,8 +344,7 @@ namespace MiniStore.Management
         }
         private bool IsValidPhoneNumber(string phoneNumber)
         {
-            // Regular expression for Vietnamese phone numbers
-            string pattern = @"^(03|05|07|08|09)\d{10,11}$";
+            string pattern = @"^(03|05|07|08|09)\d{8,9}$";
             return Regex.IsMatch(phoneNumber, pattern);
         }
     }

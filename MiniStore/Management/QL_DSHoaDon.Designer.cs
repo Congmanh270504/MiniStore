@@ -30,7 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lbl_dshoadon = new System.Windows.Forms.Label();
-            this.grb_tthoadon = new System.Windows.Forms.GroupBox();
+            this.btn_print = new System.Windows.Forms.GroupBox();
+            this.btn_In = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.tbDate = new System.Windows.Forms.TextBox();
             this.lbPhuongThuctinh = new System.Windows.Forms.Label();
             this.cbPayment = new System.Windows.Forms.ComboBox();
@@ -48,8 +50,7 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.orderDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.grb_tthoadon.SuspendLayout();
+            this.btn_print.SuspendLayout();
             this.grpb_dshoadon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -66,30 +67,60 @@
             this.lbl_dshoadon.TabIndex = 1;
             this.lbl_dshoadon.Text = "DANH SÁCH HÓA ĐƠN";
             // 
-            // grb_tthoadon
+            // btn_print
             // 
-            this.grb_tthoadon.Controls.Add(this.btnLoad);
-            this.grb_tthoadon.Controls.Add(this.tbDate);
-            this.grb_tthoadon.Controls.Add(this.lbPhuongThuctinh);
-            this.grb_tthoadon.Controls.Add(this.cbPayment);
-            this.grb_tthoadon.Controls.Add(this.lbTime);
-            this.grb_tthoadon.Controls.Add(this.cbDate);
-            this.grb_tthoadon.Controls.Add(this.lbDateTime);
-            this.grb_tthoadon.Controls.Add(this.maskDateTime);
-            this.grb_tthoadon.Controls.Add(this.btn_Dong);
-            this.grb_tthoadon.Controls.Add(this.label2);
-            this.grb_tthoadon.Controls.Add(this.btn_Tim);
-            this.grb_tthoadon.Controls.Add(this.cbCell);
-            this.grb_tthoadon.Controls.Add(this.txtSearch);
-            this.grb_tthoadon.Controls.Add(this.lbNhap);
-            this.grb_tthoadon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_tthoadon.ForeColor = System.Drawing.Color.DarkCyan;
-            this.grb_tthoadon.Location = new System.Drawing.Point(13, 69);
-            this.grb_tthoadon.Name = "grb_tthoadon";
-            this.grb_tthoadon.Size = new System.Drawing.Size(875, 152);
-            this.grb_tthoadon.TabIndex = 2;
-            this.grb_tthoadon.TabStop = false;
-            this.grb_tthoadon.Text = "Tìm kiếm hóa đơn";
+            this.btn_print.Controls.Add(this.btn_In);
+            this.btn_print.Controls.Add(this.btnLoad);
+            this.btn_print.Controls.Add(this.tbDate);
+            this.btn_print.Controls.Add(this.lbPhuongThuctinh);
+            this.btn_print.Controls.Add(this.cbPayment);
+            this.btn_print.Controls.Add(this.lbTime);
+            this.btn_print.Controls.Add(this.cbDate);
+            this.btn_print.Controls.Add(this.lbDateTime);
+            this.btn_print.Controls.Add(this.maskDateTime);
+            this.btn_print.Controls.Add(this.btn_Dong);
+            this.btn_print.Controls.Add(this.label2);
+            this.btn_print.Controls.Add(this.btn_Tim);
+            this.btn_print.Controls.Add(this.cbCell);
+            this.btn_print.Controls.Add(this.txtSearch);
+            this.btn_print.Controls.Add(this.lbNhap);
+            this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btn_print.Location = new System.Drawing.Point(13, 69);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(875, 152);
+            this.btn_print.TabIndex = 2;
+            this.btn_print.TabStop = false;
+            this.btn_print.Text = "Tìm kiếm hóa đơn";
+            // 
+            // btn_In
+            // 
+            this.btn_In.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_In.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_In.ForeColor = System.Drawing.Color.White;
+            this.btn_In.Location = new System.Drawing.Point(698, 21);
+            this.btn_In.Name = "btn_In";
+            this.btn_In.Size = new System.Drawing.Size(118, 46);
+            this.btn_In.TabIndex = 29;
+            this.btn_In.Text = "IN DANH SÁCH";
+            this.btn_In.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_In.UseVisualStyleBackColor = false;
+            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.ForeColor = System.Drawing.Color.White;
+            this.btnLoad.Image = global::MiniStore.Properties.Resources.available_updates_32px1;
+            this.btnLoad.Location = new System.Drawing.Point(509, 21);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(118, 46);
+            this.btnLoad.TabIndex = 28;
+            this.btnLoad.Text = "LOAD";
+            this.btnLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // tbDate
             // 
@@ -270,35 +301,20 @@
             this.orderDetailsToolStripMenuItem.Text = "Xem chi tiết hóa đơn";
             this.orderDetailsToolStripMenuItem.Click += new System.EventHandler(this.orderDetailsToolStripMenuItem_Click);
             // 
-            // btnLoad
-            // 
-            this.btnLoad.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Image = global::MiniStore.Properties.Resources.available_updates_32px1;
-            this.btnLoad.Location = new System.Drawing.Point(606, 16);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(118, 46);
-            this.btnLoad.TabIndex = 28;
-            this.btnLoad.Text = "LOAD";
-            this.btnLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
             // QL_DSHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 535);
             this.Controls.Add(this.grpb_dshoadon);
-            this.Controls.Add(this.grb_tthoadon);
+            this.Controls.Add(this.btn_print);
             this.Controls.Add(this.lbl_dshoadon);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "QL_DSHoaDon";
             this.Text = "DANH SÁCH HÓA ĐƠN";
             this.Load += new System.EventHandler(this.QL_DSHoaDon_Load);
-            this.grb_tthoadon.ResumeLayout(false);
-            this.grb_tthoadon.PerformLayout();
+            this.btn_print.ResumeLayout(false);
+            this.btn_print.PerformLayout();
             this.grpb_dshoadon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -310,7 +326,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_dshoadon;
-        private System.Windows.Forms.GroupBox grb_tthoadon;
+        private System.Windows.Forms.GroupBox btn_print;
         private System.Windows.Forms.GroupBox grpb_dshoadon;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btn_Dong;
@@ -329,5 +345,6 @@
         private System.Windows.Forms.Label lbPhuongThuctinh;
         private System.Windows.Forms.TextBox tbDate;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btn_In;
     }
 }

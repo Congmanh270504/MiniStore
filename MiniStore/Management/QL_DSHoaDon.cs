@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQL;
 using MiniStore.ItemNav;
+using MiniStore.Report;
 namespace MiniStore.Management
 {
     public partial class QL_DSHoaDon : Form
@@ -532,6 +533,21 @@ namespace MiniStore.Management
         private void OrderDetailsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
+        }
+
+        private void btn_In_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frm_DSHD frm_dshd = new frm_DSHD();
+            frm_dshd.FormClosed += frm_dshd_FormClosed;
+            frm_dshd.Show();
+        }
+        private void frm_dshd_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!this.IsDisposed)
+            {
+                this.Show();
+            }
         }
     }
 }
