@@ -267,7 +267,7 @@ namespace MiniStore.ItemNav
                 case "Vàng":
                     sell = 7;
                     break;
-                case "Kim cương":
+                case "Bạch kim":
                     sell = 10;
                     break;
                 default:
@@ -277,6 +277,11 @@ namespace MiniStore.ItemNav
             {
                 total *= ((100 - sell) / 100);
 
+            }
+            if (listOrder.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Không có sản phẩm trong giỏ hàng !!", "Không có sản phẩm", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
             }
 
             if (string.IsNullOrEmpty(txtReceive.Text))
@@ -401,7 +406,7 @@ namespace MiniStore.ItemNav
                     sell = 5;
                     break;
                 case "Kim cương":
-                    sell = 7;
+                    sell = 10;
                     break;
                 default:
                     sell = 0;
@@ -424,6 +429,7 @@ namespace MiniStore.ItemNav
         {
             NewCustomer newCustomer = new NewCustomer();
             newCustomer.ShowDialog();
+            load_CbCustomer();
         }
 
         private void btnDecrease_Click(object sender, EventArgs e)

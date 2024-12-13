@@ -31,6 +31,8 @@
             this.grpDanhSach = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.grpb_ttkh = new System.Windows.Forms.GroupBox();
+            this.txtb_Email = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtb_sdt = new System.Windows.Forms.TextBox();
             this.txtb_DiaChi = new System.Windows.Forms.TextBox();
             this.cbb_hangkh = new System.Windows.Forms.ComboBox();
@@ -44,8 +46,6 @@
             this.btn_Clean = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
-            this.txtb_Email = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grpDanhSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.grpb_ttkh.SuspendLayout();
@@ -54,14 +54,14 @@
             // grpDanhSach
             // 
             this.grpDanhSach.Controls.Add(this.dataGridView);
-            this.grpDanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpDanhSach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDanhSach.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpDanhSach.Location = new System.Drawing.Point(12, 236);
             this.grpDanhSach.Name = "grpDanhSach";
             this.grpDanhSach.Size = new System.Drawing.Size(900, 312);
             this.grpDanhSach.TabIndex = 89;
             this.grpDanhSach.TabStop = false;
-            this.grpDanhSach.Text = "Danh sách loại sản phẩm";
+            this.grpDanhSach.Text = "Danh sách khách hàng";
             // 
             // dataGridView
             // 
@@ -84,7 +84,7 @@
             this.grpb_ttkh.Controls.Add(this.lbl_hangkh);
             this.grpb_ttkh.Controls.Add(this.lbl_tenkh);
             this.grpb_ttkh.Controls.Add(this.lbl_makh);
-            this.grpb_ttkh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpb_ttkh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpb_ttkh.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpb_ttkh.Location = new System.Drawing.Point(12, 12);
             this.grpb_ttkh.Name = "grpb_ttkh";
@@ -93,33 +93,55 @@
             this.grpb_ttkh.TabStop = false;
             this.grpb_ttkh.Text = "Thông Tin Khách Hàng";
             // 
+            // txtb_Email
+            // 
+            this.txtb_Email.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtb_Email.Location = new System.Drawing.Point(596, 131);
+            this.txtb_Email.Name = "txtb_Email";
+            this.txtb_Email.Size = new System.Drawing.Size(226, 26);
+            this.txtb_Email.TabIndex = 119;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(452, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 19);
+            this.label1.TabIndex = 118;
+            this.label1.Text = "Email";
+            // 
             // txtb_sdt
             // 
+            this.txtb_sdt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb_sdt.Location = new System.Drawing.Point(596, 34);
             this.txtb_sdt.Name = "txtb_sdt";
-            this.txtb_sdt.Size = new System.Drawing.Size(226, 29);
+            this.txtb_sdt.Size = new System.Drawing.Size(226, 26);
             this.txtb_sdt.TabIndex = 116;
             this.txtb_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtb_sdt_KeyPress);
             // 
             // txtb_DiaChi
             // 
+            this.txtb_DiaChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb_DiaChi.Location = new System.Drawing.Point(163, 81);
             this.txtb_DiaChi.Name = "txtb_DiaChi";
-            this.txtb_DiaChi.Size = new System.Drawing.Size(226, 29);
+            this.txtb_DiaChi.Size = new System.Drawing.Size(226, 26);
             this.txtb_DiaChi.TabIndex = 114;
             // 
             // cbb_hangkh
             // 
             this.cbb_hangkh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_hangkh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_hangkh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_hangkh.FormattingEnabled = true;
             this.cbb_hangkh.Location = new System.Drawing.Point(596, 84);
             this.cbb_hangkh.Name = "cbb_hangkh";
-            this.cbb_hangkh.Size = new System.Drawing.Size(226, 25);
+            this.cbb_hangkh.Size = new System.Drawing.Size(226, 27);
             this.cbb_hangkh.TabIndex = 117;
             // 
             // txtb_tenkh
             // 
+            this.txtb_tenkh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb_tenkh.Location = new System.Drawing.Point(163, 35);
             this.txtb_tenkh.Multiline = true;
             this.txtb_tenkh.Name = "txtb_tenkh";
@@ -130,51 +152,51 @@
             // lbl_sdtkh
             // 
             this.lbl_sdtkh.AutoSize = true;
-            this.lbl_sdtkh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sdtkh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_sdtkh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_sdtkh.Location = new System.Drawing.Point(452, 38);
             this.lbl_sdtkh.Name = "lbl_sdtkh";
-            this.lbl_sdtkh.Size = new System.Drawing.Size(104, 21);
+            this.lbl_sdtkh.Size = new System.Drawing.Size(91, 19);
             this.lbl_sdtkh.TabIndex = 109;
             this.lbl_sdtkh.Text = "Số điện thoại:";
             // 
             // lbl_hangkh
             // 
             this.lbl_hangkh.AutoSize = true;
-            this.lbl_hangkh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hangkh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_hangkh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_hangkh.Location = new System.Drawing.Point(446, 88);
             this.lbl_hangkh.Name = "lbl_hangkh";
-            this.lbl_hangkh.Size = new System.Drawing.Size(134, 21);
+            this.lbl_hangkh.Size = new System.Drawing.Size(116, 19);
             this.lbl_hangkh.TabIndex = 108;
             this.lbl_hangkh.Text = "Hạng khách hàng:";
             // 
             // lbl_tenkh
             // 
             this.lbl_tenkh.AutoSize = true;
-            this.lbl_tenkh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tenkh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_tenkh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_tenkh.Location = new System.Drawing.Point(17, 38);
             this.lbl_tenkh.Name = "lbl_tenkh";
-            this.lbl_tenkh.Size = new System.Drawing.Size(120, 21);
+            this.lbl_tenkh.Size = new System.Drawing.Size(107, 19);
             this.lbl_tenkh.TabIndex = 107;
             this.lbl_tenkh.Text = "Tên khách hàng:";
             // 
             // lbl_makh
             // 
             this.lbl_makh.AutoSize = true;
-            this.lbl_makh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_makh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_makh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_makh.Location = new System.Drawing.Point(8, 85);
             this.lbl_makh.Name = "lbl_makh";
-            this.lbl_makh.Size = new System.Drawing.Size(144, 21);
+            this.lbl_makh.Size = new System.Drawing.Size(126, 19);
             this.lbl_makh.TabIndex = 106;
             this.lbl_makh.Text = "Địa chỉ khách hàng:";
             // 
             // btn_Dong
             // 
             this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dong.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dong.ForeColor = System.Drawing.Color.White;
             this.btn_Dong.Image = global::MiniStore.Properties.Resources.cancel_32px8;
             this.btn_Dong.Location = new System.Drawing.Point(764, 184);
@@ -189,7 +211,7 @@
             // btn_Sua
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sua.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sua.ForeColor = System.Drawing.Color.White;
             this.btn_Sua.Image = global::MiniStore.Properties.Resources.edit_file_20px4;
             this.btn_Sua.Location = new System.Drawing.Point(407, 184);
@@ -204,7 +226,7 @@
             // btn_Clean
             // 
             this.btn_Clean.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Clean.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clean.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Clean.ForeColor = System.Drawing.Color.White;
             this.btn_Clean.Image = global::MiniStore.Properties.Resources.available_updates_32px2;
             this.btn_Clean.Location = new System.Drawing.Point(583, 185);
@@ -219,7 +241,7 @@
             // btn_Xoa
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
             this.btn_Xoa.Image = global::MiniStore.Properties.Resources.delete_20px4;
             this.btn_Xoa.Location = new System.Drawing.Point(226, 184);
@@ -234,7 +256,7 @@
             // btn_Them
             // 
             this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Them.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Them.ForeColor = System.Drawing.Color.White;
             this.btn_Them.Image = global::MiniStore.Properties.Resources.add_20px3;
             this.btn_Them.Location = new System.Drawing.Point(45, 184);
@@ -245,24 +267,6 @@
             this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Them.UseVisualStyleBackColor = false;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
-            // 
-            // txtb_Email
-            // 
-            this.txtb_Email.Location = new System.Drawing.Point(596, 131);
-            this.txtb_Email.Name = "txtb_Email";
-            this.txtb_Email.Size = new System.Drawing.Size(226, 29);
-            this.txtb_Email.TabIndex = 119;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(452, 135);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 21);
-            this.label1.TabIndex = 118;
-            this.label1.Text = "Email";
             // 
             // QL_KhachHang
             // 

@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,60 +15,60 @@ namespace MiniStore.ItemNav
     public partial class frm_Report : Form
     {
         DBConnect db;
-        SqlDataAdapter da_employees;
-        DataTable employees;
+        SqlDataAdapter da_report;
+        DataTable report;
         List<string> columnNames = new List<string>
                         {
-                            "OrderID",
-                            "CustomerName",
-                            "EmployeeName",
-                            "OrderDate",
-                            "TotalAmount",
-                            "PaymentMethod"
-                        };
-        List<string> dateType = new List<string>
-                        {
-                            "Tháng",
-                            "Năm"
+                            "OrderYear",
+                            "OrderMonth",
+                            "TotalQuantity",
+                            "TotalRevenue"
                         };
         public frm_Report()
         {
             InitializeComponent();
             db = new DBConnect("miniMKT");
         }
-        void datagrid_Load()
+        private void loadReport()
         {
-            string sql = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from Orders,Customers,Employees where Orders.CustomerID=Customers.CustomerID and Employees.EmployeeID = Orders.EmployeeID";
-            da_employees = db.getDataAdapter(sql, "Orders");
-            employees = db.Dset.Tables["Orders"];
-            dataGridView.DataSource = employees;
-        }
-        void load_DateType()
-        {
-            foreach (var item in dateType)
+            string sql = "SELECT  MONTH(o.OrderDate) AS OrderMonth, YEAR(o.OrderDate) AS OrderYear, (SELECT SUM(TotalAmount) FROM Orders o2   WHERE o2.OrderID = o.OrderID) AS TotalRevenue, SUM(od.Quantity) AS TotalQuantity" +
+                " FROM  Orders o JOIN  OrderDetails od ON o.OrderID = od.OrderID" +
+                " GROUP BY  YEAR(o.OrderDate), MONTH(o.OrderDate), o.OrderID " +
+                "ORDER BY  OrderMonth,OrderYear;";
+
+            da_report = db.getDataAdapter(sql, "Orders");
+
+            if (report != null)
             {
-                cb_TimeType.Items.Add(item);
+                report.Clear();
             }
-            if (cb_TimeType.Items.Count > 0)
+            else
             {
-                cb_TimeType.SelectedIndex = 0;
+                report = new DataTable();
             }
+
+            da_report.Fill(report);
+            dataGridView.DataSource = report;
         }
-        private void frm_Report_Load(object sender, EventArgs e)
+
+
+        private int getTotalQuanity(string subQuery)
         {
-            string query = "SELECT SUM(TotalAmount) FROM Orders";
-            lbTotal.Text = db.getInt(query).ToString() + "đ";
-            datagrid_Load();
-            load_DateType();
-            DataColumn[] primaryKey = new DataColumn[1];
-            primaryKey[0] = employees.Columns["OrderID"];
-            employees.PrimaryKey = primaryKey;
-            dataGridView.Columns["OrderID"].HeaderText = "Mã hóa đơn";
-            dataGridView.Columns["EmployeeName"].HeaderText = "Tên nhân viên";
-            dataGridView.Columns["CustomerName"].HeaderText = "Tên khách hàng";
-            dataGridView.Columns["OrderDate"].HeaderText = "Ngày lập";
-            dataGridView.Columns["TotalAmount"].HeaderText = "Tổng tiền";
-            dataGridView.Columns["PaymentMethod"].HeaderText = "Phương thức tính";
+            string sql = "select sum(quantity) from OrderDetails" + subQuery;
+            return db.getCount(sql);
+        }
+        private int getTotalRevenue(string subQuery)
+        {
+            string sql = "select SUM(TotalAmount) from Orders " + subQuery;
+            return db.getCount(sql);
+        }
+        private void frm_Report2_Load(object sender, EventArgs e)
+        {
+            loadReport();
+            dataGridView.Columns["OrderMonth"].HeaderText = "Tháng";
+            dataGridView.Columns["OrderYear"].HeaderText = "Năm";
+            dataGridView.Columns["TotalQuantity"].HeaderText = "Số lượng mặt hàng bán ra";
+            dataGridView.Columns["TotalRevenue"].HeaderText = "Doanh thu";
 
             foreach (string item in columnNames)
             {
@@ -77,6 +76,53 @@ namespace MiniStore.ItemNav
                 dataGridView.Columns[item].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dataGridView.Columns[item].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridView.Columns[item].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
+            }
+            lbTotalQuantity.Text = getTotalQuanity("").ToString() + " sản phẩm đã bán";
+            lbTotalRevenue.Text = getTotalRevenue("").ToString() + "đ";
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadReport();
+            tbTime.Clear();
+            lbTotalQuantity.Text = getTotalQuanity("").ToString() + " sản phẩm đã bán";
+            lbTotalRevenue.Text = getTotalRevenue("").ToString() + "đ";
+        }
+
+        private void btn_Tim_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbTime.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập năm tìm kiếm.", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                tbTime.Focus();
+                return;
+            }
+            string sql = "SELECT  MONTH(o.OrderDate) AS OrderMonth, YEAR(o.OrderDate) AS OrderYear, (SELECT SUM(TotalAmount) FROM Orders o2   WHERE o2.OrderID = o.OrderID) AS TotalRevenue, SUM(od.Quantity) AS TotalQuantity" +
+                " FROM  Orders o JOIN  OrderDetails od ON o.OrderID = od.OrderID" +
+                " WHERE YEAR(o.OrderDate) = " + tbTime.Text + " " +
+                " GROUP BY  YEAR(o.OrderDate), MONTH(o.OrderDate), o.OrderID " +
+                "ORDER BY  OrderMonth,OrderYear;";
+       
+
+            da_report = db.getDataAdapter(sql, "Orders");
+            da_report.SelectCommand.Parameters.AddWithValue("@year", tbTime.Text);
+            DataTable searchResults = new DataTable();
+            da_report.Fill(searchResults);
+
+            if (searchResults.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy dữ liệu cho năm đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                lbTotalQuantity.Text = getTotalQuanity(",Orders  WHERE YEAR(OrderDate) = " + tbTime.Text + " AND OrderDetails.OrderID = Orders.OrderID").ToString() + " sản phẩm đã bán";
+                lbTotalRevenue.Text = getTotalRevenue("WHERE YEAR(OrderDate) = " + tbTime.Text).ToString() + "đ";
+                dataGridView.DataSource = searchResults;
             }
         }
 
@@ -88,85 +134,35 @@ namespace MiniStore.ItemNav
             }
         }
 
-        private void btn_Tim_Click(object sender, EventArgs e)
+        private void btn_Tim_KeyDown(object sender, KeyEventArgs e)
         {
-            string query = "";
-            switch (cb_TimeType.Text)
+            if (e.KeyCode == Keys.Enter)
             {
-                case "Tháng":
-                    int time = int.Parse(tbTime.Text);
-                    if (time > 12)
-                    {
-                        if (MessageBox.Show("Không tháng nhập vào lớn hơn 12.", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information) == DialogResult.Retry)
-                        {
-                            tbTime.Clear();
-                            tbTime.Focus();
-                        }
-                        return;
-                    }
-                  string sql = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
-                                       "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
-                                       "and Employees.EmployeeID = Orders.EmployeeID and MONTH(OrderDate) = '" + tbTime.Text + "'";
-                    using (SqlConnection connection = new SqlConnection(db.strConnect))
-                    {
-                        SqlDataAdapter da_products = new SqlDataAdapter(sql, connection);
-
-                        DataTable products = new DataTable();
-                        da_products.Fill(products);
-                        if (products.Rows.Count == 0)
-                        {
-                            MessageBox.Show("Không tìm thấy hóa đơn nào có ngày đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            tbTime.Clear();
-                            tbTime.Focus();
-                            datagrid_Load();
-                            return;
-                        }
-                        sql = "SELECT SUM(TotalAmount) FROM Orders where month(OrderDate)='" + tbTime.Text + "'";
-                        lbTotal.Text = db.getInt(sql).ToString() + "đ";
-                        dataGridView.DataSource = products;
-                    }
-                    break;
-                case "Năm":
-                    query = "select OrderID,CustomerName,EmployeeName,OrderDate,TotalAmount,PaymentMethod from " +
-                                      "Orders, Customers, Employees where Orders.CustomerID = Customers.CustomerID " +
-                                      "and Employees.EmployeeID = Orders.EmployeeID and YEAR(OrderDate) = '" + tbTime.Text + "'";
-                    using (SqlConnection connection = new SqlConnection(db.strConnect))
-                    {
-                        SqlDataAdapter da_products = new SqlDataAdapter(query, connection);
-
-                        DataTable products = new DataTable();
-                        da_products.Fill(products);
-                        if (products.Rows.Count == 0)
-                        {
-                            MessageBox.Show("Không tìm thấy hóa đơn nào có năm đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            tbTime.Clear();
-                            tbTime.Focus();
-                            datagrid_Load();
-                            return;
-                        }
-                        sql = "SELECT SUM(TotalAmount) FROM Orders where year(OrderDate)='" + tbTime.Text + "'";
-                        lbTotal.Text = db.getInt(sql).ToString() + "đ";
-                        dataGridView.DataSource = products;
-        }
-                    break;
-                default:
-                    break;
+                btn_Tim_Click(sender, e);
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void RevueneDetailToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            datagrid_Load();
-            string query = "SELECT SUM(TotalAmount) FROM Orders";
-            lbTotal.Text = db.getInt(query).ToString() + "đ";
-            tbTime.Clear();
-            cb_TimeType.SelectedIndex = -1;
-            cb_TimeType.Focus();
+            if (dataGridView.CurrentRow != null)
+            {
+                // Lấy thông tin từ dòng được chọn
+                string orderMonth = dataGridView.CurrentRow.Cells["OrderMonth"].Value.ToString();
+                string orderYear = dataGridView.CurrentRow.Cells["OrderYear"].Value.ToString();
+                // Tạo và hiển thị form OrderDetails
+                var revenueDetailsForm = new frm_ReportDeatails(orderMonth, orderYear);
+                Hide();
+                revenueDetailsForm.FormClosed += frm_ReportDeatailsForm_FormClosed;
+                revenueDetailsForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn để xem chi tiết", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
+        private void frm_ReportDeatailsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Close();
+            this.Show();
         }
     }
 }

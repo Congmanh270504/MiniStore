@@ -45,11 +45,11 @@
             // lbl_dshoadon
             // 
             this.lbl_dshoadon.AutoSize = true;
-            this.lbl_dshoadon.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dshoadon.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dshoadon.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbl_dshoadon.Location = new System.Drawing.Point(154, 9);
             this.lbl_dshoadon.Name = "lbl_dshoadon";
-            this.lbl_dshoadon.Size = new System.Drawing.Size(501, 45);
+            this.lbl_dshoadon.Size = new System.Drawing.Size(500, 36);
             this.lbl_dshoadon.TabIndex = 2;
             this.lbl_dshoadon.Text = "THÔNG TIN CHI TIẾT HÓA ĐƠN";
             // 

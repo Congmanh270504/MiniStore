@@ -1,5 +1,6 @@
 ﻿using SQL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,6 +60,17 @@ namespace MiniStore.ItemNav
                 MessageBox.Show("Chưa nhập địa chỉ khách hàng !!", "Chưa nhập địa chỉ", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
+            if (string.IsNullOrEmpty(tb_Email.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập email khách hàng !!", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tb_Email.Focus();
+                return;
+            }
+            if (!tb_Email.Text.Contains("@gmail.com"))
+            {
+                MessageBox.Show("Email không hợp lệ !!", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                return;
+            }
             if (db.checkExist(string.Format("select count(*) from Customers where CustomerName = N'{0}'", tbName.Text)))
             {
                 MessageBox.Show("Đã tồn tại tên khách hàng !!", "Đã tồn tại khách hàng", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -70,9 +82,25 @@ namespace MiniStore.ItemNav
                 MessageBox.Show("Số điện thoại không hợp lệ !!", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 return;
             }
+            if (db.checkExist(string.Format("select count(*) from Customers where Phone = '{0}'", tbNumberPhone.Text)))
+            {
+                if (MessageBox.Show("Số điện thoại khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                {
+                    tbNumberPhone.Focus();
+                }
+                return;
+            }
+            if (db.checkExist(string.Format("select count(*) from Customers where Email = N'{0}'", tb_Email.Text)))
+            {
+                if (MessageBox.Show("Email khách hàng đã tồn tại", "Thông báo", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1) != DialogResult.Cancel)
+                {
+                    tb_Email.Focus();
+                }
+                return;
+            }
 
-            string query = string.Format("INSERT INTO Customers (CustomerName, Phone, CustomerSuppAddress) VALUES (N'{0}', '{1}', N'{2}')"
-                , tbName.Text, tbNumberPhone.Text, tbAddress.Text);
+           string query = string.Format("INSERT Customers ( CustomerName, Phone, Email , CustomerRank, CustomerSuppAddress)" +
+                                 " VALUES (N'{0}', '{1}', '{2}' , null, N'{3}')", tbName.Text, tbNumberPhone.Text, tb_Email.Text, tbAddress.Text);
             db.updateToDataBase(query);
 
             MessageBox.Show("Thêm khách hàng thành công !!", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);

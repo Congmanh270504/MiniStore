@@ -158,67 +158,67 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(543, 96);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(200, 27);
+            this.txtSDT.Size = new System.Drawing.Size(200, 25);
             this.txtSDT.TabIndex = 13;
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSDT.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSDT.Location = new System.Drawing.Point(423, 104);
             this.lblSDT.Name = "lblSDT";
-            this.lblSDT.Size = new System.Drawing.Size(100, 20);
+            this.lblSDT.Size = new System.Drawing.Size(87, 17);
             this.lblSDT.TabIndex = 12;
             this.lblSDT.Text = "Số điện thoại:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(543, 28);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 27);
+            this.txtEmail.Size = new System.Drawing.Size(200, 25);
             this.txtEmail.TabIndex = 11;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(423, 38);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(99, 20);
+            this.lblEmail.Size = new System.Drawing.Size(90, 17);
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Địa chỉ Email:";
             // 
             // lblCMND
             // 
             this.lblCMND.AutoSize = true;
-            this.lblCMND.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCMND.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCMND.Location = new System.Drawing.Point(49, 96);
             this.lblCMND.Name = "lblCMND";
-            this.lblCMND.Size = new System.Drawing.Size(64, 20);
+            this.lblCMND.Size = new System.Drawing.Size(61, 17);
             this.lblCMND.TabIndex = 6;
             this.lblCMND.Text = "Chức vụ:";
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNV.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNV.Location = new System.Drawing.Point(119, 35);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(226, 27);
+            this.txtTenNV.Size = new System.Drawing.Size(226, 25);
             this.txtTenNV.TabIndex = 3;
             this.txtTenNV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenNV_KeyPress);
             // 
             // lblTenNV
             // 
             this.lblTenNV.AutoSize = true;
-            this.lblTenNV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNV.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNV.Location = new System.Drawing.Point(11, 38);
             this.lblTenNV.Name = "lblTenNV";
-            this.lblTenNV.Size = new System.Drawing.Size(102, 20);
+            this.lblTenNV.Size = new System.Drawing.Size(94, 17);
             this.lblTenNV.TabIndex = 2;
             this.lblTenNV.Text = "Tên nhân viên:";
             // 
@@ -232,7 +232,7 @@
             this.grpThongTin.Controls.Add(this.lblCMND);
             this.grpThongTin.Controls.Add(this.txtTenNV);
             this.grpThongTin.Controls.Add(this.lblTenNV);
-            this.grpThongTin.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpThongTin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpThongTin.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpThongTin.Location = new System.Drawing.Point(12, 88);
             this.grpThongTin.Name = "grpThongTin";
@@ -244,19 +244,20 @@
             // cb_Position
             // 
             this.cb_Position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Position.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Position.FormattingEnabled = true;
             this.cb_Position.Location = new System.Drawing.Point(119, 92);
             this.cb_Position.Name = "cb_Position";
-            this.cb_Position.Size = new System.Drawing.Size(226, 29);
+            this.cb_Position.Size = new System.Drawing.Size(226, 25);
             this.cb_Position.TabIndex = 14;
             // 
             // lblTimNhanVien
             // 
             this.lblTimNhanVien.AutoSize = true;
-            this.lblTimNhanVien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimNhanVien.Location = new System.Drawing.Point(155, 31);
             this.lblTimNhanVien.Name = "lblTimNhanVien";
-            this.lblTimNhanVien.Size = new System.Drawing.Size(140, 20);
+            this.lblTimNhanVien.Size = new System.Drawing.Size(126, 17);
             this.lblTimNhanVien.TabIndex = 2;
             this.lblTimNhanVien.Text = "Tìm kiếm nhân viên:";
             // 
@@ -274,7 +275,7 @@
             this.grpTimKiem.Controls.Add(this.btnSearch);
             this.grpTimKiem.Controls.Add(this.lblTimNhanVien);
             this.grpTimKiem.Controls.Add(this.txtTimKiem);
-            this.grpTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpTimKiem.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpTimKiem.Location = new System.Drawing.Point(12, 12);
             this.grpTimKiem.Name = "grpTimKiem";
@@ -287,7 +288,7 @@
             // 
             this.btnSearch.Location = new System.Drawing.Point(551, 28);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(96, 36);
+            this.btnSearch.Size = new System.Drawing.Size(96, 27);
             this.btnSearch.TabIndex = 34;
             this.btnSearch.Text = "TÌM KIẾM";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -307,7 +308,7 @@
             // btn_Clear
             // 
             this.btn_Clear.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Clear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clear.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Clear.ForeColor = System.Drawing.Color.White;
             this.btn_Clear.Location = new System.Drawing.Point(510, 239);
             this.btn_Clear.Name = "btn_Clear";
@@ -320,7 +321,7 @@
             // grpDanhSach
             // 
             this.grpDanhSach.Controls.Add(this.dataGridView_DSNhanVien);
-            this.grpDanhSach.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpDanhSach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDanhSach.ForeColor = System.Drawing.Color.DarkCyan;
             this.grpDanhSach.Location = new System.Drawing.Point(12, 303);
             this.grpDanhSach.Name = "grpDanhSach";
@@ -421,7 +422,7 @@
             // btn_Dong
             // 
             this.btn_Dong.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Dong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dong.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dong.ForeColor = System.Drawing.Color.White;
             this.btn_Dong.Image = global::MiniStore.Properties.Resources.cancel_32px;
             this.btn_Dong.Location = new System.Drawing.Point(671, 239);
@@ -438,7 +439,7 @@
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Sua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sua.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sua.ForeColor = System.Drawing.Color.White;
             this.btn_Sua.Image = global::MiniStore.Properties.Resources.edit_file_20px;
             this.btn_Sua.Location = new System.Drawing.Point(344, 240);
@@ -455,7 +456,7 @@
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
             this.btn_Xoa.Image = global::MiniStore.Properties.Resources.delete_20px;
             this.btn_Xoa.Location = new System.Drawing.Point(178, 240);
@@ -472,7 +473,7 @@
             // 
             this.btn_Them.BackColor = System.Drawing.Color.DarkCyan;
             this.btn_Them.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Them.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Them.ForeColor = System.Drawing.Color.White;
             this.btn_Them.Image = global::MiniStore.Properties.Resources.add_20px;
             this.btn_Them.Location = new System.Drawing.Point(12, 240);

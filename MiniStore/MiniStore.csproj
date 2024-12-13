@@ -81,12 +81,6 @@
     <Compile Include="Forms\frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_RestoreDatabase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frm_RestoreDatabase.Designer.cs">
-      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frm_Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +98,12 @@
     </Compile>
     <Compile Include="ItemNav\editInfor.Designer.cs">
       <DependentUpon>editInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemNav\frm_ReportDeatails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemNav\frm_ReportDeatails.Designer.cs">
+      <DependentUpon>frm_ReportDeatails.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemNav\frm_Report.cs">
       <SubType>Form</SubType>
@@ -146,12 +146,6 @@
     </Compile>
     <Compile Include="Management\QL_DSHoaDon.Designer.cs">
       <DependentUpon>QL_DSHoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Management\QL_HoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Management\QL_HoaDon.Designer.cs">
-      <DependentUpon>QL_HoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Management\QL_KhachHang.cs">
       <SubType>Form</SubType>
@@ -218,9 +212,6 @@
     <EmbeddedResource Include="Forms\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_RestoreDatabase.resx">
-      <DependentUpon>frm_RestoreDatabase.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_Splash.resx">
       <DependentUpon>frm_Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemNav\editInfor.resx">
       <DependentUpon>editInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemNav\frm_ReportDeatails.resx">
+      <DependentUpon>frm_ReportDeatails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemNav\frm_Report.resx">
       <DependentUpon>frm_Report.cs</DependentUpon>
@@ -250,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Management\QL_DSHoaDon.resx">
       <DependentUpon>QL_DSHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Management\QL_HoaDon.resx">
-      <DependentUpon>QL_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Management\QL_KhachHang.resx">
       <DependentUpon>QL_KhachHang.cs</DependentUpon>

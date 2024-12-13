@@ -29,7 +29,7 @@ namespace MiniStore.ItemNav
         public OrderDetails(string orderID)
         {
             InitializeComponent();
-            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            db = new DBConnect("miniMKT");
             OrderID = orderID;
         }
 

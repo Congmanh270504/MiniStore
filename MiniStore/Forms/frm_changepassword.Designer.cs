@@ -43,70 +43,70 @@
             // lbl_oldpass
             // 
             this.lbl_oldpass.AutoSize = true;
-            this.lbl_oldpass.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_oldpass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_oldpass.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbl_oldpass.Location = new System.Drawing.Point(170, 34);
             this.lbl_oldpass.Name = "lbl_oldpass";
-            this.lbl_oldpass.Size = new System.Drawing.Size(99, 20);
+            this.lbl_oldpass.Size = new System.Drawing.Size(88, 19);
             this.lbl_oldpass.TabIndex = 11;
             this.lbl_oldpass.Text = "Mật khẩu cũ:";
             // 
             // lbl_newpass
             // 
             this.lbl_newpass.AutoSize = true;
-            this.lbl_newpass.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_newpass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_newpass.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbl_newpass.Location = new System.Drawing.Point(170, 73);
             this.lbl_newpass.Name = "lbl_newpass";
-            this.lbl_newpass.Size = new System.Drawing.Size(110, 20);
+            this.lbl_newpass.Size = new System.Drawing.Size(96, 19);
             this.lbl_newpass.TabIndex = 12;
             this.lbl_newpass.Text = "Mật khẩu mới:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkCyan;
             this.label4.Location = new System.Drawing.Point(170, 118);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 20);
+            this.label4.Size = new System.Drawing.Size(63, 19);
             this.label4.TabIndex = 13;
             this.label4.Text = "Nhập lại:";
             // 
             // txtMatKhauCu
             // 
-            this.txtMatKhauCu.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhauCu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauCu.Location = new System.Drawing.Point(286, 31);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.PasswordChar = '*';
-            this.txtMatKhauCu.Size = new System.Drawing.Size(184, 27);
+            this.txtMatKhauCu.Size = new System.Drawing.Size(184, 26);
             this.txtMatKhauCu.TabIndex = 14;
             this.txtMatKhauCu.UseSystemPasswordChar = true;
             // 
             // txtMatKhauMoi
             // 
-            this.txtMatKhauMoi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhauMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauMoi.Location = new System.Drawing.Point(286, 73);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.PasswordChar = '*';
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(184, 27);
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(184, 26);
             this.txtMatKhauMoi.TabIndex = 15;
             this.txtMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // txtNhapLai
             // 
-            this.txtNhapLai.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNhapLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNhapLai.Location = new System.Drawing.Point(286, 118);
             this.txtNhapLai.Name = "txtNhapLai";
             this.txtNhapLai.PasswordChar = '*';
-            this.txtNhapLai.Size = new System.Drawing.Size(184, 27);
+            this.txtNhapLai.Size = new System.Drawing.Size(184, 26);
             this.txtNhapLai.TabIndex = 16;
             this.txtNhapLai.UseSystemPasswordChar = true;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Red;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = global::MiniStore.Properties.Resources.cancel_32px4;
             this.btnCancel.Location = new System.Drawing.Point(363, 151);
@@ -121,7 +121,7 @@
             // btn_Xacnhan
             // 
             this.btn_Xacnhan.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_Xacnhan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btn_Xacnhan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xacnhan.ForeColor = System.Drawing.Color.White;
             this.btn_Xacnhan.Image = global::MiniStore.Properties.Resources.checked_24px;
             this.btn_Xacnhan.Location = new System.Drawing.Point(217, 151);

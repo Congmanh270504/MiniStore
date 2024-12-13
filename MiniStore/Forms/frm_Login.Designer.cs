@@ -90,11 +90,11 @@
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblLogin.Location = new System.Drawing.Point(44, 187);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(283, 32);
+            this.lblLogin.Size = new System.Drawing.Size(289, 26);
             this.lblLogin.TabIndex = 8;
             this.lblLogin.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
@@ -104,7 +104,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.DarkCyan;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
             this.btnLogin.Location = new System.Drawing.Point(74, 436);
@@ -120,27 +120,28 @@
             // lbl_username
             // 
             this.lbl_username.AutoSize = true;
-            this.lbl_username.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_username.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_username.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbl_username.Location = new System.Drawing.Point(25, 253);
             this.lbl_username.Name = "lbl_username";
-            this.lbl_username.Size = new System.Drawing.Size(80, 20);
+            this.lbl_username.Size = new System.Drawing.Size(70, 19);
             this.lbl_username.TabIndex = 10;
             this.lbl_username.Text = "Username";
             // 
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_password.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_password.ForeColor = System.Drawing.Color.DarkCyan;
             this.lbl_password.Location = new System.Drawing.Point(25, 330);
             this.lbl_password.Name = "lbl_password";
-            this.lbl_password.Size = new System.Drawing.Size(76, 20);
+            this.lbl_password.Size = new System.Drawing.Size(69, 19);
             this.lbl_password.TabIndex = 11;
             this.lbl_password.Text = "Password";
             // 
             // txtb_username
             // 
+            this.txtb_username.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb_username.Location = new System.Drawing.Point(28, 287);
             this.txtb_username.Multiline = true;
             this.txtb_username.Name = "txtb_username";
@@ -149,6 +150,7 @@
             // 
             // txtb_password
             // 
+            this.txtb_password.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtb_password.Location = new System.Drawing.Point(28, 365);
             this.txtb_password.Multiline = true;
             this.txtb_password.Name = "txtb_password";
