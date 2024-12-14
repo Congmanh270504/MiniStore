@@ -1,4 +1,4 @@
-﻿create database miniMKT
+create database miniMKT
 use miniMKT
 ----------------------------------------------------------------------------------------------------------------------------------------
 -- Bảng Categories
@@ -328,4 +328,21 @@ FROM (
         YEAR(o.OrderDate), MONTH(o.OrderDate)  
 ) AS MonthlyTotals,Orders
 
-	select sum(TotalAmount) from Orders where MONTH(OrderDate)=6 and YEAR(OrderDate)=2023
+	SELECT 
+    SUM(TotalRevenue) AS GrandTotalRevenue, -- Tổng tất cả giá trị TotalRevenue
+    SUM(TotalQuantity) AS GrandTotalQuantity -- Tổng tất cả giá trị TotalQuantity
+FROM (
+    SELECT  
+        MONTH(o.OrderDate) AS OrderMonth, 
+        YEAR(o.OrderDate) AS OrderYear, 
+        SUM(o.TotalAmount) AS TotalRevenue,  
+        SUM(od.Quantity) AS TotalQuantity            
+    FROM  
+        Orders o 
+    JOIN  
+        OrderDetails od ON o.OrderID = od.OrderID
+    WHERE  
+         YEAR(o.OrderDate) = 2024 -- Điều kiện chỉ lấy dữ liệu tháng 6, năm 2024
+    GROUP BY  
+        YEAR(o.OrderDate), MONTH(o.OrderDate)  
+) AS MonthlyTotals;
