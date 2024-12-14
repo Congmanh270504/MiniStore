@@ -245,3 +245,87 @@ INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES 
 INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (29, 12, 7, 12, 74500 )
 INSERT OrderDetails (OrderDetailID, OrderID, ProductID, Quantity, Price) VALUES (30, 26, 8, 29, 22200 )
 
+
+SELECT 
+    O.OrderID,
+    O.TotalAmount AS OldTotalAmount,
+    OD.TotalAmount AS NewTotalAmount
+FROM Orders O
+JOIN (
+    SELECT 
+        OrderID, 
+        SUM(Quantity * Price) AS TotalAmount
+    FROM 
+        OrderDetails
+    GROUP BY 
+        OrderID
+) OD
+ON O.OrderID = OD.OrderID;
+
+-- Tính lại TotalAmount từ Quantity * Price và áp dụng giảm giá
+UPDATE Orders
+SET TotalAmount = 
+    CASE 
+        WHEN Customers.CustomerRank = N'Bạc' THEN Quantity * Price * 0.95
+        WHEN Customers.CustomerRank = N'Vàng' THEN Quantity * Price * 0.93
+        WHEN Customers.CustomerRank = N'Bạch kim' THEN Quantity * Price * 0.90
+        ELSE Quantity * Price -- Giữ nguyên nếu không thuộc các hạng trên
+    END
+FROM Orders,OrderDetails
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+-- Kiểm tra kết quả sau khi cập nhật
+SELECT * FROM Orders;
+
+UPDATE Orders
+SET TotalAmount = 
+    CASE 
+        WHEN Customers.CustomerRank = N'Bạc' THEN OrderDetails.Quantity * OrderDetails.Price * 0.95
+        WHEN Customers.CustomerRank = N'Vàng' THEN OrderDetails.Quantity * OrderDetails.Price * 0.93
+        WHEN Customers.CustomerRank = N'Bạch kim' THEN OrderDetails.Quantity * OrderDetails.Price * 0.90
+        ELSE OrderDetails.Quantity * OrderDetails.Price
+    END
+FROM Orders
+INNER JOIN OrderDetails ON Orders.OrderID = OrderDetails.OrderID
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+-- Kiểm tra kết quả
+SELECT * FROM Orders;
+
+
+SELECT  MONTH(o.OrderDate) AS OrderMonth, YEAR(o.OrderDate) AS OrderYear, (SELECT SUM(TotalAmount) FROM Orders o2   WHERE o2.OrderID = o.OrderID) AS TotalRevenue, SUM(od.Quantity) AS TotalQuantity 
+                 FROM  Orders o JOIN  OrderDetails od ON o.OrderID = od.OrderID 
+                 GROUP BY  YEAR(o.OrderDate), MONTH(o.OrderDate), o.OrderID  
+                ORDER BY  OrderYear,OrderMonth;
+
+				SELECT  
+    MONTH(o.OrderDate) AS OrderMonth, 
+    YEAR(o.OrderDate) AS OrderYear, 
+    SUM(o.TotalAmount) AS TotalRevenue,  
+    SUM(od.Quantity) AS TotalQuantity            
+FROM  
+    Orders o 
+JOIN  
+    OrderDetails od ON o.OrderID = od.OrderID
+GROUP BY  
+    YEAR(o.OrderDate), MONTH(o.OrderDate)  
+ORDER BY  
+    OrderYear, OrderMonth;
+
+	SELECT 
+    SUM(TotalRevenue) AS GrandTotalRevenue -- Tổng tất cả giá trị TotalRevenue
+FROM (
+    SELECT  
+        MONTH(o.OrderDate) AS OrderMonth, 
+        YEAR(o.OrderDate) AS OrderYear, 
+        SUM(o.TotalAmount) AS TotalRevenue,  
+        SUM(od.Quantity) AS TotalQuantity            
+    FROM  
+        Orders o 
+    JOIN  
+        OrderDetails od ON o.OrderID = od.OrderID
+    GROUP BY  
+        YEAR(o.OrderDate), MONTH(o.OrderDate)  
+) AS MonthlyTotals,Orders
+
+	select sum(TotalAmount) from Orders where MONTH(OrderDate)=6 and YEAR(OrderDate)=2023

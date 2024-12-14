@@ -20,7 +20,7 @@ namespace MiniStore.Forms
         public frm_changepassword()
         {
             InitializeComponent();
-            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            db = new DBConnect( "miniMKT");
         }
 
         private void btn_Xacnhan_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace MiniStore.Forms
         {
             InitializeComponent();
             user = frm_Login.LoggedInUser;
-            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            db = new DBConnect( "miniMKT");
             tbPosition.Enabled = false;
         }
 

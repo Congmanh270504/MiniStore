@@ -29,7 +29,7 @@ namespace MiniStore.Management
         public QL_KhachHang()
         {
             InitializeComponent();
-            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            db = new DBConnect( "miniMKT");
         }
 
         private void QL_KhachHang_FormClosing(object sender, FormClosingEventArgs e)

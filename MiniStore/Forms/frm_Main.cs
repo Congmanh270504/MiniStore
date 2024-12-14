@@ -19,19 +19,26 @@ namespace MiniStore.Forms
         User user;
         string position;
         private int currentImageIndex = 0;
+        //private string[] imagePaths = new string[]
+        //{
+        //    @"E:\img\discount_banner1.jpg",
+        //    @"E:\img\discount_banner2.jpg",
+        //    @"E:\img\discount_banner3.jpg",
+        //    @"E:\img\discount_banner5.jpg"
+        //};
         private string[] imagePaths = new string[]
         {
-            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner1.jpg",
-            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner2.jpg",
-            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner3.jpg",
-            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner5.jpg"
+            @"E:\img\discount_banner1.jpg",
+            @"E:\img\discount_banner2.jpg",
+            @"E:\img\discount_banner3.jpg",
+            @"E:\img\discount_banner5.jpg"
         };
         private Timer imageChangeTimer;
 
         public frm_Main()
         {
             InitializeComponent();
-            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            db = new DBConnect( "miniMKT");
             user = frm_Login.LoggedInUser;
             string query = string.Format("SELECT Position FROM Employees WHERE EmployeeID = {0} ", user.Id);
             position = db.getString(query);

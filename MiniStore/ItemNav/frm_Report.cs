@@ -18,12 +18,12 @@ namespace MiniStore.ItemNav
         SqlDataAdapter da_report;
         DataTable report;
         List<string> columnNames = new List<string>
-                        {
-                            "OrderYear",
-                            "OrderMonth",
-                            "TotalQuantity",
-                            "TotalRevenue"
-                        };
+{
+"OrderYear",
+"OrderMonth",
+"TotalQuantity",
+"TotalRevenue"
+};
         public frm_Report()
         {
             InitializeComponent();
@@ -31,10 +31,14 @@ namespace MiniStore.ItemNav
         }
         private void loadReport()
         {
-            string sql = "SELECT  MONTH(o.OrderDate) AS OrderMonth, YEAR(o.OrderDate) AS OrderYear, (SELECT SUM(TotalAmount) FROM Orders o2   WHERE o2.OrderID = o.OrderID) AS TotalRevenue, SUM(od.Quantity) AS TotalQuantity" +
-                " FROM  Orders o JOIN  OrderDetails od ON o.OrderID = od.OrderID" +
-                " GROUP BY  YEAR(o.OrderDate), MONTH(o.OrderDate), o.OrderID " +
-                "ORDER BY  OrderMonth,OrderYear;";
+            string sql = "SELECT" +
+            " MONTH(o.OrderDate) AS OrderMonth," +
+            " YEAR(o.OrderDate) AS OrderYear," +
+            " SUM(o.TotalAmount) AS TotalRevenue," +
+            " SUM(od.Quantity) AS TotalQuantity" + " FROM  Orders o" +
+            " JOIN OrderDetails od ON o.OrderID = od.OrderID" +
+            " GROUP BY YEAR(o.OrderDate), MONTH(o.OrderDate)" +
+            " ORDER BY OrderYear, OrderMonth;";
 
             da_report = db.getDataAdapter(sql, "Orders");
 
@@ -54,12 +58,22 @@ namespace MiniStore.ItemNav
 
         private int getTotalQuanity(string subQuery)
         {
-            string sql = "select sum(quantity) from OrderDetails" + subQuery;
+            string sql = "SELECT SUM(TotalQuantity) AS GrandTotalQuantity FROM" +
+                " ( SELECT MONTH(o.OrderDate) AS OrderMonth, YEAR(o.OrderDate) AS OrderYear," +
+                " SUM(o.TotalAmount) AS TotalRevenue," +
+                " SUM(od.Quantity) AS TotalQuantity" +
+                " FROM  Orders o JOIN  OrderDetails od ON o.OrderID = od.OrderID" + subQuery +
+                " GROUP BY  YEAR(o.OrderDate), MONTH(o.OrderDate)  ) AS MonthlyTotals; " ;
             return db.getCount(sql);
         }
         private int getTotalRevenue(string subQuery)
         {
-            string sql = "select SUM(TotalAmount) from Orders " + subQuery;
+            string sql = "SELECT SUM(TotalRevenue) AS GrandTotalRevenue FROM" +
+           " ( SELECT MONTH(o.OrderDate) AS OrderMonth, YEAR(o.OrderDate) AS OrderYear," +
+           " SUM(o.TotalAmount) AS TotalRevenue," +
+           " SUM(od.Quantity) AS TotalQuantity" +
+           " FROM  Orders o JOIN  OrderDetails od ON o.OrderID = od.OrderID" + subQuery +
+           " GROUP BY  YEAR(o.OrderDate), MONTH(o.OrderDate)  ) AS MonthlyTotals; " ;
             return db.getCount(sql);
         }
         private void frm_Report2_Load(object sender, EventArgs e)
@@ -102,12 +116,17 @@ namespace MiniStore.ItemNav
                 tbTime.Focus();
                 return;
             }
-            string sql = "SELECT  MONTH(o.OrderDate) AS OrderMonth, YEAR(o.OrderDate) AS OrderYear, (SELECT SUM(TotalAmount) FROM Orders o2   WHERE o2.OrderID = o.OrderID) AS TotalRevenue, SUM(od.Quantity) AS TotalQuantity" +
-                " FROM  Orders o JOIN  OrderDetails od ON o.OrderID = od.OrderID" +
-                " WHERE YEAR(o.OrderDate) = " + tbTime.Text + " " +
-                " GROUP BY  YEAR(o.OrderDate), MONTH(o.OrderDate), o.OrderID " +
-                "ORDER BY  OrderMonth,OrderYear;";
-       
+            string sql = "SELECT" +
+            " MONTH(o.OrderDate) AS OrderMonth," +
+            " YEAR(o.OrderDate) AS OrderYear," +
+            " SUM(o.TotalAmount) AS TotalRevenue," +
+            " SUM(od.Quantity) AS TotalQuantity" + " FROM Orders o" +
+            " JOIN OrderDetails od ON o.OrderID = od.OrderID" +
+            " WHERE YEAR(o.OrderDate) = " + tbTime.Text + " " +
+            " GROUP BY YEAR(o.OrderDate), MONTH(o.OrderDate)" +
+            " ORDER BY OrderYear, OrderMonth;";
+
+
 
             da_report = db.getDataAdapter(sql, "Orders");
             da_report.SelectCommand.Parameters.AddWithValue("@year", tbTime.Text);
@@ -120,8 +139,8 @@ namespace MiniStore.ItemNav
             }
             else
             {
-                lbTotalQuantity.Text = getTotalQuanity(",Orders  WHERE YEAR(OrderDate) = " + tbTime.Text + " AND OrderDetails.OrderID = Orders.OrderID").ToString() + " sản phẩm đã bán";
-                lbTotalRevenue.Text = getTotalRevenue("WHERE YEAR(OrderDate) = " + tbTime.Text).ToString() + "đ";
+                lbTotalQuantity.Text = getTotalQuanity(" WHERE YEAR(o.OrderDate) = " + tbTime.Text).ToString() + " sản phẩm đã bán";
+                lbTotalRevenue.Text = getTotalRevenue(" WHERE YEAR(o.OrderDate) = " + tbTime.Text).ToString() + "đ";
                 dataGridView.DataSource = searchResults;
             }
         }

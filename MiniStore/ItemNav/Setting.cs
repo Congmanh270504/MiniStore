@@ -19,7 +19,7 @@ namespace MiniStore.ItemNav
         public Setting()
         {
             InitializeComponent();
-            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            db = new DBConnect( "miniMKT");
             user = frm_Login.LoggedInUser;
         }
 

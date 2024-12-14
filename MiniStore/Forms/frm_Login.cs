@@ -15,7 +15,7 @@ namespace MiniStore.Forms
         private frm_Login()
         {
             InitializeComponent();
-            db = new DBConnect("CongManhPC\\MSSQLSERVER01", "miniMKT");
+            db = new DBConnect( "miniMKT");
         }
 
         public static frm_Login GetInstance()
