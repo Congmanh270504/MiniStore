@@ -137,7 +137,7 @@
             this.btnReport.ForeColor = System.Drawing.Color.White;
             this.btnReport.Image = global::MiniStore.Properties.Resources.graph_report_32px;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 162);
+            this.btnReport.Location = new System.Drawing.Point(0, 109);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(200, 47);
             this.btnReport.TabIndex = 11;
@@ -173,7 +173,7 @@
             this.btnPersonnel.ForeColor = System.Drawing.Color.White;
             this.btnPersonnel.Image = global::MiniStore.Properties.Resources.conference_32px;
             this.btnPersonnel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonnel.Location = new System.Drawing.Point(0, 109);
+            this.btnPersonnel.Location = new System.Drawing.Point(3, 162);
             this.btnPersonnel.Name = "btnPersonnel";
             this.btnPersonnel.Size = new System.Drawing.Size(200, 47);
             this.btnPersonnel.TabIndex = 9;

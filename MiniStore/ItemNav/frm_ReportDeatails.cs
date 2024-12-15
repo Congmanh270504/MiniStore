@@ -28,40 +28,27 @@ namespace MiniStore.ItemNav
                             "Price",
                             "CustomerRank"
                         };
-
-
+        public static string Month = "";
+        public static string Year = "";
         public frm_ReportDeatails(string month, string year)
         {
             InitializeComponent();
             db = new DBConnect("miniMKT");
             lbMonthYear.Text = month + "/" + year;
-            lbTotalQuantity.Text = db.getInt("SELECT SUM(OD.Quantity) AS TotalQuantity" +
-                " FROM Orders O" +
-                " JOIN Employees E ON O.EmployeeID = E.EmployeeID" +
-                " JOIN Customers C ON O.CustomerID = C.CustomerID" +
-                " JOIN OrderDetails OD ON O.OrderID = OD.OrderID" +
-                " JOIN Products P ON OD.ProductID = P.ProductID" +
-                " WHERE YEAR(O.OrderDate) = " + year + " AND MONTH(O.OrderDate) = " + month).ToString() + " sản phẩm đã bán";
-
-            lbTotalRevenue.Text = db.getInt("SELECT SUM(OD.Price * OD.Quantity) AS TotalPrice" +
-                " FROM Orders O" +
-                " JOIN Employees E ON O.EmployeeID = E.EmployeeID" +
-                " JOIN Customers C ON O.CustomerID = C.CustomerID" +
-                " JOIN OrderDetails OD ON O.OrderID = OD.OrderID" +
-                " JOIN Products P ON OD.ProductID = P.ProductID" +
-                " WHERE YEAR(O.OrderDate) = " + year + " AND MONTH(O.OrderDate) = " + month).ToString() + "đ";
-
+            lbTotalQuantity.Text = db.getInt("select sum(quantity) from OrderDetails,Orders where Orders.OrderID =OrderDetails.OrderID and MONTH(OrderDate)= " + month + " and YEAR(OrderDate)=" + year) + " sản phẩm đã bán";
+            lbTotalRevenue.Text = db.getInt("select totalamount from orders where MONTH(OrderDate)= " + month + " and YEAR(OrderDate)= " + year ) + "đ";
+            Month = month;
+            Year = year;
         }
         void datagrid_Load()
         {
-            string[] monthYear = lbMonthYear.Text.Split('/');
             string sql = "SELECT CONVERT(VARCHAR(10), O.OrderDate, 103) AS OrderDate,E.EmployeeName AS EmployeeName,C.CustomerName AS CustomerName,P.ProductName AS ProductName,OD.Quantity AS Quantity,OD.Price AS Price,C.CustomerRank AS CustomerRank" +
                 " FROM Orders O" +
-                " JOIN Employees E ON O.EmployeeID = E.EmployeeID " +
-                "JOIN Customers C ON O.CustomerID = C.CustomerID " +
-                "JOIN OrderDetails OD ON O.OrderID = OD.OrderID" +
+                " JOIN Employees E ON O.EmployeeID = E.EmployeeID" +
+                " JOIN Customers C ON O.CustomerID = C.CustomerID" +
+                " JOIN OrderDetails OD ON O.OrderID = OD.OrderID" +
                 " JOIN Products P ON OD.ProductID = P.ProductID" +
-                " WHERE MONTH(O.OrderDate) = " + monthYear[0] + " AND YEAR(O.OrderDate) = " + monthYear[1] +
+                " WHERE Month(O.OrderDate) = " + Month + " and Year(O.OrderDate) =" + Year +
                 " ORDER BY O.OrderDate;";
             da_revenueDetails = db.getDataAdapter(sql, "Orders");
             revenue = db.Dset.Tables["Orders"];

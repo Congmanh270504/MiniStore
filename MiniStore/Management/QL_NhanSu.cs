@@ -50,13 +50,7 @@ namespace MiniStore.Management
             dataGridView_DSNhanVien.Columns["Phone"].HeaderText = "SĐT";
             dataGridView_DSNhanVien.Columns["Email"].HeaderText = "Email";
 
-            txtTenNV.DataBindings.Add(new Binding("Text", employees, "EmployeeName", true, DataSourceUpdateMode.Never));
-
-            txtSDT.DataBindings.Add(new Binding("Text", employees, "Phone", true, DataSourceUpdateMode.Never));
-
-            cb_Position.DataBindings.Add(new Binding("SelectedValue", employees, "Position", true, DataSourceUpdateMode.Never));
-
-            txtEmail.DataBindings.Add(new Binding("Text", employees, "Email", true, DataSourceUpdateMode.Never));
+           
 
             // Center the header text
             dataGridView_DSNhanVien.Columns["EmployeeID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -76,7 +70,24 @@ namespace MiniStore.Management
 
             dataGridView_DSNhanVien.Columns["EmployeeID"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
             dataGridView_DSNhanVien.Columns["EmployeeName"].HeaderCell.Style.WrapMode = DataGridViewTriState.False;
-        
+            AddBindings();
+        }
+        private void AddBindings()
+        {
+            txtTenNV.DataBindings.Add(new Binding("Text", employees, "EmployeeName", true, DataSourceUpdateMode.Never));
+
+            txtSDT.DataBindings.Add(new Binding("Text", employees, "Phone", true, DataSourceUpdateMode.Never));
+
+            cb_Position.DataBindings.Add(new Binding("SelectedValue", employees, "Position", true, DataSourceUpdateMode.Never));
+
+            txtEmail.DataBindings.Add(new Binding("Text", employees, "Email", true, DataSourceUpdateMode.Never));
+        }
+        private void ClearBindings()
+        {
+            txtTenNV.DataBindings.Clear();
+            txtSDT.DataBindings.Clear();
+            cb_Position.DataBindings.Clear();
+            txtEmail.DataBindings.Clear();
         }
         void load_Position()
         {
@@ -86,6 +97,9 @@ namespace MiniStore.Management
             cb_Position.DisplayMember = "Position";
 
             cb_Position.ValueMember = "Position";
+
+            string firstEmployeePosition = dataGridView_DSNhanVien.Rows[0].Cells["Position"].Value.ToString();
+            cb_Position.SelectedValue = firstEmployeePosition;
         }
 
         private bool IsValidPhoneNumber(string phoneNumber)
@@ -268,6 +282,7 @@ namespace MiniStore.Management
         {
             string searchString = txtTimKiem.Text;
             string sql = "SELECT EmployeeID,EmployeeName,Position,Phone,Email FROM Employees WHERE EmployeeName LIKE @searchString";
+            ClearBindings();
 
             using (SqlConnection connection = new SqlConnection(db.strConnect))
             {
@@ -278,6 +293,8 @@ namespace MiniStore.Management
                 da_products.Fill(products);
                 dataGridView_DSNhanVien.DataSource = products;
             }
+
+            AddBindings();
         }
 
         private void btn_Clear_Click(object sender, EventArgs e)

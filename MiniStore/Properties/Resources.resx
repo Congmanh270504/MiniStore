@@ -187,6 +187,9 @@
   <data name="left_round_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\left_round_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="delete_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\delete_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="contract_120px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\contract_120px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -280,7 +283,7 @@
   <data name="delete_32px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\delete_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancel_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="cancel_32px9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\cancel_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cancel_32px6" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -328,10 +331,10 @@
   <data name="checked_24px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\checked_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\MyResources\delete_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cancel_32px9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="cancel_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\MyResources\cancel_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_file_32px2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\MyResources\edit_file_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

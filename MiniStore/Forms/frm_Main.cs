@@ -19,19 +19,12 @@ namespace MiniStore.Forms
         User user;
         string position;
         private int currentImageIndex = 0;
-        //private string[] imagePaths = new string[]
-        //{
-        //    @"E:\img\discount_banner1.jpg",
-        //    @"E:\img\discount_banner2.jpg",
-        //    @"E:\img\discount_banner3.jpg",
-        //    @"E:\img\discount_banner5.jpg"
-        //};
         private string[] imagePaths = new string[]
         {
-            @"E:\img\discount_banner1.jpg",
-            @"E:\img\discount_banner2.jpg",
-            @"E:\img\discount_banner3.jpg",
-            @"E:\img\discount_banner5.jpg"
+            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner1.jpg",
+            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner2.jpg",
+            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner3.jpg",
+            @"E:\Trần Công Mạnh_BT\CongNghe_Net\Project\MiniStore\MINISTORE\img\discount_banner5.jpg"
         };
         private Timer imageChangeTimer;
 
@@ -54,6 +47,7 @@ namespace MiniStore.Forms
                 case "Thu ngân":
                     btnProduct.Visible = false;
                     btnAdmin.Visible = false;
+                    btnProduct.Visible = false;
                     break;
                 default:
                     break;

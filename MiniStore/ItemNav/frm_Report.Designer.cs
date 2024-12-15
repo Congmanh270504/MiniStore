@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RevueneDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.lbl_hoadon = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbTotalRevenue = new System.Windows.Forms.Label();
@@ -44,9 +42,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbTotalQuantity = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -56,18 +58,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.Location = new System.Drawing.Point(12, 166);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.Location = new System.Drawing.Point(12, 213);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(797, 383);
+            this.dataGridView.Size = new System.Drawing.Size(797, 408);
             this.dataGridView.TabIndex = 131;
             // 
             // contextMenuStrip1
@@ -83,36 +85,6 @@
             this.RevueneDetailToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.RevueneDetailToolStripMenuItem.Text = "Chi tiết doanh thu";
             this.RevueneDetailToolStripMenuItem.Click += new System.EventHandler(this.RevueneDetailToolStripMenuItem_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnRefresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Image = global::MiniStore.Properties.Resources.available_updates;
-            this.btnRefresh.Location = new System.Drawing.Point(500, 124);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(125, 36);
-            this.btnRefresh.TabIndex = 132;
-            this.btnRefresh.Text = "REFRESH";
-            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = global::MiniStore.Properties.Resources.cancel_32px1;
-            this.btnClose.Location = new System.Drawing.Point(641, 124);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(114, 36);
-            this.btnClose.TabIndex = 133;
-            this.btnClose.Text = "ĐÓNG";
-            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lbl_hoadon
             // 
@@ -131,7 +103,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(500, 95);
+            this.label1.Location = new System.Drawing.Point(17, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 19);
             this.label1.TabIndex = 130;
@@ -142,7 +114,7 @@
             this.lbTotalRevenue.AutoSize = true;
             this.lbTotalRevenue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalRevenue.ForeColor = System.Drawing.Color.IndianRed;
-            this.lbTotalRevenue.Location = new System.Drawing.Point(641, 96);
+            this.lbTotalRevenue.Location = new System.Drawing.Point(158, 65);
             this.lbTotalRevenue.Name = "lbTotalRevenue";
             this.lbTotalRevenue.Size = new System.Drawing.Size(45, 19);
             this.lbTotalRevenue.TabIndex = 134;
@@ -200,7 +172,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(500, 59);
+            this.label3.Location = new System.Drawing.Point(17, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 19);
             this.label3.TabIndex = 136;
@@ -211,23 +183,65 @@
             this.lbTotalQuantity.AutoSize = true;
             this.lbTotalQuantity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalQuantity.ForeColor = System.Drawing.Color.IndianRed;
-            this.lbTotalQuantity.Location = new System.Drawing.Point(641, 60);
+            this.lbTotalQuantity.Location = new System.Drawing.Point(158, 29);
             this.lbTotalQuantity.Name = "lbTotalQuantity";
             this.lbTotalQuantity.Size = new System.Drawing.Size(101, 19);
             this.lbTotalQuantity.TabIndex = 137;
             this.lbTotalQuantity.Text = "lbTotalQuantity";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Image = global::MiniStore.Properties.Resources.cancel_32px1;
+            this.btnClose.Location = new System.Drawing.Point(656, 151);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(153, 46);
+            this.btnClose.TabIndex = 133;
+            this.btnClose.Text = "ĐÓNG";
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnRefresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Image = global::MiniStore.Properties.Resources.available_updates;
+            this.btnRefresh.Location = new System.Drawing.Point(491, 151);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(153, 46);
+            this.btnRefresh.TabIndex = 132;
+            this.btnRefresh.Text = "REFRESH";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lbTotalQuantity);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lbTotalRevenue);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox2.Location = new System.Drawing.Point(491, 47);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(309, 91);
+            this.groupBox2.TabIndex = 139;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông tin ";
+            // 
             // frm_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 561);
-            this.Controls.Add(this.lbTotalQuantity);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(821, 633);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lbTotalRevenue);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_hoadon);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRefresh);
@@ -238,6 +252,8 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +274,6 @@
         private System.Windows.Forms.Label lbTotalQuantity;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem RevueneDetailToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

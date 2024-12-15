@@ -134,7 +134,6 @@ namespace MiniStore.Management
         void load_DVT()
         {
             string sql = "select Unit from Products group by Unit ";
-
             cb_DVT.DataSource = db.getDataTable(sql, "Unit");
             cb_DVT.DisplayMember = "Unit";
             cb_DVT.ValueMember = "Unit";
