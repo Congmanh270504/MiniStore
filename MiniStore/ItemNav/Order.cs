@@ -25,7 +25,7 @@ namespace MiniStore.ItemNav
         public Order()
         {
             InitializeComponent();
-            db = new DBConnect( "miniMKT");
+            db = new DBConnect("miniMKT");
             user = frm_Login.LoggedInUser;
         }
 
@@ -278,7 +278,7 @@ namespace MiniStore.ItemNav
                 total *= ((100 - sell) / 100);
 
             }
-            if (listOrder.SelectedItems.Count == 0)
+            if (listOrder.Items.Count == 0)
             {
                 MessageBox.Show("Không có sản phẩm trong giỏ hàng !!", "Không có sản phẩm", MessageBoxButtons.OKCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
@@ -322,6 +322,21 @@ namespace MiniStore.ItemNav
                 " VALUES ({0}, {1}, {2}, {3})", orderID, productID, quantity, price);
                 db.updateToDataBase(query);
             }
+
+            int totalAmount = db.getInt("select sum(TotalAmount) from orders where CustomerID = " + cbCustomer.SelectedValue);
+            if (totalAmount >= 10000000)
+            {
+                db.updateToDataBase("update Customers set CustomerRank = N'Bạch kim' where CustomerID = " + cbCustomer.SelectedValue);
+            }
+            else if (totalAmount >= 5000000)
+            {
+                db.updateToDataBase("update Customers set CustomerRank = N'Vàng' where CustomerID = " + cbCustomer.SelectedValue);
+            }
+            else if (totalAmount >= 2000000)
+            {
+                db.updateToDataBase("update Customers set CustomerRank = N'Bạc' where CustomerID = " + cbCustomer.SelectedValue);
+            }
+
             if (cb_PrintBill.Checked)
             {
                 Hide();
@@ -451,7 +466,7 @@ namespace MiniStore.ItemNav
                 if (currentQuantity > 0)
                 {
                     // Update the item with the new quantity
-                    itemParts[itemParts.Length - 1] = " {currentQuantity} {itemParts[itemParts.Length - 1].Split(' ')[2].Trim()}";
+                    itemParts[itemParts.Length - 1] = " " + currentQuantity.ToString() + " " + itemParts[itemParts.Length - 1].Split(' ')[2].Trim();
                     listOrder.Items[index] = string.Join("-", itemParts);
                 }
                 else

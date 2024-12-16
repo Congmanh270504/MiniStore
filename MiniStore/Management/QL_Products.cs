@@ -85,8 +85,6 @@ namespace MiniStore.Management
 
             }
             AddBindings();
-
-
         }
         private void AddBindings()
         {
@@ -212,6 +210,7 @@ namespace MiniStore.Management
             cb_DVT.SelectedValue);
             db.updateToDataBase(sql);
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            ClearBindings();
             LoadData();
         }
 
@@ -252,6 +251,7 @@ namespace MiniStore.Management
 
                 string query = string.Format("DELETE FROM Products WHERE ProductID = {0}", productId);
                 db.updateToDataBase(query);
+                ClearBindings();
                 LoadData();
                 da_products.Update(products);
                 MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -342,6 +342,7 @@ namespace MiniStore.Management
             string query = "UPDATE Products SET ";
             query += string.Join(", ", subQuery) + string.Format(" WHERE ProductID = {0}", maSanPham);
             db.updateToDataBase(query);
+            ClearBindings();
             LoadData();
             da_products.Update(products);
 
